@@ -1,0 +1,86 @@
+<?php
+/**
+ * Project Name:    Discover Jackson NC
+ * Project URI:     https://www.discoverjacksonnc.com
+ * Description:     Manage user roles, capabilities and other aspects of user accounts
+ * Agency:          Rawle Murdy Associates
+ * Agency URI:      https://www.rawlemurdy.com
+ * Text Domain:     jctda
+ *
+ * @package         jctda
+ * @since           20180930
+ * @author          lpeterson
+ */
+
+add_action( 'members_register_caps', function() {
+	members_register_cap( 'jc_review_global', [ 'label' => 'Review: Global Style Adjustments', 'group' => 'jc_user_cap_group' ] );
+	members_register_cap( 'jc_review_header', [ 'label' => 'Review: Desktop Header', 'group' => 'jc_user_cap_group' ] );
+	members_register_cap( 'jc_review_search', [ 'label' => 'Review: Site Search', 'group' => 'jc_user_cap_group' ] );
+	members_register_cap( 'jc_review_accordion', [ 'label' => 'Review: Collapse/Expand', 'group' => 'jc_user_cap_group' ] );
+	members_register_cap( 'jc_review_tile', [ 'label' => 'Review: Content Tiles', 'group' => 'jc_user_cap_group' ] );
+	members_register_cap( 'jc_review_carousel', [ 'label' => 'Review: Content Carousels', 'group' => 'jc_user_cap_group' ] );
+	members_register_cap( 'jc_review_grid', [ 'label' => 'Review: Tile Grids', 'group' => 'jc_user_cap_group' ] );
+	members_register_cap( 'jc_review_progress', [ 'label' => 'Review: Reading Time & Progress Indication', 'group' => 'jc_user_cap_group' ] );
+	members_register_cap( 'jc_review_cta', [ 'label' => 'Review: CTA View', 'group' => 'jc_user_cap_group' ] );
+	members_register_cap( 'jc_review_lazy_hero', [ 'label' => 'Review: Lazy Loaded Heroes', 'group' => 'jc_user_cap_group' ] );
+	members_register_cap( 'jc_review_lazy_image', [ 'label' => 'Review: Lazy Loaded Images', 'group' => 'jc_user_cap_group' ] );
+	members_register_cap( 'jc_review_lazy_section', [ 'label' => 'Review: Lazy Loaded Sections', 'group' => 'jc_user_cap_group' ] );
+	members_register_cap( 'jc_review_async_form', [ 'label' => 'Review: Async Form Submissions', 'group' => 'jc_user_cap_group' ] );
+	members_register_cap( 'jc_review_async_cta', [ 'label' => 'Review: Async Call to Action Loading', 'group' => 'jc_user_cap_group' ] );
+	members_register_cap( 'jc_review_async_modal', [ 'label' => 'Review: Async Loaded Modals & Lightboxes', 'group' => 'jc_user_cap_group' ] );
+	members_register_cap( 'jc_review_async_page', [ 'label' => 'Review: Async Loaded Pages', 'group' => 'jc_user_cap_group' ] );
+	members_register_cap( 'jc_review_offcanvas_1', [ 'label' => 'Review: Mobile Navigation 1', 'group' => 'jc_user_cap_group' ] );
+	members_register_cap( 'jc_review_offcanvas_2', [ 'label' => 'Review: Mobile Navigation 2', 'group' => 'jc_user_cap_group' ] );
+	members_register_cap( 'jc_review_offcanvas_3', [ 'label' => 'Review: Mobile Navigation 3', 'group' => 'jc_user_cap_group' ] );
+	members_register_cap( 'jc_review_offcanvas_4', [ 'label' => 'Review: Mobile Navigation 4', 'group' => 'jc_user_cap_group' ] );
+	members_register_cap( 'jc_review_offcanvas_5', [ 'label' => 'Review: Mobile Navigation 5', 'group' => 'jc_user_cap_group' ] );
+	members_register_cap( 'jc_review_offcanvas_6', [ 'label' => 'Review: Mobile Navigation 6', 'group' => 'jc_user_cap_group' ] );
+
+	members_register_cap(
+		'jc_get_rest_api',
+		[
+			'label' => __( 'JC REST API - GET Requests', 'jc-network' ),
+			'group' => 'jc_user_cap_group'
+		]
+	);
+	members_register_cap(
+		'jc_post_rest_api',
+		[
+			'label' => __( 'JC REST API - POST', 'jc-network' ),
+			'group' => 'jc_user_cap_group'
+		]
+	);
+	members_register_cap(
+		'jc_put_rest_api',
+		[
+			'label' => __( 'JC REST API - PUT Requests', 'jc-network' ),
+			'group' => 'jc_user_cap_group'
+		]
+	);
+	members_register_cap(
+		'jc_patch_rest_api',
+		[
+			'label' => __( 'JC REST API - PATCH Requests', 'jc-network' ),
+			'group' => 'jc_user_cap_group'
+		]
+	);
+	members_register_cap(
+		'jc_delete_rest_api',
+		[
+			'label' => __( 'JC REST API - DELETE Requests', 'jc-network' ),
+			'group' => 'jc_user_cap_group'
+		]
+	);
+});
+
+add_action( 'members_register_cap_groups', function() {
+	members_register_cap_group(
+		'jc_user_cap_group',
+		[
+			'label'    => __( 'Jackson County', 'jc-network' ),
+			'caps'     => [],
+			'icon'     => 'dashicons-welcome-view-site',
+			'priority' => 1
+		]
+	);
+});

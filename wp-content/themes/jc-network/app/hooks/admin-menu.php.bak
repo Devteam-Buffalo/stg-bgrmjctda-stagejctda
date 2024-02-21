@@ -1,0 +1,85 @@
+<?php
+/**
+ * Project Name:    Discover Jackson NC
+ * Project URI:     https://www.discoverjacksonnc.com
+ * Description:     Fires before the administration menu loads in the admin.
+ * Agency:          Rawle Murdy Associates
+ * Agency URI:      https://www.rawlemurdy.com
+ * Text Domain:     jctda
+ *
+ * @package         jctda
+ * @since           1.5.0
+ * @author          lpeterson
+ *
+ * @param string $context Empty context.
+ */
+
+add_action( 'admin_menu', function() {
+	global $submenu, $menu;
+	if ( is_array( $menu ) )
+		end( $menu );
+
+	/**
+	 * Remove unused customize.php admin menu item for all users
+	 *
+	 * @since 3.6.0
+	 */
+	unset( $submenu['themes.php'][6] ); // i.e. customize.php
+
+	/**
+	 * Remove specific sub-menu items from Appearance
+	 *
+	 * Done only for JCTDA user role since Menu access requested (manage_options)
+	 * yet no fine-grained access control is provided natively.
+	 *
+	 * @since 3.6.0
+	 */
+	if ( current_user_can( 'jackson_county' ) ) {
+		/**
+		 * Remove theme read, update, delete and install capabilities
+		 *
+		 * @since 3.6.0
+		 */
+		unset( $submenu['themes.php'][7] ); // i.e. themes.php
+
+		/**
+		 * Remove widget view, update capabilities
+		 *
+		 * @since 3.6.0
+		 */
+		unset( $submenu['themes.php'][5] ); // i.e. widgets.php
+
+		$remove = [
+			'Tools',
+			'Settings',
+			'Users'
+		];
+
+		if ( $menu ) {
+			while ( prev( $menu ) ) {
+				$value = explode( ' ', $menu[ key( $menu )][0] );
+
+				if ( in_array( $value[0] != null ? $value[0]:"" , $remove ) )
+					unset( $menu[ key( $menu )] );
+			}
+		}
+
+		remove_menu_page( 'edit.php?post_type=acf-field-group' );
+	}
+
+	/**
+	 * Remove Welcome to WordPress widget from Dashboard
+	 *
+	 * Globally disabled (for all users and roles) to help speed up login time
+	 *
+	 * @since 3.6.0
+	 */
+	remove_action( 'welcome_panel', 'wp_welcome_panel' );
+
+	/**
+	 * Remove Yoast Dashboard
+	 *
+	 * @since 3.6.0
+	 */
+	remove_menu_page('wpseo_dashboard');
+}, 999 );

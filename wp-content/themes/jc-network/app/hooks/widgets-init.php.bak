@@ -1,0 +1,225 @@
+<?php
+/**
+ * Project Name:    Discover Jackson NC
+ * Project URI:     https://www.discoverjacksonnc.com
+ * Description:     Registers all of the default WordPress widgets on startup.
+ * Agency:          Rawle Murdy Associates
+ * Agency URI:      https://www.rawlemurdy.com
+ * Text Domain:     jctda
+ *
+ * @package         jctda
+ * @since           20181212
+ * @author          lpeterson
+ */
+
+class Recent_Blog_Posts extends WP_Widget {
+	protected $widget_slug = 'recent-blog-posts';
+
+	public function __construct() {
+		parent::__construct(
+			$this->get_widget_slug(),
+			__( 'Recent Blog Posts', $this->get_widget_slug() ),
+			[
+				'classname'  => $this->get_widget_slug().'-class',
+				'description' => __( 'Display the last 5 blog posts in a list.', $this->get_widget_slug() )
+			]
+		);
+
+		add_action( 'save_post',    [ $this, 'flush_widget_cache' ] );
+		add_action( 'deleted_post', [ $this, 'flush_widget_cache' ] );
+		add_action( 'switch_theme', [ $this, 'flush_widget_cache' ] );
+	}
+
+	public function get_widget_slug() {
+		return $this->widget_slug;
+	}
+
+	public function widget( $args, $instance ) {
+		$cache = wp_cache_get( $this->get_widget_slug(), 'site_widgets' );
+
+		if ( ! is_array( $cache ) )
+			$cache = [];
+
+		if ( ! isset( $args['widget_id'] ) )
+			$args['widget_id'] = $this->id;
+
+		if ( isset( $cache[ $args['widget_id'] ] ) )
+			return print $cache[ $args['widget_id'] ];
+
+		ob_start();
+
+		$widget_string = $before_widget; ?>
+
+		<section class="blog-list widget">
+			<h4 class="widget-title"><?= __( 'Recent Blog Posts', $this->get_widget_slug() ) ?></h4>
+			<?php
+			extract( $args, EXTR_SKIP );
+
+			global $post;
+
+			$args = [
+				'post_type'              => 'post',
+				'post_status'            => 'publish',
+				'perm'                   => 'readable',
+				'posts_per_page'         => 5,
+				'orderby'                => 'date modified',
+				'order'                  => 'DESC',
+				'no_found_rows'          => true,
+				'cache_results'          => true,
+				'update_post_meta_cache' => false,
+				'update_post_term_cache' => false,
+			];
+			$items = get_posts( $args );
+
+			if ( is_array( $items ) && !empty( $items ) ) :
+				foreach ( $items as $post ) :
+					setup_postdata( $post ); ?>
+
+					<article <?php post_class('uk-panel uk-panel-header uk-panel-divider uk-article loop-article') ?>>
+						<a href="<?php the_permalink() ?>" title="<?php the_title_attribute() ?>" class="uk-link-muted">
+							<time class="uk-text-uppercase sans-serif text-grey" datetime="<?php the_date( 'c' ) ?>"><?php the_date() ?></time>
+							<h5 class="uk-margin-remove uk-text-large uk-padding-vertical-small sans-serif"><?php the_title() ?></h5>
+							<button class="uk-button uk-button-link uk-text-uppercase uk-text-small text-orange">
+								Read More
+								<small class="uk-icon-chevron-right"></small>
+							</button>
+						</a>
+					</article>
+
+					<?php endforeach;
+				wp_reset_postdata();
+			endif;
+
+			$archive = get_page_by_title( 'Blog Archive', null, 'page' );
+			$archive_title = get_the_title( $archive->ID ); ?>
+
+			<a href="<?= get_permalink( $archive->ID ) ?>" class="uk-button uk-button-secondary uk-button-large uk-width-1-1" title="View <?= esc_attr( $archive_title ) ?>"><?= esc_attr( 'View ' . $archive_title ) ?></a>
+			<hr>
+		</section>
+
+		<?php
+		$widget_string .= ob_get_clean();
+		$widget_string .= $after_widget;
+		$cache[ $args['widget_id'] ] = $widget_string;
+		wp_cache_set( $this->get_widget_slug(), $cache, 'site_widgets' );
+
+		print $widget_string;
+	}
+
+	public function flush_widget_cache() {
+		wp_cache_delete( $this->get_widget_slug(), 'site_widgets' );
+	}
+
+	public function update( $new_instance, $old_instance ) {
+		$instance = $old_instance;
+		return $instance;
+	}
+
+	public function form( $instance ) {
+		$instance = wp_parse_args(
+			(array) $instance
+		);
+	}
+}
+
+
+/**
+ * wp_widgets_init
+ *
+ * Calls {@see 'widgets_init'} action after all of the WordPress widgets have been registered
+ *
+ * @since 2.2.0
+ */
+add_action( 'widgets_init', function() {
+	/**
+	 * Builds the definition for a single sidebar and returns the ID.
+	 *
+	 * Accepts either a string or an array and then parses that against a set
+	 * of default arguments for the new sidebar. WordPress will automatically
+	 * generate a sidebar ID and name based on the current number of registered
+	 * sidebars if those arguments are not included.
+	 *
+	 * When allowing for automatic generation of the name and ID parameters, keep
+	 * in mind that the incrementor for your sidebar can change over time depending
+	 * on what other plugins and themes are installed.
+	 *
+	 * If theme support for 'widgets' has not yet been added when this function is
+	 * called, it will be automatically enabled through the use of add_theme_support()
+	 *
+	 * @since 2.2.0
+	 *
+	 * @global array $wp_registered_sidebars Stores the new sidebar in this array by sidebar ID.
+	 *
+	 * @param array|string $args {
+	 *     Optional. Array or string of arguments for the sidebar being registered.
+	 *
+	 *     @type string $name          The name or title of the sidebar displayed in the Widgets
+	 *                                 interface. Default 'Sidebar $instance'.
+	 *     @type string $id            The unique identifier by which the sidebar will be called.
+	 *                                 Default 'sidebar-$instance'.
+	 *     @type string $description   Description of the sidebar, displayed in the Widgets interface.
+	 *                                 Default empty string.
+	 *     @type string $class         Extra CSS class to assign to the sidebar in the Widgets interface.
+	 *                                 Default empty.
+	 *     @type string $before_widget HTML content to prepend to each widget's HTML output when
+	 *                                 assigned to this sidebar. Default is an opening list item element.
+	 *     @type string $after_widget  HTML content to append to each widget's HTML output when
+	 *                                 assigned to this sidebar. Default is a closing list item element.
+	 *     @type string $before_title  HTML content to prepend to the sidebar title when displayed.
+	 *                                 Default is an opening h2 element.
+	 *     @type string $after_title   HTML content to append to the sidebar title when displayed.
+	 *                                 Default is a closing h2 element.
+	 * }
+	 * @return string Sidebar ID added to $wp_registered_sidebars global.
+	 */
+	$sidebars = [
+		[
+			'name' => 'Default Sidebar',
+			'slug' => 'default-sidebar',
+			'desc' => 'The default sidebar for pages requiring a sidebar. Default sidebar contents can be seen on the Blog page.',
+		],
+		[
+			'name' => 'Media Room Navigation',
+			'slug' => 'jc-media-room-sidebar',
+			'desc' => 'Media Room pages that require a sidebar navigation.',
+		],
+		[
+			'name' => 'TDA Docs',
+			'slug' => 'jc-tda-sidebar',
+			'desc' => 'JCTDA document archives.',
+		],
+		[
+			'name' => 'Contact Pages',
+			'slug' => 'jc-contact-us-sidebar',
+			'desc' => 'Pages with contact information.',
+		],
+		[
+			'name' => 'Blog Archive List',
+			'slug' => 'jc-blog-all',
+			'desc' => 'Pages with lists of linked blog post titles.',
+		],
+		[
+			'name' => 'Media Room Archive List',
+			'slug' => 'jc-media-all',
+			'desc' => 'Pages with lists linked media room article titles.',
+		],
+		[
+			'name' => 'Sitemap & 404 (Page Not Found)',
+			'slug' => 'jc-404-sidebar',
+			'desc' => 'Navigation links for 404 and pages where sitemaps display.',
+		],
+	];
+	foreach ( $sidebars as $sidebar ) {
+		register_sidebar( [
+			'name'          => $sidebar['name'],
+			'id'            => $sidebar['slug'],
+			'description'   => $sidebar['desc'],
+			'class'         => $sidebar['slug'],
+			'before_widget' => '<section class="widget-'.$sidebar['slug'].'-section widget">',
+			'before_title'  => '<h4 class="widget-'.$sidebar['slug'].'-title widget-title">',
+			'after_title'   => '</h4>',
+			'after_widget'  => '</section><hr>',
+		] );
+	}
+	register_widget( 'Recent_Blog_Posts' );
+});

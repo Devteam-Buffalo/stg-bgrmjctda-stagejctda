@@ -1,0 +1,91 @@
+{
+    "key": "group_59109d31d6953",
+    "title": "Menu Ad",
+    "fields": [
+        {
+            "key": "field_59109d31da2be",
+            "label": "Choose an Image",
+            "name": "mega_image",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "preview_size": "full",
+            "library": "all",
+            "min_width": 525,
+            "min_height": 525,
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": 1,
+            "mime_types": "jpg,jpeg,png"
+        },
+        {
+            "key": "field_59109f62c9c55",
+            "label": "Choose a Link",
+            "name": "mega_link",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "nav_menu",
+                "operator": "==",
+                "value": "4"
+            }
+        ],
+        [
+            {
+                "param": "nav_menu",
+                "operator": "==",
+                "value": "164"
+            }
+        ],
+        [
+            {
+                "param": "nav_menu",
+                "operator": "==",
+                "value": "165"
+            }
+        ],
+        [
+            {
+                "param": "nav_menu",
+                "operator": "==",
+                "value": "166"
+            }
+        ],
+        [
+            {
+                "param": "nav_menu",
+                "operator": "==",
+                "value": "668"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 0,
+    "description": "Upload an image for this mega menu. Optionally, choose a link to make the image clickable.",
+    "modified": 1521647538
+}

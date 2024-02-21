@@ -1,0 +1,49 @@
+<?php
+/**
+ * Project Name:    Discover Jackson NC
+ * Project URI:     https://www.discoverjacksonnc.com
+ * Description:     Filters the names and labels of the default image sizes.
+ * Agency:          Rawle Murdy Associates
+ * Agency URI:      https://www.rawlemurdy.com
+ * Text Domain:     jctda
+ *
+ * @package         jctda
+ * @since           20190107
+ * @author          lpeterson
+ *
+ * @since 3.3.0
+ * @param array $size_names Array of image sizes and their names. Default values
+ *                          include 'Thumbnail', 'Medium', 'Large', 'Full Size'.
+ */
+
+add_filter( 'image_size_names_choose', function( $size_names ) {
+	$size_names = [
+		// Add Tile Size
+		'tile' => 'Tile (275 x 275, Center Crop)',
+		// 'tile_small_size' => 'Tile Small (275x275)',
+		// 'tile_medium_size' => 'Tile Medium (525x525)',
+		// 'tile_large_size' => 'Tile Large (775x775)',
+
+		// Add Card Size
+		'card' => 'Card (480 x 360, Center Crop)',
+		// 'card_small_size' => 'Card Small (640x480)',
+		// 'card_medium_size' => 'Card Medium (800x600)',
+		// 'card_large_size' => 'Card Large (1024x768)',
+
+		// Add Masonry Size
+		'masonry' => 'Masonry (Proportionate x 525, No Crop)',
+		// 'masonry_small_size' => 'Masonry Small (700x525)',
+		// 'masonry_medium_size' => 'Masonry Medium (900x525)',
+		// 'masonry_large_size' => 'Masonry Large (1220x525)',
+
+		// Add Hero Size
+		'hero' => 'Hero (Proportionate x 725, No Crop)',
+		// 'hero_small_size' => 'Hero Small (800x600)',
+		// 'hero_medium_size' => 'Hero Medium (1600x525)',
+		// 'hero_large_size' => 'Hero Large (2160x725)',
+
+		'full' => 'Full Size (not recommended)',
+	];
+
+	return $size_names;
+});

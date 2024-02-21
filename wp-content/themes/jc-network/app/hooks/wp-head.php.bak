@@ -1,0 +1,80 @@
+<?php
+/**
+ * Project Name:    Discover Jackson NC
+ * Project URI:     https://www.discoverjacksonnc.com
+ * Description:     Output directives in the head and remove WP-based actions & filters
+ * Agency:          Rawle Murdy Associates
+ * Agency URI:      https://www.rawlemurdy.com
+ * Text Domain:     jctda
+ *
+ * @package         jctda
+ * @since           20190205
+ * @author          lpeterson
+ */
+
+add_action( 'wp_head', function() {
+	print(
+		'<script>document.documentElement.classList.remove("no-js");</script>'."\n".
+		'<link crossorigin="anonymous" rel="shortcut icon" href="'.CDN_URL.'/assets/favicons/favicon.ico?v=3.2.0">'."\n".
+		'<link rel="preconnect" href="https://storage.googleapis.com">'."\n".
+		'<link rel="preconnect" href="https://maps.googleapis.com">'."\n"
+	);
+	if ( has_post_thumbnail() ) {
+		printf(
+			'<link crossorigin="anonymous" rel="preload" href="%s" as="image">'."\n",
+			wp_get_attachment_image_url( get_post_thumbnail_id(), 'full' )
+		);
+	}
+}, 1 );
+
+/**
+ * Preload: fetches resources with high-priority and does not block the window's onload event
+ *
+ *          <link rel="preload" href="image.jpg" as="image" type="image/jpg">
+ *          <link rel="preload" href="style.css" as="style" type="text/css">
+ *          <link rel="preload" href="//fonts.googleapis.com/font.woff" as="font" type="font/woff" crossorigin>
+ *
+ *
+ *
+ * Prefetch: fetches resources for the next navigation which are low priority
+ *
+ *           <link rel="prefetch" href="image.jpg">
+ *
+ *
+ *
+ * Prerender: renders the next page, assets and all, in the background.
+ *
+ *           <link rel="prerender" href="https://www.website.com/next-page/">
+ *
+ *
+ *
+ * Preconnect: setup early connections before an HTTP request is actually sent to the server
+ *
+ *           <link rel="preconnect" href="//cdn.domain.com" crossorigin>
+ *
+ *
+ *
+ * DNS Prefetch: perform DNS lookups on a page in the background while the user is browsing
+ *
+ *           <link rel="dns-prefetch" href="//fonts.googleapis.com">
+ *           <link rel="dns-prefetch" href="//www.google-analytics.com">
+ *           <link rel="dns-prefetch" href="//cdn.domain.com">
+ *
+		// '<link rel="preconnect" href="https://fonts.googleapis.com">'."\n".
+		// '<link rel="preconnect" href="https://www.google-analytics.com">'."\n".
+		// '<meta name="intercoolerjs:use-data-prefix" content="true">'."\n".
+		// '<meta name="intercoolerjs:use-actual-http-method" content="true">'."\n".
+		// '<link rel="preconnect" href="https://ajax.googleapis.com">'."\n".
+		// '<link crossorigin="anonymous" rel="apple-touch-icon" sizes="180x180" href="https://storage.googleapis.com/jctda-cdn/assets/favicons/apple-touch-icon.png?v=3.2.0">'."\n".
+		// '<link crossorigin="anonymous" rel="icon" type="image/png" sizes="32x32" href="https://storage.googleapis.com/jctda-cdn/assets/favicons/favicon-32x32.png?v=3.2.0">'."\n".
+		// '<link crossorigin="anonymous" rel="icon" type="image/png" sizes="194x194" href="https://storage.googleapis.com/jctda-cdn/assets/favicons/favicon-194x194.png?v=3.2.0">'."\n".
+		// '<link crossorigin="anonymous" rel="icon" type="image/png" sizes="192x192" href="https://storage.googleapis.com/jctda-cdn/assets/favicons/android-chrome-192x192.png?v=3.2.0">'."\n".
+		// '<link crossorigin="anonymous" rel="icon" type="image/png" sizes="16x16" href="https://storage.googleapis.com/jctda-cdn/assets/favicons/favicon-16x16.png?v=3.2.0">'."\n".
+		// '<link crossorigin="anonymous" rel="mask-icon" href="https://storage.googleapis.com/jctda-cdn/assets/favicons/safari-pinned-tab.svg?v=3.2.0" color="#006e75">'."\n".
+
+		// '<meta name="msapplication-TileColor" content="#006e75">'."\n".
+		// '<meta crossorigin="anonymous" name="msapplication-TileImage" content="https://storage.googleapis.com/jctda-cdn/assets/favicons/mstile-144x144.png?v=3.2.0">'."\n".
+		// '<meta crossorigin="anonymous" name="msapplication-config" content="https://storage.googleapis.com/jctda-cdn/assets/favicons/browserconfig.xml?v=3.2.0">'."\n".
+		// '<meta name="theme-color" content="#006e75">'."\n".
+		// '<script src="https://cdn.polyfill.io/v2/polyfill.min.js" async defer></script>'."\n".
+ */

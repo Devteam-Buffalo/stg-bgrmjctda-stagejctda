@@ -1,0 +1,19 @@
+@charset "UTF-8";
+/*
+**  @file    _wp-comments-popup.scss
+**  
+**  @desc    
+**  
+**  @path    /_wp-comments-popup.scss
+**  @package jctda
+**  @author  Lee Peterson
+**  @date    11/9/17
+*/
+
+.comment-content a {
+	word-wrap: break-word;
+}
+
+.bypostauthor {
+	display: block;
+}

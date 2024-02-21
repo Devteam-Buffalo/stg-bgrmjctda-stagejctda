@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>collapsible Test Suite</title>
+	<link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-1.18.0.css">
+	<link rel="stylesheet" href="../src/collapsible.css">
+
+	<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+	<script src="https://code.jquery.com/qunit/qunit-1.18.0.js"></script>
+	<script src="../src/collapsible.js"></script>
+	<script src="../src/collapsible.set.js"></script>
+	<script src="../src/collapsible.tab.js"></script>
+	<script src="../src/collapsible.menu.js"></script>
+	<script src="test.js"></script>
+	<script>
+	/* Removing access to jQuery and $. But it'll still be available as _$, if
+			 you REALLY want to mess around with jQuery in the console. REMEMBER WE
+			 ARE TESTING A PLUGIN HERE, THIS HELPS ENSURE BEST PRACTICES. REALLY. */
+	window._$ = jQuery.noConflict(true);
+
+	document.documentElement.className += " enhanced";
+	_$(function(){
+		_$( document ).trigger( "enhance" );
+	});
+	</script>
+</head>
+<body>
+	<div id="qunit"></div>
+	<div id="qunit-fixture">
+		<div id="default" class="collapsible">
+			<h4 class="docs">Toggle collapsible content</h4>
+			<p class="docs">And this is the collapsible content</p>
+		</div>
+		<div id="outoforder" class="collapsible">
+			<p class="collapsible-content">And this is the collapsible content</p>
+			<h4 class="collapsible-header">Toggle collapsible content</h4>
+		</div>
+		<div id="collapsed" class="collapsible collapsible-collapsed">
+			<h4 class="docs">Toggle collapsible content</h4>
+			<p class="docs">And this is the collapsible content</p>
+		</div>
+		<div id="innerButton" data-config data-inner-button="true" class="collapsible collapsible-collapsed">
+			<h4 class="docs">Toggle collapsible content</h4>
+			<p class="docs">And this is the collapsible content</p>
+		</div>
+		<div id="accordion-a" class="collapsible collapsible-collapsed" data-collapsible-set="accordion">
+			<h4 class="docs collapsible-header">Collapsible A</h4>
+			<p class="docs collapsible-content">And this is the collapsible content</p>
+		</div>
+		<div id="accordion-b" class="collapsible collapsible-collapsed" data-collapsible-set="accordion">
+			<h4 class="docs collapsible-header">Collapsible B</h4>
+			<p class="docs collapsible-content">And this is the collapsible content</p>
+		</div>
+		<div id="accordion-c" class="collapsible collapsible-collapsed" data-collapsible-set="other-accordion">
+			<h4 class="docs collapsible-header">Collapsible C</h4>
+			<p class="docs collapsible-content">And this is the collapsible content</p>
+		</div>
+		<div id="menu" class="collapsible collapsible-collapsed" style="position: relative">
+			<h4 class="docs collapsible-header">Menu</h4>
+			<p class="docs collapsible-content" style="position: absolute">And this is the collapsible content</p>
+		</div>
+		<div class="tabs" id="tabs">
+			<div id="tabs-a" class="collapsible" data-collapsible-set="tabs">
+				<h4 class="docs collapsible-header">Tab A</h4>
+				<p class="docs collapsible-content">And this is the collapsible content (A)</p>
+			</div>
+			<div id="tabs-b" class="collapsible collapsible-collapsed" data-collapsible-set="tabs">
+				<h4 class="docs collapsible-header">Tab B</h4>
+				<p class="docs collapsible-content">And this is the collapsible content (B)</p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

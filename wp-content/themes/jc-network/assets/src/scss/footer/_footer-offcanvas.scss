@@ -1,0 +1,29 @@
+#offcanvas-menu {
+	.uk-offcanvas-bar {
+		background: $support-blue url('../img/offcanvas-bg.jpg') center center no-repeat;
+		background-size: cover;
+	}
+	
+	ul {
+		padding-top: 2rem;
+		
+		a {
+			margin: 0;
+			padding: .5rem 0 .5rem 2rem;
+			color: #fff;
+			@extend .primary-nav-link;
+			
+			&:hover { background: none; }
+			&:focus {
+				background: #fff;
+				color: $support-blue;
+			}
+		}
+	}
+	
+	.offcanvas-ancillary a {
+		padding-top: 5px;
+		padding-bottom: 5px;
+		font-size: 1rem;
+	}
+}

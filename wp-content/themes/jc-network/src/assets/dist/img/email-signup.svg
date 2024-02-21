@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+    <title>email-signup</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="email-signup" transform="translate(1.000000, 1.000000)" stroke="#FFFFFF" stroke-width="2">
+            <path d="M38,16.5 L46,22 L46,43 C46,44.656 44.656,46 43,46 L3,46 C1.344,46 0,44.656 0,43 L0,22 L8,16.5" id="Stroke-1"></path>
+            <polyline id="Stroke-3" points="6 40 16 32 30 32 40 40"></polyline>
+            <path d="M46,22 L34,30" id="Stroke-5"></path>
+            <path d="M0,22 L12,30" id="Stroke-7"></path>
+            <polyline id="Stroke-9" points="38 27.334 38 0 8 0 8 27.334"></polyline>
+            <path d="M25.490426,12.5095666 C26.865854,13.884994 26.865854,16.115 25.490426,17.490426 C24.115,18.865854 21.884994,18.865854 20.5095666,17.490426 C19.13414,16.115 19.13414,13.884994 20.5095666,12.5095666 C21.884994,11.13414 24.115,11.13414 25.490426,12.5095666" id="Stroke-11"></path>
+            <path d="M28.086,22.436 C26.64,23.428 24.886,24 23,24 C18.03,24 14,19.97 14,15 C14,10.03 18.03,6 23,6 C27.97,6 32,10.03 32,15 L32,15.784 C32,17.296 30.774,18.522 29.262,18.522 C27.748,18.522 26.522,17.296 26.522,15.784 L26.522,15" id="Stroke-13"></path>
+        </g>
+    </g>
+</svg>

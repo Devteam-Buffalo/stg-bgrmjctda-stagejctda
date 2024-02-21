@@ -1,0 +1,43 @@
+<?php
+/**
+ * Project Name:    Discover Jackson NC
+ * Project URI:     https://www.discoverjacksonnc.com
+ * Description:     Single post navigation.
+ * Agency:          Rawle Murdy Associates
+ * Agency URI:      https://www.rawlemurdy.com
+ * Text Domain:     jctda
+ *
+ * @package         jctda
+ * @since           3.3.0
+ * @link            https://www.discoverjacksonnc.com
+ * @author          Lee Peterson
+ * @date            6/24/18
+ * @file            post-nav.php
+ */
+defined('ABSPATH') or exit;
+
+if ( ! function_exists('jc_post_nav') ) :
+
+	function jc_post_nav() {
+
+		ob_start(); ?>
+
+		<h2 class="uk-visible screen-reader-text">Post Navigation</h2>
+		<nav class="nav-links" role="navigation">
+			<hr class="uk-article-divider">
+			
+			<ul class="uk-flex uk-grid-width-1-1 uk-grid-width-medium-1-2 uk-pagination">
+				<li class="uk-text-left">
+				<?= get_next_post_link() ? next_post_link( '<div class="uk-text-small uk-text-uppercase"><small class="uk-icon-chevron-left"></small> Prev Blog Post</div><div class="uk-text-small uk-text-uppercase">%link</div>', '%title', true ) : false ?>
+				</li>
+				
+				<li class="uk-text-right">
+				<?= get_previous_post_link() ? previous_post_link( '<div class="uk-text-small uk-text-uppercase">Next Blog Post <small class="uk-icon-chevron-right"></small></div><div class="uk-text-small uk-text-uppercase">%link</div>', '%title', true ) : false ?>
+				</li>
+			</ul>
+		</nav>
+		
+		<?php ob_get_flush();
+	}
+
+endif;

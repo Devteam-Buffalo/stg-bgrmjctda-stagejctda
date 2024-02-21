@@ -1,0 +1,39 @@
+@charset "UTF-8";
+/*
+**  @file    _text.scss
+**  
+**  @desc    
+**  
+**  @path    /_text.scss
+**  @package jctda
+**  @author  Lee Peterson
+**  @date    11/10/17
+*/
+
+
+.text-script {
+	font-family: $font-script !important;
+
+	&.large-script {
+		@media all and (min-width: 320px) { font-size: 2rem; }
+		@media all and (min-width: $breakpoint-small) { font-size: 3rem; }
+		@media all and (min-width: $breakpoint-medium) { font-size: 6rem; }
+		@media all and (min-width: $breakpoint-xlarge) { font-size: 7rem; }
+	}
+}
+
+.text-shadow {
+	text-rendering: optimizeLegibility;
+	-webkit-text-size-adjust: none;
+	
+	&.small-shadow {
+		text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+	}
+	
+	&.large-shadow {
+		text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+	}
+}
+
+time,
+time a { text-decoration: none !important; }

@@ -1,0 +1,359 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	transition: .1s linear;
+	transition-property: font-size
+}
+
+[class*=h1],
+[class*=h2],
+[class*=h3],
+[class*=h4],
+[class*=h5],
+[class*=h6],
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: var(--blue);
+	font: normal normal normal normal 1.1rem/1.275 var(--serif-light), sans-serif;
+	text-transform: none
+}
+
+header[class*=hero] h1 {
+	font-family: var(--script);
+	text-shadow: 0 2px 8px var(--trans);
+	font-size: 2.875rem
+}
+
+[class*=h1],
+h1 {
+	font-size: 2rem
+}
+
+[class*=h2],
+h2 {
+	font-size: 1.375rem
+}
+
+[class*=h3],
+h3 {
+	font-size: 1.275rem
+}
+
+[class*=h4],
+h4 {
+	font-size: 1.175rem
+}
+
+[class*=h5],
+h5 {
+	font-size: 1.125rem
+}
+
+@media all and (min-width:480px) {
+
+	[class*=h2],
+	h2 {
+		font-size: 1.475rem
+	}
+
+	[class*=h3],
+	h3 {
+		font-size: 1.325rem
+	}
+
+	[class*=h4],
+	h4 {
+		font-size: 1.275rem
+	}
+
+	[class*=h5],
+	h5 {
+		font-size: 1.0175rem
+	}
+
+	[class*=h6],
+	h6 {
+		font-size: 1rem
+	}
+}
+
+@media all and (min-width:768px) {
+
+	[class*=h1],
+	h1 {
+		font-size: 2.875rem
+	}
+
+	[class*=h2],
+	h2 {
+		font-size: 1.75rem
+	}
+
+	[class*=h3],
+	h3 {
+		font-size: 1.5rem
+	}
+
+	[class*=h4],
+	h4 {
+		font-size: 1.25rem
+	}
+
+	[class*=h5],
+	h5 {
+		font-size: 1.1rem
+	}
+
+	[class*=h6],
+	h6 {
+		font-size: 1rem
+	}
+}
+
+@media all and (min-width:960px) {
+	header[class*=hero] h1 {
+		font-size: 4.225rem
+	}
+
+	[class*=h2],
+	h2 {
+		font-size: 2.225rem
+	}
+
+	[class*=h3],
+	h3 {
+		font-size: 1.75rem
+	}
+
+	[class*=h4],
+	h4 {
+		font-size: 1.5rem
+	}
+
+	[class*=h5],
+	h5 {
+		font-size: 1.25rem
+	}
+
+	[class*=h6],
+	h6 {
+		font-size: 1.1rem
+	}
+}
+
+@media all and (min-width:1220px) {
+	header[class*=hero] h1 {
+		font-size: 6.225rem
+	}
+
+	[class*=h2],
+	h2 {
+		font-size: 2.625rem
+	}
+
+	[class*=h5],
+	h5 {
+		font-size: 1.375rem
+	}
+
+	[class*=h6],
+	h6 {
+		font-size: 1.25rem
+	}
+}
+
+.intro h1 {
+	margin-top: 0
+}
+
+.intro h3 {
+	margin-top: 0;
+	margin-bottom: 0
+}
+
+.intro p {
+	margin-bottom: 0
+}
+
+.intro.centered h1,
+.intro.centered h3,
+.intro.centered p {
+	text-align: center
+}
+
+.intro.styled h1 {
+	font-family: var(--script)
+}
+
+.intro.styled h3 {
+	font-family: var(--serif-light)
+}
+
+.intro.styled p {
+	font-family: var(--serif-regular)
+}
+
+@media all and (min-width:960px) {
+	.intro.styled h1 {
+		font-size: 6.225rem
+	}
+
+	.intro.styled h3 {
+		font-size: 1.5rem
+	}
+
+	.intro.styled p {
+		font-family: var(--sans-regular);
+		font-size: 1.1rem
+	}
+}
+
+h1>*,
+h2>*,
+h3>*,
+h4>*,
+h5>*,
+h6>* {
+	font-family: inherit
+}
+
+h1:only-child,
+h2:only-child,
+h3:only-child,
+h4:only-child,
+h5:only-child,
+h6:only-child {
+	margin-bottom: 1rem;
+	line-height: 1.1
+}
+
+aside h4:first-of-type {
+	font: normal 1.25rem/1.2 var(--sans-regular);
+	text-transform: uppercase;
+	color: var(--green)
+}
+
+[class*=sans-] {
+	font-family: var(--sans-regular)
+}
+
+.sans-thin {
+	font-family: var(--sans-thin)
+}
+
+.sans-light {
+	font-family: var(--sans-light)
+}
+
+.sans-regular {
+	font-family: var(--sans-regular)
+}
+
+.sans-bold {
+	font-family: var(--sans-bold)
+}
+
+
+.text-shadow {
+	text-shadow: 0 2px 6px var(--trans);
+	transition: 350ms linear;
+	transition-property: text-shadow
+}
+
+.text-shadow:hover {
+	text-shadow: 0 3px 8px var(--trans)
+}
+
+
+.intro p {
+	font-size: larger
+}
+
+.jc-ancillary .intro h1 {
+	font-family: var(--script)
+}
+
+.intro.styled h1 {
+	font-family: var(--script)
+}
+
+.intro.styled h2 {
+	font-family: var(--serif-light)
+}
+
+.intro.styled p {
+	font-family: var(--sans-light);
+	font-size: larger
+}
+
+.mountain h1:first-child,
+.mountain h2:first-child,
+.mountain h3:first-child,
+.mountain h4:first-child,
+.mountain h5:first-child,
+.mountain h6:first-child,
+h1.mountain,
+h2.mountain,
+h3.mountain,
+h4.mountain,
+h5.mountain,
+h6.mountain {
+	margin-top: 0;
+	margin-bottom: 0;
+	padding-top: 2rem;
+	padding-bottom: 0;
+	font-size: 2.25rem;
+	text-align: center;
+	background-size: contain;
+	background: transparent url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+PCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj48c3ZnIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAzMTIgNDQiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgeG1sbnM6c2VyaWY9Imh0dHA6Ly93d3cuc2VyaWYuY29tLyIgc3R5bGU9ImZpbGwtcnVsZTpldmVub2RkO2NsaXAtcnVsZTpldmVub2RkO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2UtbWl0ZXJsaW1pdDoxLjQxNDIxOyI+PGcgaWQ9IkxheWVyLTEiIHNlcmlmOmlkPSJMYXllciAxIj48Y2xpcFBhdGggaWQ9Il9jbGlwMSI+PHJlY3QgeD0iMCIgeT0iLTAuMDAxIiB3aWR0aD0iMzExLjE1MiIgaGVpZ2h0PSI0My4xNzciIGNsaXAtcnVsZT0ibm9uemVybyIvPjwvY2xpcFBhdGg+PGcgY2xpcC1wYXRoPSJ1cmwoI19jbGlwMSkiPjxwYXRoIGQ9Ik0yODYuNTI0LDI2LjM3NkMyODIuODMyLDI1LjkwMyAyODAuMDEsMjUuMDIzIDI3Ny4wNywyNC4xODhDMjc2LjYxNCwyNC4wNTYgMjc2LjE4LDIzLjkwNyAyNzUuNzg4LDIzLjc1MkMyNzMuNjcsMjIuOTIgMjcxLjYyOSwyMi4wNjIgMjY5LjQzOCwyMS4yNTNDMjY4LDIwLjcyNCAyNjUuOTYsMjAuNzczIDI2NS4xNzgsMjEuNDI0QzI2My44MzQsMjIuNTQ2IDI2MC45OTQsMjMuMDY1IDI1OC4zNSwyMy43ODhDMjU2LjgzOSwyMy4zNjUgMjU1LjM3OCwyMi45NDEgMjUzLjg4MSwyMi41MzNDMjUxLjEyNCwyMS43OCAyNDkuNywyMC42MTQgMjQ2Ljc4LDE5Ljg4MkMyNDQuMjgyLDE5LjI1MyAyNDIuOTU4LDE4LjA3MiAyMzkuMjksMTcuOTcyQzIzOS4wMzIsMTcuOTY2IDIzOC43NjYsMTcuODc0IDIzOC41MzIsMTcuODA4QzIzNy40ODIsMTcuNTA4IDIzNi40NDgsMTcuMjA4IDIzNS4zMDgsMTYuODc2QzIzNS40ODQsMTYuNjk0IDIzNS42OSwxNi40NzIgMjM1LjgyOCwxNi4zMjRDMjM0LjI0LDE1Ljk5NiAyMzIuNjU4LDE1Ljc1MyAyMzEuMzcsMTUuMzlDMjI4LjA0NywxNC40NSAyMjYuMzU0LDEzLjAxNiAyMjIuNzUyLDEyLjEwMkMyMjAuMjc0LDExLjQ2OCAyMTguMjIyLDEwLjU1IDIxNi44ODgsOS41MTJDMjE1LjI2NCw4LjI0NiAyMTIuMjU1LDcuMjUzIDIxMC45OTIsNS44OTlDMjEwLjU1Miw1LjQyNiAyMDkuNTMyLDQuODQ0IDIwOC4zMzcsNC42NjhDMjA4LjMzNyw0LjY2OCAxOTMuMjIyLDAuNjc4IDE4Ny4yNSwwLjA3QzE4My42MjIsLTAuMjk2IDE4MS41NzgsMC44NDQgMTgwLjIzLDEuODU1QzE3OC4yODIsMy4zMTggMTc2LjM3Miw0Ljc3MyAxNzIuODQ4LDUuODg2QzE3Mi40ODgsNiAxNzIuMjk1LDYuMTc2IDE3MS45ODYsNi4zMTJDMTY5LjY4LDcuMzIyIDE2Ny40MDgsOC4zMzcgMTY1LjAyNiw5LjMyOEMxNjMuNjc2LDkuODkgMTYyLjE0MiwxMC4zOTcgMTYwLjY3NiwxMC45MjZDMTU5LjU1OCwxMS4zMjggMTU4LjQxNCwxMS43MTggMTU3LjMwMiwxMi4xMjJDMTU1Ljc3NCwxMi42NzQgMTU0LjIzLDEzLjIyMiAxNTIuNzUsMTMuNzlDMTUxLjU0MiwxNC4yNTYgMTUwLjQ1OCwxNC43NjIgMTQ5LjI2LDE1LjIzQzE0Ni44NzIsMTYuMTY5IDE0NC4yMzIsMTcuMDQgMTQyLjA5MiwxOC4wNDJDMTQwLjQyOCwxOC44MjYgMTM4LjY4MiwxOS41NyAxMzYuNzE4LDIwLjI2QzEzMy43NywyMS4yOTMgMTMyLjU5LDIxLjA3NiAxMjkuNTcyLDIwLjUwOEMxMjguODcyLDIwLjM3NCAxMjguMjY4LDIwLjA4IDEyNy41NzQsMjAuMDYyQzEyMy45NzgsMTkuOTgxIDEyMC40MTIsMTkuODUyIDExNy4wODYsMjAuNjM4QzExNC40NTYsMjEuMjYgMTExLjU0MiwyMS43NjQgMTA4LjMxNCwyMS45OTRDMTA2LjI3NiwyMi4xMzggMTA0Ljc2OCwyMi41ODggMTAzLjYwMiwyMy4yMUMxMDEuOTIsMjQuMTExIDEwMC4yMjIsMjUuMDE4IDk4LjI1MiwyNS44NDJDOTcuMDY4LDI2LjMzOCA5NS40MTIsMjYuNzA2IDkzLjg3NCwyNy4wODhDOTIuODQ0LDI3LjM0NiA5MS42MSwyNy4yMjggOTAuNzcyLDI2Ljk2NkM4OC4xODYsMjYuMTUzIDg1LjcwNiwyNS4zMDIgODMuMjA4LDI0LjQ1OEM4Mi45MzIsMjQuMzYxIDgyLjc4NCwyNC4yMiA4Mi42MjIsMjQuMDkyQzgxLjI2LDIzLjAyNSA3OS45MTQsMjEuOTU4IDc4LjU0NiwyMC44OTRDNzguMzA2LDIwLjcwNCA3Ny44ODQsMjAuNTMyIDc3LjczLDIwLjMzN0M3Ni4yNCwyMC42MDcgNzYuNjYsMTguOTM5IDcxLjQyOCwxOS41MzRDNjkuMDE4LDE5LjgwOCA2Ni4zNywxOS4xMzIgNjQuNjMsMTguNDI2QzY0LjE4LDE4LjI0NCA2My42NDIsMTguMDkgNjMuMDkyLDE3LjkxMkM2Mi4xNjIsMTguMDQgNjEuMzQ4LDE4LjE3NCA2MC40OTYsMTguMjY2QzU4LjMyLDE4LjQ5NiA1Ni4zNDgsMTguODQ2IDU0Ljg5NiwxOS40NThDNTIuMzQsMjAuNTM4IDQ5Ljg2MiwyMS42MzYgNDcuMzkyLDIyLjczN0M0Ni42NTIsMjMuMDY1IDQ2LjE3OCwyMy40NzIgNDUuMzU4LDIzLjc3MkM0MS41NTQsMjUuMTUxIDM3LjYsMjYuNDg1IDMzLjgyOCwyNy44NzhDMzEuNDk4LDI4LjczNyAyOS41MTgsMjkuNzEgMjcuMTc4LDMwLjU2OUMyMy4zNTIsMzEuOTY4IDQuNjE4LDQyLjA5OCAwLDQzLjE3NkwzMDIuMzUsNDMuMTc2TDMxMS4xNTIsNDIuOTM5QzMxMC4xMDgsNDIuNTk2IDI5MS41MjIsMjcuNjU3IDI5MC40NjMsMjcuMzE5QzI4OS4zMDIsMjYuOTQ1IDI4Ny45ODQsMjYuNTYyIDI4Ni41MjQsMjYuMzc2IiBzdHlsZT0iZmlsbDojZjJmMmYyO2ZpbGwtcnVsZTpub256ZXJvOyIvPjwvZz48L2c+PC9zdmc+) center bottom no-repeat
+}
+
+.script,
+.text-script {
+	font-family: var(--script);
+	line-height: 1
+}
+
+@media all and (min-width:320px) {
+
+	.script.large-script,
+	.text-script.large-script {
+		font-size: 2rem
+	}
+}
+
+@media all and (min-width:480px) {
+
+	.script.large-script,
+	.text-script.large-script {
+		font-size: 3rem
+	}
+}
+
+@media all and (min-width:768px) {
+
+	.script.large-script,
+	.text-script.large-script {
+		font-size: 6rem
+	}
+}
+
+@media all and (min-width:1220px) {
+
+	.script.large-script,
+	.text-script.large-script {
+		font-size: 7rem
+	}
+}
+
+.text-shadow {
+	text-rendering: optimizeLegibility;
+	-webkit-text-size-adjust: none
+}

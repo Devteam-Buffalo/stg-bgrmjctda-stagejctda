@@ -1,0 +1,186 @@
+{
+    "key": "group_58d27c4043722",
+    "title": "Manage Site - Marketing & Analytics",
+    "fields": [
+        {
+            "key": "field_58db782f3f1e5",
+            "label": "Enable Analytics Scripts",
+            "name": "enable_analytics_scripts",
+            "type": "checkbox",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "sharpspring": "SharpSpring",
+                "piwik": "Piwik",
+                "ga": "Google Analytics",
+                "gtm": "Google Tag Manager"
+            },
+            "allow_custom": 0,
+            "save_custom": 0,
+            "default_value": [],
+            "layout": "horizontal",
+            "toggle": 0,
+            "return_format": "value"
+        },
+        {
+            "key": "field_58d27c4fa537e",
+            "label": "SharpSpring Analytics Code",
+            "name": "sharpspring_analytics",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_58db782f3f1e5",
+                        "operator": "==",
+                        "value": "sharpspring"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "<script type=\"text\/javascript\">\r\n\/\/ Paste your SharpSpring Analytics JavaScript below\r\n\r\nvar _ss = _ss || []; \r\n_ss.push(['_setDomain', 'https:\/\/koi-3QNA3B8I86.marketingautomation.services\/net']); \r\n_ss.push(['_setAccount', 'KOI-3UG4658L9E']); \r\n_ss.push(['_trackPageView']); (function() { \r\n\tvar ss = document.createElement('script'); \r\n\t\r\n\tss.type = 'text\/javascript'; \r\n\t\r\n\tss.async = true;  \r\n\t\r\n\tss.src = ('https:' == document.location.protocol ? 'https:\/\/' : 'http:\/\/') + 'koi-3QNA3B8I86.marketingautomation.services\/client\/ss.js?ver=1.1.1'; \r\n\t\r\n\tvar scr = document.getElementsByTagName('script')[0]; \r\n\t\r\n\tscr.parentNode.insertBefore(ss, scr);\r\n})();\r\n\r\n\/\/ Paste your SharpSpring Analytics JavaScript above\r\n<\/script>",
+            "placeholder": "Paste your SharpSpring analytics JavaScript code into this field.",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_58db76aec93a5",
+            "label": "Piwik Analytics Code",
+            "name": "piwik_analytics",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_58db782f3f1e5",
+                        "operator": "==",
+                        "value": "piwik"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "<script type=\"text\/javascript\">\r\n\/\/ Paste your Piwik Analytics JavaScript below\r\n\r\n\r\n\r\n\/\/ Paste your Piwik Analytics JavaScript above\r\n<\/script>",
+            "placeholder": "Paste your Piwik Analytics JavaScript code into this field.",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_58d27d8da537f",
+            "label": "Google Analytics Code",
+            "name": "google_analytics",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_58db782f3f1e5",
+                        "operator": "==",
+                        "value": "ga"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "<script type=\"text\/javascript\">\r\n\/\/ Paste your Google Analytics JavaScript below\r\n\r\n\r\n\r\n\/\/ Paste your Google Analytics JavaScript above\r\n<\/script>",
+            "placeholder": "Paste your Google Analytics JavaScript code into this field.",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_58d27fa22a4b0",
+            "label": "Google Tag Manager Code (before closing head tag)",
+            "name": "google_tag_manager_head",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_58db782f3f1e5",
+                        "operator": "==",
+                        "value": "gtm"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "<script type=\"text\/javascript\">\r\n\/\/ Paste your Google Tag Manager JavaScript below\r\n\r\n\r\n\r\n\/\/ Paste your Google Tag Manager JavaScript above\r\n<\/script>",
+            "placeholder": "Paste your Google Tag Manager JavaScript code into this field.",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_58d39c56c0309",
+            "label": "Google Tag Manager Code (after opening body tag)",
+            "name": "google_tag_manager_body",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_58db782f3f1e5",
+                        "operator": "==",
+                        "value": "gtm"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "<script type=\"text\/javascript\">\r\n\/\/ Paste your Google Tag Manager JavaScript below\r\n\r\n\r\n\r\n\/\/ Paste your Google Tag Manager JavaScript above\r\n<\/script>",
+            "placeholder": "Paste your Google Tag Manager JavaScript code into this field.",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "jc-marketing-analytics"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 0,
+    "description": "",
+    "menu_item_level": "all",
+    "modified": 1499441325
+}

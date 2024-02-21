@@ -1,0 +1,70 @@
+{
+    "key": "group_58f540350fbe5",
+    "title": "Outdoors, Attractions, Lodging, Restaurants, Towns & Weddings - What's Nearby",
+    "fields": [
+        {
+            "key": "field_58f5405837437",
+            "label": "Choose Nearby Locations",
+            "name": "nearby_choice",
+            "type": "post_object",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "outdoors",
+                "attractions",
+                "food_drink",
+                "lodging"
+            ],
+            "taxonomy": [],
+            "allow_null": 0,
+            "multiple": 1,
+            "return_format": "object",
+            "ui": 1
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "outdoor"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "attraction"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "town"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "wedding"
+            }
+        ]
+    ],
+    "menu_order": "",
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1500330339
+}

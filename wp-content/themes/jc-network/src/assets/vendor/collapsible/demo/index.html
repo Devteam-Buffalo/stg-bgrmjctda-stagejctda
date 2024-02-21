@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Collapsible Examples</title>
+
+	<link rel="stylesheet" href="https://filamentgroup.github.io/demo-head/demohead.css">
+	<link rel="stylesheet" href="docs.css">
+	<link rel="stylesheet" href="../src/lib/xrayhtml.css">
+	<link rel="stylesheet" href="../src/collapsible.css" />
+	<link rel="stylesheet" href="../src/collapsible-selectproxy.css" />
+	<link rel="stylesheet" href="../src/collapsible.navbar.css" />
+	<script src="../src/lib/jquery.js"></script>
+	<script src="../src/lib/xrayhtml.js"></script>
+	<script type="text/javascript" src="../src/collapsible.js"></script>
+	<script type="text/javascript" src="../src/collapsible.set.js"></script>
+	<script type="text/javascript" src="../src/collapsible.menu.js"></script>
+	<script type="text/javascript" src="../src/collapsible.menuunderlay.js"></script>
+	<script type="text/javascript" src="../src/collapsible.menuactiveitem.js"></script>
+	<script type="text/javascript" src="../src/collapsible.tab.js"></script>
+	<script type="text/javascript" src="../src/collapsible.externaltoggle.js"></script>
+	<script type="text/javascript" src="../src/collapsible.selectproxy.js"></script>
+	<script type="text/javascript" src="../src/collapsible.navbar.js"></script>
+	<script src="https://filamentgroup.github.io/demo-head/loadfont.js"></script>
+	<script>
+		document.documentElement.className += " enhanced";
+	</script>
+</head>
+
+
+
+<body class="docs">
+	<div class="demo-header">
+		<div class="company">
+			<img src="http://filamentgroup.com/images/fg-logo-positive-sm-crop.png" alt="Filament Group">
+		</div>
+		<div class="details">
+			<h1 class="description-container">Demo of <span class="repo-name">Collapsible</span>
+				<span class="description">A progressive disclosure toggle and so much more.</span>
+			</h1>
+			<ul class="outbound-links">
+				<li><a href="https://github.com/filamentgroup/collapsible">Code</a></li>
+				<li><a href="https://github.com/filamentgroup/collapsible/issues">Issues</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="docs-main">
+
+
+		<h1 class="docs">Collapsible Examples</h1>
+
+		<ul class="docs">
+			<li><a href="#basic">Basic Collapsible</a></li>
+			<li><a href="#initial-state">Collapsed Initial State</a></li>
+			<li><a href="#order">Header/Content Order</a></li>
+			<li><a href="#inner-button">Inner Button</a></li>
+			<li><a href="#interactivity">Disabling Interactivity with CSS</a></li>
+			<li><a href="#attributes">Optional Attribute Configuration</a></li>
+			<li><a href="#extensions">Collapsible Extensions</a></li>
+		</ul>
+
+		<h2 id="basic" class="docs">Basic collapsible</h2>
+
+		<p class="docs">To make a collapsible, you'll need the collapsible.css styles, jQuery (or equivalent), and  collapsible.js script in your page.</p>
+
+<pre class="docs"><code class="docs">&lt;link rel=&quot;stylesheet&quot; href=&quot;collapsible.css&quot;&gt;
+&Tab;&lt;script type=&quot;text/javascript&quot; src=&quot;jquery.js&quot;&gt;&lt;/script&gt;
+&Tab;&lt;script type=&quot;text/javascript&quot; src=&quot;collapsible.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+
+		<p class="docs">The collapsible HTML should be an element with a class of <code>collapsible</code>, and two child elements that become the header and content.
+			It'll automatically gain class-toggling behavior and proper ARIA attributes when a parent element (or the document) receives an "enhance" event.</p>
+
+		<div data-xrayhtml>
+			<div class="collapsible">
+				<h4>Show/Hide Content</h4>
+				<p>This is the collapsible content. Currently, it's a <code>p</code> element, but it could be anything really, like a <code>div</code> containing other <code>p</code>'s for example.</p>
+			</div>
+
+
+			<style>
+			/* some simple demo styles for all collapsibles on this page */
+			.collapsible-header,
+			.collapsible-content {
+				border: 1px solid #ccc;
+				padding: .7em 35px;
+				font-size: 1em;
+				margin-top: 0;
+				background-color: #fff;
+			}
+			.collapsible-content {
+				margin-top: 0;
+				border-top-width: 0;
+				padding-top: 1.5em;
+				padding-bottom: 1.5em;
+			}
+			.collapsible-header {
+				margin-bottom: 0;
+				cursor: pointer;
+				background: url(img/tri-down.png) 10px 50% no-repeat;
+			}
+			.collapsible-header:focus {
+				background-color: #eee;
+			}
+			.collapsible-collapsed .collapsible-header {
+				background-image: url(img/tri-right.png);
+			}
+			</style>
+			<script>
+			$( function(){
+				// initialize collapsibles:
+				$( document ).trigger( "enhance" );
+			});
+			</script>
+		</div>
+
+
+
+		<h2 id="initial-state" class="docs">Collapsed initial state</h2>
+
+		<p class="docs">To collapse the collapsible when the page first renders, add the <code>collapsible-collapsed</code> class.</p>
+
+		<div data-xrayhtml>
+			<div class="collapsible collapsible-collapsed">
+				<h4>Show/Hide content</h4>
+				<p>And this is the collapsible content</p>
+			</div>
+		</div>
+
+		<p class="docs"><strong>note:</strong> If you use JavaScript to add an <code>.enhanced</code> class on the HTML element from an inline script in the head of the page, it'll ensure that the collapsible is collapsed more immediately (and safely) before the collapsible JS applies.
+			That's because the collapsible CSS includes these rules:</p>
+
+<pre><code><strong>.enhanced .collapsible-collapsed .collapsible-content</strong>,
+.collapsible-enhanced .collapsible-collapsed .collapsible-content {
+	display: none;
+}</code></pre>
+
+
+<h2 id="inner-button" class="docs">Inner Button Option</h2>
+
+<p class="docs">If the <code>innerButton</code> option is true, the contents of the collapsible header will be wrapped in a <code>button</code> element. Generally, this is preferable to the default behavior of converting the header to a button by adding aria attributes. If the header starts as a non-interactive element like a <code>h3</code>, we recommend setting this option to <code>true</code>. If the header starts as an anchor or other interactive element, it's best to use the default.</p>
+
+<div data-xrayhtml>
+	<div class="collapsible collapsible-collapsed" data-config data-inner-button="true">
+		<h4>Show/Hide content</h4>
+		<p>And this is the collapsible content</p>
+	</div>
+</div>
+
+
+<h2 id="order" class="docs">Header/Content Order</h2>
+<p class="docs">By default, the collapsible script will apply header and content classes to the first and second child elements, respectively. If this order isn't ideal, you can pre-apply the classes and the script will use those instead.</p>
+
+<div data-xrayhtml class="flipped-demo">
+	<div class="collapsible collapsible-collapsed">
+		<p class="collapsible-content">And this is the collapsible content</p>
+		<h4 class="collapsible-header">Show/Hide content</h4>
+	</div>
+
+	<style>
+	.flipped-demo .collapsible-header {
+		margin-top: 0;
+		background-image: url(img/tri-up.png);
+	}
+	.flipped-demo .collapsible-collapsed .collapsible-header {
+		background-image: url(img/tri-right.png);
+	}
+	.flipped-demo .collapsible-content {
+		margin-bottom: 0;
+		border-top-width: 1px;
+		border-bottom-width: 0;
+	}
+	</style>
+</div>
+
+<h2 id="interactivity" class="docs">Disabling interactivity with CSS</h2>
+<p class="docs">If, at certain media query breakpoints, you'd like to show a collapsible's content without offering the user any ability to toggle it,
+you can do that by setting the content element's CSS display to "block", and the header's cursor property to "default". This tells the collapsible that it
+should act as if it is non-interactive, and attributes like tabindex, role will be removed.</p>
+
+
+
+
+
+<div data-xrayhtml>
+	<div class="collapsible collapsible-expandwhenwide">
+		<h4>Heading</h4>
+		<p>This is the collapsible content. Currently, it's a <code>p</code> element, but it could be anything really, like a <code>div</code> containing other <code>p</code>'s for example.</p>
+	</div>
+
+
+	<style>
+	@media (min-width: 35em) {
+		.collapsible-expandwhenwide.collapsible .collapsible-content {
+				display: block;
+			}
+			.collapsible-expandwhenwide.collapsible .collapsible-header,
+			.collapsible-expandwhenwide.collapsible .collapsible-header button {
+				cursor: default;
+				background: none;
+		}
+	}
+	</style>
+</div>
+
+
+
+<h2 id="attributes" class="docs">Optional attribute configuration</h2>
+
+<p class="docs">Collapsible allows you to override many presets via HTML data attributes.
+To use any data attribute configuration, first include the <code>data-config</code> attribute, and then any others you'd like to specify.</p>
+
+<h3 class="docs">Adding a title/tooltip</h3>
+
+<p class="docs">The <code>data-instructions</code> attribute specifies a tooltip value.</p>
+
+<div data-xrayhtml>
+	<div class="collapsible" data-config data-instructions="click to toggle">
+		<h4>Show/Hide content</h4>
+		<p >And this is the collapsible content</p>
+	</div>
+</div>
+
+<h3 class="docs">Changing collapsible classes</h3>
+
+
+<p class="docs">Additionally, you can override the HTML classes that the collapsible script applies or looks for via data attributes:</p>
+
+<ul class="docs">
+	<li class="docs"><strong>data-collapsible-collapsed-class</strong>: Default: <code>collapsible-collapsed</code></li>
+	<li class="docs"><strong>data-collapsible-expanded-class</strong>: Default: <code>collapsible-expanded</code></li>
+	<li class="docs"><strong>data-collapsible-header-class</strong>: Default: <code>collapsible-header</code></li>
+	<li class="docs"><strong>data-collapsible-content-class</strong>: Default: <code>collapsible-content</code></li>
+	<li class="docs"><strong>data-collapsible-enhanced-class</strong>: Default: <code>collapsible-enhanced</code></li>
+	<li class="docs"><strong>data-collapsible-class</strong>: Default: <code>collapsible</code> (<i>note: changing this class will prevent auto-initialization, so you'll have to call <code>$(myelement).collapsible()</code> to initialize the div.</i>)</li>
+
+</ul>
+
+
+
+<h2 id="extensions" class="docs">Collapsible Extensions</h2>
+
+<p class="docs">Include the collapsible.set.js to use collapsible sets. A set of collapsibles work as an accordion. In the HTML, add <code>data-set</code> attributes with a shared value to include collapsibles in a set.</p>
+
+<div data-xrayhtml>
+	<div class="collapsible" data-collapsible-set="foo">
+		<h4>Accordion A</h4>
+		<p>And this is the accordion tab content</p>
+	</div>
+	<div class="collapsible collapsible-collapsed" data-collapsible-set="foo">
+		<h4>Accordion B</h4>
+		<p>And this is the accordion tab content</p>
+	</div>
+	<div class="collapsible collapsible-collapsed" data-collapsible-set="foo">
+		<h4>Accordion C</h4>
+		<p>And this is the accordion tab content</p>
+	</div>
+	<div class="collapsible collapsible-collapsed" data-collapsible-set="foo">
+		<h4>Accordion D</h4>
+		<p>And this is the accordion tab content</p>
+	</div>
+	<style>
+		[data-collapsible-set="foo"] .collapsible-content {
+			margin-bottom: 0;
+		}
+	</style>
+</div>
+
+
+<h3 class="docs">Tabbed Collapsible Set</h3>
+
+<p class="docs">To make a collapsible set behave and appear as tabs, wrap the set in a div with a class of <code>tabs</code>,
+	include the collapsible.tab.js script, and something like the CSS in this example:</p>
+
+<div data-xrayhtml>
+	<div class="tabs">
+		<div class="collapsible collapsible-collapsed" data-collapsible-set="tabs-example">
+			<h4>Tab A</h4>
+			<p >And this is the content for tab A. <a href="#">Sample link to test tab order.</a></p>
+		</div>
+		<div class="collapsible" data-collapsible-set="tabs-example">
+			<h4>Tab B</h4>
+			<p >And this is the content for tab B. <a href="#">Sample link to test tab order.</a></p>
+		</div>
+		<div class="collapsible collapsible-collapsed" data-collapsible-set="tabs-example">
+			<h4>Tab C</h4>
+			<p >And this is the content for tab C. <a href="#">Sample link to test tab order.</a></p>
+		</div>
+		<div class="collapsible collapsible-collapsed" data-collapsible-set="tabs-example">
+			<h4>Tab D</h4>
+			<p >And this is the content for tab D. <a href="#">Sample link to test tab order.</a></p>
+		</div>
+	</div>
+	<style>
+	.tabnav {
+		display: table;
+		width: 100%;
+		padding: 0;
+		margin: 0;
+	}
+	.tabnav li {
+		display: table-cell;
+		border: 2px solid #fff;
+		border-bottom-width: 0;
+	}
+	.tabnav a {
+		display: block;
+		background-color: #aaa;
+		color: #fff;
+		padding: .4em 1em;
+		text-decoration: none;
+	}
+	.tabnav .tab-active {
+		border: 1px solid #aaa;
+		border-bottom-width: 0;
+		background-color: #fff;
+		color: #222;
+	}
+	</style>
+</div>
+
+<h3 class="docs">Menu collapsibles</h3>
+<p class="docs">Include the collapsible.menu.js script. Any time a collapsible-content is absolute positioned, menu tap-out-to-collapse behavior will apply.
+The following example has an absolute-positioned collapsible-content div at wider viewport sizes, making it closeable via click/tap-out.</p>
+
+<div data-xrayhtml>
+	<div class="collapsible collapsible-collapsed menu-example">
+		<h4 class="collapsible-header">Menu</h4>
+		<div class="collapsible-content">
+			<ul>
+				<li><a href="#">Item</a></li>
+				<li><a href="#">Item</a></li>
+				<li><a href="#">Item</a></li>
+				<li><a href="#">Item</a></li>
+				<li><a href="#">Item</a></li>
+			</ul>
+		</div>
+	</div>
+	<style>
+	/* demo styles for the collapsible menus on this page */
+	@media (min-width: 40em){
+		/* make tap-out to close work at wider breakpoints */
+		.menu-example .collapsible-content {
+			position: absolute;
+		}
+	}
+	.menu-example .collapsible-header,
+	.menu-example .collapsible-content,
+	.menu-example li {
+		max-width: 300px;
+		width: 100%;
+		box-sizing: border-box;
+	}
+	.menu-example .collapsible-header {
+		background-image: url(img/tri-down.png);
+	}
+	.menu-example .collapsible-content {
+		padding: 0;
+	}
+	.menu-example ul,
+	.menu-example li {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	.menu-example a {
+		padding: .5em 30px;
+		display: block;
+		border-bottom: 1px solid #eee;
+	}
+	</style>
+</div>
+
+<h3 class="docs">Menu with active state</h3>
+
+
+<p class="docs">Include the collapsible.menuactiveitem.js script. Any time a collapsible-content is absolute positioned, menu tap-out-to-collapse behavior will apply.
+The following example has an absolute-positioned collapsible-content div at wider viewport sizes, making it closeable via click/tap-out.</p>
+
+<div data-xrayhtml>
+<div class="collapsible collapsible-collapsed menu-example">
+	<h4 class="collapsible-header">Menu</h4>
+	<div class="collapsible-content">
+		<ul>
+			<li><a href="#">Item</a></li>
+			<li><a href="#">Item</a></li>
+			<li><a href="#">Item</a></li>
+			<li><a href="#">Item</a></li>
+			<li><a href="#">Item</a></li>
+		</ul>
+	</div>
+</div>
+<style>
+.collapsible-expanded .collapsible-menu-active {
+	background-color: #eee;
+}
+</style>
+</div>
+
+<h3 class="docs">Hover menu collapsibles</h3>
+
+
+<p class="docs">(With the data-collapsible-hover attribute included, any time collapsible-content is absolute positioned, menu hover behavior will apply as well.</p>
+<div data-xrayhtml>
+<div class="collapsible collapsible-collapsed menu-example" data-collapsible-hover>
+	<a href="http://google.com" class="collapsible-header">Menu</a>
+	<div class="collapsible-content">
+		<ul>
+			<li><a href="#">Item</a></li>
+			<li><a href="#">Item</a></li>
+			<li><a href="#">Item</a></li>
+			<li><a href="#">Item</a></li>
+			<li><a href="#">Item</a></li>
+		</ul>
+	</div>
+</div>
+
+<style>
+	[data-collapsible-hover] .collapsible-content {
+		position: absolute;
+		background: #fff;
+	}
+</style>
+</div>
+
+<p class="docs">To apply exclusively behavior (for menus that do not toggle on click/tap, but only hover), set the data-collapsible-hover attribute to "exclusive".</p>
+<div data-xrayhtml>
+<div class="collapsible collapsible-collapsed menu-example" data-collapsible-hover="exclusive">
+	<h4 class="collapsible-header">Hover Menu</h4>
+	<div class="collapsible-content">
+		<ul>
+			<li><a href="#">Item</a></li>
+			<li><a href="#">Item</a></li>
+			<li><a href="#">Item</a></li>
+			<li><a href="#">Item</a></li>
+			<li><a href="#">Item</a></li>
+		</ul>
+	</div>
+</div>
+</div>
+
+
+<h3 class="docs">Underlay collapsibles</h3>
+<p class="docs">Include the collapsible.menuunderlay.js. (Once included, a collapsible with a <code>data-collapsible-underlay</code> attr will receive an underlay div sibling (prepended to its parent) with classes <code>.collapsible-underlay</code> and, when collapsed, <code>.collapsible-underlay-hidden</code>.</p>
+<div data-xrayhtml>
+<div class="collapsible collapsible-collapsed menu-example" data-collapsible-underlay>
+	<h4 class="collapsible-header">Collapsible Menu</h4>
+	<div class="collapsible-content">
+		<ul>
+			<li><a href="#"><strong>Item</strong></a></li>
+			<li><a href="#">Item</a></li>
+			<li><a href="#">Item</a></li>
+			<li><a href="#">Item</a></li>
+			<li><a href="#">Item</a></li>
+		</ul>
+	</div>
+</div>
+
+
+<style>
+/* underlay styles */
+.collapsible[data-collapsible-underlay] {
+	position: relative;
+}
+.collapsible-underlay-contain {
+	position: relative;
+}
+.collapsible-underlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0,0,0,.2);
+}
+.collapsible-underlay-hidden {
+	display: none;
+}
+</style>
+</div>
+
+<h3 class="docs">External Toggle collapsibles</h3>
+<p class="docs">Include collapsible.externaltoggle.js. Clickable targets that exist outside of the collapsible HTML that can toggle any specified collapsible target. Works with checkbox, radio, select, links.</p>
+<div data-xrayhtml>
+
+<div><a href="#external-toggle-example" data-collapsible-target>Toggle Collapsible</a></div>
+<div><a href="#external-toggle-example" data-collapsible-target data-force-expand>Expand Collapsible</a></div>
+<div><a href="#external-toggle-example" data-collapsible-target data-force-collapse>Collapse Collapsible</a></div>
+<label><input type="checkbox" data-collapsible-target="#external-toggle-example"> Toggle</label>
+<select data-collapsible-target="#external-toggle-example">
+	<option data-ignore>Select one</option>
+	<option data-force-expand>Expand</option>
+	<option data-force-collapse>Collapse</option>
+	<option>Toggle</option>
+</select>
+<div class="collapsible collapsible-collapsed" id="external-toggle-example">
+	<h4 class="collapsible-header">Collapsible</h4>
+	<div class="collapsible-content">
+		<ul>
+			<li><a href="#">Item</a></li>
+			<li><a href="#">Item</a></li>
+			<li><a href="#">Item</a></li>
+			<li><a href="#">Item</a></li>
+			<li><a href="#">Item</a></li>
+		</ul>
+		<label>
+			Text Input
+			<input type="text">
+		</label>
+		<label>
+			Text Input
+			<input type="text">
+		</label>
+		<label>
+			Text Input
+			<input type="text">
+		</label>
+	</div>
+</div>
+</div>
+
+<h4 class="docs">Toggle with Checkbox (Collapsed by Default)</h4>
+<p class="docs">Include the collapsible.externaltoggle.js script.</p>
+<div data-xrayhtml>
+<form>
+	<label><input type="checkbox" checked data-collapsible-target="#external-toggle-checkbox-example2"> Toggle Collapsible</label>
+	<div class="collapsible collapsible-collapsed" id="external-toggle-checkbox-example2">
+		<h4 class="collapsible-header">Collapsible</h4>
+		<div class="collapsible-content">
+			<ul>
+				<li><a href="#">Item</a></li>
+				<li><a href="#">Item</a></li>
+				<li><a href="#">Item</a></li>
+				<li><a href="#">Item</a></li>
+				<li><a href="#">Item</a></li>
+			</ul>
+		</div>
+	</div>
+</form>
+</div>
+
+<h4 class="docs">Toggle with Radio</h4>
+<p class="docs">Include the collapsible.externaltoggle.js script.</p>
+<div data-xrayhtml>
+<form>
+	<label><input type="radio" name="collapsible-radio"> Collapse</label>
+	<label><input type="radio" data-collapsible-target="#external-toggle-radio-example" name="collapsible-radio"> Expand</label>
+	<div class="collapsible collapsible-collapsed" id="external-toggle-radio-example">
+		<h4 class="collapsible-header">Collapsible</h4>
+		<div class="collapsible-content">
+			<ul>
+				<li><a href="#">Item</a></li>
+				<li><a href="#">Item</a></li>
+				<li><a href="#">Item</a></li>
+				<li><a href="#">Item</a></li>
+				<li><a href="#">Item</a></li>
+			</ul>
+		</div>
+	</div>
+</form>
+</div>
+
+
+<h3 class="docs">Select Proxy</h3>
+<p class="docs">Include the collapsible.selectproxy.js script.</p>
+<p class="docs">Add the <code>data-collapsible-follow-link</code> attribute to keep <code>preventDefault()</code> from firing.</p>
+
+<div data-xrayhtml>
+<select id="bag-priority-1">
+	<option value="Highest">Highest Priority</option>
+	<option value="High">High Priority</option>
+	<option value="Medium">Medium Priority</option>
+	<option value="Low">Low Priority</option>
+	<option value="Lowest">Lowest Priority</option>
+	<option value="None">No Priority</option>
+</select>
+<div aria-hidden="true" class="collapsible collapsible-menu collapsible-collapsed collapsible-selectproxy" data-collapsible-selectproxy="bag-priority-1">
+	<h4 class="collapsible-header"><strong>Highest</strong> Priority</h4>
+	<div class="collapsible-content">
+		<ul>
+			<li><a href="#" data-value="Highest"><strong>Highest</strong> Priority</a></li>
+			<li><a href="https://www.filamentgroup.com/" data-value="High" data-collapsible-follow-link><strong>High</strong> Priority</a></li>
+			<li><a href="#" data-value="Medium"><strong>Medium</strong> Priority</a></li>
+			<li><a href="#" data-value="Low"><strong>Low</strong> Priority</a></li>
+			<li><a href="#" data-value="Lowest"><strong>Lowest</strong> Priority</a></li>
+			<li><a href="#" data-value="None">No priority</a></li>
+			<li><a href="#">Not linked to select</a></li>
+		</ul>
+	</div>
+</div>
+
+<style>
+	.collapsible-menu .collapsible-content {
+		position: absolute;
+	}
+
+</style>
+</div>
+
+
+
+	<h3 class="docs">Collapsible Navbars</h3>
+	<p class="docs">Collapsible navbars manage a list of navigation items to move any items into a "More" menu that can't fit at a given width. To create a navbar, include the collapsible.navbar.js script and collapsible.navbar.css stylesheet, and follow this markup pattern. The data attribute class overrides are necessary for the navbar to pick up the styles in the component stylesheet.
+	The data-collapsible-ismenu attribute ensures that the "more" menu picks up menu-like features like click-out to close, even though its menu items are not in fact positioned absolute. </p>
+	<div data-xrayhtml class="navbar-example">
+		<div class="navbar navbar-collapsed collapsible" role="navigation" data-config data-collapsible-ismenu data-collapsed-class="navbar-collapsed" data-expanded-class="navbar-expanded" data-header-class="navbar_more" data-enhanced-class="navbar-enhanced" data-content-class="navbar_items">
+			<ul class="navbar_items">
+				<li class="navbar_item"><a href="#" class="navbar_itemlink">Item A</a></li>
+				<li class="navbar_item"><a href="#" class="navbar_itemlink">Item B</a></li>
+				<li class="navbar_item"><a href="#" class="navbar_itemlink">Item C</a></li>
+				<li class="navbar_item"><a href="#" class="navbar_itemlink">Item D</a></li>
+				<li class="navbar_item"><a href="#" class="navbar_itemlink">Item E</a></li>
+				<li class="navbar_item"><a href="#" class="navbar_itemlink">Item F</a></li>
+			</ul>
+			<h2 class="navbar_more">More <span class="icon-arrow-menu"></span></h2>
+		</div><!--navbar-->
+
+		<style>
+			.navbar {
+				border: 1px solid #eee;
+			}
+			.navbar,
+			.navbar_items,
+			.navbar_item,
+			.navbar_more  {
+			  font-size: 1em;
+			}
+			.navbar_itemlink,
+			.navbar_more {
+			  padding: .7em 1em;
+			  text-transform: uppercase;
+			  font-size: 1em;
+			  text-decoration: none;
+			  display: block;
+			  cursor: pointer;
+			  background-color: #fff;
+				border: 0;
+			}
+			.navbar_more {
+				width: 5.1em;
+				cursor: pointer;
+				background: #eee url(img/tri-down.png) 85% 50% no-repeat;
+			}
+			.navbar_more:hover,
+			.navbar_more:focus,
+			.navbar_itemlink:hover,
+			.navbar_itemlink:focus {
+				text-decoration: none;
+			  background-color: #eee;
+				outline: none;
+			}
+			.navbar-expanded .navbar_more {
+				background-color: #333;
+				color: #fff;
+			}
+			.navbar_item-overflow ~ .navbar_item-overflow .navbar_itemlink {
+			  border-top: none;
+			}
+			.navbar_item-overflow {
+			  box-shadow: -3px 3px 0 0 #f7f7f7; /* can’t use an rgba here because they overlap */
+			}
+
+		</style>
+	</div>
+
+	<style>
+	/* clearfix this example */
+		.navbar-example .snippet:after {
+			content: "\20";
+			clear: both;
+			display: block;
+		}
+	</style>
+
+
+	<h3 class="docs">Collapsible Navbar with Nested Menus</h3>
+	<p class="docs">Collapsible navbars manage a list of navigation items to move any items into a "More" menu that can't fit at a given width. To create a navbar, include the collapsible.navbar.js script and collapsible.navbar.css stylesheet, and follow this markup pattern. The data attribute class overrides are necessary for the navbar to pick up the styles in the component stylesheet.
+	The data-collapsible-ismenu attribute ensures that the "more" menu picks up menu-like features like click-out to close, even though its menu items are not in fact positioned absolute. </p>
+	<div data-xrayhtml class="navbar-example">
+		<div class="navbar navbar-collapsed collapsible" role="navigation" data-config data-collapsible-ismenu data-collapsible-hover data-collapsed-class="navbar-collapsed" data-expanded-class="navbar-expanded" data-header-class="navbar_more" data-enhanced-class="navbar-enhanced" data-content-class="navbar_items">
+			<ul class="navbar_items">
+				<li class="navbar_item collapsible collapsible-collapsed" data-collapsible-hover data-collapsible-set="navbarexample">
+					<a href="#" class="navbar_itemlink">Item A</a>
+					<div class="navbar_item_menu">This is the menu content for item A</div>
+
+				</li>
+				<li class="navbar_item collapsible collapsible-collapsed" data-collapsible-hover data-collapsible-set="navbarexample">
+					<a href="#" class="navbar_itemlink">Item B</a>
+					<div class="navbar_item_menu">This is the menu content for item B</div>
+
+				</li>
+				<li class="navbar_item collapsible collapsible-collapsed" data-collapsible-hover data-collapsible-set="navbarexample">
+					<a href="#" class="navbar_itemlink">Item C</a>
+					<div class="navbar_item_menu">This is the menu content for item C</div>
+
+				</li>
+				<li class="navbar_item collapsible collapsible-collapsed" data-collapsible-hover data-collapsible-set="navbarexample">
+					<a href="#" class="navbar_itemlink">Item D</a>
+					<div class="navbar_item_menu">This is the menu content for item D</div>
+
+				</li>
+				<li class="navbar_item collapsible collapsible-collapsed" data-collapsible-hover data-collapsible-set="navbarexample">
+					<a href="#" class="navbar_itemlink">Item E</a>
+					<div class="navbar_item_menu">This is the menu content for item E</div>
+
+				</li>
+				<li class="navbar_item collapsible collapsible-collapsed" data-collapsible-hover data-collapsible-set="navbarexample">
+					<a href="#" class="navbar_itemlink">Item F</a>
+					<div class="navbar_item_menu">This is the menu content for item G</div>
+
+				</li>
+			</ul>
+			<h2 class="navbar_more">More <span class="icon-arrow-menu"></span></h2>
+		</div><!--navbar-->
+
+		<style>
+			.navbar_item_menu {
+				position: absolute;
+				left: 0;
+				width: 100%;
+				border: 1px solid #eee;
+				box-sizing: border-box;
+			}
+			.navbar_item.collapsible .navbar_itemlink {
+				padding-left: 30px;
+			}
+		</style>
+	</div>
+
+</div>
+</body>
+</html>

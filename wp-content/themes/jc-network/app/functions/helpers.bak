@@ -1,0 +1,57 @@
+<?php
+/*
+**  @file               helpers.php
+**  @description        Description.
+**  @package            jctda
+**  @since              2.1.0
+**  @author             lpeterson
+**  @date               4/14/18
+*/
+defined( 'ABSPATH' ) || exit;
+
+if ( is_super_admin() ) {
+	if ( ( is_admin() && is_customize_preview() ) === false ) {
+		defined('WP_DEBUG') || define('WP_DEBUG', true);
+		defined('WP_DEBUG_LOG') || define('WP_DEBUG_LOG', true);
+		defined('WP_DEBUG_DISPLAY') || define('WP_DEBUG_DISPLAY', true);
+		defined('SCRIPT_DEBUG') || define('SCRIPT_DEBUG', true);
+		defined('SAVEQUERIES') || define('SAVEQUERIES', true);
+	}
+}
+else {
+	defined('WP_DEBUG') || define('WP_DEBUG', true);
+	defined('WP_DEBUG_LOG') || define('WP_DEBUG_LOG', false);
+	defined('WP_DEBUG_DISPLAY') || define('WP_DEBUG_DISPLAY', false);
+	defined('SCRIPT_DEBUG') || define('SCRIPT_DEBUG', false);
+	defined('SAVEQUERIES') || define('SAVEQUERIES', false);
+}
+
+$files = [
+	'acf/acf.php',
+	'parse/explode-data.php',
+	'validators/images-exist.php',
+	//'get/endpoint.php',
+	'media/resize-image.php',
+	//'pagination/blog-pagination.php',
+	//'pagination/post-navigation.php',
+	//'pagination/posts-navigation.php',
+	'theme/is-tree.php',
+	'theme/markup-tags.php',
+	'theme/nice-number.php',
+	'theme/parent-page-title.php',
+	'theme/phone-parser.php',
+	'theme/post-depth.php',
+	'theme/print-code.php',
+	'theme/pull-sentences.php',
+	'theme/shorten-content.php',
+	'theme/show.php',
+	'theme/smart-trim.php',
+	'theme/style.php',
+	'theme/substr.php',
+	'theme/the-spinner.php',
+	'theme/url-parser.php',
+	'theme/weather.php',
+	'theme/weather-icons.php',
+];
+foreach ( $files as $file )
+	require_once __DIR__ . '/helpers/' . $file;

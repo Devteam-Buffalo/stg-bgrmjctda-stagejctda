@@ -1,0 +1,42 @@
+<?php
+/*
+**  @file               model-section-intro.php
+**  @description        
+**  @package            jctda-public-prod
+**  @since              1.0.0
+**  @author             lpeterson
+**  @date               2/23/18
+*/
+
+defined('ABSPATH') || exit;
+
+if ( ! function_exists( 'jc_model_archive_header' ) ) :
+
+	function jc_model_archive_header( $args = [] ) {
+		
+		if( ! is_array( $args ) ) 
+			return false;
+		
+		$page = $args['page'];
+		
+		ob_start(); ?>
+
+		<header class="entry-header archive-location-header">
+			<div class="hero-container">
+				<div class="hero child-hero">
+					<figure class="uk-overlay archive-location-hero" style="background-image: url(<?= $page['page_hero'] ?>);">
+						<figcaption class="uk-overlay-panel uk-flex uk-flex-center uk-flex-middle uk-text-center">
+							<h1 class="uk-container hero-title text-shadow large-shadow"><?= $page['page_heading'] ?></h1>
+						</figcaption>
+					</figure>
+					
+					<p class="uk-text-small hero-template-copyright photo-copyright" style="position: absolute; bottom: 20px; right: 20px;"></p>
+				</div>
+			</div>
+		</header>
+
+		<?php return ob_get_clean();
+
+	}
+
+endif;

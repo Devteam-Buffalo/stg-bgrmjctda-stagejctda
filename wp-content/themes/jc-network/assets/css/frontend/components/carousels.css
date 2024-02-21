@@ -1,0 +1,105 @@
+.carousel-tiles .carousel-link {
+	position: relative;
+	display: block;
+	width: 100%;
+	max-width: 100%
+}
+
+@media all and (min-width:320px) and (max-width:666px) {
+	.carousel-tiles .carousel-link {
+		min-height: 256px
+	}
+}
+
+@media all and (min-width:667px) and (max-width:839px) {
+	.carousel-tiles .carousel-link {
+		min-height: 340px
+	}
+}
+
+@media all and (min-width:840px) and (max-width:959px) {
+	.carousel-tiles .carousel-link {
+		min-height: 450px
+	}
+}
+
+@media all and (min-width:960px) {
+	.carousel-tiles .carousel-link {
+		min-height: 256px
+	}
+}
+
+.carousel-tiles .carousel-link>img {
+	position: absolute;
+	z-index: 2;
+	top: 0;
+	opacity: 1;
+	background: 0 0;
+	transition: all .2s linear
+}
+
+.carousel-tiles .carousel-link:hover {
+	text-decoration: none
+}
+
+.carousel-tiles .carousel-link .section-title,
+.carousel-tiles .carousel-link .sub-section-title {
+	position: relative;
+	z-index: 3;
+	margin: 0;
+	color: var(--white)
+}
+
+.carousel-tiles .carousel-link .section-title {
+	padding: 15px;
+	font-family: var(--sans-regular);
+	font-size: 10px;
+	line-height: 1;
+	font-family: var(--sans-regular);
+	letter-spacing: 3px;
+	text-transform: uppercase
+}
+
+.carousel-tiles .carousel-link .sub-section-title {
+	display: initial;
+	padding: 5px 15px;
+	font-family: var(--sans-thin);
+	font-size: 1.6rem;
+	line-height: 1.45em;
+	box-decoration-break: clone;
+	-webkit-box-decoration-break: clone;
+	-o-box-decoration-break: clone
+}
+
+.carousel figure {
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: 100.5%;
+	transition: 150ms linear;
+	transition-property: background-size
+}
+
+.carousel figure:focus,
+.carousel figure:hover {
+	background-size: 107.5%
+}
+
+.carousel figcaption {
+	margin-left: -20px
+}
+
+.carousel figcaption span {
+	display: inline;
+	font-size: 1.25rem;
+	line-height: 1.2;
+	box-decoration-break: clone;
+	-webkit-box-decoration-break: clone;
+	-o-box-decoration-break: clone
+}
+
+@media all and (min-width:768px) {
+	.carousel figcaption span {
+		font-size: 1.75rem;
+		line-height: 1.5
+	}
+}

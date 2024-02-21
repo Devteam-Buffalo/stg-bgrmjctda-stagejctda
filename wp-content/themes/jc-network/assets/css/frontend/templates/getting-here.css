@@ -1,0 +1,48 @@
+.getting-here-links {
+	margin-bottom: 5%
+}
+
+.getting-here-links h4 {
+	margin: 5rem 0 2rem
+}
+
+.getting-here-links a {
+	color: var(--grey)
+}
+
+.getting-here-links a:hover {
+	text-decoration: none
+}
+
+.getting-here-links a i {
+	display: inline-block;
+	margin-bottom: 10px;
+	color: var(--blue);
+	font-size: 3rem
+}
+
+.getting-here-links a span>* {
+	display: block
+}
+
+@media all and (min-width:320px) {
+	.getting-here-links a span>span {
+		font-size: 1.25rem
+	}
+}
+
+@media all and (min-width:768px) {
+	.getting-here-links a span>span {
+		font-size: 1.5rem
+	}
+}
+
+@media all and (min-width:960px) {
+	.getting-here-links a span>span {
+		font-size: 1.75rem
+	}
+}
+
+.getting-here-links a small {
+	color: var(--medium-grey)
+}

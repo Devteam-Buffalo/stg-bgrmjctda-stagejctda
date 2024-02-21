@@ -1,0 +1,48 @@
+<?php
+/**
+ * Project Name:    Discover Jackson NC
+ * Project URI:     https://www.discoverjacksonnc.com
+ * Description:     A simple and responsive image comparison slider
+ * Agency:          Rawle Murdy Associates
+ * Agency URI:      https://www.rawlemurdy.com
+ * Text Domain:     jctda
+ *
+ * @package         jctda
+ * @since           20180930
+ * @author          lpeterson
+ * @see             https://github.com/jotform/before-after.js
+ */
+
+add_shortcode( 'compare', function( $a ) {
+	$a = shortcode_atts([
+		'div_id' => '',
+		'before' => '',
+		'after'  => '',
+	], $a );
+
+	if ( empty( $a['before'] ) || empty( $a['after'] ) )
+		return '<p style="margin:0;color:red"><strong>Error</strong>: Please provide URLs for 2 images!<br>'.
+			'For example: <kbd>before="'.get_site_url().'/image.jpg"</kbd> <kbd>after="'.get_site_url().'/image.jpg"</kbd></p>';
+
+	$div_id = empty( $a['div_id'] ) ? 'compare-' . random_int( 1000, 100000 ) : esc_attr( $a['div_id'] );
+	$before = esc_url_raw( $a['before'], [ 'https' ] );
+	$after  = esc_url_raw( $a['after'], [ 'https' ] );
+
+	$compare = '<div class="ba-slider">'.
+		'<div id="'.$div_id.'" class="compare">'.
+			'<img src="'.$after.'">'.
+
+			'<div class="resize">'.
+				'<img src="'.$before.'">'.
+			'</div>'.
+
+			'<div class="handle"></div>'.
+		'</div>'.
+	'</div>';
+
+	wp_enqueue_style( 'compare/css', 'https://raw.githubusercontent.com/jotform/before-after.js/master/before-after.min.css' );
+	wp_enqueue_script( 'compare/js', 'https://raw.githubusercontent.com/jotform/before-after.js/master/before-after.min.js', ['jquery'] );
+	wp_add_inline_script( 'compare/js', 'jQuery("#'.$div_id.'").beforeAfter();', 'after' );
+
+	return $compare;
+});

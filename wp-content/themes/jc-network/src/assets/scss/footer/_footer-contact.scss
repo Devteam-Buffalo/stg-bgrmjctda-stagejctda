@@ -1,0 +1,43 @@
+.footer-contact {
+	padding: 1% 0;
+	background-color: darken($menu-bg-color, 5%);
+
+	.footer-contact-nav {
+		ul,
+		li { margin: 0; }
+
+		li:first-of-type { padding-left: 0; }
+
+		a {
+			color: $footer-link-color;
+			font-size: 1.1rem;
+			line-height: 1;
+		}
+	}
+
+	.footer-social-links-container {
+		@media all and (max-width: $breakpoint-medium) {
+			width: 100%;
+			text-align: center;
+		}
+
+		a {
+			position: relative;
+			top: 3px;
+			width: 32px;
+			height: 32px;
+			border-radius: 50%;
+			overflow: hidden;
+			color: #fff;
+			font-size: 1.45rem;
+			line-height: 1.75;
+			background-color: $menu-bg-color;
+
+			&.social-link:last-of-type {
+				@media all and (min-width: ($breakpoint-medium + 1)) { margin-right: 0; }
+			}
+			
+			i { color: #fff; }
+		}
+	}
+}

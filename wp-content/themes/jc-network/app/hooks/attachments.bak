@@ -1,0 +1,367 @@
+<?php
+/**
+ * Project Name:    Discover Jackson NC
+ * Project URI:     https://www.discoverjacksonnc.com
+ * Description:     Attachment filters.
+ * Agency:          Rawle Murdy Associates
+ * Agency URI:      https://www.rawlemurdy.com
+ * Text Domain:     jctda
+ *
+ * @package         jctda
+ * @since           3.1.0
+ * @link            https://www.discoverjacksonnc.com
+ * @author          lpeterson
+ * @date            6/13/18
+ * @file            attachments.php
+ */
+// defined('ABSPATH') or exit;
+
+/**
+ * Filters the names and labels of the default image sizes.
+ *
+ * @since 3.3.0
+ *
+ * @param array $size_names Array of image sizes and their names. Default values
+ *                          include 'Thumbnail', 'Medium', 'Large', 'Full Size'.
+ */
+// add_filter( 'image_size_names_choose', function( $size_names ) {
+// 	$size_names = [
+// 		'thumbnail' => 'Thumbnail',
+// 		'tile_large_size' => 'Tile',
+// 		'masonry_small_size' => 'Masonry - Small',
+// 		'masonry_medium_size' => 'Masonry - Medium',
+// 		'masonry_large_size' => 'Masonry - Large',
+// 		'hero_medium_size' => 'Hero',
+// 		'hero_large_size' => 'Hi-Res Hero',
+// 	];
+
+// 	return $size_names;
+// });
+
+/**
+ * Filters the image HTML markup to send to the editor when inserting an image.
+ *
+ * @since 2.5.0
+ *
+ * @param string       $html    The image HTML markup to send.
+ * @param int          $id      The attachment id.
+ * @param string       $caption The image caption.
+ * @param string       $title   The image title.
+ * @param string       $align   The image alignment.
+ * @param string       $url     The image source URL.
+ * @param string|array $size    Size of image. Image size or array of width and height values
+ *                              (in that order). Default 'medium'.
+ * @param string       $alt     The image alternative, or alt, text.
+ */
+// add_filter( 'image_send_to_editor', function( $html, $id, $caption, $title, $align, $url, $size, $alt ) {
+// 	if ( '' !== $html ) {
+// 		$html = '<figure id="post-'.$id.'-media-'.$id.'" class="align-'.$align.'">'.
+// 			'<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="'.$url.'"';
+
+// 			if ( !empty( $alt ) ) {
+// 				$html .= ' alt="'.$alt.'"';
+// 			}
+
+// 			$html .= '>';
+
+// 			if ( isset($caption) && !empty($caption) ) {
+// 				$html .= '<figcaption>'.$caption.'</figcaption>';
+// 			}
+// 		$html .= '</figure>';
+// 	}
+
+// 	return $html;
+// }, 10, 8 );
+
+// add_filter( 'wp_get_attachment_image_attributes', function( $attr, $attachment ) {
+// 	/**
+// 	 * @todo Revisit lazyloading when JS is disabled or failing
+// 	 *
+// 	 * @since 3.2.0
+// 	 */
+// 	//if ( wp_script_is( 'lazy/js', 'done' ) && '' !== $attr['src'] ) {
+
+// 	if ( '' !== $attr['src'] ) {
+// 		$attr['data-src'] = $attr['src'];
+// 		$attr['src'] = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
+// 		$attr['class'] = $attr['class'] . ' lazyloading';
+// 	}
+
+// 	return $attr;
+// }, 20, 2 );
+
+// /**
+//  * Filters the post thumbnail HTML.
+//  *
+//  * @since 2.9.0
+//  *
+//  * @param string       $html              The post thumbnail HTML.
+//  * @param int          $post_id           The post ID.
+//  * @param string       $post_thumbnail_id The post thumbnail ID.
+//  * @param string|array $size              The post thumbnail size. Image size or array of width and height
+//  *                                        values (in that order). Default 'post-thumbnail'.
+//  * @param string       $attr              Query string of attributes.
+//  */
+// add_filter( 'post_thumbnail_html', function( $html, $post_id, $post_thumbnail_id, $size, $attr ) {
+// 	if ( !empty( $html ) ) {
+// 		$data_src = wp_get_attachment_image_url( $post_thumbnail_id, $size, false );
+// 		$src = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
+// 		$class = 'lazyload';
+// 		$alt = get_metadata('post', $post_thumbnail_id, '_wp_attachment_image_alt', true);
+// 		$caption = wp_get_attachment_caption( $post_thumbnail_id );
+// 		$copyright = get_metadata('post', $post_thumbnail_id, 'copyright', true);
+
+// 		$atts = [
+// 			'src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"',
+// 			'data-src="'.esc_url($data_src).'"',
+// 			'data-size="'.esc_attr($size).'"',
+// 			empty($copyright)?'':'data-copyright="'.esc_attr($copyright).'"',
+// 			'class="lazyload"',
+// 			'alt="'.esc_attr(empty($alt)?get_the_title($post_thumbnail_id):$alt).'"',
+// 			'itemprop="image"',
+// 		];
+// 		$html = '<figure class="post-thumbnail">'."\n" .
+// 			'<img ' . implode( ' ', $atts ) . '>'."\n";
+
+// 			if ( ( false !== $caption || false !== $copyright ) && ( !empty($caption) || !empty($copyright) ) ) {
+// 				$html .= '<figcaption class="uk-padding-vertical-small uk-text-center text-sans text-grey">'."\n" .
+// 					strip_tags( $caption ) .
+// 					esc_html( $copyright ) .
+// 				'</figcaption>';
+// 			}
+
+// 		$html .= '</figure>'."\n";
+
+// 	}
+
+// 	return $html;
+// }, 11, 5 );
+
+
+
+/**
+ * Fires before an attachment is deleted, at the start of wp_delete_attachment().
+ *
+ * @since 2.0.0
+ *
+ * @param int $post_id Attachment ID.
+
+add_filter( 'delete_attachment', function( $attachment_id ) {
+	$dir = wp_upload_dir();
+	$meta = wp_get_attachment_metadata( $attachment_id );
+	$path = pathinfo( $meta['file'] );
+
+	foreach ( $meta as $k => $v ) {
+		if ( 'sizes' === $k ) {
+			foreach ( $v as $z => $s ) {
+				$orig = $dir['basedir'] . '/' . $path['dirname'] . '/' . $s['file'];
+				$retina = substr_replace( $orig, '@2x.', strrpos( $orig, '.' ), strlen( '.' ) );
+				if ( file_exists( $retina ) ) {
+					delete_post_meta( $attachment_id, 'sizes' );
+					unlink( $retina );
+				}
+			}
+		}
+	}
+
+	return $attachment_id;
+});
+ */
+
+/**
+ * Generate post thumbnail attachment meta data.
+ *
+ * @since 2.1.0
+ *
+ * @param int $attachment_id Attachment Id to process.
+ * @param string $file Filepath of the Attached image.
+ * @return mixed Metadata for attachment.
+ */
+// add_filter( 'wp_generate_attachment_metadata', function( $metadata, $attachment_id ) {
+	//foreach ( $metadata as $k => $v )
+	//	if ( is_array( $v ) )
+	//		foreach ( $v as $i => $a )
+	//			if ( is_array( $a ) )
+	//				retina_support_create_images( get_attached_file( $attachment_id ), $a['width'], $a['height'], true );
+
+	//return $metadata;
+// }, 20, 2 );
+
+/**
+ * Create retina-ready images
+ *
+ * @since 3.2.0
+ * @see wp_generate_attachment_metadata
+ *
+ * @var array $file
+ * @var int $width
+ * @var int $height
+ * @var bool $crop
+ */
+// function retina_support_create_images( $file, $width, $height, $crop = false ) {
+// 	if ( $width || $height ) {
+// 		$resized_file = wp_get_image_editor( $file );
+
+// 		if ( !is_wp_error( $resized_file ) ) {
+// 			$new_name = $resized_file->generate_filename( $width . 'x' . $height . '@2x' );
+// 			$resized_file->resize( $width * 2, $height * 2, $crop );
+// 			$resized_file->save( $new_name );
+// 			$size = $resized_file->get_size();
+
+// 			return [
+// 				'file' => wp_basename( $new_name ),
+// 				'width' => $size['width'],
+// 				'height' => $size['height'],
+// 			];
+// 		}
+// 	}
+// 	return true;
+// }
+
+
+
+
+/**
+ * Filters the post thumbnail HTML.
+ *
+ * @since 2.9.0
+ *
+ * @param string       $html              The post thumbnail HTML.
+ * @param int          $post_id           The post ID.
+ * @param string       $post_thumbnail_id The post thumbnail ID.
+ * @param string|array $size              The post thumbnail size. Image size or array of width and height
+ *                                        values (in that order). Default 'post-thumbnail'.
+ * @param string       $attr              Query string of attributes.
+add_filter( 'post_thumbnail_html', function( $html, $post_id, $post_thumbnail_id, $size, $attr ) {
+	if ( isset( $html, $post_id, $post_thumbnail_id ) && '' !== $html ) {
+		$meta = wp_get_attachment_metadata( $post_thumbnail_id, true );
+		$url = ipq_get_theme_image_url( $post_thumbnail_id, [ $meta['width'], $meta['height'] ] );
+		$srcset = wp_get_attachment_image_srcset( $post_thumbnail_id, $meta['sizes'], $meta );
+		$sizes = wp_get_attachment_image_sizes( $post_thumbnail_id );
+		$caption = wp_get_attachment_caption( $post_thumbnail_id );
+
+		$local = wp_get_upload_dir()['baseurl'];
+		$gs_host = ud_get_stateless_media()->get_gs_host();
+
+		$cdn_src = $meta['gs_link'];
+		$width = $meta['width'];
+		$height = $meta['height'];
+		$classes = $attr['class'];
+
+		if ( "1" == get_option( 'cdn_uploads' ) && ( false !== strpos( $url, $local ) ) )
+			$src = str_replace( $local, get_option( 'cdn_uploads_bucket' ), $url );
+		else
+			$src = $url;
+
+		$alt = ( metadata_exists( 'post', $post_thumbnail_id, '_wp_attachment_image_alt' ) )
+			? get_post_meta( $post_thumbnail_id, '_wp_attachment_image_alt', true )
+			: get_the_title( $post_id );
+
+		$copyright = ( isset( $meta['image_meta']['copyright'] ) && !empty( $meta['image_meta']['copyright'] ) )
+			? $meta['image_meta']['copyright']
+			: get_metadata( 'post', $post_thumbnail_id, 'copyright', true );
+
+		$ipq_locked = ( isset( $meta['ipq_locked'] ) && '1' == $meta['ipq_locked'] )
+			? 'true'
+			: 'false';
+
+		do_action( 'begin_fetch_post_thumbnail_html', $post_id, $post_thumbnail_id, $size );
+
+		if ( in_the_loop() )
+			update_post_thumbnail_cache();
+
+		$atts = [
+			'src="'.esc_url($src).'"',
+			'srcset="'.esc_attr($srcset).'"',
+			'sizes="'.esc_attr($sizes).'"',
+			'alt="'.esc_attr($alt).'"',
+			'class="'.esc_attr($classes).'"',
+			'data-src="'.esc_url($src).'"',
+			'data-srcset="'.esc_attr($srcset).'"',
+			'data-width="'.esc_attr($width).'"',
+			'data-height="'.esc_attr($height).'"',
+			'data-ipq="'.esc_attr($ipq_locked).'"',
+			'data-copyright="'.esc_attr($copyright).'"',
+			'itemprop="image"',
+			// @todo make image lazy load using intercooler
+			//'ic-trigger-on="scrolled-into-view"',
+			//'ic-target="this"',
+			//'ic-action="src:$src"',
+		];
+		$html = '<figure class="uk-thumbnail">' .
+			'<img ' . implode( ' ', $atts ) . '>';
+			if ( $caption || $copyright ) {
+				$html .= '<figcaption class="uk-padding-vertical-small uk-text-center text-sans grey-text">' .
+					strip_tags( $caption ) .
+					esc_html( $copyright ) .
+				'</figcaption>';
+			}
+		$html .= '</figure>';
+
+		do_action( 'end_fetch_post_thumbnail_html', $post_id, $post_thumbnail_id, $size );
+
+		return $html;
+	}
+}, 999, 5 );
+ */
+
+
+/**
+ * intermediate_image_sizes_advanced
+ *
+ * Filters the image sizes automatically generated when uploading an image
+ *
+ * @since 3.0.0
+ *
+ * @param array $sizes An associative array of image sizes
+ * @param array $metadata An associative array of image metadata: width, height, file
+ *
+ */
+// add_filter( 'intermediate_image_sizes_advanced', function( $sizes, $metadata ) {
+// 	$sizes = [
+// 		[
+// 			'width' => '',
+// 			'height' => '',
+// 			'crop' => false
+// 		]
+// 	];
+
+// 	$metadata
+// }, 10, 2 );
+
+/**
+ * Filters 'img' elements in post content to add 'srcset' and 'sizes' attributes.
+ *
+ * @since 4.4.0
+ *
+ * @see wp_image_add_srcset_and_sizes()
+ *
+ * @param string $content The raw post content to be filtered.
+ * @return string Converted content with 'srcset' and 'sizes' attributes added to images.
+ */
+// wp_make_content_images_responsive( $content )
+// 	$content = str_replace( $image, wp_image_add_srcset_and_sizes( $image, $image_meta, $attachment_id ), $content );
+
+
+
+/**
+ * Adds 'srcset' and 'sizes' attributes to an existing 'img' element.
+ *
+ * @since 4.4.0
+ *
+ * @see wp_calculate_image_srcset()
+ * @see wp_calculate_image_sizes()
+ *
+ * @param string $image         An HTML 'img' element to be filtered.
+ * @param array  $image_meta    The image meta data as returned by 'wp_get_attachment_metadata()'.
+ * @param int    $attachment_id Image attachment ID.
+ * @return string Converted 'img' element with 'srcset' and 'sizes' attributes added.
+ */
+// function wp_image_add_srcset_and_sizes( $image, $image_meta, $attachment_id )
+// 	$srcset = wp_calculate_image_srcset( $size_array, $image_src, $image_meta, $attachment_id );
+// 		$sizes = wp_calculate_image_sizes( $size_array, $image_src, $image_meta, $attachment_id );
+
+// add_filter( 'wp_get_attachment_thumb_url', function( $url ) {
+// 	return str_replace( WP_UPLOADS_URL, CDN_UPLOAD, $url );
+// }, 999 );
+

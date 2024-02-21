@@ -1,0 +1,25 @@
+<?php
+/*
+**  Template Name:      ✓ Social Stream
+**  Template Post Type: page, post
+**  Description:        
+**  
+**  @file               page-template-social-stream.php
+**  @package            jctda
+**  @since              1.0.0
+**  @author             lpeterson
+**  @date               4/3/18
+*/
+defined( 'ABSPATH' ) || exit;
+
+get_template_part( 'resource/view/partial/header/get-header-full' );
+
+if ( have_posts() ) : 
+	while ( have_posts() ) : 
+		the_post();
+
+		pods_view( 'resource/view/partial/article/social.php', get_defined_vars(), DAY_IN_SECONDS, 'cache', false );
+	endwhile;
+endif;
+
+get_template_part( 'resource/view/partial/footer/get-footer-full' );

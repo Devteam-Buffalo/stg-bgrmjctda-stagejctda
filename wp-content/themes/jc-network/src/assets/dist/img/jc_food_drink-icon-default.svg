@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="256px" height="257px" viewBox="0 0 256 257" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41 (35326) - http://www.bohemiancoding.com/sketch -->
+    <title>default-location-food-drink</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Default-Location-Icons" transform="translate(-302.000000, 0.000000)">
+            <g id="default-location-food-drink" transform="translate(302.000000, 0.000000)">
+                <rect id="Rectangle" fill="#DF7E40" x="0.0435042738" y="0.635694287" width="256" height="256"></rect>
+                <g id="Burger-Shapes" transform="translate(52.000000, 62.000000)" stroke="#FFFFFF" stroke-linejoin="round">
+                    <g id="BurgerIcon" transform="translate(0.625000, 0.000000)">
+                        <path d="M147.854875,35.3661875 L147.854875,31.4965 C147.854875,14.403375 130.330813,0.54775 108.718313,0.54775 L39.6851875,0.54775 C18.0705,0.54775 0.5508125,14.403375 0.5508125,31.4965 L0.5508125,35.3661875 L147.854875,35.3661875 L147.854875,35.3661875 Z" id="Stroke-1" stroke-width="7" stroke-linecap="round"></path>
+                        <path d="M0.546875,103.314531 L0.546875,107.182031 C0.546875,124.277344 18.0709375,138.132969 39.6834375,138.132969 L108.716562,138.132969 C130.33125,138.132969 147.853125,124.277344 147.853125,107.182031 L147.853125,103.314531 L0.546875,103.314531 L0.546875,103.314531 Z" id="Stroke-3" stroke-width="7" stroke-linecap="round"></path>
+                        <path d="M0.5499375,72.9393437 C0.5499375,76.3605937 3.3236875,79.1343437 6.7449375,79.1343437 L141.659,79.1343437 C145.082437,79.1343437 147.854,76.3605937 147.854,72.9393437 L147.854,68.4659063 C147.854,65.0446563 145.082437,62.2709062 141.659,62.2709062 L6.7449375,62.2709062 C3.3236875,62.2709062 0.5499375,65.0446563 0.5499375,68.4659063 L0.5499375,72.9393437 L0.5499375,72.9393437 Z" id="Stroke-5" stroke-width="3" stroke-linecap="round"></path>
+                        <path d="M147.854875,52.2906562 C133.130813,52.2906562 133.130813,48.1606562 118.404563,48.1606562 C103.673938,48.1606562 103.673938,52.2906562 88.9433125,52.2906562 C74.21925,52.2906562 74.21925,48.1606562 59.4908125,48.1606562 C44.758,48.1606562 44.758,52.2906562 30.0208125,52.2906562 C15.283625,52.2906562 15.283625,48.1606562 0.5508125,48.1606562" id="Stroke-7" stroke-width="3"></path>
+                        <path d="M147.852687,91.8791563 C133.128625,91.8791563 133.128625,87.7491562 118.402375,87.7491562 C103.673937,87.7491562 103.673937,91.8791563 88.941125,91.8791563 C74.214875,91.8791563 74.214875,87.7491562 59.4908125,87.7491562 C44.7558125,87.7491562 44.7558125,91.8791563 30.018625,91.8791563 C15.2814375,91.8791563 15.2814375,87.7491562 0.548625,87.7491562" id="Stroke-9" stroke-width="3"></path>
+                        <path d="M26.807375,20 L38.1101875,20" id="Stroke-11" stroke-width="7" stroke-linecap="round"></path>
+                        <path d="M55.9733125,12 L67.276125,12" id="Stroke-13" stroke-width="7" stroke-linecap="round"></path>
+                        <path d="M78.5769688,23 L89.8797813,23" id="Stroke-15" stroke-width="7" stroke-linecap="round"></path>
+                        <path d="M110.295719,16 L121.598531,16" id="Stroke-17" stroke-width="7" stroke-linecap="round"></path>
+                        <path d="M26.807375,123 L38.1101875,123" id="Stroke-19" stroke-width="7" stroke-linecap="round"></path>
+                        <path d="M55.9733125,115 L67.276125,115" id="Stroke-21" stroke-width="7" stroke-linecap="round"></path>
+                        <path d="M78.5769688,125 L89.8797813,125" id="Stroke-23" stroke-width="7" stroke-linecap="round"></path>
+                        <path d="M110.295719,118 L121.598531,118" id="Stroke-25" stroke-width="7" stroke-linecap="round"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

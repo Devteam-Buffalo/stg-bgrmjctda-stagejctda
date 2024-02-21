@@ -1,0 +1,105 @@
+.primary-widget {
+	.newsletter-signup-widget-container {
+		> div { background-color: lighten($support-blue, 55%); }
+
+		.widget-header {
+			background-color: $support-blue;
+
+			.widget-title {
+				color: #fff;
+
+				&:before {
+					background-image: url('../img/newsletter-signup-widget-icon.png');
+					
+					@media all and (max-width: $breakpoint-small) { background-size: 75%; }
+				}
+			}
+		}
+
+		fieldset > div:first-of-type {
+			margin-top: 1.5%;
+			margin-bottom: 6%;
+
+			input {
+				border-bottom-color: lighten($support-blue, 35%);
+
+				&:focus {
+					border-bottom-color: $support-blue;
+					color: $support-blue;
+				}
+			}
+		}
+
+		label[for="newsletter-signup-agree"] {
+			line-height: 1;
+
+			[data-uk-tooltip] {
+				display: inline-block;
+				padding-bottom: 2px;
+				border-bottom: 1px dotted $support-blue;
+				color: $support-blue;
+				cursor: help;
+				transition: all 200ms ease-in-out;
+
+				&:hover {
+					border-bottom-color: $base-body-color;
+					color: $base-body-color;
+				}
+			}
+		}
+		
+		input[type="submit"] {
+			background-color: $support-blue !important;
+			float: right !important;
+		}
+	}
+	
+	.widget-footer { padding-top: 0 !important; padding-bottom: 6% !important; }
+}
+
+.inline-signup {
+	.primary-widget .widget {
+		> div { min-height: inherit; }
+		
+		.widget-header { padding: 1.5% 1.5% 1.5% 65px; }
+		
+		.widget-content { padding: 2% 6% 0; }
+		
+		.widget-footer { padding: 2% 6%; }
+	}
+	
+	.primary-widget .newsletter-signup-widget-container fieldset > div:first-of-type { margin-bottom: 2.5%; }
+}
+
+body .gform_wrapper ul.gfield_checkbox li input[type=checkbox], 
+body .gform_wrapper ul.gfield_radio li input[type=radio] { width: 14px !important; }
+
+body .gform_wrapper .no-labels .top_label .gfield_label { display: none !important; }
+
+body .primary-widget .gform_wrapper .gform_footer {
+	@media all and (min-width: $breakpoint-large) {
+		margin: 0 !important;
+		padding: 0 !important;
+		clear: none !important;
+		position: relative;
+		top: -30px;
+	}
+}
+
+body .primary-widget .intro-paragraph { margin-top: 0; }
+
+body #signup-modal .gform_wrapper .newsletter-signup-form .gform_footer {
+	@media all and (min-width: $breakpoint-large) {
+		margin: 0 !important;
+		padding: 0 !important;
+		clear: none !important;
+	}
+}
+
+
+body .validation_error { display: none !important; visibility: hidden !important; height: 0px !important; width: 0px !important; }
+
+#signup-modal {
+	input[type="submit"] { background-color: $support-blue; }
+	.gchoice_4_3_1 { width: 50%; float: right; margin-right: 0; }
+}

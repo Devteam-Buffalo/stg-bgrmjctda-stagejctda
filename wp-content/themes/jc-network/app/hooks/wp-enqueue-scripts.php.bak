@@ -1,0 +1,55 @@
+<?php
+/**
+ * Project Name:    Discover Jackson NC
+ * Project URI:     https://www.discoverjacksonnc.com
+ * Description:     Enqueue scripts and styles globally
+ * Agency:          Rawle Murdy Associates
+ * Agency URI:      https://www.rawlemurdy.com
+ * Text Domain:     jctda
+ *
+ * @package         jctda
+ * @since           20181210
+ * @author          lpeterson
+ */
+
+// if ( current_user_can('administrator') ) {
+//	add_action( 'wp_enqueue_scripts', function() {
+//		wp_deregister_script('jquery');
+//		wp_deregister_script('jquery-migrate');
+//		wp_register_script('jquery', '//code.jquery.com/jquery-3.1.1.min.js', [], null);
+//		wp_register_script('jquery-migrate', '//code.jquery.com/jquery-migrate-1.4.1.min.js', ['jquery'], null);
+//		wp_enqueue_style('style', get_theme_file_uri('resource/asset/css/style.min.css'), [], null, 'all');
+//		wp_enqueue_style('print', get_theme_file_uri('resource/asset/css/print.css'), [], null, 'print');
+//		wp_enqueue_script('jctda/core/js', '//storage.googleapis.com/jctda-cdn/core/core.min.js', ['jquery'], null, false);
+//		wp_enqueue_script('google/maps/js', '//maps.googleapis.com/maps/api/js?key=AIzaSyAt8B_YwNZbkQyIhoodSEGwfzrbWwVxn9o', [], null, true);
+//		wp_enqueue_script('row/grid/js', '//storage.googleapis.com/jctda-cdn/core/rowgrid.min.js', [], null, true);
+//		wp_register_style('light/gallery/css', '//cdn.jsdelivr.net/npm/lightgallery@1.6.11/dist/css/lightgallery.min.css', [], null, 'screen');
+//		wp_register_script('light/gallery/js', '//cdn.jsdelivr.net/npm/lightgallery@1.6.11/dist/js/lightgallery.min.js', [], null, true);
+//		wp_enqueue_script('jctda/script/js', '//storage.googleapis.com/jctda-cdn/core/script.js', [], null, true);
+//	});
+// }
+// else {
+	add_action( 'wp_enqueue_scripts', function() {
+		wp_deregister_script('jquery');
+		wp_deregister_script('jquery-migrate');
+		wp_register_script('jquery', '//code.jquery.com/jquery-3.1.1.min.js', [], null);
+		wp_register_script('jquery-migrate', '//code.jquery.com/jquery-migrate-1.4.1.min.js', ['jquery'], null);
+
+		wp_enqueue_style('style', get_theme_file_uri('resource/asset/css/style.min.css'), [], null, 'screen');
+		wp_enqueue_style('print', get_theme_file_uri('resource/asset/css/print.css'), [], null, 'print');
+		wp_enqueue_style('lightbox/trans', get_theme_file_uri('resource/asset/src/lightgallery/dist/css/lightgallery.min.css'), [], null, 'screen');
+		wp_enqueue_style('lightbox/css', get_theme_file_uri('resource/asset/src/lightgallery/dist/css/lg-transitions.min.css'), [], null, 'screen');
+
+		wp_enqueue_script('uikit/js', ASSETS.'/js/uikit.2.27.5.min.js', ['jquery'], null, false);
+		wp_enqueue_script('uikit/components', ASSETS.'/js/uikit-plugins.2.27.5.min.js', ['uikit/js'], null);
+		wp_enqueue_script('gmaps/js', '//maps.googleapis.com/maps/api/js?key=AIzaSyAt8B_YwNZbkQyIhoodSEGwfzrbWwVxn9o', [], null, true);
+		wp_enqueue_script('masonry/js', ASSETS.'/js/jquery.justifiedGallery.min.js', [], null, true);
+		wp_enqueue_script('lightbox/js', get_theme_file_uri('resource/asset/src/lightgallery/dist/js/lightgallery-all.min.js'), [], null, true);
+		wp_enqueue_script('global/js', get_theme_file_uri('resource/asset/js/global.js'), [], null, true);
+		wp_enqueue_script('archive/map', get_theme_file_uri('resource/asset/js/archive-map.js'), [], null, true);
+		wp_enqueue_script('single/map', get_theme_file_uri('resource/asset/js/single-map.js'), [], null, true);
+		$markerIcon = ['markerIcon' => CDN_URL.'/assets/img/ui/icon-map.svg'];
+		wp_localize_script('single/map', 'mapData', $markerIcon);
+		wp_localize_script('archive/map', 'mapData', $markerIcon);
+	});
+// }

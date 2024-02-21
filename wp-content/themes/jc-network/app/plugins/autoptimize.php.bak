@@ -1,0 +1,183 @@
+<?php
+/**
+ * Project Name:    Discover Jackson NC
+ * Project URI:     https://www.discoverjacksonnc.com
+ * Description:     Autoptimize filters and settings.
+ * Agency:          Rawle Murdy Associates
+ * Agency URI:      https://www.rawlemurdy.com
+ * Text Domain:     jctda
+ *
+ * @package         jctda
+ * @since           3.3.0
+ * @link            https://www.discoverjacksonnc.com
+ * @author          lpeterson
+ * @date            6/15/18
+ * @file            autoptimize.php
+ */
+defined('ABSPATH') or exit;
+
+
+/**
+ * Change the threshold at which background images are turned into data uri's
+ *
+ * @since 3.3.0
+ * @var int $urisize Size in bytes
+ */
+add_filter( 'autoptimize_filter_css_datauri_maxsize', function( $urisizeIn ) {
+// 	return 262144;
+});
+
+
+/**
+ * Exclude background images from being turned into data uri's
+ *
+ * @since 3.3.0
+ * @var string $imageexcl Comma-seperated list of images to exclude
+ */
+add_filter( 'autoptimize_filter_css_datauri_exclude', function( $imageexcl ) {
+// 	return "adfreebutton.jpg, otherimage.png";
+});
+
+
+/**
+ * Change flag added to javascript
+ *
+ * @since 3.3.0
+ * @var string $defer 'defer', 'async' or both
+ */
+add_filter( 'autoptimize_filter_js_defer', function( $defer ) {
+// 	return $defer."async ";
+});
+
+
+/**
+ * Stop autoptimize from optimizing URLs by specifying a URL and returning a boolean
+ *
+ * @since 3.3.0
+ */
+add_filter( 'autoptimize_filter_noptimize', function() {
+// 	if ( false !== strpos( $_SERVER['REQUEST_URI'], 'no-autoptimize-now' ) ) 
+// 		return true;
+});
+
+
+/**
+ * JS optimization exclude strings, as configured in admin page
+ *
+ * @since 3.3.0
+ * @var string $exclude Comma-seperated list of exclude strings
+ */
+add_filter( 'autoptimize_filter_js_exclude', function( $exclude ) {
+// 	return $exclude.", customize-support";
+});
+
+
+/**
+ * CSS optimization exclude strings, as configured in admin page
+ *
+ * @since 3.3.0
+ * @var string $exclude Comma-seperated list of exclude strings
+ */
+add_filter( 'autoptimize_filter_css_exclude', function( $exclude ) {
+// 	return $exclude.", recentcomments";
+});
+
+
+/**
+ * Array scripts to move to the end of body
+ *
+ * @since 3.3.0
+ * @var array $movelast Scripts to move
+ */
+add_filter( 'autoptimize_filter_js_movelast', function( $movelast ) {
+// 	$movelast[]="console.log";
+	
+// 	return $movelast;
+});
+
+
+/**
+ * Inject CSS files in this location
+ *
+ * @since 3.3.0
+ * @var array $replacetag HTML tag (full tag including braces) and 
+ *                        injection method ('before', 'after' or 'replace')
+ */
+add_filter( 'autoptimize_filter_css_replacetag', function( $replacetag ) {
+// 	return [ '<head>', 'after' ];
+});
+
+
+/**
+ * Inject JS files in this location
+ *
+ * @since 3.3.0
+ * @var array $replacetag HTML tag (full tag including braces) and 
+ *                        injection method ('before', 'after' or 'replace')
+ */
+add_filter( 'autoptimize_filter_js_replacetag', function( $replacetag ) {
+// 	return [ '</body>', 'before' ];
+});
+
+
+/**
+ * Minify CSS files
+ *
+ * @since 3.3.0
+ */
+add_filter( 'autoptimize_css_do_minify', function() {
+// 	return false;
+});
+
+
+/**
+ * Minify JS files
+ *
+ * @since 3.3.0
+ */
+add_filter( 'autoptimize_js_do_minify', function() {
+// 	return false;
+});
+
+
+/**
+ * Aggregate inline CSS files
+ *
+ * @since 3.3.0
+ */
+add_filter( 'autoptimize_css_include_inline', function() {
+// 	return false;
+});
+
+
+/**
+ * Aggregate inline JS files
+ *
+ * @since 3.3.0
+ */
+add_filter( 'autoptimize_js_include_inline', function() {
+// 	return false;
+});
+
+
+/**
+ * Inline CSS when defer and inline active, aka "critical CSS"
+ *
+ * @since 3.3.0
+ * @var string $inlined String with above the fold CSS as configured in admin
+ */
+add_filter( 'autoptimize_filter_css_defer_inline', function( $inlined ) {
+// 	return $inlined."h2,h1{color:red !important;}";
+});
+	
+
+/**
+ * CDN font sources
+ *
+ * @since 3.3.0
+ */
+add_filter( 'autoptimize_filter_css_fonts_cdn', function(){
+// 	return true;
+});
+
+

@@ -1,0 +1,26 @@
+.signup-tab-container {
+	.signup-tab a {
+		display: inline-block;
+		background-color: $support-orange;
+		color: #fff;
+		font-family: "Proxima N W01 Light";
+
+		@media all and (min-width: 320px) {
+			padding: .7rem 1rem;
+			font-size: .75rem;
+		}
+		@media all and (min-width: $breakpoint-medium) {
+			padding: .825rem 1.25rem;
+			font-size: 1.1rem;
+		}
+
+		&:hover,
+		&:focus { text-decoration: none; }
+
+		img {
+			position: relative;
+			top: -2px;
+			left: -2px;
+		}
+	}
+}

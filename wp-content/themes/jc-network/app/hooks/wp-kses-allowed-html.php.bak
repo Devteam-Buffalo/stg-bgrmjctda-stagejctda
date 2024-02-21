@@ -1,0 +1,53 @@
+<?php
+/**
+ * Project Name:    Discover Jackson NC
+ * Project URI:     https://www.discoverjacksonnc.com
+ * Description:     Filters the HTML that is allowed for a given context
+ * Agency:          Rawle Murdy Associates
+ * Agency URI:      https://www.rawlemurdy.com
+ * Text Domain:     jctda
+ *
+ * @package         jctda
+ * @since           3.5.0
+ * @author          lpeterson
+ *
+ * @global array $allowedposttags
+ * @global array $allowedtags
+ * @global array $allowedentitynames
+ *
+ * @param array[]|string $context      Context to judge allowed tags by.
+ * @param string         $context_type Context name.
+ */
+
+add_filter( 'wp_kses_allowed_html', function( $allowedposttags ) {
+	if ( !current_user_can( 'publish_posts' ) )
+		return $allowedposttags;
+
+	$allowedposttags['iframe'] = [
+		'align' => true,
+		'width' => true,
+		'height' => true,
+		'frameborder' => true,
+		'name' => true,
+		'src' => true,
+		'id' => true,
+		'class' => true,
+		'style' => true,
+		'scrolling' => true,
+		'marginwidth' => true,
+		'marginheight' => true,
+		'gesture' => true,
+		'allow' => true,
+		'allowfullscreen' => true,
+	];
+
+	$allowedposttags['script'] = [
+		'src' => true,
+		'id' => true,
+		'class' => true,
+		'style' => true,
+		'crossorigin' => true,
+	];
+
+	return $allowedposttags;
+});

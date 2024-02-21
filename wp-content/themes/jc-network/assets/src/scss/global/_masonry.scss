@@ -1,0 +1,59 @@
+.masonry-container { padding-left: 0 !important; padding-right: 0 !important; }
+
+.masonry-tiles .masonry-tile.masonry-link {
+	@media all and (max-width: 667px) {
+		display: block;
+		position: relative;
+		margin: 1rem 0;
+		width: 100%;
+		height: 225px;
+		overflow: hidden;
+	}
+	
+	> img {
+		opacity: 1;
+		background: transparent;
+		transform: scale(1);
+		transition: all 200ms ease-in-out;
+	}
+	
+	&:hover > img {
+		opacity: 0.9;
+		background: #000;
+		transform: scale(1.025);
+	}
+
+	.masonry-title.caption {
+		position: absolute;
+		top: 20px;
+		right: auto;
+		bottom: auto;
+		left: 0;
+		z-index: 2;
+		display: block;
+		margin: 0;
+		padding: 5px 15px;
+		opacity: 1;
+		color: #fff;
+		font-family: $font-sans-thin, sans-serif;
+		font-size: 1.6rem;
+		line-height: 1.3em;
+		-webkit-box-decoration-break: clone;
+		box-decoration-break: clone;
+		
+		&.overlay-jc_lodging_type,
+		&.overlay-jc_lodging_amenity,
+		&.overlay-jc_camping_amenity,
+		&.overlay-jc_lodging_accommodation { background-color: $support-blue; }
+
+		&.overlay-jc_food_type,
+		&.overlay-jc_food_amenity { background-color: $support-orange; }
+
+		&.overlay-gray { background-color: $primary-grey; }
+		&.overlay-green { background-color: $primary-green; }
+		&.overlay-yellow { background-color: $support-yellow; }
+		&.overlay-dark-grey { background-color: $dark-grey; }
+		&.overlay-brown { background-color: $support-brown; }
+
+	}
+}

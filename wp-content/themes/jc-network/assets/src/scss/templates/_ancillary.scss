@@ -1,0 +1,41 @@
+@charset "UTF-8";
+/*
+**  @file    _ancillary.scss
+**  
+**  @desc    
+**  
+**  @path    /_ancillary.scss
+**  @package jctda
+**  @author  Lee Peterson
+**  @date    11/9/17
+*/
+
+.ancillary-hero {
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	
+	@media all and (min-width: 320px) {
+		margin-bottom: 2rem;
+		height: 325px;
+	}
+	@media all and (min-width: $breakpoint-medium) { height: 425px; }
+	@media all and (min-width: $breakpoint-large) {
+		margin-bottom: 0;
+		padding-bottom: 2rem;
+		height: auto;
+	}
+	@media all and (min-width: $breakpoint-xlarge) {
+		max-height: 800px;
+	}
+}
+
+.ancillary-content {
+	padding-left: 35px;
+	padding-right: 35px;
+	
+	@media all and (min-width: $breakpoint-large) {
+		padding-top: 5%;
+		padding-bottom: 5%;
+	}
+}

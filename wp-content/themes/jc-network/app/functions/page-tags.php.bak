@@ -1,0 +1,12 @@
+<?php
+/*
+**  @file               page-tags.php
+**  @description        Page navigation markup for navigating previous/next "page" post types.
+**  @package            jctda
+**  @since              2.1.0
+**  @author             lpeterson
+**  @date               4/14/18
+*/
+defined( 'ABSPATH' ) || exit;
+
+

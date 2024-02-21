@@ -1,0 +1,37 @@
+<?php
+/*
+**  @file               performance-audit.php
+**  @description        Back-end Server-side Processing - Server Resources Needed Before Front-end Render
+**  @package            jctda
+**  @since              2.1.0
+**  @author             lpeterson
+**  @date               4/12/18
+*/
+defined( 'ABSPATH' ) || exit;
+
+//add_action( 'wp_footer', 'jc_perf', 999, 1 );
+//function jc_perf( $data ) {
+	//$sprint = sprintf( "<div class=\"uk-scrollable-text\"><pre><code>Back-end Server-side Processing \n 4/12/18 - jctda v2.1.0 \n /app/wp/performance-audit.php \n </code><code>Server Resources Needed Before Front-end Render \n %d actions run through %d queries in %.3f seconds using %.2fMB of memory \n</code>",
+	//	$data['num_actions'],
+	//	$data['num_queries'],
+	//	timer_stop( 0, 3 ),
+	//	memory_get_peak_usage() / 1024 / 1024
+	//);
+	//$vprint = vsprintf( "<code>All Queries Run \n\n {$data['all_queries']} \n\n end performance audit</code></pre></div>",  );
+
+	//return $sprint;
+//}
+
+//add_action( 'shutdown', function() {
+//	if ( current_user_can( 'manage_options' ) ) {
+		//global $wpdb, $wp_actions;
+		
+		//$data = [];
+		
+		//$data['num_actions'] = count( array_keys( $wp_actions ) );
+		//$data['num_queries'] = absint( $wpdb->num_queries );
+		//$data['all_queries'] = json_encode( $wpdb->queries );
+		
+		//echo jc_perf( $data );
+//	}
+//} );

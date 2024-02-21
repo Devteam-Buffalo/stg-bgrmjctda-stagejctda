@@ -1,0 +1,79 @@
+<?php
+/*
+**  Template Name:      Search
+**  Template Post Type: page
+**  Description:        
+**  
+**  @file               page-template-swp-search.php
+**  @package            jctda
+**  @since              1.0.0
+**  @author             lpeterson
+**  @date               4/3/18
+*/
+defined( 'ABSPATH' ) || exit;
+
+$query = isset( $_REQUEST['swpquery'] ) ? sanitize_text_field( $_REQUEST['swpquery'] ) : '';
+$swppg = isset( $_REQUEST['swppg'] ) ? absint( $_REQUEST['swppg'] ) : 1;
+if ( class_exists( 'SWP_Query' ) ) {
+	$engine = 'default';
+	$swp_query = new SWP_Query(
+		array(
+			's'      => $query,
+			'engine' => $engine,
+			'page'   => $swppg,
+		)
+	);
+	$pagination = paginate_links( array(
+		'format'  => '?swppg=%#%',
+		'current' => $swppg,
+		'total'   => $swp_query->max_num_pages,
+	) );
+}
+get_template_part( 'resource/view/partial/header/get-header-full' ); ?>
+
+<section class="uk-container uk-container-center" role="search">
+	<header class="page-header">
+		<h1 class="page-title">
+			<?php if ( ! empty( $query ) ) : ?>
+				Search Results for: <?= $query ?>
+			<?php else : ?>
+				Begin typing your search …
+			<?php endif; ?>
+		</h1>
+
+		<div class="search-box">
+			<form role="search" method="get" class="uk-search" action="<?= esc_html( get_permalink() ); ?>">
+				<label>
+					<input type="search" class="uk-search-field search-field" placeholder="Begin typing your search …" value="" name="swpquery" data-swplive="true" title="Begin typing your search …">
+				</label>
+			</form>
+		</div>
+	</header>
+
+	<?php if ( ! empty( $query ) && isset( $swp_query ) && ! empty( $swp_query->posts ) ) {
+		foreach ( $swp_query->posts as $post ) {
+			setup_postdata( $post ); ?>
+
+			<article class="search-result">
+				<header><h2><a href="<?= get_permalink(); ?>"><?php the_title(); ?></a></h2></header>
+				<div><?php the_excerpt(); ?></div>
+			</article>
+
+			<?php
+		}
+		
+		wp_reset_postdata();
+
+		if ( $swp_query->max_num_pages > 1 ) { ?>
+			<div class="navigation pagination" role="navigation">
+				<div class="nav-links">
+					<?= wp_kses_post( $pagination ); ?>
+				</div>
+			</div>
+		<?php }
+	} else {
+		?><p>No results found.</p><?php
+	} ?>
+</section>
+
+<?php get_template_part( 'resource/view/partial/footer/get-footer-full' );

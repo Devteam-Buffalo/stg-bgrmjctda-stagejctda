@@ -1,0 +1,35 @@
+/**
+ * Project Name:    Discover Jackson NC
+ * Project URI:     https://www.discoverjacksonnc.com
+ * Description:     Main entry point for frontend
+ * Agency:          Rawle Murdy Associates
+ * Agency URI:      https://www.rawlemurdy.com
+ * Text Domain:     jctda
+ *
+ * @package         jctda
+ * @since           20190209
+ * @author          lpeterson
+ */
+
+@import url("base/uikit/fonts");
+
+/* CSS baseline reset */
+@import url("sanitize.css");
+
+/* Global - global pieces like media queries, mixins and placholders */
+@import url("utilities/index");
+
+/* Base - base styles such as fonts, typography, and wordpress overrides */
+@import url("base/index");
+
+/* Components */
+@import url("components/index");
+
+/* Layout - styles specific to layout */
+@import url("partials/index");
+
+/* Templates */
+@import url("templates/index");
+
+/* Print */
+@import url("print/index");

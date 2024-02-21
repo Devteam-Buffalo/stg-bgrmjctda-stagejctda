@@ -1,0 +1,64 @@
+$footer-link-color: #708C8E !default;
+
+.site-footer {
+	background-color: $menu-bg-color;
+
+	@media all and (max-width: $breakpoint-large) { padding-bottom: 80px; }
+
+	.logo-footer-container {
+		position: relative;
+	
+		@media all and (min-width: 320px) {
+			width: 80px;
+			height: 72px;
+			padding-left: 15px !important;
+		}
+		@media all and (min-width: $breakpoint-small) {
+			width: 90px;
+			height: 81px;
+		}
+		@media all and (min-width: $breakpoint-medium) {
+			width: 100px;
+			height: 91px;
+			padding-left: 0 !important;
+		}
+		@media all and (min-width: $breakpoint-large) {
+// 			margin-right: 3%;
+			width: 140px;
+			height: 127px;
+		}
+		@media all and (max-width: ($breakpoint-large - 1)) {
+			float: none;
+			margin: 0 auto;
+		}
+	
+		.logo-footer {
+// 			position: absolute;
+			display: block;
+			background: transparent url('../img/logo-header-vector.svg') center center no-repeat;
+			background-size: contain;
+	
+			@media all and (min-width: 320px) {
+				top: 10px;
+				width: 80px;
+				height: 70px;
+			}
+			@media all and (min-width: $breakpoint-small) {
+				width: 90px;
+				height: 80px;
+			}
+			@media all and (min-width: $breakpoint-medium) {
+				top: auto;
+				width: 100px;
+				height: 88px;
+			}
+			@media all and (min-width: $breakpoint-large) {
+				width: 140px;
+				height: 124px;
+			}
+			
+			&:hover,
+			&:focus { text-decoration: none; }
+		}
+	}
+}

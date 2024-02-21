@@ -1,0 +1,63 @@
+<?php
+/*
+**  @file               .body-classes.php
+**  @description        Description.
+**  @package            jctda
+**  @since              2.1.0
+**  @author             lpeterson
+**  @date               4/11/18
+*/
+defined( 'ABSPATH' ) || exit;
+
+add_filter( 'body_class', function($classes) {
+	$types = ['outdoor','attraction','town','wedding','jc_outdoor','jc_attraction','jc_food_drink','jc_lodging','jc_town','jc_wedding'];
+	$taxes = ['jc_food_amenity','jc_food_type','jc_lodging_accommodation','jc_lodging_amenity','jc_lodging_type','jc_camping_amenity'];
+
+	if ( is_front_page() ) :
+		$classes[] = 'front-page has-hero';
+	endif;
+
+	if ( is_home() || is_singular('post') || is_archive() || is_author() || is_search() ) :
+		$classes[] = 'blog-page no-hero';
+	endif;
+
+	if ( ( is_singular( $types ) && has_children() ) || is_archive( $taxes ) ) :
+		$classes[] = 'has-map';
+	endif;
+	
+	if ( is_singular( $types ) ) :
+		$classes[] = 'single-location';
+	endif;
+	
+	if ( is_post_type_archive( $types ) ) :
+		$classes[] = 'location-archive';
+	endif;
+	
+	if ( is_tax( $taxes ) ) :
+		$classes[] = 'location-type';
+	endif;
+	
+	if ( wp_script_is( 'intercooler-js', 'enqueued' ) ) :
+		$classes[] = 'async-enqueued';
+	elseif ( wp_script_is( 'intercooler-js', 'to_do' ) ) :
+		$classes[] = 'async-loading';
+	elseif ( wp_script_is( 'intercooler-js', 'done' ) ) :
+		$classes[] = 'async-done';
+	else :
+		$classes[] = 'no-async';
+	endif;
+	
+	if ( ! ( is_front_page() || is_home() || is_singular('post') || is_archive() || is_author() || is_search() ) && has_post_thumbnail() ) :
+		$classes[] = 'has-hero';
+	else :
+		$classes[] = 'no-hero';
+	endif;
+	
+	if ( isset( $_SERVER['HTTP_SAVE_DATA'] ) ) :
+		$classes[] = 'http-save-data';
+	else :
+		$classes[] = 'no-save-data';
+	endif;
+
+	return $classes;
+} );

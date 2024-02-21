@@ -1,0 +1,12 @@
+<?php
+/*
+**  @file               .admin-columns.php
+**  @description        Description.
+**  @package            jctda
+**  @since              2.1.0
+**  @author             lpeterson
+**  @date               4/11/18
+*/
+defined( 'ABSPATH' ) || exit;
+
+add_filter( 'ac/suppress_site_wide_notices', '__return_true' );

@@ -1,0 +1,182 @@
+.widget {
+	.primary-widget & {
+		> div {
+			min-height: 350px;
+			background-color: lighten($base-body-color, 70%);
+		}
+
+		.widget-header {
+			padding: 2% 2% 2% 55px;
+			background-color: #ddd;
+
+			@media all and (min-width: $breakpoint-large) { padding: 3% 3% 3% 65px; }
+
+			.widget-title {
+				position: relative;
+				margin: 0;
+				color: $base-body-color;
+				font-family: $font-sans-light;
+				font-size: 2rem;
+
+				@media all and (min-width: 320px) { font-size: 1.5rem; }
+				@media all and (min-width: ($breakpoint-small + 1)) { font-size: 1.75rem; }
+				@media all and (min-width: $breakpoint-large) { font-size: 2.25rem; }
+
+				&:before {
+					content: "";
+					position: absolute;
+					right: calc(100% + 8px);
+					top: -15%;
+					display: block;
+					width: 35px;
+					height: 35px;
+					background-color: transparent;
+					background-position: center center;
+					background-repeat: no-repeat;
+				}
+			}
+		}
+
+		.widget-content {
+			padding: 5% 6% 1%;
+			
+			@media all and (min-width: $breakpoint-small) { padding: 5% 10% 1%; }
+		}
+
+		.widget-footer {
+			padding: 1% 6% 5%;
+
+			@media all and (min-width: $breakpoint-small) { padding: 5% 10% 1%; }
+
+			p {
+				margin: 1rem 0 0;
+				color: rgba(0, 0, 0, 0.5);
+				line-height: 1;
+			}
+		}
+	}
+	
+	li.gfield { margin-top: 0 !important; }
+}
+
+#acf_widget_7162-2 {
+	@media all and (min-width: $breakpoint-large) {
+		margin-top: 35%;
+	}
+}
+
+.jc-tiles {
+	.uk-overlay-panel { padding: $hor-space; }
+	
+	figcaption > p {
+		margin-bottom: .5rem !important;
+		font-family: $font-sans-regular;
+		letter-spacing: .1rem;
+	}
+	
+	figcaption > h4 {
+		margin-left: -$hor-space !important;
+		padding: ($hor-space / 2) $hor-space;
+		font-family: $font-sans-thin;
+	}
+}
+
+.jc-discover-tiles {
+	.uk-slidenav,
+	figcaption > p { display: none; }
+}
+
+.jc-signup-form {
+	background-color: lighten($support-blue, 55%);
+	
+	.gform_heading,
+	.gform_body {
+		margin-bottom: 0;
+		padding: 0;
+		border-bottom: none;
+		overflow: hidden;
+	}
+	
+	.gform_body { padding: 5% 10% 1%; }
+	
+	.gfield_label { display: none; }
+	
+	.gform_title {
+		position: relative;
+		margin-bottom: 0;
+		padding: .75rem 3.5rem .75rem 1rem;
+		background-color: $support-blue;
+		color: #fff;
+		font-family: $font-sans-light;
+		
+		&::before {
+			content: "";
+			display: inline-block;
+			margin: 0 $hor-space -.5rem 0;
+			background: transparent url('../img/email-signup.svg') center center no-repeat;
+			background-size: contain;
+			width: 40px;
+			height: 40px;
+		}
+	}
+	
+	.gform_fields {
+		display: block;
+	}
+	
+	.gfield_html {
+		clear: none;
+		float: left;
+		max-width: 75%;
+		
+		p { color: #999; }
+	}
+	
+	.gform_footer {
+		right: 2rem;
+		top: -120px !important;
+		float: right;
+		
+		input { background: $support-blue;}
+	}
+	
+	input[type="text"],
+	input[type="email"] {
+		font-size: 1.2rem;
+		color: $support-blue;
+	}
+	
+	.gform_confirmation_message {
+		position: relative;
+		top: 50%;
+		margin: -.5rem auto 0 7.5%;
+		width: 80%;
+		text-align: center;
+		font-family: $font-sans-light;
+		font-size: 2rem;
+		line-height: 1.25;
+		
+		&::before {
+			content: "";
+			position: absolute;
+			left: 50%;
+			bottom: 105%;
+			display: block;
+			margin-left: -32px;
+			width: 72px;
+			height: 72px;
+			background: url('../img/check.svg') center center no-repeat;
+			background-size: contain;
+		}
+	}
+}
+
+#page .primary-widget .events-widget-container .widget-header .widget-title::before {
+	background: transparent url('../img/events.svg') center center no-repeat;
+	background-size: contain;
+	width: 40px;
+	height: 40px;
+}
+
+#page .widget > .events { background-color: lighten($orange, 35%); }
+#page .widget > .events { min-height: 335px; }

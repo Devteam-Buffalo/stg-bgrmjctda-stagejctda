@@ -1,0 +1,46 @@
+<?php
+/**
+ * Project Name:    Discover Jackson NC
+ * Project URI:     https://www.discoverjacksonnc.com
+ * Description:     Map capabilities only admins should have to existing admin capabilities
+ * Agency:          Rawle Murdy Associates
+ * Agency URI:      https://www.rawlemurdy.com
+ * Text Domain:     jctda
+ *
+ * @package         jctda
+ * @since           20181005
+ * @author          lpeterson
+ */
+
+/**
+ * Do not allow plugin, theme, or core updates at the user capability level.
+ *
+ * This will globally prevent checks and UI nags throughout the interface for
+ * all users.
+ *
+ * @param  array  $caps
+ * @param  string $cap
+ * @return array
+ */
+add_filter( 'map_meta_cap', function( $caps = [], $cap = '', $user_id, $args ) {
+	switch ( $cap ) {
+		case 'update_plugins':
+		case 'delete_plugins':
+		case 'install_plugins':
+		case 'upload_plugins':
+		case 'update_themes':
+		case 'delete_themes':
+		case 'install_themes':
+		case 'upload_themes':
+		case 'update_core':
+			$caps = ['do_not_allow'];
+	}
+
+	if ( 'edit_css' === $cap )
+		$caps = ['edit_theme_options'];
+
+	if ( 'unfiltered_html' === $cap )
+		$caps = ['manage_options'];
+
+	return $caps;
+}, 10, 4 );

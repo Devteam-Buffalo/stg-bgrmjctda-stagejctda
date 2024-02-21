@@ -1,0 +1,25 @@
+<?php
+/**
+ * Project Name:    Discover Jackson NC
+ * Project URI:     https://www.discoverjacksonnc.com
+ * Description:     Filters the custom logo output
+ * Agency:          Rawle Murdy Associates
+ * Agency URI:      https://www.rawlemurdy.com
+ * Text Domain:     jctda
+ *
+ * @package         jctda
+ * @since           20181109
+ * @author          lpeterson
+ */
+
+add_filter( 'get_custom_logo', function( $html ) {
+	$logo = has_custom_logo() ? wp_get_attachment_image_src( get_theme_mod( 'custom_logo' ), 'full' )[0] : CDN_URL.'/assets/img/logo.svg';
+
+	$html = sprintf(
+		'<img src="%s" alt="%s" rel="home" itemprop="logo">',
+		esc_url($logo),
+		get_bloginfo('name').' Logo'
+	);
+
+	return $html;
+});

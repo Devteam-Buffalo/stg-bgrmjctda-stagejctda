@@ -1,0 +1,22 @@
+<?php
+/**
+ * Project Name:    Discover Jackson NC
+ * Project URI:     https://www.discoverjacksonnc.com
+ * Description:     CR Hero
+ * Agency:          Rawle Murdy Associates
+ * Agency URI:      https://www.rawlemurdy.com
+ * Text Domain:     jctda
+ *
+ * @package         jctda
+ * @since           20190123
+ * @author          lpeterson
+ *
+ * Note: If using conditional tags, use the method versions within the passed instance
+ * (e.g. $this->is_main_query() instead of is_main_query()). This is because the functions
+ * like is_main_query() test against the global $wp_query instance, not the passed one.
+ *
+ * @param WP_Query $this The WP_Query instance (passed by reference).
+ */
+
+// add_action( 'pre_get_posts', function( $query ) {
+// });

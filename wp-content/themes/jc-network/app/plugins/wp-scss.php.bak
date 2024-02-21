@@ -1,0 +1,18 @@
+<?php
+/**
+ * Project Name:    Discover Jackson NC
+ * Project URI:     https://www.discoverjacksonnc.com
+ * Description:     Modifications for WP-SCSS plugin.
+ * Agency:          Rawle Murdy Associates
+ * Agency URI:      https://www.rawlemurdy.com
+ * Text Domain:     jctda
+ *
+ * @package         jctda
+ * @since           3.6.0
+ * @link            https://www.discoverjacksonnc.com
+ * @author          Lee Peterson
+ * @date            7/17/18
+ * @file            wp-scss.php
+ */
+defined('ABSPATH') or exit;
+

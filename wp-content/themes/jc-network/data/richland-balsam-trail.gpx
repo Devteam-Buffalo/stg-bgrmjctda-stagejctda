@@ -1,0 +1,580 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.0" creator="GPSBabel - http://www.gpsbabel.org" xmlns="http://www.topografix.com/GPX/1/0">
+  <time>2018-10-08T16:53:17.562Z</time>
+  <bounds minlat="35.355575010" minlon="-82.991324309" maxlat="35.367524587" maxlon="-82.986935042"/>
+  <wpt lat="35.355575010" lon="-82.987956041">
+    <ele>1807.768800</ele>
+    <time>2017-10-14T21:33:00Z</time>
+    <name>Cowee Mountains Overlook</name>
+    <cmt>Cowee Mountains Overlook</cmt>
+    <desc>Cowee Mountains Overlook</desc>
+    <sym>Scenic Area</sym>
+  </wpt>
+  <wpt lat="35.360008031" lon="-82.986935042">
+    <ele>1831.238400</ele>
+    <time>2017-10-14T21:42:38Z</time>
+    <name>Haywood-Jackson Overlook</name>
+    <cmt>Haywood-Jackson Overlook</cmt>
+    <desc>Haywood-Jackson Overlook</desc>
+    <sym>Parking Area</sym>
+  </wpt>
+  <wpt lat="35.360115739" lon="-82.987114247">
+    <time>2018-10-08T16:47:29Z</time>
+    <name>National Park</name>
+    <cmt>National Park</cmt>
+    <desc>National Park</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="35.360414386" lon="-82.986952309">
+    <time>2018-10-08T16:47:31Z</time>
+    <name>National Park1</name>
+    <cmt>National Park</cmt>
+    <desc>National Park</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="35.364218764" lon="-82.990906807">
+    <time>2018-10-08T16:47:44Z</time>
+    <name>National Park10</name>
+    <cmt>National Park</cmt>
+    <desc>National Park</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="35.364871966" lon="-82.990748556">
+    <time>2018-10-08T16:47:45Z</time>
+    <name>National Park11</name>
+    <cmt>National Park</cmt>
+    <desc>National Park</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="35.365104228" lon="-82.990654176">
+    <time>2018-10-08T16:47:46Z</time>
+    <name>National Park12</name>
+    <cmt>National Park</cmt>
+    <desc>National Park</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="35.365453167" lon="-82.990731709">
+    <time>2018-10-08T16:47:48Z</time>
+    <name>National Park13</name>
+    <cmt>National Park</cmt>
+    <desc>National Park</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="35.365719041" lon="-82.990708910">
+    <time>2018-10-08T16:47:49Z</time>
+    <name>National Park14</name>
+    <cmt>National Park</cmt>
+    <desc>National Park</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="35.365950717" lon="-82.990547391">
+    <time>2018-10-08T16:47:49Z</time>
+    <name>National Park15</name>
+    <cmt>National Park</cmt>
+    <desc>National Park</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="35.366398478" lon="-82.990720896">
+    <time>2018-10-08T16:47:54Z</time>
+    <name>National Park16</name>
+    <cmt>National Park</cmt>
+    <desc>National Park</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="35.366950175" lon="-82.990837321">
+    <time>2018-10-08T16:47:55Z</time>
+    <name>National Park17</name>
+    <cmt>National Park</cmt>
+    <desc>National Park</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="35.367325265" lon="-82.990752496">
+    <time>2018-10-08T16:47:56Z</time>
+    <name>National Park18</name>
+    <cmt>National Park</cmt>
+    <desc>National Park</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="35.367524587" lon="-82.990521742">
+    <time>2018-10-08T16:47:57Z</time>
+    <name>National Park19</name>
+    <cmt>National Park</cmt>
+    <desc>National Park</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="35.361253917" lon="-82.987289764">
+    <time>2018-10-08T16:47:31Z</time>
+    <name>National Park2</name>
+    <cmt>National Park</cmt>
+    <desc>National Park</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="35.367410174" lon="-82.990189902">
+    <time>2018-10-08T16:47:59Z</time>
+    <name>National Park20</name>
+    <cmt>National Park</cmt>
+    <desc>National Park</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="35.366731575" lon="-82.990051014">
+    <time>2018-10-08T16:48:01Z</time>
+    <name>National Park21</name>
+    <cmt>National Park</cmt>
+    <desc>National Park</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="35.366344498" lon="-82.990240194">
+    <time>2018-10-08T16:48:02Z</time>
+    <name>National Park22</name>
+    <cmt>National Park</cmt>
+    <desc>National Park</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="35.365825072" lon="-82.990141371">
+    <time>2018-10-08T16:48:03Z</time>
+    <name>National Park23</name>
+    <cmt>National Park</cmt>
+    <desc>National Park</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="35.365362307" lon="-82.990175402">
+    <time>2018-10-08T16:48:05Z</time>
+    <name>National Park24</name>
+    <cmt>National Park</cmt>
+    <desc>National Park</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="35.364714554" lon="-82.990028718">
+    <time>2018-10-08T16:48:05Z</time>
+    <name>National Park25</name>
+    <cmt>National Park</cmt>
+    <desc>National Park</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="35.364155481" lon="-82.989994604">
+    <time>2018-10-08T16:48:06Z</time>
+    <name>National Park26</name>
+    <cmt>National Park</cmt>
+    <desc>National Park</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="35.363694895" lon="-82.989839790">
+    <time>2018-10-08T16:48:07Z</time>
+    <name>National Park27</name>
+    <cmt>National Park</cmt>
+    <desc>National Park</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="35.363392644" lon="-82.989605181">
+    <time>2018-10-08T16:48:08Z</time>
+    <name>National Park28</name>
+    <cmt>National Park</cmt>
+    <desc>National Park</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="35.363131715" lon="-82.989306198">
+    <time>2018-10-08T16:48:09Z</time>
+    <name>National Park29</name>
+    <cmt>National Park</cmt>
+    <desc>National Park</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="35.361881973" lon="-82.988319397">
+    <time>2018-10-08T16:47:35Z</time>
+    <name>National Park3</name>
+    <cmt>National Park</cmt>
+    <desc>National Park</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="35.362859303" lon="-82.988864891">
+    <time>2018-10-08T16:48:10Z</time>
+    <name>National Park30</name>
+    <cmt>National Park</cmt>
+    <desc>National Park</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="35.362637686" lon="-82.988850223">
+    <time>2018-10-08T16:48:12Z</time>
+    <name>National Park31</name>
+    <cmt>National Park</cmt>
+    <desc>National Park</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="35.362394946" lon="-82.988538751">
+    <time>2018-10-08T16:48:13Z</time>
+    <name>National Park32</name>
+    <cmt>National Park</cmt>
+    <desc>National Park</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="35.362138292" lon="-82.988501620">
+    <time>2018-10-08T16:47:36Z</time>
+    <name>National Park4</name>
+    <cmt>National Park</cmt>
+    <desc>National Park</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="35.362834828" lon="-82.990220664">
+    <time>2018-10-08T16:47:39Z</time>
+    <name>National Park5</name>
+    <cmt>National Park</cmt>
+    <desc>National Park</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="35.362925185" lon="-82.990960702">
+    <time>2018-10-08T16:47:40Z</time>
+    <name>National Park6</name>
+    <cmt>National Park</cmt>
+    <desc>National Park</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="35.363186365" lon="-82.991324309">
+    <time>2018-10-08T16:47:41Z</time>
+    <name>National Park7</name>
+    <cmt>National Park</cmt>
+    <desc>National Park</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="35.363482665" lon="-82.991245687">
+    <time>2018-10-08T16:47:42Z</time>
+    <name>National Park8</name>
+    <cmt>National Park</cmt>
+    <desc>National Park</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="35.363768907" lon="-82.991263121">
+    <time>2018-10-08T16:47:43Z</time>
+    <name>National Park9</name>
+    <cmt>National Park</cmt>
+    <desc>National Park</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="35.367039023" lon="-82.989968034">
+    <ele>1951.024800</ele>
+    <time>2017-10-14T22:05:07Z</time>
+    <name>Richland Balsam</name>
+    <cmt>Richland Balsam</cmt>
+    <desc>Richland Balsam</desc>
+    <sym>Summit</sym>
+  </wpt>
+  <wpt lat="35.361827994" lon="-82.987946989">
+    <ele>1842.516000</ele>
+    <time>2017-10-14T21:46:14Z</time>
+    <name>Richland Balsam Nature Trail loop split</name>
+    <cmt>Richland Balsam Nature Trail loop split</cmt>
+    <desc>Richland Balsam Nature Trail loop split</desc>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="35.362497037" lon="-82.989380965">
+    <ele>1854.708000</ele>
+    <time>2017-10-14T21:48:31Z</time>
+    <name>View from Richland Balsam Nature Trail</name>
+    <cmt>View from Richland Balsam Nature Trail</cmt>
+    <desc>View from Richland Balsam Nature Trail</desc>
+    <sym>Scenic Area</sym>
+  </wpt>
+  <rte>
+    <name>Richland Balsam</name>
+    <rtept lat="35.360008031" lon="-82.986935042">
+      <ele>1831.238400</ele>
+      <time>2017-10-14T21:42:38Z</time>
+      <name>Haywood-Jackson Overlook</name>
+      <cmt>Haywood-Jackson Overlook</cmt>
+      <desc>Haywood-Jackson Overlook</desc>
+      <sym>Parking Area</sym>
+    </rtept>
+    <rtept lat="35.360115739" lon="-82.987114247">
+      <time>2018-10-08T16:47:29Z</time>
+      <name>National Park</name>
+      <cmt>National Park</cmt>
+      <desc>National Park</desc>
+      <sym>Waypoint</sym>
+    </rtept>
+    <rtept lat="35.360414386" lon="-82.986952309">
+      <time>2018-10-08T16:47:31Z</time>
+      <name>National Park1</name>
+      <cmt>National Park</cmt>
+      <desc>National Park</desc>
+      <sym>Waypoint</sym>
+    </rtept>
+    <rtept lat="35.361253917" lon="-82.987289764">
+      <time>2018-10-08T16:47:31Z</time>
+      <name>National Park2</name>
+      <cmt>National Park</cmt>
+      <desc>National Park</desc>
+      <sym>Waypoint</sym>
+    </rtept>
+    <rtept lat="35.361827994" lon="-82.987946989">
+      <ele>1842.516000</ele>
+      <time>2017-10-14T21:46:14Z</time>
+      <name>Richland Balsam Nature Trail loop split</name>
+      <cmt>Richland Balsam Nature Trail loop split</cmt>
+      <desc>Richland Balsam Nature Trail loop split</desc>
+      <sym>Triangle, Red</sym>
+    </rtept>
+    <rtept lat="35.361881973" lon="-82.988319397">
+      <time>2018-10-08T16:47:35Z</time>
+      <name>National Park3</name>
+      <cmt>National Park</cmt>
+      <desc>National Park</desc>
+      <sym>Waypoint</sym>
+    </rtept>
+    <rtept lat="35.362138292" lon="-82.988501620">
+      <time>2018-10-08T16:47:36Z</time>
+      <name>National Park4</name>
+      <cmt>National Park</cmt>
+      <desc>National Park</desc>
+      <sym>Waypoint</sym>
+    </rtept>
+    <rtept lat="35.362497037" lon="-82.989380965">
+      <ele>1854.708000</ele>
+      <time>2017-10-14T21:48:31Z</time>
+      <name>View from Richland Balsam Nature Trail</name>
+      <cmt>View from Richland Balsam Nature Trail</cmt>
+      <desc>View from Richland Balsam Nature Trail</desc>
+      <sym>Scenic Area</sym>
+    </rtept>
+    <rtept lat="35.362834828" lon="-82.990220664">
+      <time>2018-10-08T16:47:39Z</time>
+      <name>National Park5</name>
+      <cmt>National Park</cmt>
+      <desc>National Park</desc>
+      <sym>Waypoint</sym>
+    </rtept>
+    <rtept lat="35.362925185" lon="-82.990960702">
+      <time>2018-10-08T16:47:40Z</time>
+      <name>National Park6</name>
+      <cmt>National Park</cmt>
+      <desc>National Park</desc>
+      <sym>Waypoint</sym>
+    </rtept>
+    <rtept lat="35.363186365" lon="-82.991324309">
+      <time>2018-10-08T16:47:41Z</time>
+      <name>National Park7</name>
+      <cmt>National Park</cmt>
+      <desc>National Park</desc>
+      <sym>Waypoint</sym>
+    </rtept>
+    <rtept lat="35.363482665" lon="-82.991245687">
+      <time>2018-10-08T16:47:42Z</time>
+      <name>National Park8</name>
+      <cmt>National Park</cmt>
+      <desc>National Park</desc>
+      <sym>Waypoint</sym>
+    </rtept>
+    <rtept lat="35.363768907" lon="-82.991263121">
+      <time>2018-10-08T16:47:43Z</time>
+      <name>National Park9</name>
+      <cmt>National Park</cmt>
+      <desc>National Park</desc>
+      <sym>Waypoint</sym>
+    </rtept>
+    <rtept lat="35.364218764" lon="-82.990906807">
+      <time>2018-10-08T16:47:44Z</time>
+      <name>National Park10</name>
+      <cmt>National Park</cmt>
+      <desc>National Park</desc>
+      <sym>Waypoint</sym>
+    </rtept>
+    <rtept lat="35.364871966" lon="-82.990748556">
+      <time>2018-10-08T16:47:45Z</time>
+      <name>National Park11</name>
+      <cmt>National Park</cmt>
+      <desc>National Park</desc>
+      <sym>Waypoint</sym>
+    </rtept>
+    <rtept lat="35.365104228" lon="-82.990654176">
+      <time>2018-10-08T16:47:46Z</time>
+      <name>National Park12</name>
+      <cmt>National Park</cmt>
+      <desc>National Park</desc>
+      <sym>Waypoint</sym>
+    </rtept>
+    <rtept lat="35.365453167" lon="-82.990731709">
+      <time>2018-10-08T16:47:48Z</time>
+      <name>National Park13</name>
+      <cmt>National Park</cmt>
+      <desc>National Park</desc>
+      <sym>Waypoint</sym>
+    </rtept>
+    <rtept lat="35.365719041" lon="-82.990708910">
+      <time>2018-10-08T16:47:49Z</time>
+      <name>National Park14</name>
+      <cmt>National Park</cmt>
+      <desc>National Park</desc>
+      <sym>Waypoint</sym>
+    </rtept>
+    <rtept lat="35.365950717" lon="-82.990547391">
+      <time>2018-10-08T16:47:49Z</time>
+      <name>National Park15</name>
+      <cmt>National Park</cmt>
+      <desc>National Park</desc>
+      <sym>Waypoint</sym>
+    </rtept>
+    <rtept lat="35.366398478" lon="-82.990720896">
+      <time>2018-10-08T16:47:54Z</time>
+      <name>National Park16</name>
+      <cmt>National Park</cmt>
+      <desc>National Park</desc>
+      <sym>Waypoint</sym>
+    </rtept>
+    <rtept lat="35.366950175" lon="-82.990837321">
+      <time>2018-10-08T16:47:55Z</time>
+      <name>National Park17</name>
+      <cmt>National Park</cmt>
+      <desc>National Park</desc>
+      <sym>Waypoint</sym>
+    </rtept>
+    <rtept lat="35.367325265" lon="-82.990752496">
+      <time>2018-10-08T16:47:56Z</time>
+      <name>National Park18</name>
+      <cmt>National Park</cmt>
+      <desc>National Park</desc>
+      <sym>Waypoint</sym>
+    </rtept>
+    <rtept lat="35.367524587" lon="-82.990521742">
+      <time>2018-10-08T16:47:57Z</time>
+      <name>National Park19</name>
+      <cmt>National Park</cmt>
+      <desc>National Park</desc>
+      <sym>Waypoint</sym>
+    </rtept>
+    <rtept lat="35.367410174" lon="-82.990189902">
+      <time>2018-10-08T16:47:59Z</time>
+      <name>National Park20</name>
+      <cmt>National Park</cmt>
+      <desc>National Park</desc>
+      <sym>Waypoint</sym>
+    </rtept>
+    <rtept lat="35.367039023" lon="-82.989968034">
+      <ele>1951.024800</ele>
+      <time>2017-10-14T22:05:07Z</time>
+      <name>Richland Balsam</name>
+      <cmt>Richland Balsam</cmt>
+      <desc>Richland Balsam</desc>
+      <sym>Summit</sym>
+    </rtept>
+    <rtept lat="35.366731575" lon="-82.990051014">
+      <time>2018-10-08T16:48:01Z</time>
+      <name>National Park21</name>
+      <cmt>National Park</cmt>
+      <desc>National Park</desc>
+      <sym>Waypoint</sym>
+    </rtept>
+    <rtept lat="35.366344498" lon="-82.990240194">
+      <time>2018-10-08T16:48:02Z</time>
+      <name>National Park22</name>
+      <cmt>National Park</cmt>
+      <desc>National Park</desc>
+      <sym>Waypoint</sym>
+    </rtept>
+    <rtept lat="35.365825072" lon="-82.990141371">
+      <time>2018-10-08T16:48:03Z</time>
+      <name>National Park23</name>
+      <cmt>National Park</cmt>
+      <desc>National Park</desc>
+      <sym>Waypoint</sym>
+    </rtept>
+    <rtept lat="35.365362307" lon="-82.990175402">
+      <time>2018-10-08T16:48:05Z</time>
+      <name>National Park24</name>
+      <cmt>National Park</cmt>
+      <desc>National Park</desc>
+      <sym>Waypoint</sym>
+    </rtept>
+    <rtept lat="35.364714554" lon="-82.990028718">
+      <time>2018-10-08T16:48:05Z</time>
+      <name>National Park25</name>
+      <cmt>National Park</cmt>
+      <desc>National Park</desc>
+      <sym>Waypoint</sym>
+    </rtept>
+    <rtept lat="35.364155481" lon="-82.989994604">
+      <time>2018-10-08T16:48:06Z</time>
+      <name>National Park26</name>
+      <cmt>National Park</cmt>
+      <desc>National Park</desc>
+      <sym>Waypoint</sym>
+    </rtept>
+    <rtept lat="35.363694895" lon="-82.989839790">
+      <time>2018-10-08T16:48:07Z</time>
+      <name>National Park27</name>
+      <cmt>National Park</cmt>
+      <desc>National Park</desc>
+      <sym>Waypoint</sym>
+    </rtept>
+    <rtept lat="35.363392644" lon="-82.989605181">
+      <time>2018-10-08T16:48:08Z</time>
+      <name>National Park28</name>
+      <cmt>National Park</cmt>
+      <desc>National Park</desc>
+      <sym>Waypoint</sym>
+    </rtept>
+    <rtept lat="35.363131715" lon="-82.989306198">
+      <time>2018-10-08T16:48:09Z</time>
+      <name>National Park29</name>
+      <cmt>National Park</cmt>
+      <desc>National Park</desc>
+      <sym>Waypoint</sym>
+    </rtept>
+    <rtept lat="35.362859303" lon="-82.988864891">
+      <time>2018-10-08T16:48:10Z</time>
+      <name>National Park30</name>
+      <cmt>National Park</cmt>
+      <desc>National Park</desc>
+      <sym>Waypoint</sym>
+    </rtept>
+    <rtept lat="35.362637686" lon="-82.988850223">
+      <time>2018-10-08T16:48:12Z</time>
+      <name>National Park31</name>
+      <cmt>National Park</cmt>
+      <desc>National Park</desc>
+      <sym>Waypoint</sym>
+    </rtept>
+    <rtept lat="35.362394946" lon="-82.988538751">
+      <time>2018-10-08T16:48:13Z</time>
+      <name>National Park32</name>
+      <cmt>National Park</cmt>
+      <desc>National Park</desc>
+      <sym>Waypoint</sym>
+    </rtept>
+    <rtept lat="35.361827994" lon="-82.987946989">
+      <ele>1842.516000</ele>
+      <time>2017-10-14T21:46:14Z</time>
+      <name>Richland Balsam Nature Trail loop split</name>
+      <cmt>Richland Balsam Nature Trail loop split</cmt>
+      <desc>Richland Balsam Nature Trail loop split</desc>
+      <sym>Triangle, Red</sym>
+    </rtept>
+    <rtept lat="35.361253917" lon="-82.987289764">
+      <time>2018-10-08T16:47:31Z</time>
+      <name>National Park2</name>
+      <cmt>National Park</cmt>
+      <desc>National Park</desc>
+      <sym>Waypoint</sym>
+    </rtept>
+    <rtept lat="35.360414386" lon="-82.986952309">
+      <time>2018-10-08T16:47:31Z</time>
+      <name>National Park1</name>
+      <cmt>National Park</cmt>
+      <desc>National Park</desc>
+      <sym>Waypoint</sym>
+    </rtept>
+    <rtept lat="35.360115739" lon="-82.987114247">
+      <time>2018-10-08T16:47:29Z</time>
+      <name>National Park</name>
+      <cmt>National Park</cmt>
+      <desc>National Park</desc>
+      <sym>Waypoint</sym>
+    </rtept>
+    <rtept lat="35.360008031" lon="-82.986935042">
+      <ele>1831.238400</ele>
+      <time>2017-10-14T21:42:38Z</time>
+      <name>Haywood-Jackson Overlook</name>
+      <cmt>Haywood-Jackson Overlook</cmt>
+      <desc>Haywood-Jackson Overlook</desc>
+      <sym>Parking Area</sym>
+    </rtept>
+  </rte>
+</gpx>

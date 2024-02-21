@@ -1,0 +1,152 @@
+.location-content {
+	.locations-map-container {
+		height: 300px;
+		max-height: 300px;
+	
+		@media all and (min-width: ($breakpoint-medium + 1)) {
+			position: relative;
+			top: -80px;
+			margin-bottom: -80px;
+			height: 600px;
+			max-height: 800px;
+		}
+	
+		.locations-map {
+			position: relative;
+			width: 100%;
+			height: 100%;
+			border: 1px solid $light-grey;
+			background-color: #fff;
+			box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+			
+			#locations-map-frame {
+				position: absolute;
+				z-index: 3;
+				border: 0;
+				width: 100%;
+				height: 100%;
+			}
+		}
+		
+		.locations-list-overlay-container {
+			position: absolute;
+			z-index: 4;
+			top: 50%;
+			left: -5%;
+			margin-top: -250px;
+			width: 40%;
+			height: 500px;
+			
+			@media all and (max-width: $breakpoint-medium) {
+				display: none;
+			}
+		}
+	}
+
+	.location-image {
+		max-width: 150px;
+		max-height: 150px;
+	}
+	
+	.location-name {
+		margin: 0 0 .5rem 0;
+		font-family: $font-serif;
+		font-weight: 400;
+		font-size: 1.2rem;
+		line-height: 1;
+		
+		span {
+			font-family: $font-sans-regular;
+			font-size: 1rem;
+		}
+	}
+	
+	.location-excerpt {
+		margin: 0;
+		font-size: 1rem;
+		line-height: 1.2;
+		color: $base-body-color;
+		
+		em { color: $medium-grey; }
+	}
+	
+	.location-meta {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		margin: 0;
+		padding: 5px 0 5px 5px;
+		background-color: #fff;
+		
+		li {
+			margin-top: 0;
+			padding: 0 5px 0 0;
+			font-size: .8rem;
+			line-height: 1;
+			
+			&:nth-child(n+2):before { margin-right: 5px !important; }
+		}
+	}
+
+	.locations-list-overlay {
+		padding: 20px;
+		width: calc(100% - 40px);
+		height: calc(100% - 40px);
+		background-color: #fff;
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+	}
+	
+	.locations-list {
+		width: 100%;
+		height: 100%;
+		overflow: auto;
+		overflow-x: hidden;
+		overflow-y: scroll;
+		-ms-overflow-style: none;
+		-webkit-overflow-scrolling: auto;
+	}
+	
+	.location-container { padding: 5px 0 }
+}
+
+.jctda-board-member-profile {
+	img {
+		display: block;
+		padding: 3px;
+		border: 1px solid #ddd;
+	}
+	
+	footer {
+		h4,
+		h5,
+		h6 {
+			margin: 10px 0;
+			padding: 0;
+			line-height: 1;
+		}
+
+		h4 {
+			font-size: 1.5rem;
+		}
+	
+		h5 {
+			font-size: 1.25rem;
+			color: #777;
+		}
+	
+		h6 {
+			font-size: 1rem;
+			font-style: italic;
+			color: #999;
+		}
+	}
+}
+
+.jctda-file-attachment {
+	h2 {
+		margin: 15px 0 20px;
+		padding: 15px 0;
+		border-bottom: 1px solid #ddd;
+		font-size: 1.5rem;
+	}
+}

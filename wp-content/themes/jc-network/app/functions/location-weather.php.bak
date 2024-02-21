@@ -1,0 +1,76 @@
+<?php
+/*
+**  @file               get-weather.php
+**  @description        Description.
+**  @package            jctda
+**  @since              2.1.0
+**  @author             lpeterson
+**  @date               5/3/18
+*/
+defined( 'ABSPATH' ) || exit;
+
+if ( ! function_exists( 'jc_location_weather' ) ) :
+
+	function jc_location_weather( $args = null ) {
+
+		$args = wp_parse_args( $args, [
+			'ID'        => isset( $args['ID'] ) ? absint( $args['ID'] ) : get_the_id(),
+			'latitude'  => '',
+			'longitude' => '',
+			'timeout'   => 5,
+			'datatype'  => 'application/json',
+			'exclude'   => 'minutely,hourly,daily,alerts,flags',
+			'units'     => 'us',
+			'echo'      => true,
+		] );
+		$args = apply_filters( 'jc_location_weather', $args );
+		
+		$post_id = $args['ID'];
+
+		$api = esc_url( WEATHER, 'https', 'api' );
+		$opt = $args['exclude'].'&'.$args['units'];
+		$key = wp_hash( $api.$opt.$post_id );
+		$weather = wp_cache_get( $key, 'location_data' );
+
+		if ( false === $weather ) {
+			if ( isset( $args['latitude'], $args['longitude'] ) ) {
+				$lat = floatval( $args['latitude'] );
+				$lon = floatval( $args['longitude'] );
+			}
+			elseif ( metadata_exists( 'post', $post_id, 'latitude' ) && metadata_exists( 'post', $post_id, 'longitude' ) ) {
+				$lat = floatval( get_metadata( 'post', $post_id, 'latitude', true ) );
+				$lon = floatval( get_metadata( 'post', $post_id, 'longitude', true ) );
+			}
+			else {
+				$gps = jc_location_gps( [ 'ID' => $post_id ] );
+				
+				$lat = floatval( $gps['lat'] );
+				$lon = floatval( $gps['lon'] );
+			}
+			$url = "{$api}/{$lat},{$lon}?{$opt}";
+			
+			$weather = Requests::get( $url, [ 'Accept' => $args['datatype'], 'timeout' => $args['timeout'] ] );
+			
+			if ( !$weather->success ) 
+				throw new Requests_Exception( $weather->getMessage(), $weather->getType(), $weather->getData(), $weather->getCode() );
+
+			$weather = json_decode( $weather->body, true );
+			
+			wp_cache_set( $key, $weather, 'location_data', HOUR_IN_SECONDS );
+
+		}
+		
+		if ( $args['echo'] ) 
+			echo html( 'div', [ 'class' => 'uk-flex uk-flex-column uk-flex-top uk-flex-wrap-top uk-text-center uk-padding text-grey weather' ], 
+				html( 'div', [ 'class' => 'uk-text-uppercase uk-text-small sans-bold summary' ], $weather['currently']['summary'] ), 
+				html( 'div', [ 'class' => 'uk-flex currently' ], 
+					html( 'div', [ 'class' => 'uk-icon-weather uk-icon-weather-'.$weather['currently']['icon'].' icon text-blue' ] ), 
+					html( 'div', [ 'class' => 'uk-text-large sans-light temperature' ], round($weather['currently']['temperature']).'&deg;' ) 
+				) 
+			);
+		else 
+			return $weather;
+
+	}
+
+endif;

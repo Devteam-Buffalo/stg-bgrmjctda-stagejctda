@@ -1,0 +1,42 @@
+@charset "UTF-8";
+/*
+**  @file    _getting-here.scss
+**  
+**  @desc    
+**  
+**  @path    /_getting-here.scss
+**  @package jctda
+**  @author  Lee Peterson
+**  @date    11/10/17
+*/
+
+.getting-here-links {
+	margin-bottom: 5%;
+	
+	h4 { margin: 5rem 0 2rem; }
+
+	a {
+		color: $base-body-color;
+		
+		&:hover { text-decoration: none; }
+		
+		i {
+			display: inline-block;
+			margin-bottom: 10px;
+			color: $support-blue;
+			font-size: 3rem;
+		}
+		
+		span {
+			> * { display: block; }
+			
+			> span {
+				@media all and (min-width: 320px) { font-size: 1.25rem; }
+				@media all and (min-width: $breakpoint-medium) { font-size: 1.5rem; }
+				@media all and (min-width: $breakpoint-large) { font-size: 1.75rem; }
+			}
+		}
+		
+		small { color: #999; }
+	}
+}

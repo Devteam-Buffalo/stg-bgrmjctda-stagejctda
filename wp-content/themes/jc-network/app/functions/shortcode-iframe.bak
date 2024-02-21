@@ -1,0 +1,41 @@
+<?php
+/**
+ * Project Name:    Discover Jackson NC
+ * Project URI:     https://www.discoverjacksonnc.com
+ * Description:     Shortcode for embedding a responsive iframe
+ * Agency:          Rawle Murdy Associates
+ * Agency URI:      https://www.rawlemurdy.com
+ * Text Domain:     jctda
+ *
+ * @package         jctda
+ * @since           20180930
+ * @author          lpeterson
+ */
+
+add_shortcode( 'iframe', function( $a ) {
+	$a = shortcode_atts([
+		'src'         => '',
+		'width'       => '640',
+		'height'      => '480',
+		'frameborder' => '0',
+	], $a );
+
+	if ( empty( $a['src'] ) )
+		return '<p style="margin:0;color:red"><strong>Error</strong>: Please provide a URL for the iframe!<br>'.
+			'For example: <kbd>src="https://youtu.be/M7lc1UVf"</kbd></p>';
+
+	$src = esc_url_raw( $a['src'], [ 'https' ] );
+
+	$iframe = '<div class="uk-cover iframe">'.
+		'<iframe '.
+			'src="'.$a['src'].'" '.
+			'width="'.$a['width'].'" '.
+			'height="'.$a['height'].'" '.
+			'frameborder="'.$a['frameborder'].'" '.
+			'allowfullscreen '.
+			'data-uk-cover>'.
+		'</iframe>'.
+	'</div>';
+
+	return $iframe;
+});

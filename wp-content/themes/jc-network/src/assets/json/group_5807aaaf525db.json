@@ -1,0 +1,238 @@
+{
+    "key": "group_5807aaaf525db",
+    "title": "Global Page Heading, Subheading, Intro, Content &amp; Excerpt",
+    "fields": [
+        {
+            "key": "field_5807abf946601",
+            "label": "Page Heading",
+            "name": "page_heading",
+            "type": "text",
+            "instructions": "This heading is displayed in the center and at the top of parent pages as an H2, and it is displayed on the left and at the top of child pages as an H1.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5807c56c46602",
+            "label": "Page Subheading",
+            "name": "page_subheading",
+            "type": "text",
+            "instructions": "This subheading is displayed in the center and at the top of parent pages as an H3, and it is displayed on the left and at the top of child pages as an H2.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "show_column": 0,
+            "show_column_weight": 0,
+            "allow_quickedit": 1,
+            "allow_bulkedit": 1
+        },
+        {
+            "key": "field_5807c57446603",
+            "label": "Page Intro",
+            "name": "page_intro",
+            "type": "text",
+            "instructions": "This intro is displayed in the center and at the top of parent pages, and it is displayed on the left and at the top of child pages as a paragraph.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "show_column": 0,
+            "show_column_weight": 0,
+            "allow_quickedit": 1,
+            "allow_bulkedit": 1
+        },
+        {
+            "key": "field_594f569cc2767",
+            "label": "Page Content (use for page content; move old page content here)",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": "acf-page-content"
+            },
+            "message": "",
+            "new_lines": "",
+            "esc_html": 0
+        },
+        {
+            "key": "field_594f56b9c2768",
+            "label": "Page Excerpt (use for page excerpt; move old page excerpt here)",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": "acf-page-excerpt"
+            },
+            "message": "",
+            "new_lines": "",
+            "esc_html": 0
+        },
+        {
+            "key": "field_5807ce7ba0319",
+            "label": "Page Content (DO NOT USE; move to new page content above)",
+            "name": "page_content",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
+            "key": "field_5807cecda031a",
+            "label": "Page Excerpt (DO NOT USE; move to new page content above)",
+            "name": "page_excerpt",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": "wpautop"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "galleries"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "b2b_news"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "press_release"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "mentions"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "town"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "outdoor"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "attraction"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "wedding"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "tda_docs"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "tribe_events"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1512508838
+}

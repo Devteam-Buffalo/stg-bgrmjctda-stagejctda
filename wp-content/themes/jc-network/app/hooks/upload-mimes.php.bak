@@ -1,0 +1,34 @@
+<?php
+/**
+ * Project Name:    Discover Jackson NC
+ * Project URI:     https://www.discoverjacksonnc.com
+ * Description:     Define allowable upload file types via upload_mimes
+ * Agency:          Rawle Murdy Associates
+ * Agency URI:      https://www.rawlemurdy.com
+ * Text Domain:     jctda
+ *
+ * @package         jctda
+ * @since           20181003
+ * @author          lpeterson
+ */
+
+add_filter( 'upload_mimes', function( $mimes ) {
+	$allowed = [
+		'png'  => 'image/png',
+		'jpg'  => 'image/jpeg',
+		'jpeg' => 'image/jpeg',
+		'gif'  => 'image/gif',
+		'webp' => 'image/webp',
+		'svg'  => 'image/svg+xml',
+		'webm' => 'audio/webm',
+		'webm' => 'video/webm',
+		'doc'  => 'application/msword',
+		'ppt'  => 'application/vnd.mspowerpoint',
+		'xls'  => 'application/msexcel',
+		'xml'  => 'application/xml',
+		'json' => 'javascript/json',
+	];
+	$mimes = array_merge_recursive( $mimes, $allowed );
+
+	return $mimes;
+});

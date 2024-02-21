@@ -1,0 +1,21 @@
+<?php
+/**
+ * Project Name:    Discover Jackson NC
+ * Project URI:     https://www.discoverjacksonnc.com
+ * Description:     Remove the 28px Push Down from the Admin Bar by disabling the output from the wp_head() function.
+ * Agency:          Rawle Murdy Associates
+ * Agency URI:      https://www.rawlemurdy.com
+ * Text Domain:     jctda
+ *
+ * @package         jctda
+ * @since           3.1.0
+ * @link            https://www.discoverjacksonnc.com
+ * @author          lpeterson
+ * @date            6/13/18
+ * @file            get-header.php
+ */
+defined('ABSPATH') or exit;
+
+add_action('get_header', function() {
+	remove_action('wp_head', '_admin_bar_bump_cb');
+});

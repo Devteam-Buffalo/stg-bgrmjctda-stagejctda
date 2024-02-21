@@ -1,0 +1,76 @@
+.widget_nav_menu {
+	padding-left: 0;
+	list-style: none;
+
+	li:not(:last-of-type) {
+		display: block;
+		border-bottom: 1px solid $light-grey;
+	}
+
+	a {
+		display: block;
+		padding: 1rem 0;
+		font-size: 1.2rem;
+		line-height: 1;
+
+		&:hover { text-decoration: none; }
+	}
+
+	ul {
+		padding-left: 15px;
+		list-style: none;
+
+		li {
+			position: relative;
+
+			&:before {
+				content: "\f054";
+				position: absolute;
+				top: 15px;
+				right: calc(100% + 10px);
+				color: $support-blue;
+				font-family: FontAwesome;
+				font-size: .8rem;
+				line-height: 1;
+			}
+		}
+
+		a { font-size: 1.1rem; }
+	}
+}
+
+.related-content-sidebar {
+	display: block;
+	margin-bottom: .25rem;
+	padding: 1rem;
+	border: 1px solid #ddd;
+	background-color: #f0f0f0;
+	font-size: 1.3rem;
+	line-height: 1;
+	color: $base-body-color;
+	
+	&:focus,
+	&:hover {
+		text-decoration: none;
+		color: #000;
+	}
+}
+
+#secondary {
+	margin-top: 10%;
+	
+	section:not(:first-of-type) {
+		margin-top: 2rem;
+		padding-top: 2rem;
+	}
+
+	h4.widget-title {
+		margin: 0 0 2rem;
+		border-bottom: 1px solid $light-grey;
+		font-family: "Proxima N W01 Reg";
+		font-size: 1.3rem;
+		line-height: 2;
+		text-transform: uppercase;
+		color: $primary-green;
+	}
+}

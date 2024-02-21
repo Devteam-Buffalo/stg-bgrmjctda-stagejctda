@@ -1,0 +1,103 @@
+<?php
+/*
+**  @file               model-gps.php
+**  @description        Description.
+**  @package            jctda
+**  @since              2.1.0
+**  @author             lpeterson
+**  @date               4/18/18
+*/
+defined( 'ABSPATH' ) || exit;
+
+if ( ! function_exists( 'jc_location_gps' ) ) :
+
+	function jc_location_gps( $args = null ) {
+		
+		$args = wp_parse_args( $args, [
+			'ID'       => isset( $args['ID'] ) ? absint( $args['ID'] ) : get_the_id(),
+			'address'  => '',
+			'street'   => '',
+			'city'     => '',
+			'state'    => '',
+			'zip'      => '',
+			'country'  => '',
+			'timeout'  => 5,
+			'datatype' => 'application/json',
+			'echo'     => false,
+			'truncate' => true,
+		] );
+		$args = apply_filters( 'jc_location_gps', $args );
+		
+		$post_id = $args['ID'];
+		
+		$api = esc_url( GEOCODE, 'https', 'api' );
+		$key = wp_hash( $api.$post_id );
+		$gps = wp_cache_get( $key, 'location_data' );
+		
+		if ( false === $gps ) {
+
+			if ( metadata_exists( 'post', $post_id, 'latitude' ) && metadata_exists( 'post', $post_id, 'longitude' ) ) {
+				$gps = [
+					'lat' => get_metadata( 'post', $post_id, 'latitude', true ),
+					'lon' => get_metadata( 'post', $post_id, 'longitude', true )
+				];
+			}
+			else { 
+				switch ( true ) {
+					case isset( $args['address'], $args['street'], $args['city'], $args['state'], $args['zip'] ):
+						$addr = implode(' ', [ $args['address'], $args['street'], $args['city'], $args['state'], $args['zip'] ] );
+						break;
+					case isset( $args['address'] ) && !empty( $args['address'] ):
+						$addr = $args['address'];
+						break;
+					case metadata_exists( 'post', $post_id, 'full_address' ):
+						$addr = get_metadata( 'post', $post_id, 'full_address', true );
+						break;
+					case ( metadata_exists( 'post', $post_id, 'physical_address_1' ) && metadata_exists( 'post', $post_id, 'physical_zip_code' ) ):
+						$addr = implode(' ', [ get_metadata( 'post', $post_id, 'physical_address_1', true ), get_metadata( 'post', $post_id, 'physical_zip_code', true ) ] );
+						break;
+					default:
+						$addr = false;
+						break;
+				}
+				
+				if ( false !== $addr ) {
+					$addr = urlencode( $addr );
+					$url = "{$api}/{$addr}/";
+	
+					$address = Requests::get( $url, [ 'Accept' => $args['datatype'], 'timeout' => $args['timeout'] ] );
+					
+					if ( !$address->success ) 
+						throw new Requests_Exception( $address->getMessage(), $address->getType(), $address->getData(), $address->getCode() );
+		
+					$address = json_decode( $address->body, true );
+	
+					$gps = [
+						'lat' => $address['results'][0]['geometry']['location']['lat'],
+						'lon' => $address['results'][0]['geometry']['location']['lng'],
+					];
+				}
+				else {
+					return false;
+				}
+			}
+
+			wp_cache_set( $key, $gps, 'location_data', MONTH_IN_SECONDS );
+		}
+		
+		$location = [
+			'lat' => $args['truncate'] ? substr( $gps['lat'], 0, 5 ) : $gps['lat'],
+			'lon' => $args['truncate'] ? substr( $gps['lon'], 0, 6 ) : $gps['lon'],
+		];
+		
+		if ( $args['echo'] ) 
+			echo html( 'div', [ 'class' => 'uk-flex text-grey gps' ], 
+				html( 'div', [ 'class' => 'uk-padding-right-small sans-regular latitude' ], 'Lat: '.$location['lat'].'&deg;N' ), 
+				html( 'div', [ 'class' => 'uk-padding-left-small sans-regular longitude' ], 'Lng: '.$location['lon'].'&deg;W' )
+			);
+		else 
+			return $location;
+
+	}
+
+endif;

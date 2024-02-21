@@ -1,0 +1,8 @@
+.rma-client #toplevel_page_wpseo_dashboard > ul > li:last-of-type,
+.rma-client .yoast-sidebar__spot,
+.rma-client .yoast-sidebar__title,
+.rma-client .notice-error,
+.rma-client .notice-warning,
+.rma-client .notice-info,
+.rma-client .update-nag,
+#emr-news { all: unset; display:none!important }

@@ -1,0 +1,317 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.0" creator="GPSBabel - http://www.gpsbabel.org" xmlns="http://www.topografix.com/GPX/1/0">
+  <time>2018-02-12T18:39:29.018Z</time>
+  <bounds minlat="35.459850412" minlon="-83.140830304" maxlat="35.464593479" maxlon="-83.137444016"/>
+  <wpt lat="35.464494657" lon="-83.137480393">
+    <time>2018-02-12T18:36:44Z</time>
+    <name>001</name>
+    <cmt>001</cmt>
+    <desc>001</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="35.463732323" lon="-83.139620544">
+    <ele>1840.077600</ele>
+    <time>2018-02-12T18:36:40Z</time>
+    <name>6037 ft height</name>
+    <cmt>6037 ft height</cmt>
+    <desc>6037 ft height</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="35.460145790" lon="-83.140467703">
+    <time>2018-02-12T18:36:33Z</time>
+    <name>National Park</name>
+    <cmt>National Park</cmt>
+    <desc>National Park</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="35.460960343" lon="-83.140830304">
+    <time>2018-02-12T18:36:34Z</time>
+    <name>National Park1</name>
+    <cmt>National Park</cmt>
+    <desc>National Park</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="35.461490918" lon="-83.140360834">
+    <time>2018-02-12T18:36:36Z</time>
+    <name>National Park2</name>
+    <cmt>National Park</cmt>
+    <desc>National Park</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="35.462122327" lon="-83.139871331">
+    <time>2018-02-12T18:36:38Z</time>
+    <name>National Park3</name>
+    <cmt>National Park</cmt>
+    <desc>National Park</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="35.462289294" lon="-83.139935704">
+    <time>2018-02-12T18:36:39Z</time>
+    <name>National Park4</name>
+    <cmt>National Park</cmt>
+    <desc>National Park</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="35.464507481" lon="-83.138926271">
+    <time>2018-02-12T18:36:42Z</time>
+    <name>National Park5</name>
+    <cmt>National Park</cmt>
+    <desc>National Park</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="35.464593479" lon="-83.137782896">
+    <time>2018-02-12T18:36:43Z</time>
+    <name>National Park6</name>
+    <cmt>National Park</cmt>
+    <desc>National Park</desc>
+    <sym>Waypoint</sym>
+  </wpt>
+  <wpt lat="35.464256024" lon="-83.137444016">
+    <ele>1905.609600</ele>
+    <time>2017-05-20T15:01:10Z</time>
+    <name>Plott Balsam crest trail</name>
+    <cmt>Plott Balsam crest trail</cmt>
+    <desc>Plott Balsam crest trail</desc>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="35.463933991" lon="-83.137933016">
+    <ele>1907.133600</ele>
+    <time>2017-05-20T15:02:18Z</time>
+    <name>Waterrock Knob</name>
+    <cmt>Waterrock Knob</cmt>
+    <desc>Waterrock Knob</desc>
+    <sym>Scenic Area</sym>
+  </wpt>
+  <wpt lat="35.459850412" lon="-83.140762243">
+    <time>2017-05-21T19:16:28Z</time>
+    <name>Waterrock Knob Overlook</name>
+    <cmt>Waterrock Knob Overlook</cmt>
+    <desc>Waterrock Knob Overlook</desc>
+    <sym>Scenic Area</sym>
+  </wpt>
+  <wpt lat="35.460516019" lon="-83.140482958">
+    <ele>1780.641600</ele>
+    <time>2017-05-20T14:48:25Z</time>
+    <name>Waterrock Knob Trail T-junction MST east</name>
+    <cmt>Waterrock Knob Trail T-junction MST east</cmt>
+    <desc>Waterrock Knob Trail T-junction MST east</desc>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="35.462133978" lon="-83.140315991">
+    <ele>1807.464000</ele>
+    <time>2017-05-20T14:52:06Z</time>
+    <name>Waterrock Knob Trail Y-junction MST west</name>
+    <cmt>Waterrock Knob Trail Y-junction MST west</cmt>
+    <desc>Waterrock Knob Trail Y-junction MST west</desc>
+    <sym>Triangle, Red</sym>
+  </wpt>
+  <wpt lat="35.459850412" lon="-83.140762243">
+    <time>2017-05-21T19:16:28Z</time>
+    <name>Waterrock Knob Visitor Center</name>
+    <cmt>Waterrock Knob Visitor Center</cmt>
+    <desc>Waterrock Knob Visitor Center</desc>
+    <sym>Parking Area</sym>
+  </wpt>
+  <rte>
+    <name>Waterrock Knob</name>
+    <rtept lat="35.459850412" lon="-83.140762243">
+      <time>2017-05-21T19:16:28Z</time>
+      <name>Waterrock Knob Overlook</name>
+      <cmt>Waterrock Knob Overlook</cmt>
+      <desc>Waterrock Knob Overlook</desc>
+      <sym>Scenic Area</sym>
+    </rtept>
+    <rtept lat="35.460145790" lon="-83.140467703">
+      <time>2018-02-12T18:36:33Z</time>
+      <name>National Park</name>
+      <cmt>National Park</cmt>
+      <desc>National Park</desc>
+      <sym>Waypoint</sym>
+    </rtept>
+    <rtept lat="35.460516019" lon="-83.140482958">
+      <ele>1780.641600</ele>
+      <time>2017-05-20T14:48:25Z</time>
+      <name>Waterrock Knob Trail T-junction MST east</name>
+      <cmt>Waterrock Knob Trail T-junction MST east</cmt>
+      <desc>Waterrock Knob Trail T-junction MST east</desc>
+      <sym>Triangle, Red</sym>
+    </rtept>
+    <rtept lat="35.460960343" lon="-83.140830304">
+      <time>2018-02-12T18:36:34Z</time>
+      <name>National Park1</name>
+      <cmt>National Park</cmt>
+      <desc>National Park</desc>
+      <sym>Waypoint</sym>
+    </rtept>
+    <rtept lat="35.461490918" lon="-83.140360834">
+      <time>2018-02-12T18:36:36Z</time>
+      <name>National Park2</name>
+      <cmt>National Park</cmt>
+      <desc>National Park</desc>
+      <sym>Waypoint</sym>
+    </rtept>
+    <rtept lat="35.462133978" lon="-83.140315991">
+      <ele>1807.464000</ele>
+      <time>2017-05-20T14:52:06Z</time>
+      <name>Waterrock Knob Trail Y-junction MST west</name>
+      <cmt>Waterrock Knob Trail Y-junction MST west</cmt>
+      <desc>Waterrock Knob Trail Y-junction MST west</desc>
+      <sym>Triangle, Red</sym>
+    </rtept>
+    <rtept lat="35.462122327" lon="-83.139871331">
+      <time>2018-02-12T18:36:38Z</time>
+      <name>National Park3</name>
+      <cmt>National Park</cmt>
+      <desc>National Park</desc>
+      <sym>Waypoint</sym>
+    </rtept>
+    <rtept lat="35.462289294" lon="-83.139935704">
+      <time>2018-02-12T18:36:39Z</time>
+      <name>National Park4</name>
+      <cmt>National Park</cmt>
+      <desc>National Park</desc>
+      <sym>Waypoint</sym>
+    </rtept>
+    <rtept lat="35.463732323" lon="-83.139620544">
+      <ele>1840.077600</ele>
+      <time>2018-02-12T18:36:40Z</time>
+      <name>6037 ft height</name>
+      <cmt>6037 ft height</cmt>
+      <desc>6037 ft height</desc>
+      <sym>Waypoint</sym>
+    </rtept>
+    <rtept lat="35.464507481" lon="-83.138926271">
+      <time>2018-02-12T18:36:42Z</time>
+      <name>National Park5</name>
+      <cmt>National Park</cmt>
+      <desc>National Park</desc>
+      <sym>Waypoint</sym>
+    </rtept>
+    <rtept lat="35.464593479" lon="-83.137782896">
+      <time>2018-02-12T18:36:43Z</time>
+      <name>National Park6</name>
+      <cmt>National Park</cmt>
+      <desc>National Park</desc>
+      <sym>Waypoint</sym>
+    </rtept>
+    <rtept lat="35.464494657" lon="-83.137480393">
+      <time>2018-02-12T18:36:44Z</time>
+      <name>001</name>
+      <cmt>001</cmt>
+      <desc>001</desc>
+      <sym>Waypoint</sym>
+    </rtept>
+    <rtept lat="35.464256024" lon="-83.137444016">
+      <ele>1905.609600</ele>
+      <time>2017-05-20T15:01:10Z</time>
+      <name>Plott Balsam crest trail</name>
+      <cmt>Plott Balsam crest trail</cmt>
+      <desc>Plott Balsam crest trail</desc>
+      <sym>Triangle, Red</sym>
+    </rtept>
+    <rtept lat="35.463933991" lon="-83.137933016">
+      <ele>1907.133600</ele>
+      <time>2017-05-20T15:02:18Z</time>
+      <name>Waterrock Knob</name>
+      <cmt>Waterrock Knob</cmt>
+      <desc>Waterrock Knob</desc>
+      <sym>Scenic Area</sym>
+    </rtept>
+    <rtept lat="35.464256024" lon="-83.137444016">
+      <ele>1905.609600</ele>
+      <time>2017-05-20T15:01:10Z</time>
+      <name>Plott Balsam crest trail</name>
+      <cmt>Plott Balsam crest trail</cmt>
+      <desc>Plott Balsam crest trail</desc>
+      <sym>Triangle, Red</sym>
+    </rtept>
+    <rtept lat="35.464494657" lon="-83.137480393">
+      <time>2018-02-12T18:36:44Z</time>
+      <name>001</name>
+      <cmt>001</cmt>
+      <desc>001</desc>
+      <sym>Waypoint</sym>
+    </rtept>
+    <rtept lat="35.464593479" lon="-83.137782896">
+      <time>2018-02-12T18:36:43Z</time>
+      <name>National Park6</name>
+      <cmt>National Park</cmt>
+      <desc>National Park</desc>
+      <sym>Waypoint</sym>
+    </rtept>
+    <rtept lat="35.464507481" lon="-83.138926271">
+      <time>2018-02-12T18:36:42Z</time>
+      <name>National Park5</name>
+      <cmt>National Park</cmt>
+      <desc>National Park</desc>
+      <sym>Waypoint</sym>
+    </rtept>
+    <rtept lat="35.463732323" lon="-83.139620544">
+      <ele>1840.077600</ele>
+      <time>2018-02-12T18:36:40Z</time>
+      <name>6037 ft height</name>
+      <cmt>6037 ft height</cmt>
+      <desc>6037 ft height</desc>
+      <sym>Waypoint</sym>
+    </rtept>
+    <rtept lat="35.462289294" lon="-83.139935704">
+      <time>2018-02-12T18:36:39Z</time>
+      <name>National Park4</name>
+      <cmt>National Park</cmt>
+      <desc>National Park</desc>
+      <sym>Waypoint</sym>
+    </rtept>
+    <rtept lat="35.462122327" lon="-83.139871331">
+      <time>2018-02-12T18:36:38Z</time>
+      <name>National Park3</name>
+      <cmt>National Park</cmt>
+      <desc>National Park</desc>
+      <sym>Waypoint</sym>
+    </rtept>
+    <rtept lat="35.462133978" lon="-83.140315991">
+      <ele>1807.464000</ele>
+      <time>2017-05-20T14:52:06Z</time>
+      <name>Waterrock Knob Trail Y-junction MST west</name>
+      <cmt>Waterrock Knob Trail Y-junction MST west</cmt>
+      <desc>Waterrock Knob Trail Y-junction MST west</desc>
+      <sym>Triangle, Red</sym>
+    </rtept>
+    <rtept lat="35.461490918" lon="-83.140360834">
+      <time>2018-02-12T18:36:36Z</time>
+      <name>National Park2</name>
+      <cmt>National Park</cmt>
+      <desc>National Park</desc>
+      <sym>Waypoint</sym>
+    </rtept>
+    <rtept lat="35.460960343" lon="-83.140830304">
+      <time>2018-02-12T18:36:34Z</time>
+      <name>National Park1</name>
+      <cmt>National Park</cmt>
+      <desc>National Park</desc>
+      <sym>Waypoint</sym>
+    </rtept>
+    <rtept lat="35.460516019" lon="-83.140482958">
+      <ele>1780.641600</ele>
+      <time>2017-05-20T14:48:25Z</time>
+      <name>Waterrock Knob Trail T-junction MST east</name>
+      <cmt>Waterrock Knob Trail T-junction MST east</cmt>
+      <desc>Waterrock Knob Trail T-junction MST east</desc>
+      <sym>Triangle, Red</sym>
+    </rtept>
+    <rtept lat="35.460145790" lon="-83.140467703">
+      <time>2018-02-12T18:36:33Z</time>
+      <name>National Park</name>
+      <cmt>National Park</cmt>
+      <desc>National Park</desc>
+      <sym>Waypoint</sym>
+    </rtept>
+    <rtept lat="35.459850412" lon="-83.140762243">
+      <time>2017-05-21T19:16:28Z</time>
+      <name>Waterrock Knob Overlook</name>
+      <cmt>Waterrock Knob Overlook</cmt>
+      <desc>Waterrock Knob Overlook</desc>
+      <sym>Scenic Area</sym>
+    </rtept>
+  </rte>
+</gpx>

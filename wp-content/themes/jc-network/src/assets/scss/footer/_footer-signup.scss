@@ -1,0 +1,49 @@
+.footer-signup .newsletter-signup-widget {
+	@media all and (max-width: $breakpoint-large) { display: none; }
+	
+	a:hover { text-decoration: underline; }
+	
+	* { color: #fff !important; }
+	
+	.widget-title {
+		font-family: "Proxima N W01 Reg", sans-serif;
+		font-size: 1.5rem;
+		line-height: 1;
+		color: #fff;
+	}
+
+	.widget-footer { display: none !important; }
+	
+	.uk-form input[type="text"],
+	.uk-form input[type="email"] {
+		font-size: 1rem;
+		color: #fff;
+		-webkit-transition: none;
+		-webkit-transition-property: none;
+		transition: none;
+		transition-property: none;
+	}
+	
+	#gform_submit_button_3 { background: darken($menu-bg-color, 5%); }
+	
+	#field_3_3 {
+		float: left;
+	
+		label { font-size: 12px; }
+	}
+	
+	#choice_3_3_1 { margin-top: 0; }
+	
+	.gform_footer {
+		margin: 0 !important;
+		padding: 0 !important;
+		clear: none !important;
+		width: auto !important;
+		float: right;
+	}
+	
+	.gform_confirmation {
+		border: 1px solid #314848;
+		background: darken($menu-bg-color, 5%);
+	}
+}

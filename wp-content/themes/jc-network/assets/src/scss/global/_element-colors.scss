@@ -1,0 +1,24 @@
+@charset "UTF-8";
+/*
+**  @file    _element-colors.scss
+**  
+**  @desc    
+**  
+**  @path    /_element-colors.scss
+**  @package jctda
+**  @author  Lee Peterson
+**  @date    11/11/17
+*/
+
+// Button Colors
+.blue-button { background-color: $support-blue; }
+.orange-button { background-color: $support-orange; }
+
+// Tile Title Overlay Colors
+.overlay-blue { background-color: $support-blue; }
+.overlay-orange { background-color: $support-orange; }
+.overlay-gray { background-color: $primary-grey; }
+.overlay-green { background-color: $primary-green; }
+.overlay-yellow { background-color: $support-yellow; }
+.overlay-dark-grey { background-color: $dark-grey; }
+.overlay-brown { background-color: $support-brown; }

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="500px" height="500px" viewBox="0 0 500 500" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.3 (33839) - http://www.bohemiancoding.com/sketch -->
+    <title>Artboard 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard-2">
+            <rect id="Rectangle" fill="#DF7E40" x="0" y="0" width="500" height="500"></rect>
+            <g id="Group" transform="translate(63.000000, 60.000000)" stroke="#FFFFFF" stroke-width="15" stroke-linejoin="round">
+                <path d="M95.1195652,313.353261 C95.1195652,313.353261 106.907609,244.663043 73.3369565,206.804348 C71.5108696,204.733696 71.6086957,201.701087 73.4673913,199.663043 C85.0434783,186.994565 114.440217,200.005435 143.983696,254.217391 C151.711957,268.353261 167.820652,267.619565 181.809783,259.630435 C208.418478,244.434783 243.782609,204.86413 268.173913,198.668478 C300.277174,190.516304 311.347826,210.081522 305.184783,216.26087 L165.146739,356.282609 L95.1195652,313.353261 L95.1195652,313.353261 Z" id="Stroke-1"></path>
+                <polygon id="Stroke-3" stroke-linecap="round" points="143.429348 378 165.146739 356.266304 95.1195652 313.353261 36.375 378"></polygon>
+                <path d="M373.646739,182 L0,182" id="Stroke-5" stroke-linecap="round"></path>
+                <path d="M340.630435,182.347826 C340.777174,179.625 341.038043,176.951087 341.038043,174.195652 C341.038043,88.6467391 271.695652,19.3043478 186.146739,19.3043478 C100.597826,19.3043478 31.2554348,88.6467391 31.2554348,174.195652 C31.2554348,176.951087 31.5326087,179.625 31.6630435,182.347826 L340.630435,182.347826 L340.630435,182.347826 Z" id="Stroke-7" stroke-linecap="round"></path>
+                <path d="M186.146739,60.0652174 C134.315217,60.0652174 90.423913,93.9945652 75.4565217,140.853261" id="Stroke-9" stroke-linecap="round"></path>
+                <path d="M187,16.3043478 L187,0" id="Stroke-11" stroke-linecap="round"></path>
+            </g>
+        </g>
+    </g>
+</svg>

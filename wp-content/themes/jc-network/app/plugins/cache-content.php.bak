@@ -1,0 +1,40 @@
+<?php
+/**
+ * Project Name:    Discover Jackson NC
+ * Project URI:     https://www.discoverjacksonnc.com
+ * Description:     Protection against rm-cache-the-content plugin deactivation.
+ * Author:          Rawle Murdy Associates
+ * Author URI:      https://www.rawlemurdy.com
+ *
+ * @package         jctda
+ * @since           3.0.0
+ * @link            https://www.discoverjacksonnc.com
+ * @author          lpeterson
+ * @date            5/24/18
+ * @file            cache-content.php
+**/
+defined( 'ABSPATH' ) || exit;
+
+
+
+if ( ! function_exists( 'the_content_cached' ) ) :
+
+	function the_content_cached( $more_link_text = null, $strip_teaser = false ) {
+
+		the_content( $more_link_text, $strip_teaser );
+
+	}
+
+endif;
+
+
+
+if ( ! function_exists( 'get_the_content_cached' ) ) :
+
+	function get_the_content_cached( $more_link_text = null, $strip_teaser = false ) {
+
+		return get_the_content( $more_link_text, $strip_teaser );
+
+	}
+
+endif;

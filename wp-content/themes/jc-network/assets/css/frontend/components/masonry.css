@@ -1,0 +1,156 @@
+/*.masonry {
+	width: 100%;
+	position: relative;
+	overflow: hidden
+}
+
+.masonry>a,
+.masonry>div,
+.masonry>figure {
+	position: absolute;
+	display: inline-block;
+	overflow: hidden;
+	filter: "alpha(opacity=10)";
+	opacity: .1;
+	margin: 0;
+	padding: 0
+}
+
+.masonry>a>a>img,
+.masonry>a>img,
+.masonry>div>a>img,
+.masonry>div>img,
+.masonry>figure>a>img,
+.masonry>figure>img {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: 0;
+	padding: 0;
+	border: none;
+	filter: "alpha(opacity=0)";
+	opacity: 0
+}
+
+.masonry>a>.caption,
+.masonry>div>.caption,
+.masonry>figure>.caption {
+	display: none;
+	position: absolute;
+	bottom: 0;
+	padding: 5px;
+	left: 0;
+	right: 0;
+	margin: 0;
+	color: #fff;
+	font-size: 12px;
+	font-weight: 300;
+	font-family: sans-serif
+}
+
+.masonry>a>.caption.caption-visible,
+.masonry>div>.caption.caption-visible,
+.masonry>figure>.caption.caption-visible {
+	display: initial;
+	filter: "alpha(opacity=70)";
+	opacity: .7;
+	-webkit-transition: opacity .5s ease-in;
+	-moz-transition: opacity .5s ease-in;
+	-o-transition: opacity .5s ease-in;
+	transition: opacity .5s ease-in
+}
+
+.masonry>.entry-visible {
+	filter: "alpha(opacity=100)";
+	opacity: 1;
+	background: 0 0
+}
+
+.masonry>.entry-visible>a>img,
+.masonry>.entry-visible>img {
+	filter: "alpha(opacity=100)";
+	opacity: 1;
+	-webkit-transition: opacity .5s ease-in;
+	-moz-transition: opacity .5s ease-in;
+	-o-transition: opacity .5s ease-in;
+	transition: opacity .5s ease-in
+}
+
+.masonry>.jg-filtered {
+	display: none
+}
+
+.masonry>.spinner {
+	position: absolute;
+	bottom: 0;
+	margin-left: -24px;
+	padding: 10px 0 10px 0;
+	left: 50%;
+	filter: "alpha(opacity=100)";
+	opacity: 1;
+	overflow: initial
+}
+
+.masonry>.spinner>span {
+	display: inline-block;
+	filter: "alpha(opacity=0)";
+	opacity: 0;
+	width: 8px;
+	height: 8px;
+	margin: 0 4px 0 4px;
+	background-color: #000;
+	border-radius: 6px
+}
+*/
+.masonry-container {
+	padding-left: 0 !important;
+	padding-right: 0 !important
+}
+
+@media all and (max-width:667px) {
+	.masonry-tiles .masonry-tile.masonry-link {
+		display: block;
+		position: relative;
+		margin: 1rem 0;
+		width: 100%;
+		max-height: 225px;
+		overflow: hidden
+	}
+}
+
+.masonry-container .masonry-tiles .masonry-tile.masonry-link {
+	height: auto;
+	max-height: 250px
+}
+
+.masonry-tiles .masonry-tile.masonry-link>img {
+	opacity: 1;
+	background: 0 0;
+	transform: scale(1);
+	transition: all .2s linear
+}
+
+.masonry-tiles .masonry-tile.masonry-link:hover>img {
+	opacity: .9;
+	background: var(--black);
+	transform: scale(1.025)
+}
+
+.masonry-tiles .masonry-tile.masonry-link .masonry-title.caption {
+	position: absolute;
+	top: 20px;
+	right: auto;
+	bottom: auto;
+	left: 0;
+	z-index: 2;
+	display: block;
+	margin: 0;
+	padding: 5px 15px;
+	opacity: 1;
+	color: var(--white);
+	font-family: var(--sans-thin);
+	font-size: 1.6rem;
+	line-height: 1.3em;
+	-webkit-box-decoration-break: clone;
+	box-decoration-break: clone
+}

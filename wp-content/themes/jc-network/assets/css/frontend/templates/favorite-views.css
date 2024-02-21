@@ -1,0 +1,86 @@
+.favorite-views-page .uk-modal.uk-open .uk-lightbox-content,
+.favorite-views-page .uk-modal.uk-open .uk-modal-dialog,
+.favorite-views-page .uk-modal.uk-open .uk-modal-dialog-lightbox .uk-responsive-width {
+	margin: 0 !important;
+	padding: 0 !important;
+	width: 100% !important;
+	height: 100% !important;
+	top: 0 !important;
+	right: 0 !important;
+	bottom: 0 !important;
+	left: 0 !important
+}
+
+.favorite-views-page .uk-modal.uk-open .uk-modal-dialog-lightbox {
+	max-width: 100% !important
+}
+
+.favorite-views-page .uk-modal-dialog-lightbox>.uk-close:first-child {
+	top: 1rem !important;
+	right: 1rem !important
+}
+
+.favorite-views-page .uk-slidenav {
+	display: none
+}
+
+.favorite-views-page .uk-modal.uk-open .uk-slidenav {
+	display: block
+}
+
+.pano-item {
+	padding: 1rem;
+	border: 1px solid transparent;
+	background: var(--white);
+	transition: all .3s linear
+}
+
+.pano-item:hover {
+	border: 1px solid var(--light-grey);
+	background: var(--light-blue)
+}
+
+.pano-item a {
+	display: block;
+	text-align: center
+}
+
+.pano-item a:first-of-type {
+	position: relative
+}
+
+.pano-item a:last-of-type {
+	margin-top: 1rem;
+	line-height: 1.1;
+	color: var(--blue)
+}
+
+.pano-item a:last-of-type:hover,
+.pano-item:hover a:last-of-type {
+	text-decoration: none
+}
+
+.pano-item a span {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -20px;
+	margin-left: -20px;
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+	font-size: 36px;
+	text-align: center;
+	opacity: 0;
+	color: #fff;
+	text-shadow: 0 3px 8px var(--trans);
+	transition: all .3s linear
+}
+
+.pano-item a:first-of-type:hover span {
+	opacity: 1
+}
+
+.pano-item:hover a span {
+	opacity: .5
+}

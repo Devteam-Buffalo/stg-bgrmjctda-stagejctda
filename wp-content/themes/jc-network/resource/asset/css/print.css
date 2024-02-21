@@ -1,0 +1,120 @@
+/**
+ * Project Name:    Discover Jackson NC
+ * Project URI:     https://www.discoverjacksonnc.com
+ * Description:     Print stylesheet - !!!!!!!!!!!!SHOULD BE INLINED WITH MAIN CSS FILE!!!!!!!!
+ * Agency:          Rawle Murdy Associates
+ * Agency URI:      https://www.rawlemurdy.com
+ * Text Domain:     jctda
+ *
+ * @package         jctda
+ * @since           20190117
+ * @author          lpeterson
+ */
+
+@media print,
+	(-webkit-min-device-pixel-ratio: 1.25),
+	(min-resolution: 1.25dppx),
+	(min-resolution: 120dpi) {
+	/* Style adjustments for high resolution devices */
+}
+
+@media print {
+
+	*,
+	*:before,
+	*:after {
+		background: transparent !important;
+		color: #000 !important;
+		-webkit-box-shadow: none !important;
+		box-shadow: none !important;
+		text-shadow: none !important;
+	}
+
+	a,
+	a:visited {
+		text-decoration: none;
+	}
+
+	a[href]:after {
+		content: " (" attr(href) ")";
+		font: normal 8pt/1 sans-serif;
+		color: #999
+	}
+
+	abbr[title]:after {
+		content: " (" attr(title) ")";
+	}
+
+	a[href^="#"]:after,
+	a[href^="javascript:"]:after {
+		content: "";
+	}
+
+	pre {
+		white-space: pre-wrap !important;
+	}
+	pre,
+	blockquote {
+		border: 1px solid #999;
+		page-break-inside: avoid;
+	}
+
+	thead {
+		display: table-header-group;
+	}
+
+	tr,
+	img {
+		page-break-inside: avoid;
+	}
+
+	p,
+	h2,
+	h3 {
+		orphans: 3;
+		widows: 3;
+	}
+
+	h2,
+	h3 {
+		page-break-after: avoid;
+	}
+
+	/**
+	 * Reset display property for JS-affected elements
+	 * @type {[type]}
+	 */
+	[class] { display: initial }
+
+	/**
+	 * Set a max width on the printable area; hide overflow
+	 * @type {[type]}
+	 */
+	article { max-width: 8in; overflow: hidden }
+
+	/**
+	 * Hide the majority of things
+	 */
+	body > :not(#page),
+	#page > :not(main),
+	main > :not(article),
+	aside[class],
+	[data-uk-dropdown], [data-uk-slider],
+	header, footer, iframe, figure, img, script,
+	hr, br, form, input, select, button { display: none }
+
+	/**
+	 * Now get specific for the printable area
+	 * @type {[type]}
+	 */
+	article .location-share, article [class*="widget"] { display: none }
+
+	/**
+	 * Custom use-cases
+	 * @type {[type]}
+	 */
+	article .location-contact span { display: block !important }
+	article [data-uk-accordion] > div { overflow: initial !important; height: auto !important }
+	article [class*="cr__"] { display: none !important }
+
+}

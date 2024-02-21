@@ -1,0 +1,54 @@
+{
+    "key": "group_5807d35b9c591",
+    "title": "B2B News, Press Releases & Mentions - Media Highlights",
+    "fields": [
+        {
+            "key": "field_5807d3b603b95",
+            "label": "Media Highlight Link",
+            "name": "media_highlight_link",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "http:\/\/www.google.com"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "b2b_news"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "press_release"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "mentions"
+            }
+        ]
+    ],
+    "menu_order": "",
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1503951693
+}

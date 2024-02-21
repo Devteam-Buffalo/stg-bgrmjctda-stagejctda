@@ -1,0 +1,54 @@
+#breadcrumbs,
+#header-signup {
+	height: 3rem;
+	overflow: hidden
+}
+
+#breadcrumbs {
+	margin: 0;
+	background-color: var(--opaque);
+	box-shadow: 0 2px 8px var(--trans)
+}
+
+#breadcrumbs ul {
+	margin: 0;
+	padding: 0;
+	list-style: none
+}
+
+@media all and (min-width:768px) {
+	#breadcrumbs ul {
+		padding-left: 100px
+	}
+}
+
+@media all and (min-width:960px) {
+	#breadcrumbs ul {
+		padding-left: calc(2rem + 150px)
+	}
+}
+
+#breadcrumbs li>span {
+	font-size: .75rem;
+	line-height: 3rem;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	color: var(--grey)
+}
+
+#breadcrumbs li>span a {
+	color: var(--orange)
+}
+
+#breadcrumbs li>span a:hover {
+	color: var(--grey);
+	text-decoration: none
+}
+
+#breadcrumbs li:nth-child(n+2)>span::before {
+	content: "//";
+	display: inline-block;
+	margin: 0 .5rem;
+	color: var(--medium-grey)
+}
+

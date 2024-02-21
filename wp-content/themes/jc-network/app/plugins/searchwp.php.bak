@@ -1,0 +1,87 @@
+<?php
+/**
+ * Project Name:    Discover Jackson NC
+ * Project URI:     https://www.discoverjacksonnc.com
+ * Description:     SearchWP Modifications
+ * Agency:          Rawle Murdy Associates
+ * Agency URI:      https://www.rawlemurdy.com
+ * Text Domain:     jctda
+ *
+ * @package         jctda
+ * @since           20181219
+ * @author          lpeterson
+ */
+
+if ( class_exists( 'SearchWP' ) ) {
+
+	add_filter( 'searchwp_license_key', function(){
+		return '82e7a93051a3f1b42be06124b90e5cdd';
+	});
+
+	add_filter( 'searchwp_dashboard_widget', '__return_false' );
+
+	add_filter( 'searchwp_admin_bar', '__return_false' );
+
+	add_filter( 'searchwp_failed_index_notice', '__return_false' );
+
+	add_filter( 'searchwp_show_conflict_notices', '__return_false' );
+
+	add_filter( 'searchwp_show_filter_conflict_notices', '__return_false' );
+
+	add_filter( 'searchwp_missing_integration_notices', '__return_false' );
+
+	add_filter( 'searchwp_in_admin', '__return_true' );
+
+	add_filter( 'searchwp_nuke_on_delete', '__return_true' );
+
+	// add_filter( 'searchwp_omit_document_processing', '__return_true' );
+
+	add_filter( 'searchwp_settings_cap', function() {
+		return 'administrator';
+	} );
+
+	add_filter( 'searchwp_statistics_cap', function() {
+		return 'rawlemurdy';
+	} );
+
+	add_filter( 'searchwp_load_maximum', function( $load_threshold ) {
+		return 1.0;
+	} );
+
+	add_filter( 'searchwp_refine_and_results', '__return_false' );
+
+	add_filter( 'searchwp_omit_meta_key', function() {
+		if ( '_' == substr( $meta_key, 0, 1 ) ) {
+			$omit = true;
+		}
+
+		return $omit;
+	}, 10, 3 );
+
+	add_filter( 'searchwp_post_statuses', function( $post_status, $engine ) {
+		$post_status = [ 'publish' ];
+		return $post_status;
+	}, 10, 2 );
+
+	add_filter( 'searchwp_posts_per_page', function( $posts_per_page, $engine, $terms, $page ) {
+		return 5;
+	}, 10, 4 );
+
+	// Prevent SearchWP from allowing an Excerpt weight for Posts on the settings screen
+	add_filter( 'searchwp_get_supports_for_post_type', function( $applicable, $context ) {
+
+		if ( 'page' === $context['post_type'] && 'excerpt' === $context['supports'] ) {
+			$applicable = false;
+		}
+
+		return $applicable;
+
+	}, 10, 2 );
+
+	// Prevent SearchWP from logging searches when logged in
+	// @link https://gist.github.com/jchristopher/f0df12b06c5ae3983b1b429c52bbeeb9
+	add_filter( 'searchwp_log_search', function( $log, $engine, $search_terms, $number_of_results ) {
+		return ! is_user_logged_in();
+	}, 10, 4 );
+
+}

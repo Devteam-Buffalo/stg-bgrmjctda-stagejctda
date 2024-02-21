@@ -1,0 +1,24 @@
+<?php
+/**
+ * Project Name:    Discover Jackson NC
+ * Project URI:     https://www.discoverjacksonnc.com
+ * Description:     Make sure both blog posts as well as pages support excerpts.
+ * Agency:          Rawle Murdy Associates
+ * Agency URI:      https://www.rawlemurdy.com
+ * Text Domain:     jctda
+ *
+ * @package         jctda
+ * @since           3.1.0
+ * @link            https://www.discoverjacksonnc.com
+ * @author          lpeterson
+ * @date            6/15/18
+ * @file            add-post-type-support.php
+ */
+defined('ABSPATH') or exit;
+
+add_action( 'init', function() {
+	$support = 'excerpt';
+	
+	add_post_type_support( 'page', $support );
+	add_post_type_support( 'post', $support );
+});

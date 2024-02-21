@@ -1,0 +1,71 @@
+@charset "UTF-8";
+/*
+**  @file    _entry.scss
+**  
+**  @desc    
+**  
+**  @path    /_entry.scss
+**  @package jctda
+**  @author  Lee Peterson
+**  @date    11/10/17
+*/
+.entry-title,
+.section-heading.archive-title {
+	@media all and (min-width: 320px) { font-size: 2.5rem; line-height: 1.3; }
+	@media all and (min-width: $breakpoint-medium) { font-size: 3rem; line-height: 1.2; }
+	@media all and (min-width: $breakpoint-large) { font-size: 4rem; line-height: 1.1; }
+	@media all and (min-width: $breakpoint-xlarge) { font-size: 4.5rem; }
+}
+
+.post.type-post .entry-title,
+.media-archive .entry-title {
+	font-size: 2rem;
+	line-height: 1.2;
+}
+
+.entry-content p,
+.entry-header p { margin: 1rem 0; }
+
+.entry-title a:hover { text-decoration: none; }
+
+.blog-post-footer {
+	margin: 1rem 0;
+	padding: 1rem 0;
+	border-top: 1px solid #ccc;
+	
+	@media all and (min-width: ($breakpoint-small + 1)) {
+		margin: 5rem 0;
+		padding: 2.5rem 0;
+	}
+	
+	.post-categories { line-height: 2; }
+	
+	.post-share-container {
+		@media all and (max-width: $breakpoint-small) {
+			display: block !important;
+			float: none;
+			margin-top: 1rem;
+			width: 100%;
+		}
+		
+		.uk-dropdown {
+			border: 1px solid #ccc;
+			border-radius: 3px;
+			background: #fff;
+			box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.2);
+		}
+		
+		.uk-nav-dropdown > li > a:hover, 
+		.uk-nav-dropdown > li > a:focus {
+			background: $support-blue;
+		}
+		
+		.uk-button {
+			@media all and (max-width: $breakpoint-small) {
+				box-sizing: border-box;
+				display: block !important;
+				width: 100%;
+			}
+		}
+	}
+}

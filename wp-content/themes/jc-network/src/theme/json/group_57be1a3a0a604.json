@@ -1,0 +1,156 @@
+{
+    "key": "group_57be1a3a0a604",
+    "title": "Restaurant Amenities, Price, Rating",
+    "fields": [
+        {
+            "key": "field_57be1a3a2e8f0",
+            "label": "Food & Drink Amenities",
+            "name": "food_drink_amenities_select",
+            "type": "select",
+            "instructions": "Multiple selections are possible. Please select all that apply.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "uk-width-3-5 uk-width-1-1 food-drink-fields",
+                "id": ""
+            },
+            "multiple": 1,
+            "allow_null": 1,
+            "choices": {
+                "arcade_room": "Arcade\/Game Room",
+                "alcohol_extensive_beer_list": "Alcohol – Extensive Beer List (30+ types)",
+                "alcohol_extensive_wine_list": "Alcohol – Extensive Wine List (30+ types)",
+                "alcohol_nc_beer_served": "Alcohol – North Carolina Beer Served",
+                "alcohol_nc_spirits_served": "Alcohol – North Carolina Spirits Served",
+                "alcohol_nc_wine_served": "Alcohol - North Carolina Wine Served",
+                "alcohol_prohibited": "Alcohol Prohibited",
+                "alcohol_served": "Alcohol Served",
+                "cash_only": "Cash Only",
+                "delivery": "Delivery",
+                "dress_code": "Dress Code",
+                "farm_to_table": "Farm to Table",
+                "food_served": "Food Served",
+                "handicap_accessible": "Handicap Accessible",
+                "motorcoach_rv_parking": "Motorcoach \/ RV Parking",
+                "organic": "Organic",
+                "pet_friendly": "Pet-friendly",
+                "private_area": "Private Area for Groups",
+                "reservations_recommended": "Reservations Recommended",
+                "reservations_required": "Reservations required for groups",
+                "take_out": "Take Out",
+                "tastings": "Tastings"
+            },
+            "default_value": [],
+            "ui": 1,
+            "ajax": 0,
+            "placeholder": "",
+            "return_format": "label"
+        },
+        {
+            "key": "field_57c9c980249bf",
+            "label": "Price Range",
+            "name": "food_drink_price_range_radio",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "uk-width-medium-2-5 uk-width-1-1 food-drink-fields",
+                "id": ""
+            },
+            "choices": {
+                "1": "$",
+                "2": "$$",
+                "3": "$$$",
+                "4": "$$$$"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": "",
+            "layout": "horizontal",
+            "return_format": "label"
+        },
+        {
+            "key": "field_57c9cad5249c0",
+            "label": "Rating",
+            "name": "food_drink_rating_radio",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "uk-width-medium-3-5 uk-width-1-1 food-drink-fields",
+                "id": ""
+            },
+            "layout": "horizontal",
+            "choices": {
+                "1": "⭑<\/i>",
+                "2": "⭑<\/i>⭑<\/i>",
+                "3": "⭑<\/i>⭑<\/i>⭑<\/i>",
+                "4": "⭑<\/i>⭑<\/i>⭑<\/i>⭑<\/i>",
+                "5": "⭑<\/i>⭑<\/i>⭑<\/i>⭑<\/i>⭑<\/i>",
+                "na": "N\/A"
+            },
+            "default_value": "na",
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "allow_null": 0,
+            "return_format": "label"
+        },
+        {
+            "key": "field_57ce8f7d3ae13",
+            "label": "Michelin Rating",
+            "name": "food_drink_michelin_rating_radio",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "uk-width-medium-2-5 uk-width-1-1 food-drink-fields",
+                "id": ""
+            },
+            "layout": "horizontal",
+            "choices": {
+                "1": "⭑<\/i>",
+                "2": "⭑<\/i>⭑<\/i>",
+                "3": "⭑<\/i>⭑<\/i>⭑<\/i>",
+                "na": "N\/A"
+            },
+            "default_value": "na",
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "allow_null": 0,
+            "return_format": "label"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "food_drink"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "lodgings"
+            }
+        ]
+    ],
+    "menu_order": "",
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1500331316
+}

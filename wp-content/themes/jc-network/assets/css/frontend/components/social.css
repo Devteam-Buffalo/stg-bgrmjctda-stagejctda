@@ -1,0 +1,21 @@
+.social-button {
+	box-sizing: border-box;
+	display: inline-block;
+	margin-left: .5rem;
+	margin-right: .5rem;
+	width: 35px;
+	height: 35px;
+	line-height: 35px;
+	border-radius: 100%;
+	color: var(--white);
+	font-size: 18px;
+	text-align: center;
+	transition: all .2s linear
+}
+
+.social-button:hover {
+	color: var(--white);
+	transform: scale(1.1);
+	box-shadow: 0 3px 6px var(--trans);
+	filter: contrast(175%)
+}

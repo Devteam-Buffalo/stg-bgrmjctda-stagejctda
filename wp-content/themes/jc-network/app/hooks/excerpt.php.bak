@@ -1,0 +1,27 @@
+<?php
+/*
+**  @file               excerpt.php
+**  @description        Description.
+**  @package            jctda
+**  @since              2.1.0
+**  @author             lpeterson
+**  @date               5/6/18
+*/
+defined( 'ABSPATH' ) || exit;
+
+add_filter( 'excerpt_more', 'jc_more_link' );
+add_filter( 'the_content_more_link', 'jc_more_link' );
+function jc_more_link() {
+	$link = html( 'a', [ 'class' => 'uk-display-inline-block read-more' ],
+		html( 'span', [ 'class' => 'uk-display-inline-block uk-padding-right-small' ], 'Continue Reading' ),
+		html( 'span', [ 'class' => 'uk-icon-angle-right' ] )
+	);
+	
+	return $link;
+}
+
+add_filter( 'excerpt_length', function( $length ) {
+	$length = 250;
+	
+	return $length;
+});

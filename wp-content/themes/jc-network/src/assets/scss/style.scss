@@ -1,0 +1,53 @@
+@charset "UTF-8";
+/*
+**  @file    style.scss
+**  
+**  @desc    
+**  
+**  @path    /style.scss
+**  @package jctda
+**  @author  Lee Peterson
+**  @date    11/10/17
+*/
+
+// Theme Variables
+@import "variables/index";
+
+// Theme Mixins
+@import "mixins/index";
+
+// Theme Fonts
+@import "fonts/index";
+
+// Framework Base
+@import "framework/index";
+
+// Plugins
+@import "plugins/index";
+
+// Global Styles
+@import "global/index";
+
+// WordPress
+@import "wordpress/index";
+
+// Header
+@import "header/index";
+
+// Footer
+@import "footer/index";
+
+// Shortcodes
+@import "shortcodes/index";
+
+// Widgets
+@import "widgets/index";
+
+// Template Parts
+@import "template-parts/index";
+
+// Page Templates
+@import "templates/index";
+
+// Pages
+@import "pages/index";

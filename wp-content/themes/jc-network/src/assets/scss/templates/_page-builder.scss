@@ -1,0 +1,21 @@
+body.page-template-page-builder-content-sidebar .site,
+body.page-template-page-builder-full-width .site {
+	@media all and (max-width: 667px) { top: 0px; }
+	
+	.hero-template-copyright.photo-copyright {
+		@media all and (max-width: 667px) { bottom: 10px; right: 10px; }
+	}
+}
+
+.page-builder-sections {
+	> div {
+		margin-bottom: 5%;
+		padding-bottom: 5%;
+		border-bottom: 1px solid #ddd;
+		
+		> div {
+			margin-bottom: 2%;
+			padding-bottom: 0;
+		}
+	}
+}

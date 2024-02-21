@@ -1,0 +1,211 @@
+<?php
+/**
+ * Project Name:    Discover Jackson NC
+ * Project URI:     https://www.discoverjacksonnc.com
+ * Description:     Custom "recent blog posts" widget
+ * Agency:          Rawle Murdy Associates
+ * Agency URI:      https://www.rawlemurdy.com
+ * Text Domain:     jctda
+ *
+ * @package         jctda
+ * @since           20180930
+ * @author          lpeterson
+ */
+
+/**
+ * Class JC_Blog_List
+ */
+class JC_Blog_List extends WP_Widget {
+
+	/**
+	 * @TODO - Rename "widget-name" to the name your your widget
+	 *
+	 * Unique identifier for your widget.
+	 *
+	 *
+	 * The variable name is used as the text domain when internationalizing strings
+	 * of text. Its value should match the Text Domain file header in the main
+	 * widget file.
+	 *
+	 * @since    1.0.0
+	 *
+	 * @var      string
+	 */
+	protected $widget_slug = 'jc-blog-list';
+
+	/**
+	 * Constructs the new widget.
+	 *
+	 * @see WP_Widget::__construct()
+	 */
+	function __construct() {
+
+		// TODO: update description
+		parent::__construct(
+			$this->get_widget_slug(),
+			__( 'JC Blog List', $this->get_widget_slug() ),
+			[
+				'classname'  => $this->get_widget_slug().'-class',
+				'description' => __( 'Display the last 5 blog posts in a list.', $this->get_widget_slug() )
+			]
+		);
+
+		// Refreshing the widget's cached output with each new post
+		add_action( 'save_post',    [ $this, 'flush_widget_cache' ] );
+		add_action( 'deleted_post', [ $this, 'flush_widget_cache' ] );
+		add_action( 'switch_theme', [ $this, 'flush_widget_cache' ] );
+
+	}
+
+	/**
+	* Return the widget slug.
+	*
+	* @since    1.0.0
+	*
+	* @return    Plugin slug variable.
+	*/
+	public function get_widget_slug() {
+		return $this->widget_slug;
+	}
+
+	/**
+	 * Outputs the content of the widget.
+	 *
+	 * @param array args  The array of form elements
+	 * @param array instance The current instance of the widget
+	 */
+	public function widget( $args, $instance ) {
+
+		// Check if there is a cached output
+		$cache = wp_cache_get( $this->get_widget_slug(), 'widget' );
+
+		if ( ! is_array( $cache ) )
+			$cache = [];
+
+		if ( ! isset( $args['widget_id'] ) )
+			$args['widget_id'] = $this->id;
+
+		if ( isset( $cache[ $args['widget_id'] ] ) )
+			return print $cache[ $args['widget_id'] ];
+
+		// go on with your widget logic, put everything into a string and …
+
+		extract( $args, EXTR_SKIP );
+
+		$widget_string = $before_widget;
+
+		$args = [
+			'post_type'              => ['post'],
+			'post_status'            => ['publish'],
+			'posts_per_page'         => 5,
+			'order'                  => 'DESC',
+			'orderby'                => 'date',
+			'no_found_rows'          => true,
+			'cache_results'          => true,
+			'update_post_meta_cache' => false,
+			'update_post_term_cache' => false,
+		];
+
+		$posts = new WP_Query( $args );
+
+		if ( $posts->have_posts() ) :
+
+			ob_start(); ?>
+
+			<section class="blog-list">
+				<h4 class="uk-text-uppercase sans-serif text-green"><?= __( 'Recent Blog Posts', $this->get_widget_slug() ) ?></h4>
+
+				<?php while ( $posts->have_posts() ) : $posts->the_post(); ?>
+				<article class="uk-panel uk-panel-header uk-panel-divider">
+					<a href="<?= get_the_permalink() ?>" title="<?= the_title_attribute() ?>" class="uk-link-muted">
+						<header>
+							<time class="uk-text-uppercase sans-serif text-grey" datetime="<?= date_i18n( 'c', strtotime( get_the_date( 'c', $posts->post_date ) ) ) ?>">
+								<?php the_date() ?>
+							</time>
+
+							<h5 class="uk-margin-remove uk-text-large uk-padding-vertical-small sans-serif">
+								<?= get_the_title() ?>
+							</h5>
+						</header>
+
+						<footer>
+							<button class="uk-button uk-button-link uk-text-uppercase uk-text-small text-orange">
+								<?= __( 'Read More', $this->get_widget_slug() ) ?>
+								<small class="uk-icon-chevron-right"></small>
+							</button>
+						</footer>
+					</a>
+				</article>
+				<?php endwhile; wp_reset_postdata(); ?>
+
+				<hr>
+
+				<a href="<?= get_permalink( get_page_by_title( 'Blog Archive', null, 'page' ) ) ?>" class="uk-button uk-button-secondary uk-button-large uk-width-1-1" title="View <?php the_title_attribute( get_page_by_title( 'Blog Archive', null, 'page' ) ) ?>">
+					<span class="text-white">View <?= get_the_title( get_page_by_title( 'Blog Archive', null, 'page' ) ) ?></span>
+				</a>
+			</section>
+
+			<?php // include( plugin_dir_path( __FILE__ ) . 'views/widget.php' );
+
+			$widget_string .= ob_get_clean();
+
+		endif;
+
+		$widget_string .= $after_widget;
+
+		$cache[ $args['widget_id'] ] = $widget_string;
+
+		wp_cache_set( $this->get_widget_slug(), $cache, 'widget' );
+
+		print $widget_string;
+
+	}
+
+	public function flush_widget_cache() {
+		wp_cache_delete( $this->get_widget_slug(), 'widget' );
+	}
+
+	/**
+	 * Processes the widget's options to be saved.
+	 *
+	 * @param array new_instance The new instance of values to be generated via the update.
+	 * @param array old_instance The previous instance of values before the update.
+	 */
+	public function update( $new_instance, $old_instance ) {
+
+		$instance = $old_instance;
+
+		// TODO: Here is where you update your widget's old values with the new, incoming values
+
+		return $instance;
+
+	}
+
+	/**
+	 * Generates the administration form for the widget.
+	 *
+	 * @param array instance The array of keys and values for the widget.
+	 */
+	public function form( $instance ) {
+
+		// TODO: Define default values for your variables
+		$instance = wp_parse_args(
+			(array) $instance
+		);
+
+		// TODO: Store the values of the widget in their own variable
+
+		// Display the admin form
+		// include( plugin_dir_path(__FILE__) . 'views/admin.php' );
+
+	}
+}
+
+/**
+ * Register the new widget.
+ *
+ * @see 'widgets_init'
+ */
+add_action( 'widgets_init', function() {
+	register_widget( 'JC_Blog_List' );
+} );

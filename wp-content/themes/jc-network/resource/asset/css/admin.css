@@ -1,0 +1,25 @@
+/**
+ * Project Name:    Discover Jackson NC
+ * Project URI:     https://www.discoverjacksonnc.com
+ * Description:     CSS for all admin pages
+ * Agency:          Rawle Murdy Associates
+ * Agency URI:      https://www.rawlemurdy.com
+ * Text Domain:     jctda
+ *
+ * @package         jctda
+ * @since           20181102
+ * @author          lpeterson
+ */
+
+.notice,
+.notice-error,
+.notice-warning,
+.notice-success,
+.notice-info,
+.is-dismissible,
+.update-nag {
+	display: none !important;
+}
+
+body.settings_page_cdn_enabler .form-table tr:nth-of-type(6),
+body.settings_page_cdn_enabler .form-table tr:nth-of-type(7) {display: none}

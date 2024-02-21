@@ -1,0 +1,51 @@
+.section-intro {
+	padding-left: 25px;
+	padding-right: 25px;
+}
+
+article:not(.home-page) .section-intro { background: url('../img/heading-mountain-bg.png') center 5% no-repeat; background-size: contain; }
+
+.section-spacing {
+	padding-top: 5%;
+	padding-bottom: 5%;
+	
+	+ & { padding-top: 0; }
+}
+
+.section-intro + .section-spacing { padding-top: 0; }
+
+.section-heading {
+	margin: 0 0 3%;
+	padding: 7.5% 0 0;
+	font-size: 1.9rem;
+	line-height: 1;
+
+	@media all and (min-width: $breakpoint-small) { font-size: 2rem; }
+	@media all and (min-width: $breakpoint-medium) { padding: 5% 0 0; font-size: 2.1rem; }
+	@media all and (min-width: $breakpoint-large) { padding: 2% 0 0; font-size: 2.2rem; }
+	@media all and (min-width: $breakpoint-xlarge) {
+		font-size: 2.3rem;
+		line-height: 1.15;
+	}
+}
+
+	
+.section-subheading,
+.section-subheading-small {
+	color: $base-body-color;
+	font-family: "Proxima N W01 Light", sans-serif;
+	font-size: 1.5rem;
+	line-height: 1.25;
+}
+
+.section-subheading-small {
+	font-size: 1.3rem;
+}
+
+.intro-paragraph {
+	font-weight: 300;
+	font-size: 1.25rem;
+	line-height: 1.4;
+	
+	+ div { margin-top: 3.5%; }
+}

@@ -1,0 +1,86 @@
+.offcanvas-nav {
+	position: absolute;
+	left: 25px;
+	top: 32px;
+	padding-left: 0
+}
+
+@media all and (max-width:480px) {
+	.offcanvas-nav {
+		margin-top: -17px
+	}
+}
+
+.jc-nav-mobile .hamburger {
+	display: block;
+	width: 35px
+}
+
+@media all and (max-width:480px) {
+	.jc-nav-mobile .hamburger {
+		width: 30px
+	}
+}
+
+.jc-nav-mobile .hamburger span {
+	display: block;
+	margin: 6px 0;
+	height: 2px;
+	background-color: var(--black)
+}
+
+.jc-nav-mobile .hamburger span:first-of-type {
+	width: 100%
+}
+
+.jc-nav-mobile .hamburger span:nth-child(2) {
+	width: 85%
+}
+
+.jc-nav-mobile .hamburger span:last-of-type {
+	width: 70%
+}
+
+#offcanvas-menu a {
+	display: block;
+	margin: 0;
+	padding: .5rem 0;
+	color: var(--white);
+	font-size: 1.35rem;
+	font-family: var(--sans-light);
+	transition: all .2s linear
+}
+
+#offcanvas-menu .uk-offcanvas-bar {
+	background: var(--blue) url(https://storage.googleapis.com/jctda-assets/img/offcanvas-bg.jpg) center center no-repeat;
+	background-size: cover
+}
+
+#menu-offcanvas-top {
+	padding-top: 2rem
+}
+
+#menu-offcanvas-bottom a {
+	font-size: 1rem
+}
+
+@media all and (max-width:959px) {
+	.hamburger .uk-icon-button {
+		background: 0 0;
+		font-size: 1.5rem
+	}
+
+	.header-main {
+		-ms-flex-pack: justify;
+		-webkit-justify-content: space-between;
+		justify-content: space-between
+	}
+
+	.jc-nav-mobile {
+		display: inline-flex !important
+	}
+
+	.jc-nav-mobile .search-header span {
+		display: none
+	}
+}

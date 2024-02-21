@@ -1,0 +1,315 @@
+[class^=text-] {
+	transition: color 250ms linear
+}
+
+.text-blue {
+	color: var(--blue)
+}
+
+.text-blue:hover {
+	color: var(--trans-blue-hover)
+}
+
+.text-orange {
+	color: var(--orange)
+}
+
+.text-orange:hover {
+	color: var(--trans-orange-hover)
+}
+
+.text-grey {
+	color: var(--grey)
+}
+
+.text-grey:hover {
+	color: var(--trans-grey-hover)
+}
+
+.text-green {
+	color: var(--green)
+}
+
+.text-green:hover {
+	color: var(--trans-green-hover)
+}
+
+.text-yellow {
+	color: var(--yellow)
+}
+
+.text-yellow:hover {
+	color: var(--trans-yellow-hover)
+}
+
+.text-white {
+	color: var(--white)
+}
+
+.text-white:hover {
+	color: var(--white)
+}
+
+.text-dark-grey {
+	color: var(--dark-grey)
+}
+
+.text-dark-grey:hover {
+	color: var(--trans-dark-grey-hover)
+}
+
+.text-brown {
+	color: var(--brown)
+}
+
+.text-brown:hover {
+	color: var(--trans-brown-hover)
+}
+
+.text-red {
+	color: var(--red)
+}
+
+.text-red:hover {
+	color: var(--trans-red-hover)
+}
+
+.text-bright-green {
+	color: #32cd32
+}
+
+.background-green,
+.color-outdoor,
+.color-page,
+.overlay-green,
+h4[class*=outdoor] {
+	background-color: var(--green)
+}
+
+.background-yellow,
+.color-attraction,
+.overlay-yellow,
+h4[class*=attraction] {
+	background-color: var(--yellow)
+}
+
+.background-jc_food_drink,
+.background-orange,
+.color-jc_food_drink,
+.overlay-orange,
+h4[class*=food] {
+	background-color: var(--orange)
+}
+
+.background-blue,
+.background-global,
+.color-global,
+.color-jc_lodging,
+.color-post,
+.overlay-blue,
+h4[class*=lodging] {
+	background-color: var(--blue)
+}
+
+.background-dark-grey,
+.background-town,
+.color-town,
+.overlay-dark-grey,
+h4[class*=town] {
+	background-color: var(--dark-grey)
+}
+
+.background-brown,
+.background-wedding,
+.color-wedding,
+.overlay-brown,
+h4[class*=wedding] {
+	background-color: var(--brown)
+}
+
+.background-jc_trip_idea,
+.background-red,
+.color-jc_trip_idea,
+.overlay-red,
+h4[class*=trip_idea] {
+	background-color: var(--red)
+}
+
+.background-dark-blue,
+.background-jc_visitor_gallery,
+.color-jc_visitor_gallery,
+.overlay-dark-blue,
+h4[class*=visitor_gallery] {
+	background-color: var(--dark-blue)
+}
+
+.background-gray,
+.background-grey,
+.overlay-gray,
+.overlay-grey {
+	background-color: var(--grey)
+}
+
+.text-shadow.small-shadow {
+	text-shadow: 0 1px 5px var(--trans)
+}
+
+.text-shadow.large-shadow {
+	text-shadow: 0 2px 8px var(--trans)
+}
+
+.background-light-blue {
+	background-color: var(--light-blue)
+}
+
+.background-light-green {
+	background-color: var(--light-green)
+}
+
+.background-light-yellow {
+	background-color: var(--light-yellow)
+}
+
+.background-light-orange {
+	background-color: var(--light-orange)
+}
+
+.background-light-red {
+	background-color: var(--light-red)
+}
+
+.background-light-brown {
+	background-color: var(--light-brown)
+}
+
+.background-light-grey {
+	background-color: var(--light-grey)
+}
+
+.color-facebook {
+	background-color: var(--facebook)
+}
+
+.color-twitter {
+	background-color: var(--twitter)
+}
+
+.color-instagram {
+	background-color: var(--instagram)
+}
+
+.color-youtube {
+	background-color: var(--youtube)
+}
+
+.color-pinterest {
+	background-color: var(--pinterest)
+}
+
+.color-tripadvisor {
+	background-color: var(--tripadvisor)
+}
+
+.color-google {
+	background-color: var(--google)
+}
+
+.color-tumblr {
+	background-color: var(--tumblr)
+}
+
+.color-yelp {
+	background-color: var(--yelp)
+}
+
+.color-airbnb {
+	background-color: var(--airbnb)
+}
+
+.color-linkedin {
+	background-color: var(--linkedin)
+}
+
+.color-addthis {
+	background-color: var(--addthis)
+}
+
+.uk-icon-addthis::before {
+	content: "\f067"
+}
+
+[class*=trans-]>canvas {
+	transition: background-color 250ms linear
+}
+
+.trans-blue>canvas {
+	background-color: var(--trans-blue)
+}
+
+.trans-blue:hover>canvas {
+	background-color: var(--trans-blue-hover)
+}
+
+.trans-orange>canvas {
+	background-color: var(--trans-orange)
+}
+
+.trans-orange:hover>canvas {
+	background-color: var(--trans-orange-hover)
+}
+
+.trans-grey>canvas {
+	background-color: var(--trans-grey)
+}
+
+.trans-grey:hover>canvas {
+	background-color: var(--trans-grey-hover)
+}
+
+.trans-green>canvas {
+	background-color: var(--trans-green)
+}
+
+.trans-green:hover>canvas {
+	background-color: var(--trans-green-hover)
+}
+
+.trans-yellow>canvas {
+	background-color: var(--trans-yellow)
+}
+
+.trans-yellow:hover>canvas {
+	background-color: var(--trans-yellow-hover)
+}
+
+.trans-dark-grey>canvas {
+	background-color: var(--trans-dark-grey)
+}
+
+.trans-dark-grey:hover>canvas {
+	background-color: var(--trans-dark-grey-hover)
+}
+
+.trans-brown>canvas {
+	background-color: var(--trans-brown)
+}
+
+.trans-brown:hover>canvas {
+	background-color: var(--trans-brown-hover)
+}
+
+.trans-red>canvas {
+	background-color: var(--trans-red)
+}
+
+.trans-red:hover>canvas {
+	background-color: var(--trans-red-hover)
+}
+
+.white-text {
+	color: var(--white)
+}
+
+.opaque-text {
+	color: var(--opaque)
+}

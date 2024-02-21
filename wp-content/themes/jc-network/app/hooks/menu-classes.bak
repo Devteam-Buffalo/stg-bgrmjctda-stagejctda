@@ -1,0 +1,42 @@
+<?php
+/**
+ * Project Name:    Discover Jackson NC
+ * Project URI:     https://www.discoverjacksonnc.com
+ * Description:     Conditionally filter classes based on properties of the menu that contains the items
+ * Agency:          Rawle Murdy Associates
+ * Agency URI:      https://www.rawlemurdy.com
+ * Text Domain:     jctda
+ *
+ * @package         jctda
+ * @since           3.3.0
+ * @link            https://www.discoverjacksonnc.com
+ * @author          Lee Peterson
+ * @date            7/1/18
+ * @file            menu-classes.php
+ *
+ * @param array required $classes Nav menu item classes
+ * @param object required $item Nav menu item data object 
+ * @param array $args Nav menu arguments.
+ * @param int $depth Depth of menu item. Used for padding
+ *
+ * @see https://developer.wordpress.org/reference/functions/wp_get_nav_menu_items/index.html#Return_Values
+ */
+
+defined('ABSPATH') or exit;
+
+add_filter( 'nav_menu_css_class', function( $classes, $item, $args, $depth ) {
+	if ( isset( $classes ) ) {
+		$replace = [
+			'current-menu-item' => 'uk-active',
+			'current-menu-parent' => 'uk-active uk-parent',
+			'current-menu-ancestor' => 'uk-active uk-parent',
+			'current_page_item' => 'uk-active',
+			'current_page_parent' => 'uk-active uk-parent',
+			'current_page_ancestor' => 'uk-active uk-parent',
+			'menu-item-has-children' => 'uk-parent',
+		];
+		$classes = str_replace( array_keys( $replace ), array_values( $replace ), $classes );
+	}
+	
+	return $classes;
+}, 10, 4 );

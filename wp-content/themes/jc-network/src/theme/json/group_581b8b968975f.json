@@ -1,0 +1,77 @@
+{
+    "key": "group_581b8b968975f",
+    "title": "Menu - Nav Image",
+    "fields": [
+        {
+            "key": "field_581b8bfd22f19",
+            "label": "Nav Menu Image",
+            "name": "nav_menu_image",
+            "type": "image",
+            "instructions": "Choose the Tile Image which is associated with this menu item's page, post or category. Required size: 525x525; required type: jpg, jpeg, png.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "clearfix",
+                "id": ""
+            },
+            "return_format": "id",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": 525,
+            "min_height": 525,
+            "min_size": "",
+            "max_width": 525,
+            "max_height": 525,
+            "max_size": "",
+            "mime_types": "jpg,jpeg,png"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "menu",
+                "operator": "==",
+                "value": "4"
+            }
+        ],
+        [
+            {
+                "param": "menu",
+                "operator": "==",
+                "value": "164"
+            }
+        ],
+        [
+            {
+                "param": "menu",
+                "operator": "==",
+                "value": "165"
+            }
+        ],
+        [
+            {
+                "param": "menu",
+                "operator": "==",
+                "value": "166"
+            }
+        ],
+        [
+            {
+                "param": "menu",
+                "operator": "==",
+                "value": "175"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 0,
+    "description": "",
+    "menu_item_level": "first",
+    "modified": 1499441335
+}

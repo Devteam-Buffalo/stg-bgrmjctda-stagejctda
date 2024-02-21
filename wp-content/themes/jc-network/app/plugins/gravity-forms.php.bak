@@ -1,0 +1,233 @@
+<?php
+/**
+ * Project Name:    Discover Jackson NC
+ * Project URI:     https://www.discoverjacksonnc.com
+ * Description:     Gravity Forms modifications
+ * Agency:          Rawle Murdy Associates
+ * Agency URI:      https://www.rawlemurdy.com
+ * Text Domain:     jctda
+ *
+ * @package         jctda
+ * @since           20181219
+ * @author          lpeterson
+ */
+
+add_filter( 'gform_field_validation', function ( $result, $value, $form, $field ) {
+	$input = $field->get_input_type();
+
+	if ( $input === 'creditcard' && $result['is_valid'] && rgempty( $field->id . '.5', $value ) ) {
+		$result['is_valid'] = false;
+		$result['message']  = 'Please enter the cardholder\'s name.';
+	}
+
+	if ( $input === 'email' ) {
+		if ( !filter_var( $value, FILTER_VALIDATE_EMAIL ) ) {
+			$result['is_valid'] = false;
+			$result['message']  = 'Sorry, the provided email address didn\'t pass validation. Please check and try again.';
+		}
+	}
+
+	return $result;
+}, 10, 4 );
+
+add_action( 'gform_enqueue_scripts_6', function( $form, $is_ajax ) {
+	$css = '#input_6_8{display:table;display:flow-root}
+	#input_6_8>span{display:block;width:100%;margin:5px 0}
+	@media all and (min-width:480px){
+		#input_6_8>span{display:inline-block;width:49%;margin:5px 0}
+		#input_6_8>span:nth-child(odd){margin-right:1%;float:left}
+		#input_6_8>span:nth-child(even){margin-left:1%;float:right}
+	}
+	#gform_fields_6{margin: 0 0 .5rem 0}
+	#input_6_14{display:table;display:flow-root}
+	#input_6_14>li{display:block;width:100%}
+	@media all and (min-width:768px){
+		#gform_fields_6{margin: 0 0 1rem 0}
+		#input_6_14>li{display:inline-block;width:49%;margin:0}
+		#input_6_14>li:nth-child(odd){margin-right:1%;float:left}
+		#input_6_14>li:nth-child(even){margin-left:1%;float:right}
+	}
+	#gform_fields_6 .hidden_label.gfield_visibility_visible,#gform_fields_6 .field_admin_only{margin:0}';
+	wp_enqueue_style( 'gform_chosen' );
+	wp_add_inline_style( 'style', $css );
+}, 10, 2 );
+
+// filter the Gravity Forms button type
+add_filter( 'gform_submit_button_13', function( $button, $form ) {
+	$form_id = $form['id'];
+
+	$data = "function gf_sms_click() {
+		if ( window['gf_submitting_{$form_id}'] ) {
+			return false;
+		}
+
+		if ( ! $('#gform_{$form_id}')[0].checkValidity || $('#gform_{$form_id}')[0].checkValidity() ) {
+			window['gf_submitting_{$form_id}'] = true;
+		}
+	}
+	function gf_sms_key() {
+		if ( event.keyCode == {$form_id} ) {
+			if ( window['gf_submitting_{$form_id}'] ) {
+				return false;
+			}
+
+			if ( ! $('#gform_{$form_id}')[0].checkValidity || $('#gform_{$form_id}')[0].checkValidity() ) {
+				window['gf_submitting_{$form_id}'] = true;
+			}
+
+			$('#gform_{$form_id}').trigger( 'submit', [true] );
+		}
+	}";
+
+	wp_add_inline_script( 'global/js', $data, 'after' );
+
+	return '<button id="gform_submit_button_'.$form_id.'" class="gform_button button uk-button uk-button-primary uk-button-large uk-width-1-1" title="Send this Location\'s Details via SMS" value="Send Location Details SMS" onclick="gf_sms_click()" onkeypress="gf_sms_key()" type="submit"><i class="uk-icon-commenting"></i> Send Message Now</button>';
+
+}, 10, 2 );
+
+/**
+ * Location directions
+ *
+ * @since 2.1.0
+ *
+ */
+add_filter( 'gform_confirmation_19', function( $confirmation, $form, $entry, $ajax ) {
+	$origin = str_replace( ' ', '+', $entry['2'] );
+	$destination = $entry['9'] . '+' . $entry['10'];
+
+	$confirmation = '<div id="location-directions-confirmation" class="uk-cover" style="max-width:100%;height:150px;overflow:hidden"><iframe src="https://www.google.com/maps/embed/v1/directions?key='.MAPS_KEY.'&origin='.$origin.'&destination='.$destination.'" width="100%" height="150" frameborder="0" style="border:0;height:150px" allowfullscreen></iframe></div>';
+
+	return $confirmation;
+}, 10, 4 );
+
+// if ( $result['is_valid'] ) {
+// 	$endpoint = add_query_arg([
+// 		'address' => $value,
+		// 'mailbox_verification' => true,
+	// 	'api_key'  => 'key-cbf247c9fe45b4964f2aab26c402d00d',
+	// ], 'https://api.mailgun.net/v3/address/private/validate' );
+
+	// $remote   = wp_remote_get( $endpoint );
+	// $body     = wp_remote_retrieve_body( $remote );
+	// $response = json_decode( $body, true );
+
+	// if ( rgar( $response, 'is_valid' ) !== true ) {
+	// 	$result['is_valid'] = false;
+	// 	$result['message']  = 'Sorry, the provided email address didn\'t pass validation. Please check and try again.';
+	// }
+
+	// if ( class_exists( 'GF_MailChimp_API' ) ) {
+	// 	$api_key = gf_mailchimp()->get_plugin_setting( 'apiKey' );
+
+	// 	if ( rgblank( $api_key ) )
+	// 		return $result;
+
+	// 	$entry	 = GFFormsModel::get_current_lead();
+	// 	$feeds	 = gf_mailchimp()->get_single_submission_feed_by_form( $form, $entry );
+	// 	$list_id = rgars( $feeds, '0/meta/mailchimpList' );
+
+	// 	if ( empty( $list_id ) )
+	// 		return $result;
+
+	// 	$mc_api = new GF_MailChimp_API( $api_key );
+	// 	$member = $mc_api->get_list_member( $list_id, $value );
+	// 	$status = $member['status'];
+
+	// 	if ( $status == 'subscribed' ) {
+	// 		$result['is_valid'] = false;
+	// 		$result['message']	= 'We appreciate your interest, however, it appears that you have already signed up!';
+	// 	}
+	// }
+// }
+// }
+
+
+/**
+ * Prevent page scrolling after submission
+ */
+add_filter( 'gform_confirmation_anchor', '__return_false' );
+/**
+ * Force CSS output radio field to be set to "No"
+ */
+add_filter( 'pre_option_rg_gforms_disable_css', '__return_true' );
+/**
+ * Add option to disable labels from admin UI per form field
+ */
+add_filter( 'gform_enable_field_label_visibility_settings', '__return_true' );
+/**
+ * Force JS scripts into the footer
+ */
+add_filter( 'gform_init_scripts_footer', '__return_true' );
+/**
+ * Replace archive title merge tag
+ */
+add_filter( 'gform_replace_merge_tags', function ( $text, $form ) {
+	$merge_tag = '{archive_title}';
+
+	if ( strpos( $text, $merge_tag ) === false || ! empty( $form ) )
+		return $text;
+
+	return str_replace( $merge_tag, get_the_archive_title(), $text );
+}, 10, 2 );
+
+add_filter( 'gform_field_css_class', function( $classes, $field, $form ) {
+	if ( in_array( $field->type, ['text', 'email', 'tel', 'select', 'textarea', 'radio', 'checkbox', 'range'] ) )
+		$classes .= ' uk-form-controls';
+
+	return $classes;
+}, 10, 3 );
+
+/**
+ * Convert state names to abbreviations
+ */
+add_filter( 'gform_address_types', function( $address_types, $form_id ) {
+	$address_types["us"] = [
+	"label" => "United States",
+	"country" => "US",
+	"zip_label" => "Zip Code",
+	"state_label" => "State",
+	"states" => [ "" => "", "AL" => "Alabama", "AK" => "Alaska", "AZ" => "Arizona", "AR" => "Arkansas", "CA" => "California", "CO" => "Colorado", "CT" => "Connecticut", "DE" => "Delaware", "DC" => "District of Columbia", "FL" => "Florida", "GA" => "Georgia", "GU" => "Guam", "HI" => "Hawaii", "ID" => "Idaho", "IL" => "Illinois", "IN" => "Indiana", "IA" => "Iowa", "KS" => "Kansas", "KY" => "Kentucky", "LA" => "Louisiana", "ME" => "Maine", "MD" => "Maryland", "MA" => "Massachusetts", "MI" => "Michigan", "MN" => "Minnesota", "MS" => "Mississippi", "MO" => "Missouri", "MT" => "Montana", "NE" => "Nebraska", "NV" => "Nevada", "NH" => "New Hampshire", "NJ" => "New Jersey", "NM" => "New Mexico", "NY" => "New York", "NC" => "North Carolina", "ND" => "North Dakota", "OH" => "Ohio", "OK" => "Oklahoma", "OR" => "Oregon", "PA" => "Pennsylvania", "PR" => "Puerto Rico", "RI" => "Rhode Island", "SC" => "South Carolina", "SD" => "South Dakota", "TN" => "Tennessee", "TX" => "Texas", "UT" => "Utah", "VT" => "Vermont", "VA" => "Virginia", "WA" => "Washington", "WV" => "West Virginia", "WI" => "Wisconsin", "WY" => "Wyoming" ]
+
+	];
+
+	return $address_types;
+}, 10, 2 );
+
+/**
+ * Set the loading animation source
+ */
+add_filter( 'gform_ajax_spinner_url', function( $image_src, $form ) {
+	$image_src = '//storage.googleapis.com/jctda-cdn/assets/img/the-spinner-1.svg';
+	return $image_src;
+}, 10, 2 );
+
+add_filter( 'gform_validation_message', function( $message, $form ) {
+	return '<div class="uk-alert uk-alert-danger" data-uk-alert>' .
+	'<a href="" class="uk-alert-close uk-close"></a>' .
+	'<p>'.$message.'</p>' .
+	'</div>';
+}, 10, 2 );
+
+// add_filter( 'gform_multiselect_placeholder_6_10', function( $placeholder, $form_id ) {
+//     return 'Click here, then select your interests...';
+// }, 10, 2 );
+
+// add_action( 'gform_register_init_scripts_13', function( $form ) {
+	// <!-- <script>
+	// 	 (function() {
+	// 		var load = function() {
+	// 			gform.addFilter( 'gform_spinner_target_elem', function( $targetElem, formId ) {
+	// 				var $targetElem = jQuery('#post-3840');
+	// 				return $targetElem;
+	// 			} );
+	// 		};
+
+	// 		if(window.addEventListener) {
+	// 			window.addEventListener('load',load);
+	// 		} else {
+	// 			window.attachEvent('onload',load);
+	// 		}
+	// 	 }());
+	// </script> -->
+	//return $form;
+//}, 10, 1 );

@@ -1,0 +1,150 @@
+<?php
+/**
+ * Project Name:    Discover Jackson NC
+ * Project URI:     https://www.discoverjacksonnc.com
+ * Description:     Modifications to Modern Tribe's The Event Calendar
+ * Agency:          Rawle Murdy Associates
+ * Agency URI:      https://www.rawlemurdy.com
+ * Text Domain:     jctda
+ *
+ * @package         jctda
+ * @since           20181118
+ * @author          lpeterson
+ */
+
+
+/**
+ * Allow the default post thumbnail size to be filtered
+ *
+ * @param $size
+ */
+// add_filter( 'tribe_events_list_widget_thumbnail_size', 'post-thumbnail' );
+
+/**
+ * Filters whether the featured image link should be added to the Events List Widget
+ *
+ * @since 4.5.13
+ *
+ * @param bool $featured_image_link Whether the featured image link should be added or not
+ *
+ * before: do_action( 'tribe_events_list_widget_before_the_event_image' );
+ * output: $post_thumbnail = '<a href="' . esc_url( tribe_get_event_link() ) . '">' . $post_thumbnail . '</a>';
+ * after: do_action( 'tribe_events_list_widget_after_the_event_image' );
+ */
+// add_action( 'tribe_events_list_widget_before_the_event_image' );
+// add_filter( 'tribe_events_list_widget_featured_image_link', true );
+// add_action( 'tribe_events_list_widget_after_the_event_image' );
+
+/**
+ * Provides an opportunity to modify the featured image size.
+ *
+ * @param string $size
+ * @param int    $post_id
+ */
+
+/**
+ * Whether to wrap the featured image in our standard div (used to
+ * assist in targeting featured images from stylesheets, etc).
+ *
+ * @param bool $wrapper
+ */
+// $wrapper = '<div class="tribe-events-event-image">' . $featured_image . '</div>';
+// add_filter( 'tribe_events_featured_image_wrap', $wrapper );
+
+/**
+ * Provides an opportunity to modify the featured image HTML.
+ *
+ * @param string $featured_image
+ * @param int    $post_id
+ * @param string $size
+ */
+// add_filter( 'tribe_event_featured_image', $featured_image, $post_id, $size );
+
+/**
+ * Filter the thumbnail image size for use in the embed template.
+ *
+ * @since 4.4.0
+ * @since 4.5.0 Added `$thumbnail_id` parameter.
+ *
+ * @param string $image_size   Thumbnail image size.
+ * @param int    $thumbnail_id Attachment ID.
+ */
+
+/**
+ * Filter the thumbnail shape for use in the embed template.
+ *
+ * Rectangular images are shown above the title while square images
+ * are shown next to the content.
+ *
+ * @since 4.4.0
+ * @since 4.5.0 Added `$thumbnail_id` parameter.
+ *
+ * @param string $shape        Thumbnail image shape. Either 'rectangular' or 'square'.
+ * @param int    $thumbnail_id Attachment ID.
+ */
+// add_filter( 'embed_thumbnail_image_shape', $shape, $thumbnail_id );
+
+// add_filter( 'tribe_rest_single_event_data', function( array $event_data ) {
+// 	$desc = get_post_meta( $event_data['id'], '_google_event_description', true );
+// 	$event_data['json_ld']['description'] = $desc;
+// 	return $event_data;
+// });
+
+// add_filter( 'tribe_json_ld_event_data', function( $data ) {
+// 	$desc = $data['description'];
+
+// 	$data = array_merge( $data, [
+// 		'json_ld' => [
+// 			'description' => preg_replace( "/[^A-Za-z0-9 ]/", '', $desc )
+// 		]
+// 	] );
+// 	return $data;
+// }, 5 );
+
+// add_filter( 'tribe_json_ld_event_data', function( array $event_data ) {
+// 	$google_desc = tribe_get_custom_fieldsz( $event_data['id'], '_ecp_custom_10', true );
+// 	$event_desc = get_the_excerpt( $event_data['id'] );
+
+// 	if ( !empty( $google_desc ) ) {
+// 		$event_data['json_ld']['description'] = preg_replace( "/[^A-Za-z0-9 ]/", '', $google_desc );
+// 	}
+// 	else {
+// 		$event_data['json_ld']['description'] = preg_replace( "/[^A-Za-z0-9 ]/", '', $event_desc );
+// 	}
+
+// 	return $event_data;
+// });
+
+// this filter adds the custom field values to the json output
+// add_filter( 'tribe_rest_event_data', 'sp_add_event_customfields' );
+// function sp_add_event_customfields($data) {
+// $event_id = $data['id'];
+// $data = array_merge( $data,
+
+// array("custom_fields" => array(
+//     'price'  => get_post_meta( $event_id, '_ecp_custom_2', true ),
+//     'Referent' => get_post_meta( $event_id, '_ecp_custom_3', true ),
+//     'Details_Anmeldung' => get_post_meta( $event_id, '_ecp_custom_4', true ),
+//     'Fotorechte' => get_post_meta( $event_id, '_ecp_custom_7', true ),
+//     'Preis' => get_post_meta( $event_id, '_ecp_custom_16', true ),
+//     )    ));
+
+//     return $data;
+// }
+
+// $data['json_ld']['description'] = get_post_meta( $event->ID, '_ecp_custom_10', true );
+//$data['json_ld']['description'] = preg_replace( "/[^A-Za-z0-9 ]/", '', $data['description'] );
+
+// $google_desc
+
+// if (
+//      &&
+//     is_array( $fields ) &&
+//     array_key_exists( 'Google Event Description', $fields ) &&
+//     !empty( $fields['Google Event Description'] )
+// ) {
+// 	$event_data['json_ld']['description'] = $fields['Google Event Description'];
+// }
+// else {
+// 	$event_data['json_ld']['description'] = strip_tags( $event_data['description'], '' );
+// }

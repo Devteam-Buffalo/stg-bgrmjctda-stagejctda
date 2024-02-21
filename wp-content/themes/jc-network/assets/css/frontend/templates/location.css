@@ -1,0 +1,469 @@
+section.single-location {
+	transform: translateY(-6rem)
+}
+
+.location-share>div:first-of-type span {
+	line-height: 35px;
+	letter-spacing: 1px
+}
+
+.location-share .social-button {
+	margin-right: 0
+}
+
+.location-intro .weather-container {
+	position: absolute;
+	top: 10px;
+	right: 5px;
+	left: auto;
+	width: 100%
+}
+
+.location-intro .weather-container .weather {
+	position: relative;
+	color: var(--dark-grey)
+}
+
+.location-intro .weather-container .weather-condition {
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: auto;
+	font-size: 1rem;
+	text-transform: uppercase;
+	font-family: var(--sans-light)
+}
+
+.location-intro .weather-container .weather-temp,
+.location-intro .weather-container i {
+	float: right;
+	margin-left: 5px;
+	font-size: 2.25rem;
+	line-height: 2.2
+}
+
+.location-intro .weather-container i {
+	font-size: 2rem;
+	line-height: 2.35
+}
+
+.location-intro h2 {
+	font: normal 1.25rem/1.5 var(--sans-regular);
+	color: var(--grey)
+}
+
+.location-intro .intro h3,
+.post-type-archive .intro h3,
+.towns .intro h3,
+.weddings .intro h3 {
+	margin: 1rem 0;
+	font-size: 1.5rem;
+	line-height: 1.4
+}
+
+.location-intro .intro p,
+.post-type-archive .intro p,
+.towns .intro p,
+.weddings .intro p {
+	margin: 1rem 0;
+	font-size: 1.1rem;
+	line-height: 1.4
+}
+
+.post-type-archive .intro {
+	margin-bottom: .5rem;
+	text-align: center
+}
+
+@media all and (min-width:768px) {
+	.post-type-archive .intro {
+		margin-bottom: 1rem
+	}
+}
+
+@media all and (min-width:1220px) {
+	.post-type-archive .intro {
+		margin-bottom: 2rem
+	}
+}
+
+.location-contact .uk-flex-1 {
+	min-width: 25%;
+	border-bottom: 1px solid var(--light-grey)
+}
+
+div.location-sms {
+	margin-bottom: 1rem;
+	padding: 1rem;
+	border: 3px solid rgba(0, 0, 0, .125);
+	background-color: #fff;
+	border-radius: 5px
+}
+
+div.location-meta-value span {
+	font-size: 12px;
+	color: #999
+}
+
+.location-directions {
+	background: #fff;
+	border: 1px solid #ccc;
+	box-shadow: 0 5px 15px -5px rgba(0, 0, 0, .25)
+}
+
+.location-directions .uk-close {
+	position: absolute;
+	left: calc(100% - 20px);
+	bottom: calc(100% - 20px)
+}
+
+@media all and (max-width:479px) {
+	.contact {
+		display: block
+	}
+
+	.contact>div {
+		margin-bottom: .5rem;
+		padding-bottom: .5rem;
+		border-bottom: 1px solid #eee
+	}
+}
+
+@media all and (min-width:480px) {
+	.contact>div:not(.directions) {
+		padding-left: 1rem
+	}
+
+	.contact>.directions {
+		min-width: 160px
+	}
+}
+
+.location-intro {
+	background: #fff;
+	padding: 2rem;
+	border: 1px solid #ddd;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, .25);
+	margin-bottom: 2rem
+}
+
+#single-location-map-frame {
+	height: 250px
+}
+
+.utility-print>a {
+	display: block;
+	padding: 1rem;
+	background: #069;
+	color: #fff;
+	text-align: center;
+	font-size: 1.25rem
+}
+
+.location-sms {
+	margin-bottom: 1rem;
+	padding: 1rem;
+	border: 3px solid rgba(0, 0, 0, .125);
+	background-color: #fff;
+	border-radius: 5px
+}
+
+.location-meta-info {
+	font-size: 12px;
+	color: #999
+}
+
+.location-meta-value>a {
+	display: block;
+	padding-right: 1rem
+}
+
+.left-column {
+	transform: translateY(-3rem)
+}
+
+.overlay {
+	position: relative;
+	padding: 3rem;
+	border: 1px solid var(--light-grey);
+	box-shadow: 0 .5rem 1rem var(--trans);
+	background-color: var(--white)
+}
+
+@media all and (min-width:480px) {
+	.location-contact .uk-flex-1 {
+		border-bottom: none
+	}
+}
+
+@media all and (min-width:480px) {
+	.location-contact .uk-flex-1:not(:last-of-type) a {
+		border-right: 1px solid var(--light-grey)
+	}
+}
+
+@media all and (min-width:768px) {
+	.location-description {
+		padding-right: 5%
+	}
+}
+
+.location-photo-gallery {
+	margin-top: 2rem
+}
+
+.location-photo-gallery .location-photos {
+	padding: 1rem;
+	border: 1px solid var(--light-grey);
+	border-top: 0
+}
+
+.location-photo-gallery .location-photo a {
+	display: block;
+	padding: 5px;
+	border: 1px solid var(--light-grey);
+	height: 75px;
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat
+}
+
+@media all and (min-width:480px) {
+	.location-photo-gallery .location-photo a {
+		height: 85px
+	}
+}
+
+@media all and (min-width:960px) {
+	.location-photo-gallery .location-photo a {
+		height: 75px
+	}
+}
+
+.location-sidebar .location-logo img {
+	display: block;
+	margin: 0 auto;
+	width: auto
+}
+
+.location-sidebar .map {
+	height: 300px
+}
+
+.location-sidebar .location-meta {
+	position: static;
+	bottom: auto;
+	right: auto;
+	margin: auto;
+	background-color: transparent
+}
+
+.location-sidebar .location-meta p {
+	margin: 1rem 0
+}
+
+.location-sidebar .location-meta span {
+	position: relative;
+	display: inline-block;
+	margin: 0 10px 10px 0;
+	height: 20px;
+	min-width: 10px;
+	text-align: center
+}
+
+.location-sidebar .location-meta span::before {
+	display: block;
+	font-family: var(--icon);
+	font-size: 20px;
+	line-height: 20px
+}
+
+.location-sidebar .location-meta span i {
+	display: block;
+	font: normal .75rem var(--sans-light);
+	line-height: 2;
+	text-transform: uppercase;
+	letter-spacing: .05em
+}
+
+.location-sidebar .location-meta .location-meta-info {
+	margin: 0 0 .5rem;
+	padding: 0 0 .5rem;
+	border-bottom: 1px solid var(--medium-grey);
+	font-size: 1rem;
+	line-height: 1;
+	color: var(--medium-grey);
+	text-overflow: ellipsis
+}
+
+.location-sidebar .location-meta.terms a,
+.location-sidebar .location-meta.terms span,
+.location-sidebar .location-meta.terms span::before {
+	height: 15px;
+	font-family: var(--sans-regular);
+	font-size: 11px;
+	line-height: 15px
+}
+
+.location-sidebar .location-meta.terms a {
+	display: inline-block;
+	padding: 2px 5px;
+	border-radius: 2px;
+	background: var(--grey);
+	color: var(--white);
+	transition: .2s all linear
+}
+
+.location-sidebar .location-meta.terms a:hover {
+	background: #069;
+	text-decoration: none
+}
+
+.location-sidebar .location-meta.icons .price span {
+	margin-right: 5px
+}
+
+.location-sidebar .location-meta.icons .price span::before {
+	content: "\f155";
+	color: #0dc319
+}
+
+.location-sidebar .location-meta.icons .payment .cash::before {
+	content: "\f155";
+	color: #85bb65
+}
+
+.location-sidebar .location-meta.icons .payment .debit::before {
+	content: "\f09d";
+	color: #d28f07
+}
+
+.location-sidebar .location-meta.icons .payment .visa::before {
+	content: "\f1f0";
+	color: #1a1f71
+}
+
+.location-sidebar .location-meta.icons .payment .amex::before {
+	content: "\f1f3";
+	color: #0072bc
+}
+
+.location-sidebar .location-meta.icons .payment .mastercard::before {
+	content: "\f1f1";
+	color: #f79e1b
+}
+
+.location-sidebar .location-meta.icons .payment .discover::before {
+	content: "\f1f2";
+	color: #f60
+}
+
+.location-sidebar .location-meta.icons .payment .check::before {
+	content: "\f00c";
+	color: #719a74
+}
+
+.location-sidebar .location-meta.icons .payment .diners::before {
+	content: "\f24c";
+	color: #2477ab
+}
+
+.location-sidebar .location-meta.icons .social [class*=facebook]::before {
+	content: "\f09a";
+	color: #3b5998
+}
+
+.location-sidebar .location-meta.icons .social [class*=twitter]::before {
+	content: "\f099";
+	color: #657786
+}
+
+.location-sidebar .location-meta.icons .social [class*=tripadvisor]::before {
+	content: "\f262";
+	color: #00af87
+}
+
+.location-sidebar .location-meta.icons .social [class*=goo]::before {
+	content: "\f0d5";
+	color: #4285f4
+}
+
+.location-sidebar .location-meta.icons .social [class*=instagram]::before {
+	content: "\f16d";
+	color: #833ab4
+}
+
+.location-sidebar .location-meta.icons .social [class*=yelp]::before {
+	content: "\f1e9";
+	color: #af0606
+}
+
+.location-sidebar .location-meta.icons .social [class*=youtu]::before {
+	content: "\f167";
+	color: red
+}
+
+.location-sidebar .location-meta.icons .social [class*=tumblr]::before {
+	content: "\f173";
+	color: #35465c
+}
+
+.location-sidebar .location-meta.icons .social [class*=air]::before {
+	content: "A";
+	color: #fd5c63
+}
+
+.location-sidebar .location-meta.icons .social [class*=vrbo]::before {
+	content: "VRBO";
+	color: var(--grey)
+}
+
+.location-sidebar .location-meta.icons .social [class*=pinterest]::before {
+	content: "\f0d2";
+	color: var(--pinterest)
+}
+
+.location-sidebar .location-meta.icons .seasons .fall::before {
+	content: "\f06c";
+	color: #725308
+}
+
+.location-sidebar .location-meta.icons .seasons .winter::before {
+	content: "\f2dc";
+	color: #0fb7ef
+}
+
+.location-sidebar .location-meta.icons .seasons .spring::before {
+	content: "\f1bb";
+	color: #08a61d
+}
+
+.location-sidebar .location-meta.icons .seasons .summer::before {
+	content: "\f185";
+	color: #f70303
+}
+
+.location-sidebar .location-utility {
+	margin-bottom: 2rem;
+	clear: both
+}
+
+.location-sidebar .location-utility a {
+	display: block;
+	padding: 8px 0;
+	border: 1px solid var(--medium-grey);
+	background-color: var(--light-grey);
+	color: var(--grey);
+	line-height: 1
+}
+
+.location-sidebar .location-utility a:hover {
+	color: var(--black);
+	text-decoration: none
+}
+
+.location-sidebar .location-utility a:focus {
+	border: 1px solid var(--grey);
+	background-color: var(--grey);
+	color: var(--white)
+}

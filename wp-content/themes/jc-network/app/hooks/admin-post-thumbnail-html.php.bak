@@ -1,0 +1,28 @@
+<?php
+/**
+ * Project Name:    Discover Jackson NC
+ * Project URI:     https://www.discoverjacksonnc.com
+ * Description:     Filters the admin post thumbnail HTML markup to return
+ * Agency:          Rawle Murdy Associates
+ * Agency URI:      https://www.rawlemurdy.com
+ * Text Domain:     jctda
+ *
+ * @package         jctda
+ * @since           20181211
+ * @author          lpeterson
+ *
+ * @since 2.9.0
+ * @since 3.5.0 Added the `$post_id` parameter.
+ * @since 4.6.0 Added the `$thumbnail_id` parameter.
+ *
+ * @param string $content      Admin post thumbnail HTML markup.
+ * @param int    $post_id      Post ID.
+ * @param int    $thumbnail_id Thumbnail ID.
+ */
+
+add_filter( 'admin_post_thumbnail_html', function( $content, $post_id, $thumbnail_id ) {
+	return '<p>Please upload a full-size image with dimensions no larger than 7680×4320px (8K UHD).</p>' .
+	"\n".
+	$content;
+}, 10, 3 );
+

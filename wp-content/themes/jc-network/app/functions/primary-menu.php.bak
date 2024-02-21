@@ -1,0 +1,122 @@
+<?php
+/*
+**  @file               menus.php
+**  @description        
+**  @package            jctda
+**  @since              2.0.0
+**  @author             lpeterson
+**  @date               3/21/18
+*/
+
+defined('ABSPATH') || exit;
+
+if( ! function_exists( 'jc_primary_menu' ) ) {
+
+	function jc_primary_menu( $menu = null ) {
+		
+		$menus = get_nav_menu_locations();
+		
+		if ( isset( $menus[$menu] ) ) {
+			
+			$menu = wp_get_nav_menu_object( $menus[$menu] );
+			
+			$items = wp_get_nav_menu_items( $menu->term_id );
+			
+			if ( is_array( $items ) ) {
+
+				foreach ( $items as $k => $item ) {
+					
+					ob_start();
+					
+					$nav = wp_nav_menu( [
+						'theme_location'  => '__prevent_fallback_menu',
+						'menu'            => $item->title . ' Mega Menu',
+						'menu_id'         => '',
+						'menu_class'      => 'uk-column-medium-1-2 uk-column-1-1 uk-padding-remove',
+						'container'       => '',
+						'container_id'    => '',
+						'container_class' => '',
+						'fallback_cb'     => false,
+						'echo'            => false,
+						'depth'           => 1,
+						'items_wrap'      => '<ul class="%2$s">%3$s</ul>',
+						'item_spacing'    => 'discard'
+					] );
+					
+					$slug = pods_str_replace( 'amp_', '', pods_clean_name( $item->title ) );
+					$ad_url = get_option( 'jc_mega_menu_ad_url_'.$slug );
+					$ad_img = get_option( 'jc_mega_menu_ad_image_'.$slug );
+					$ad_arg = [ 'width' => 325, 'height' => 325, 'crop' => false, 'jpeg_quality' => 85 ];
+					
+					if ( ! empty( $ad_img ) ) {
+						$ad_img = maybe_unserialize( $ad_img );
+						$ad_id = absint( $ad_img[0] );
+						$image = wpthumb( wp_get_attachment_image_url( $ad_id, 'full', false ), $ad_arg );
+					} ?>
+					
+					<?php //show($item) ?>
+					
+					<ul class="uk-navbar-nav <?= ( $item->title == 'Your Trip' ) ? 'uk-flex-item-auto' : 'uk-flex-item-none' ?>">
+						<li class="<?= $item->classes[0] ?>" data-uk-dropdown="{mode:'click',justify:'#page'}">
+							<a href="javascript:void()" id="menu-<?= $item->object .'-'. $item->object_id ?>" class="<?= ( $item->title == 'Search' ) ?: 'uk-visible-large' ?>" title="<?= $item->attr_title .' '.$item->type_label ?>">
+								<div id="<?= $slug ?>-nav-icon" class="uk-hidden-large nav-icon"></div>
+								<?php if ( $item->title == 'Search' ) : ?>
+									<img src="<?= ASSETS . '/img/search-alt.svg' ?>" alt="Search" width="20" height="20" class="search-icon">
+									<span class="uk-hidden-small"><?= $item->title ?></span>
+								<?php else : ?>
+									<?= $item->title ?>
+								<?php endif ?>
+							</a>
+							
+							<div class="uk-dropdown-blank uk-dropdown-width-3 uk-dropdown-navbar">
+								<div class="async-indicator"></div>
+<!-- 								<a class="uk-dropdown-close uk-icon-close uk-close uk-close-alt uk-position-top-right" style="z-index: 3"></a> -->
+								
+								<div class="async-contents uk-padding-vertical-large">
+									<div class="uk-container uk-container-center">
+										<div class="uk-grid uk-dropdown-grid">
+											<div class="uk-width-1-1<?= ( ! empty($ad_img) ) ? ' uk-width-large-2-3' : '' ?>">
+												<a href="<?= ( $item->title == 'Search' ) ? 'javascript:void()' : $item->url ?>" id="parent-<?= $item->object .'-'. $item->object_id ?>" class="uk-dropdown-title text-white" title="<?= $item->attr_title .' '.$item->type_label ?>">
+													<?= $item->title ?>
+												</a>
+												<div class="uk-nav uk-nav-dropdown">
+													<?php if ( $item->title == 'Search' ) : ?>
+														<?php get_template_part( 'resource/view/partial/form/search', 'global' ) ?>
+													<?php else : ?>
+														<?= $nav ?>
+													<?php endif ?>
+												</div>
+											</div>
+											
+											<?php if ( isset($ad_img) && ! empty($ad_img) ) : ?>
+											<div class="uk-width-1-1 uk-width-medium-1-2 uk-width-large-1-3 uk-visible-large uk-text-right">
+												<?php if ( $ad_url ) : ?>
+													<a href="<?= $ad_url ?>" class="uk-display-inline-block"><img class="uk-display-block" src="<?= $image ?>"></a>
+												<?php else : ?>
+													<img src="<?= $image ?>">
+												<?php endif ?>
+											</div>
+											<?php endif ?>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+					
+					<?php ob_get_flush();
+					
+				}
+
+			}
+		
+		}
+		else {
+			echo 'Menu not set';
+		}
+		
+		return true;
+
+	}
+
+}

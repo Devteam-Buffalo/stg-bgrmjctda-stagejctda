@@ -1,0 +1,25 @@
+{
+	"name": "jctda",
+	"version": "2.1.0",
+	"license" : "proprietary",
+	"private": true,
+	"homepage": "https://www.discoverjacksonnc.com",
+	"support" : [
+		"Rawle Murdy Support <support@rawlemurdy.com>",
+		"Rawle Murdy Bug Tracking <https://rawlemurdy.mydonedone.com>"
+	],
+	"authors" : [
+		"Rawle Murdy Associates <digital@rawlemurdy.com>",
+		"Lee Peterson <lpeterson@rawlemurdy.com>"
+	],
+	"dependencies": {
+		"jquery" : "^2.2.4",
+		"uikit" : "^2.27.2",
+		"intercooler-js" : "^1.2.1",
+		"lightgallery" : "^1.6.8"
+	},
+	"ignore": [
+		"node_modules",
+		"bower_components"
+	]
+}

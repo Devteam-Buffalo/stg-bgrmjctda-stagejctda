@@ -1,0 +1,45 @@
+@charset "UTF-8";
+/*
+**  @file    _wp-attachment.scss
+**  
+**  @desc    
+**  
+**  @path    /_wp-attachment.scss
+**  @package jctda
+**  @author  Lee Peterson
+**  @date    11/9/17
+*/
+
+.wp-caption {
+	margin-bottom: 1rem;
+	max-width: 100%;
+
+	img[class*="wp-image-"] {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.wp-caption-text {
+		margin: .875rem 0 0;
+		text-align: center;
+		font-size: .9rem;
+		font-style: italic;
+	}
+}
+.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 1.5em;
+}
+.alignright {
+	display: inline;
+	float: right;
+	margin-left: 1.5em;
+}
+.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}

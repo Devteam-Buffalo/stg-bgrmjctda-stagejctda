@@ -1,0 +1,919 @@
+{
+    "key": "group_596763e6d0ba7",
+    "title": "Food & Drink Location Information",
+    "fields": [
+        {
+            "key": "field_596763e6de95f",
+            "label": "Business Name",
+            "name": "location_name",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "My Company Name",
+            "prepend": "",
+            "append": "",
+            "maxlength": 100
+        },
+        {
+            "key": "field_596763e6de9ea",
+            "label": "Type of Food & Drink Location",
+            "name": "location_food_types",
+            "type": "taxonomy",
+            "instructions": "Choose all that apply.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "food_drink_type",
+            "field_type": "multi_select",
+            "allow_null": 1,
+            "add_term": 1,
+            "save_terms": 1,
+            "load_terms": 1,
+            "return_format": "object",
+            "multiple": 0
+        },
+        {
+            "key": "field_596763e6dea71",
+            "label": "Food & Drink Amenities",
+            "name": "location_food_amenities",
+            "type": "taxonomy",
+            "instructions": "Choose all that apply.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "food_drink_amenity",
+            "field_type": "multi_select",
+            "allow_null": 1,
+            "add_term": 1,
+            "save_terms": 1,
+            "load_terms": 1,
+            "return_format": "object",
+            "multiple": 0
+        },
+        {
+            "key": "field_596763e6df0e8",
+            "label": "Descriptions",
+            "name": "location_descriptions",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "block",
+            "button_label": "<i class=\"uk-icon-plus uk-icon-justify\"><\/i> Add Descriptions",
+            "sub_fields": [
+                {
+                    "key": "field_596763e78b661",
+                    "label": "Type",
+                    "name": "type",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "uk-form-select",
+                        "id": ""
+                    },
+                    "choices": {
+                        "brief": "Brief",
+                        "summary": "Summary",
+                        "short": "Short",
+                        "detailed": "Detailed"
+                    },
+                    "default_value": [],
+                    "allow_null": 1,
+                    "multiple": 0,
+                    "ui": 1,
+                    "ajax": 1,
+                    "return_format": "value",
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_596763e78b731",
+                    "label": "Content",
+                    "name": "content",
+                    "type": "wysiwyg",
+                    "instructions": "View an example.",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "tooltip-slide",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "tabs": "visual",
+                    "toolbar": "basic",
+                    "media_upload": 0,
+                    "delay": 0
+                }
+            ]
+        },
+        {
+            "key": "field_596763e6df16e",
+            "label": "Contact Details",
+            "name": "location_contacts",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "block",
+            "button_label": "<i class=\"uk-icon-plus uk-icon-justify\"><\/i> Add Contacts",
+            "sub_fields": [
+                {
+                    "key": "field_596763e7bda8b",
+                    "label": "Contact Type",
+                    "name": "contact_type",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "uk-form-select",
+                        "id": ""
+                    },
+                    "choices": {
+                        "location": "Location",
+                        "mailing": "Mailing",
+                        "manager": "Manager",
+                        "owner": "Owner",
+                        "other": "Other"
+                    },
+                    "default_value": [],
+                    "allow_null": 1,
+                    "multiple": 0,
+                    "ui": 1,
+                    "ajax": 1,
+                    "return_format": "label",
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_596763e7bdb19",
+                    "label": "First Name",
+                    "name": "first_name",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_596763e7bdba7",
+                    "label": "Last Name",
+                    "name": "last_name",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_596763e7bdc34",
+                    "label": "Address",
+                    "name": "address",
+                    "type": "google_map",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "center_lat": "35.3738562",
+                    "center_lng": "-83.2280255",
+                    "zoom": 8,
+                    "height": 200
+                },
+                {
+                    "key": "field_596763e7bdcd3",
+                    "label": "Phone Number",
+                    "name": "phone_numbers",
+                    "type": "repeater",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "collapsed": "",
+                    "min": 0,
+                    "max": 0,
+                    "layout": "table",
+                    "button_label": "<i class=\"uk-icon-plus uk-icon-justify\"><\/i> Add Number",
+                    "sub_fields": [
+                        {
+                            "key": "field_596763e7e47f2",
+                            "label": "Type",
+                            "name": "type",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "uk-form-select",
+                                "id": ""
+                            },
+                            "choices": {
+                                "main": "Main",
+                                "alternate": "Alternate",
+                                "tollfree": "Toll-Free",
+                                "reservations": "Reservations",
+                                "mobile": "Mobile",
+                                "fax": "Fax",
+                                "other": "Other"
+                            },
+                            "default_value": [],
+                            "allow_null": 1,
+                            "multiple": 0,
+                            "ui": 1,
+                            "ajax": 1,
+                            "return_format": "value",
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_596763e7e4880",
+                            "label": "Number",
+                            "name": "number",
+                            "type": "number",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": 5559876543,
+                            "prepend": "",
+                            "append": "",
+                            "min": "0000000000",
+                            "max": 9999999999,
+                            "step": 1
+                        }
+                    ]
+                },
+                {
+                    "key": "field_596763e7bdd67",
+                    "label": "Email Address",
+                    "name": "email_address",
+                    "type": "email",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "email@address.com",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_596763e7bddf1",
+                    "label": "Newsletter Signup",
+                    "name": "newsletter_signup",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "Yes, I would like to receive the JCTDA bi-monthly newsletter.",
+                    "default_value": 0,
+                    "ui": 1,
+                    "ui_on_text": "Yes",
+                    "ui_off_text": "No"
+                }
+            ]
+        },
+        {
+            "key": "field_596763e6df1f2",
+            "label": "Websites",
+            "name": "location_websites",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "<i class=\"uk-icon-plus uk-icon-justify\"><\/i> Add Websites",
+            "sub_fields": [
+                {
+                    "key": "field_596763e828422",
+                    "label": "Type",
+                    "name": "type",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "uk-form-select",
+                        "id": ""
+                    },
+                    "choices": {
+                        "primary": "Primary",
+                        "secondary": "Secondary",
+                        "mobile": "Mobile",
+                        "app": "Web\/Mobile App",
+                        "meetings": "Meetings",
+                        "facebook": "Facebook",
+                        "twitter": "Twitter",
+                        "linkedin": "LinkedIn",
+                        "google_plus": "Google+",
+                        "youtube": "YouTube",
+                        "pinterest": "Pinterest",
+                        "instagram": "Instagram",
+                        "flickr": "Flickr",
+                        "whatsapp": "WhatsApp",
+                        "periscope": "Periscope",
+                        "foursquare": "Foursquare",
+                        "google_my_business": "Google My Business",
+                        "bing": "Bing",
+                        "yahoo": "Yahoo!",
+                        "tripadvisor": "Trip Advisor",
+                        "yelp": "Yelp",
+                        "vrbo": "VRBO",
+                        "airbnb": "AirBnB",
+                        "other": "Other"
+                    },
+                    "default_value": [],
+                    "allow_null": 1,
+                    "multiple": 0,
+                    "ui": 1,
+                    "ajax": 1,
+                    "return_format": "label",
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_596763e8284b2",
+                    "label": "URL",
+                    "name": "url",
+                    "type": "url",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "https:\/\/www.website.com"
+                }
+            ]
+        },
+        {
+            "key": "field_596763e6df276",
+            "label": "Hours of Availability",
+            "name": "location_hours",
+            "type": "repeater",
+            "instructions": "Please add up to 7 days.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 7,
+            "layout": "table",
+            "button_label": "<i class=\"uk-icon-plus uk-icon-justify\"><\/i> Add Hours",
+            "sub_fields": [
+                {
+                    "key": "field_596763e84a115",
+                    "label": "Day",
+                    "name": "day",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "uk-form-select",
+                        "id": ""
+                    },
+                    "choices": {
+                        "sunday": "Sunday",
+                        "monday": "Monday",
+                        "tuesday": "Tuesday",
+                        "wednesday": "Wednesday",
+                        "thursday": "Thursday",
+                        "friday": "Friday",
+                        "saturday": "Saturday"
+                    },
+                    "default_value": [],
+                    "allow_null": 1,
+                    "multiple": 0,
+                    "ui": 1,
+                    "ajax": 1,
+                    "return_format": "label",
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_596763e84a1a4",
+                    "label": "Open",
+                    "name": "open",
+                    "type": "time_picker",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "display_format": "g:i a",
+                    "return_format": "g:i a"
+                },
+                {
+                    "key": "field_596763e84a22e",
+                    "label": "Close",
+                    "name": "close",
+                    "type": "time_picker",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "display_format": "g:i a",
+                    "return_format": "g:i a"
+                }
+            ]
+        },
+        {
+            "key": "field_596763e6df30f",
+            "label": "Special Dates",
+            "name": "location_dates",
+            "type": "repeater",
+            "instructions": "Special dates such as holidays.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 7,
+            "layout": "table",
+            "button_label": "<i class=\"uk-icon-plus uk-icon-justify\"><\/i> Add Dates",
+            "sub_fields": [
+                {
+                    "key": "field_596763e86d8cd",
+                    "label": "Date",
+                    "name": "date",
+                    "type": "date_picker",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "display_format": "m\/d\/Y",
+                    "return_format": "F j, Y",
+                    "first_day": 0
+                },
+                {
+                    "key": "field_596763e86d980",
+                    "label": "Open",
+                    "name": "open",
+                    "type": "time_picker",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "display_format": "g:i a",
+                    "return_format": "g:i a"
+                },
+                {
+                    "key": "field_596763e86da1a",
+                    "label": "Close",
+                    "name": "close",
+                    "type": "time_picker",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "display_format": "g:i a",
+                    "return_format": "g:i a"
+                }
+            ]
+        },
+        {
+            "key": "field_596763e6df396",
+            "label": "Price Range",
+            "name": "location_price",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "1": "$",
+                "2": "$$",
+                "3": "$$$",
+                "4": "$$$$",
+                "5": "$$$$$"
+            },
+            "allow_null": 1,
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": "",
+            "layout": "vertical",
+            "return_format": "label"
+        },
+        {
+            "key": "field_596763e6df41a",
+            "label": "Payment Methods Accepted",
+            "name": "location_payment",
+            "type": "checkbox",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "cash": "Cash",
+                "debit": "Debit",
+                "amex": "AMEX",
+                "visa": "Visa",
+                "mastercard": "MasterCard",
+                "discover": "Discover",
+                "diners_club": "Diners Club",
+                "check": "Check"
+            },
+            "allow_custom": 0,
+            "save_custom": 0,
+            "default_value": [],
+            "layout": "vertical",
+            "toggle": 0,
+            "return_format": "label"
+        },
+        {
+            "key": "field_596763e6df49e",
+            "label": "Deposit Amount",
+            "name": "location_deposit",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "deposit-amount",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": 300,
+            "prepend": "$",
+            "append": ".00",
+            "min": "",
+            "max": "",
+            "step": 1
+        },
+        {
+            "key": "field_596763e6df522",
+            "label": "Company Logo",
+            "name": "location_logo",
+            "type": "image",
+            "instructions": "Please upload a web-compatible file such as PNG or JPG. Refrain from uploading PDF, EPS, etc.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "uk-form-file",
+                "id": "upload-drop"
+            },
+            "return_format": "url",
+            "preview_size": "full",
+            "library": "uploadedTo",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_596763e6df5a7",
+            "label": "Featured Photo",
+            "name": "location_photo",
+            "type": "image",
+            "instructions": "Please upload a web-compatible file such as a JPG at least 1200px wide, 72dpi, no larger than 10MB. Refrain from uploading PDF, EPS, PNG, etc.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "uk-form-file",
+                "id": "upload-drop"
+            },
+            "return_format": "url",
+            "preview_size": "full",
+            "library": "uploadedTo",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_596763e6df62b",
+            "label": "Photo Galleries",
+            "name": "location_galleries",
+            "type": "repeater",
+            "instructions": "Please upload web-compatible files such as JPGs at least 300px wide, 72dpi, no larger than 10MB. Refrain from uploading PDF, EPS, PNG, etc.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "block",
+            "button_label": "<i class=\"uk-icon-plus uk-icon-justify\"><\/i> Add Photos",
+            "sub_fields": [
+                {
+                    "key": "field_596763e8c2ba2",
+                    "label": "Type",
+                    "name": "type",
+                    "type": "taxonomy",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "uk-form-select",
+                        "id": ""
+                    },
+                    "taxonomy": "media_types",
+                    "field_type": "select",
+                    "allow_null": 1,
+                    "add_term": 1,
+                    "save_terms": 1,
+                    "load_terms": 1,
+                    "return_format": "object",
+                    "multiple": 0
+                },
+                {
+                    "key": "field_596763e8c2c32",
+                    "label": "Photos",
+                    "name": "photos",
+                    "type": "gallery",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "min": "",
+                    "max": "",
+                    "insert": "append",
+                    "library": "uploadedTo",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": ""
+                }
+            ]
+        },
+        {
+            "key": "field_596763e6df6b1",
+            "label": "Shopping Center Location",
+            "name": "location_shopping",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Is your business located in a shopping center?",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "Yes",
+            "ui_off_text": "No"
+        },
+        {
+            "key": "field_596763e6df737",
+            "label": "Choose Nearby Locations",
+            "name": "location_nearby",
+            "type": "post_object",
+            "instructions": "Choose all that apply.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "uk-form-select",
+                "id": ""
+            },
+            "post_type": [
+                "attraction",
+                "food_drink",
+                "lodgings",
+                "town",
+                "wedding"
+            ],
+            "taxonomy": [],
+            "allow_null": 1,
+            "multiple": 1,
+            "return_format": "id",
+            "ui": 1
+        },
+        {
+            "key": "field_596763e6df7d0",
+            "label": "Seasons of Operation",
+            "name": "location_seasons",
+            "type": "checkbox",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "fall": "Fall",
+                "winter": "Winter",
+                "spring": "Spring",
+                "summer": "Summer"
+            },
+            "allow_custom": 0,
+            "save_custom": 0,
+            "default_value": [],
+            "layout": "horizontal",
+            "toggle": 0,
+            "return_format": "value"
+        },
+        {
+            "key": "field_596763e6df859",
+            "label": "Number of Employees",
+            "name": "location_employees",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "1": "1",
+                "2_5": "2-5",
+                "6_10": "6-10",
+                "11_20": "11-20",
+                "21_50": "21-50",
+                "51_100": "51-100",
+                "101_250": "101-250",
+                "251_500": "251-500",
+                "501_1000": "501-1000",
+                "1000_plus": "1000+"
+            },
+            "allow_null": 1,
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": "",
+            "layout": "horizontal",
+            "return_format": "value"
+        },
+        {
+            "key": "field_596763e6df8e4",
+            "label": "Founding Date",
+            "name": "location_founded",
+            "type": "date_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "m\/d\/Y",
+            "return_format": "F j, Y",
+            "first_day": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "food_drink"
+            }
+        ]
+    ],
+    "menu_order": -999,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 0,
+    "description": "Location information.",
+    "modified": 1500329022
+}

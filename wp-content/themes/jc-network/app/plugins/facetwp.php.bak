@@ -1,0 +1,183 @@
+<?php
+/*
+**  @file               facetwp.php
+**  @description        A shortcode to generate a Submit button, such as to redirect to another page
+**  @package            jctda
+**  @since              2.1.0
+**  @author             lpeterson
+**  @date               4/30/18
+*/
+defined( 'ABSPATH' ) || exit;
+
+if ( class_exists( 'FacetWP' ) ) {
+
+	add_action( 'wp_head', function() {
+		ob_start(); ?>
+
+		<script>
+		;(function($) {
+			"use strict";
+			
+			$(function() {
+				if ( 'undefined' !== typeof FWP ) {
+
+					wp.hooks.addFilter('facetwp/set_options/fselect', function(opts, data) {
+						
+						opts.showSearch = false;
+					
+						return opts;
+					
+					});
+				}
+			});
+
+			$(document).on('facetwp-loaded', function() {
+				if ( 'undefined' !== typeof FWP && FWP.loaded ) {
+
+					$('html, body').animate({ scrollTop: 0 }, 500);
+
+					$('.facetwp-template').addClass('visible');
+				}
+
+			});
+
+		} )( jQuery );
+		</script>
+
+		<?php echo ob_get_clean();
+	}, 100 );
+
+
+	//add_filter( 'facetwp_facets', function( $facets ) {
+		//$facets[] = [
+			//'source'        => 'carta_labels',
+			//'search_engine' => '',
+			//'label'         => __( 'FAQs', 'ridecarta' ),
+			//'name'          => 'carta_facetwp_faqs',
+			//'type'          => 'hierarchy',
+			//'multiple'      => 'yes',
+			//'label_any'     => __( 'Any Question', 'ridecarta' ),
+			//'orderby'       => 'display_value',
+			//'count'         => '100',
+			//'operator'      => 'and',
+			//'placeholder'   => 'Enter keywords',
+		//];
+		
+		//return $facets;
+	//}
+
+
+
+	//add_filter( 'facetwp_index_row', function( $params, $class ) {
+		//if ( 'categories' == $params['facet_name'] ) {
+		//	if ( 0 < $params['depth'] ) {
+		//		return false; // don't index child terms
+		//	}
+		//}
+		
+		//return $params;
+	//}, 10, 2 );
+
+
+	/**
+	 * FacetWP - Submit
+	 * 
+	 * A shortcode to generate a Submit button, such as to redirect to another page
+	 *
+	 * @since 2.0.0
+	 *
+	 * @access public
+	 * @return FacetWP_Submit_Addon() shortcode
+	 */
+	class FacetWP_Submit_Addon {
+
+		function __construct() {
+			add_filter( 'facetwp_assets', array( $this, 'assets' ) );
+			add_filter( 'facetwp_shortcode_html', array( $this, 'shortcode' ), 10, 2 );
+		}
+
+
+		function assets( $assets ) {
+			$assets['facetwp-submit.js'] = ASSETS . 'dist/js/facetwp-submit.js';
+
+			return $assets;
+		}
+
+
+		function shortcode( $output, $atts ) {
+			if ( isset( $atts['submit'] ) ) {
+				$label = isset( $atts['label'] ) ? $atts['label'] : __( 'Submit', 'ridecarta' );
+				$output = '<button class="fwp-submit" data-href="' . esc_attr( $atts['submit'] ) . '">' . esc_attr( $label ) . '</button>';
+			}
+
+			return $output;
+		}
+
+
+	}
+
+	new FacetWP_Submit_Addon();
+
+
+
+
+	/**
+	 * FacetWP - Load More
+	 * 
+	 * A shortcode to generate a Load More button instead of standard pagination
+	 *
+	 * @since 2.0.0
+	 *
+	 * @access public
+	 * @return FacetWP_Load_More_Addon() shortcode
+	 */
+	class FacetWP_Load_More_Addon {
+	
+		function __construct() {
+			add_filter( 'facetwp_assets', array( $this, 'assets' ) );
+			add_filter( 'facetwp_shortcode_html', array( $this, 'shortcode' ), 10, 2 );
+			add_filter( 'facetwp_query_args', array( $this, 'query_args' ), 10, 2 );
+		}
+	
+	
+		/**
+		 * On pageload, update posts_per_page if we detect a "load_more" URL variable
+		 */
+		function query_args( $args, $class ) {
+			if ( isset( $class->ajax_params['is_preload'] ) ) {
+				$url_var = FWP()->helper->get_setting( 'prefix' ) . 'load_more';
+	
+				if ( isset( $class->http_params['get'][ $url_var ] ) ) {
+					$paged = (int) $class->http_params['get'][ $url_var ];
+					$per_page = (int) empty( $args['posts_per_page'] ) ? get_option( 'posts_per_page' ) : $args['posts_per_page'];
+					$args['posts_per_page'] = ( $paged * $per_page );
+				}
+			}
+	
+			return $args;
+		}
+	
+	
+		function assets( $assets ) {
+			$assets['facetwp-load-more.js'] = ASSETS . 'dist/js/facetwp-load-more.js';
+			return $assets;
+		}
+	
+	
+		function shortcode( $output, $atts ) {
+			if ( isset( $atts['load_more'] ) ) {
+				$label = isset( $atts['label'] ) ? $atts['label'] : __( 'Load more', 'ridecarta' );
+				$output = '<button class="fwp-load-more">' . esc_attr( $label ) . '</button>';
+			}
+			return $output;
+		}
+	
+	
+	}
+	
+	new FacetWP_Load_More_Addon();
+
+}
+
+
+

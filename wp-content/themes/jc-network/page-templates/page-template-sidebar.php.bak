@@ -1,0 +1,15 @@
+<?php
+/**
+ * Template Name: Content Sidebar
+ *
+ * @link https://codex.wordpress.org/Template_Hierarchy
+ *
+ * @package jc-network
+ */
+get_header();
+	do_action( 'jc_network_before_sidebar_content_area' );
+		while ( have_posts() ) : the_post();
+			get_template_part( 'template-parts/sidebar/sidebar-with-content' );
+		endwhile;
+	do_action( 'jc_network_after_sidebar_content_area' );
+get_footer();

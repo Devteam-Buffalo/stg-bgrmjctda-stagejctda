@@ -1,0 +1,18 @@
+<?php
+/**
+ * Project Name:    Discover Jackson NC
+ * Project URI:     https://www.discoverjacksonnc.com
+ * Description:     Enqueue scripts for all admin pages
+ * Agency:          Rawle Murdy Associates
+ * Agency URI:      https://www.rawlemurdy.com
+ * Text Domain:     jctda
+ *
+ * @package         jctda
+ * @since           20181102
+ * @author          lpeterson
+ */
+
+add_action( 'admin_enqueue_scripts', function() {
+	wp_enqueue_style('admin/css', get_theme_file_uri('resource/asset/css/admin.css'), [], null);
+	wp_enqueue_script('admin/js', get_theme_file_uri('resource/asset/js/admin.js'), ['jquery'], null);
+});

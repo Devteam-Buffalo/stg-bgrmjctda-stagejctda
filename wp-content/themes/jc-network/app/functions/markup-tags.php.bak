@@ -1,0 +1,127 @@
+<?php
+/* ---------------------------------------
+*
+* Markup templates for cleaner template files
+*
+* @package jc-network
+*
+------------------------------------ */
+
+/*
+* General Page templates
+------------------------------------ */
+function jc_network_add_before_page_content_area() {
+	?>
+	<div class="content-area primary-content-area">
+		<main class="site-main main-content" role="main">
+	<?php
+}
+add_action('jc_network_before_page_content_area', 'jc_network_add_before_page_content_area');
+
+function jc_network_add_after_page_content_area() {
+	?>
+		</main>
+	</div>
+	<?php
+}
+add_action('jc_network_after_page_content_area', 'jc_network_add_after_page_content_area');
+
+
+/*
+* Full-width Page template
+------------------------------------ */
+function jc_network_add_before_full_width_content_area() {
+	?>
+	<div class="content-area primary-content-area">
+		<main class="site-main main-content" role="main">
+	<?php
+}
+add_action('jc_network_before_full_width_content_area', 'jc_network_add_before_full_width_content_area');
+
+function jc_network_add_after_full_width_content_area() {
+	?>
+		</main>
+	</div>
+	<?php
+}
+add_action('jc_network_after_full_width_content_area', 'jc_network_add_after_full_width_content_area');
+
+
+/*
+* Archive templates
+------------------------------------ */
+function jc_network_add_before_archive_content_area() {
+	?>
+	<div class="content-area primary-content-area archive-content">
+		<main class="site-main main-content" role="main">
+			<header class="page-header">
+				<?php
+					the_archive_title( '<h1 class="page-title">', '</h1>' );
+					the_archive_description( '<div class="archive-description">', '</div>' );
+				?>
+			</header><!-- .page-header -->
+	<?php
+}
+add_action('jc_network_before_archive_content_area', 'jc_network_add_before_archive_content_area');
+
+function jc_network_add_after_archive_content_area() {
+	?>
+		</main>
+	</div>
+	<?php
+}
+add_action('jc_network_after_archive_content_area', 'jc_network_add_after_archive_content_area');
+
+
+/*
+* Sidebar template
+------------------------------------ */
+function jc_network_add_before_sidebar_content_area() {
+	?>
+	<div class="uk-container uk-container-center">
+		<div class="uk-grid">
+			<div class="uk-width-large-7-10 uk-width-1-1 content-area primary-content-area without-hero has-sidebar-content">
+				<main class="site-main main-content" role="main">
+	<?php
+}
+add_action('jc_network_before_sidebar_content_area', 'jc_network_add_before_sidebar_content_area');
+
+function jc_network_add_after_sidebar_content_area() {
+	?>
+				</main>
+			</div>
+			
+			<?php get_sidebar(); do_action('be_sidebar_selector'); ?>
+		</div>
+	</div>
+	<?php
+}
+add_action('jc_network_after_sidebar_content_area', 'jc_network_add_after_sidebar_content_area');
+
+
+/*
+* 404/Sitemap
+------------------------------------ */
+function jc_network_add_before_sitemap_area() {
+	?>
+	<div class="uk-container uk-container-center">
+		<div class="uk-grid">
+			<div class="uk-width-large-7-10 uk-width-1-1 content-area primary-content-area without-hero has-sidebar-content">
+				<main class="site-main main-content" role="main">
+	<?php
+}
+add_action('jc_network_before_sitemap_area', 'jc_network_add_before_sitemap_area');
+
+function jc_network_add_after_sitemap_area() {
+	?>
+				</main>
+			</div>
+			
+			<?php get_sidebar(); do_action('be_sidebar_selector'); ?>
+		</div>
+	</div>
+	<?php
+}
+add_action('jc_network_after_sitemap_area', 'jc_network_add_after_sitemap_area');
+
+

@@ -1,0 +1,28 @@
+<?php
+/**
+ * Project Name:    Discover Jackson NC
+ * Project URI:     https://www.discoverjacksonnc.com
+ * Description:     Add custom image sizes attribute for responsive images
+ * Agency:          Rawle Murdy Associates
+ * Agency URI:      https://www.rawlemurdy.com
+ * Text Domain:     jctda
+ *
+ * @package         jctda
+ * @since           20180930
+ * @author          lpeterson
+ */
+
+add_filter( 'wp_calculate_image_sizes', function( $sizes, $size ) {
+	$width = $size[0];
+
+	if ( 840 <= $width ) {
+		$sizes = '(max-width: 709px) 85vw, (max-width: 909px) 67vw, (max-width: 1362px) 62vw, 840px';
+	}
+
+	if ( 840 > $width && 600 <= $width ) {
+		$sizes = '(max-width: 709px) 85vw, (max-width: 909px) 67vw, (max-width: 984px) 61vw, (max-width: 1362px) 45vw, 600px';
+	}
+	elseif ( 600 > $width ) {
+		$sizes = '(max-width: ' . $width . 'px) 85vw, ' . $width . 'px';
+	}
+}, 10, 2 );

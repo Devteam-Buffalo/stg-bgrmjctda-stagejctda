@@ -1,0 +1,239 @@
+.content-tiles {
+	.content-tile {
+		.section-title {
+			margin: 0 0 1rem;
+			padding: 6% 1rem 0;
+			font-family: "Proxima N W01 Reg", sans-serif;
+			font-size: 0.75rem;
+			line-height: 1em;
+			letter-spacing: 0.2em;
+			text-transform: uppercase;
+		}
+
+		.sub-section-title {
+			font-family: "Proxima N W01 Thin Reg", sans-serif;
+			font-size: 1.6rem;
+			line-height: 1.3em;
+			-webkit-box-decoration-break: clone;
+			box-decoration-break: clone;
+		}
+
+		figcaption { padding: 0; }
+
+		figure,
+		.content-tile-img { width: 100%; }
+
+		figcaption,
+		.content-tile-img { transition: all 200ms ease-in-out; }
+
+		&:hover,
+		&:focus {
+			figcaption { background-color: rgba(0, 0, 0, 0.25); }
+
+			.content-tile-img { transform: scale(1.025); }
+		}
+
+		h2 {
+			margin: 2rem 5%;
+			font-family: "Proxima N W01 Thin Reg", sans-serif;
+			font-size: 1.5rem;
+			line-height: 1.2;
+
+			@media all and (min-width: $breakpoint-small) {
+				margin: 2rem 5%;
+				font-size: 1.75rem;
+			}
+			@media all and (min-width: $breakpoint-medium) {
+				margin: 1rem 5%;
+				font-size: 1.25rem;
+			}
+			@media all and (min-width: $breakpoint-large) {
+				margin: 1.25rem 5%;
+				font-size: 1.75rem;
+			}
+			@media all and (min-width: $breakpoint-xlarge) {
+				margin: 2rem 5%;
+				font-size: 2.25rem;
+			}
+		}
+	}
+
+	&.two-tiles {
+		.sub-section-title {
+			@media all and (min-width: $breakpoint-large) { font-size: 2.2rem; }
+			@media all and (min-width: $breakpoint-xlarge) { font-size: 2.4rem; }
+		}
+	}
+
+	&.three-tiles {
+		.sub-section-title {
+			@media all and (min-width: $breakpoint-large) { font-size: 2rem; }
+			@media all and (min-width: $breakpoint-xlarge) { font-size: 2.2rem; }
+		}
+	}
+
+	&.four-tiles {
+		.sub-section-title {
+			@media all and (min-width: $breakpoint-large) { font-size: 1.7rem; }
+			@media all and (min-width: $breakpoint-xlarge) { font-size: 1.9rem; }
+		}
+	}
+
+	&.latest-blog-tiles {
+		figcaption { background-color: rgba($support-blue, 0.7); }
+
+		.content-tile:hover figcaption { background-color: rgba($support-blue, 0.9); }
+
+		.post-icon {
+			margin: 0 auto 1rem;
+
+			@media all and (min-width: $breakpoint-medium) { margin: 0 auto .5rem; }
+			@media all and (min-width: $breakpoint-xlarge) { margin: 0 auto 1rem; }
+		}
+
+		time {
+			display: block;
+			margin: 0 auto;
+			width: auto;
+		}
+	}
+
+	&.plan-your-visit-tiles {
+		// Plan Your Visit Tile Overlay
+		$visitor-guide-tile-color: rgb(31, 97, 168);
+		$getting-here-tile-color: rgb(113, 80, 46);
+		$towns-tile-color: rgb(45, 59, 70);
+		$weddings-tile-color: rgb(89, 112, 35);
+		$venues-tile-color: rgb(120, 39, 32);
+
+		$visit-tile-opacity-static: 0.7;
+		$visit-tile-opacity-hover: 0.9;
+
+		.visitor-guide-tile {
+			figcaption { background-color: rgba($visitor-guide-tile-color, $visit-tile-opacity-static); }
+			&:hover figcaption { background-color: rgba($visitor-guide-tile-color, $visit-tile-opacity-hover); }
+		}
+		.getting-here-tile {
+			figcaption { background-color: rgba($getting-here-tile-color, $visit-tile-opacity-static); }
+			&:hover figcaption { background-color: rgba($getting-here-tile-color, $visit-tile-opacity-hover); }
+		}
+		.towns-tile {
+			figcaption { background-color: rgba($towns-tile-color, $visit-tile-opacity-static); }
+			&:hover figcaption { background-color: rgba($towns-tile-color, $visit-tile-opacity-hover); }
+		}
+		.weddings-tile {
+			figcaption { background-color: rgba($weddings-tile-color, $visit-tile-opacity-static); }
+			&:hover figcaption { background-color: rgba($weddings-tile-color, $visit-tile-opacity-hover); }
+		}
+		.venues-tile {
+			figcaption { background-color: rgba($venues-tile-color, $visit-tile-opacity-static); }
+			&:hover figcaption { background-color: rgba($venues-tile-color, $visit-tile-opacity-hover); }
+		}
+	}
+}
+
+.post-icon {
+	display: block;
+	margin: -1rem auto 0;
+	width: auto;
+	max-width: 40px;
+}
+
+.tile-label {
+	font-size: .9rem;
+	line-height: 1;
+	font-weight: 400;
+	letter-spacing: 3px;
+	text-transform: uppercase;
+}
+
+.has-underline {
+	position: relative;
+
+	&:after {
+		content: "";
+		position: absolute;
+		bottom: -10px;
+		left: 50%;
+		margin-left: -50px;
+		width: 100px;
+		height: 3px;
+		background-color: $support-orange;
+	}
+}
+
+.overlay-content {
+	display: block;
+	max-width: 75%;
+}
+
+.overlay-title {
+	box-sizing: border-box;
+	display: inline;
+	margin: 0;
+	padding: 5px 15px;
+}
+
+.parent-section-tiles {
+	.overlay-content { margin: 1.75rem 0 0; }
+}
+
+.carousel-tiles {
+	.carousel-link {
+		position: relative;
+		display: block;
+		width: 100%;
+		max-width: 100%;
+		
+		@media all and (min-width: 320px) and (max-width: 666px) { min-height: 256px; }
+		@media all and (min-width: 667px) and (max-width: 839px) { min-height: 340px; }
+		@media all and (min-width: 840px) and (max-width: 959px) { min-height: 450px; }
+		@media all and (min-width: 960px) { min-height: 256px; }
+		
+		> img {
+			position: absolute;
+			z-index: 2;
+			top: 0;
+			opacity: 1;
+			background: transparent;
+			transition: all 200ms ease-in-out;
+		}
+		
+		&:hover { text-decoration: none; }
+		
+		&:hover > img {
+			//opacity: 0.75;
+			//background: #000;
+			//transform: scale(1.025);
+		}
+		
+		.section-title,
+		.sub-section-title {
+			position: relative;
+			z-index: 3;
+			margin: 0;
+			color: #fff;
+		}
+		
+		.section-title {
+			padding: 15px;
+			font-family: "Proxima N W01 Reg", sans-serif;
+			font-size: 10px;
+			line-height: 1;
+			font-weight: 400;
+			letter-spacing: 3px;
+			text-transform: uppercase;
+		}
+	
+		.sub-section-title {
+			display: initial;
+			padding: 5px 15px;
+			font-family: "Proxima N W01 Thin Reg", sans-serif;
+			font-size: 1.6rem;
+			line-height: 1.45em;
+			box-decoration-break: clone;
+			-webkit-box-decoration-break: clone;
+			-o-box-decoration-break: clone;
+		}
+	}
+}

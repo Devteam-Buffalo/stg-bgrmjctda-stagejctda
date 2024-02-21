@@ -1,0 +1,269 @@
+.content-tiles .content-tile .section-title {
+	margin: 0 0 1rem;
+	padding: 6% 1rem 0;
+	font-family: var(--sans-regular);
+	font-size: .75rem;
+	line-height: 1em;
+	letter-spacing: .2em;
+	text-transform: uppercase
+}
+
+.content-tiles .content-tile .sub-section-title {
+	font-family: var(--sans-thin);
+	font-size: 1.6rem;
+	line-height: 1.3em;
+	-webkit-box-decoration-break: clone;
+	box-decoration-break: clone
+}
+
+.content-tiles .content-tile figcaption {
+	padding: 0
+}
+
+.content-tiles .content-tile .content-tile-img,
+.content-tiles .content-tile figure {
+	width: 100%
+}
+
+.content-tiles .content-tile .content-tile-img,
+.content-tiles .content-tile figcaption {
+	transition: all .2s linear
+}
+
+.content-tiles .content-tile:focus figcaption,
+.content-tiles .content-tile:hover figcaption {
+	background-color: var(--trans)
+}
+
+.content-tiles .content-tile:focus .content-tile-img,
+.content-tiles .content-tile:hover .content-tile-img {
+	transform: scale(1.025)
+}
+
+.content-tiles .content-tile h2 {
+	margin: 2rem 5%;
+	font-family: var(--sans-thin);
+	font-size: 1.5rem;
+	line-height: 1.2
+}
+
+@media all and (min-width:480px) {
+	.content-tiles .content-tile h2 {
+		margin: 2rem 5%;
+		font-size: 1.75rem
+	}
+}
+
+@media all and (min-width:768px) {
+	.content-tiles .content-tile h2 {
+		margin: 1rem 5%;
+		font-size: 1.25rem
+	}
+}
+
+@media all and (min-width:960px) {
+	.content-tiles .content-tile h2 {
+		margin: 1.25rem 5%;
+		font-size: 1.75rem
+	}
+}
+
+@media all and (min-width:1220px) {
+	.content-tiles .content-tile h2 {
+		margin: 2rem 5%;
+		font-size: 2.25rem
+	}
+}
+
+@media all and (min-width:960px) {
+	.content-tiles.two-tiles .sub-section-title {
+		font-size: 2.2rem
+	}
+}
+
+@media all and (min-width:1220px) {
+	.content-tiles.two-tiles .sub-section-title {
+		font-size: 2.4rem
+	}
+}
+
+@media all and (min-width:960px) {
+	.content-tiles.three-tiles .sub-section-title {
+		font-size: 2rem
+	}
+}
+
+@media all and (min-width:1220px) {
+	.content-tiles.three-tiles .sub-section-title {
+		font-size: 2.2rem
+	}
+}
+
+@media all and (min-width:960px) {
+	.content-tiles.four-tiles .sub-section-title {
+		font-size: 1.7rem
+	}
+}
+
+@media all and (min-width:1220px) {
+	.content-tiles.four-tiles .sub-section-title {
+		font-size: 1.9rem
+	}
+}
+
+.content-tiles.latest-blog-tiles figcaption {
+	background-color: var(--trans-blue)
+}
+
+.content-tiles.latest-blog-tiles .content-tile:hover figcaption {
+	background-color: var(--blue)
+}
+
+.content-tiles.latest-blog-tiles .post-icon {
+	margin: 0 auto 1rem
+}
+
+@media all and (min-width:768px) {
+	.content-tiles.latest-blog-tiles .post-icon {
+		margin: 0 auto .5rem
+	}
+}
+
+@media all and (min-width:1220px) {
+	.content-tiles.latest-blog-tiles .post-icon {
+		margin: 0 auto 1rem
+	}
+}
+
+.content-tiles.latest-blog-tiles time {
+	display: block;
+	margin: 0 auto;
+	width: auto
+}
+
+.content-tiles.plan-your-visit-tiles .visitor-guide-tile figcaption {
+	background-color: var(--trans-blue)
+}
+
+.content-tiles.plan-your-visit-tiles .visitor-guide-tile:hover figcaption {
+	background-color: var(--trans-blue-hover)
+}
+
+.content-tiles.plan-your-visit-tiles .getting-here-tile figcaption {
+	background-color: var(--trans-green)
+}
+
+.content-tiles.plan-your-visit-tiles .getting-here-tile:hover figcaption {
+	background-color: var(--trans-green-hover)
+}
+
+.content-tiles.plan-your-visit-tiles .towns-tile figcaption {
+	background-color: var(--trans-grey)
+}
+
+.content-tiles.plan-your-visit-tiles .towns-tile:hover figcaption {
+	background-color: var(--trans-grey-hover)
+}
+
+.content-tiles.plan-your-visit-tiles .weddings-tile figcaption {
+	background-color: var(--trans-brown)
+}
+
+.content-tiles.plan-your-visit-tiles .weddings-tile:hover figcaption {
+	background-color: var(--trans-brown-hover)
+}
+
+.content-tiles.plan-your-visit-tiles .venues-tile figcaption {
+	background-color: var(--trans-red)
+}
+
+.content-tiles.plan-your-visit-tiles .venues-tile:hover figcaption {
+	background-color: var(--trans-red-hover)
+}
+
+.tile-label {
+	font-size: .9rem;
+	line-height: 1;
+	font-family: var(--sans-regular);
+	letter-spacing: 3px;
+	text-transform: uppercase
+}
+
+.overlay-content {
+	display: block;
+	max-width: 75%
+}
+
+.overlay-title {
+	box-sizing: border-box;
+	display: inline;
+	margin: 0;
+	padding: 5px 15px
+}
+
+.parent-section-tiles .overlay-content {
+	margin: 1.75rem 0 0
+}
+
+.blog-tiles h3 {
+	margin: .5rem 0 1rem;
+	line-height: 1
+}
+
+.blog-tiles time {
+	font-size: .75rem
+}
+
+.jc-tiles .uk-overlay-panel {
+	padding: 1rem
+}
+
+.jc-tiles figcaption>p {
+	margin-bottom: .5rem !important;
+	font-family: var(--sans-regular);
+	letter-spacing: .1rem
+}
+
+.jc-tiles figcaption>h4 {
+	margin-left: -1rem !important;
+	padding: .5rem 1rem;
+	font-family: var(--sans-thin)
+}
+
+.jc-discover-tiles .uk-slidenav,
+.jc-discover-tiles figcaption>p {
+	display: none
+}
+
+.post-icon {
+	display: block;
+	margin: -1rem auto 0;
+	width: auto;
+	max-width: 40px
+}
+
+.has-underline {
+	position: relative
+}
+
+.has-underline:after {
+	content: "";
+	position: absolute;
+	bottom: -10px;
+	left: 50%;
+	margin-left: -50px;
+	width: 100px;
+	height: 3px;
+	background-color: var(--orange)
+}
+
+.content-tile .tile-label+h2 {
+	margin: 1rem;
+	font-size: 2rem
+}
+
+.full-width-image,
+.uk-overlay {
+	width: 100% !important
+}
+

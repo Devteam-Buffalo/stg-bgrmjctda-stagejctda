@@ -1,0 +1,107 @@
+.primary-widget {
+	.events-widget-container {
+		> div { background-color: lighten($support-orange, 37.5%); }
+
+		.widget-header {
+			background-color: $support-orange;
+
+			.widget-title {
+				color: #fff;
+
+				&:before {
+					background: url('../img/events-widget-icon.png') center center no-repeat;
+					
+					@media all and (max-width: $breakpoint-small) { background-size: 75%; }
+				}
+
+				a {
+					font-size: 1.2rem;
+					line-height: 2.5;
+					color: #fff;
+					
+					@media all and (max-width: $breakpoint-small) { display: none; }
+				}
+			}
+		}
+
+		.widget-content {
+			@media all and (max-width: $breakpoint-small) { padding: 5%; }
+			@media all and (min-width: ($breakpoint-medium + 1)) { padding-left: 5%; }
+
+			.time-date {
+				.entry-date {
+					box-sizing: border-box;
+					display: block;
+					padding: 7px 0 9px;
+					width: 65px;
+					height: 65px;
+					border: 1px solid $support-orange;
+					background-color: #fff;
+					overflow: hidden;
+				}
+
+				.entry-month,
+				.entry-day {
+					display: block;
+					width: 100%;
+					-webkit-box-decoration-break: clone;
+					box-decoration-break: clone;
+				}
+
+				.entry-month {
+					color: #999;
+					font-size: 1.25rem;
+					text-transform: uppercase;
+					letter-spacing: 0.05em;
+				}
+
+				.entry-day {
+					color: #666;
+					font-size: 2.25rem;
+					font-weight: 300;
+					letter-spacing: -0.05em;
+				}
+				
+				strong {
+					display: block;
+					width: 100%;
+					text-align: center;
+					text-transform: uppercase;
+					line-height: 2;
+				}
+			}
+
+			.time-range {
+				strong,
+				span {
+					display: block;
+					width: 100%;
+					font-size: 1rem;
+					line-height: 1.4;
+				}
+
+				strong {
+					color: #999;
+					text-transform: uppercase;
+				}
+
+				span {
+					margin-bottom: 1rem;
+					color: $base-body-color;
+				}
+			}
+
+			h5 {
+				font-family: "Proxima N W01 Bold", sans-serif;
+
+				a { color: $support-orange; }
+			}
+
+			p { margin-bottom: 2rem; }
+		}
+	}
+}
+
+.events-signup-widget .uk-row-first {
+	@media all and (max-width: 667px) { margin-top: 0 !important; }
+}

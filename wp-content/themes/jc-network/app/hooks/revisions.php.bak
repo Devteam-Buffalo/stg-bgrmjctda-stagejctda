@@ -1,0 +1,19 @@
+<?php
+/*
+**  @file               revisions.php
+**  @description        Sets the number of revisions for post types.
+**  @package            jctda
+**  @since              3.0.0
+**  @author             lpeterson
+**  @date               5/17/18
+*/
+defined( 'ABSPATH' ) || exit;
+
+add_filter( 'wp_revisions_to_keep', function( $num, $post ) {
+	$location_types = jc_get_location_types();
+
+	if ( in_array( $post->post_type, $location_types ) ) 
+		$num = 5;
+
+	return $num;
+}, 10, 2 );

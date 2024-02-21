@@ -1,0 +1,82 @@
+<?php
+/**
+ * Project Name:    Discover Jackson NC
+ * Project URI:     https://www.discoverjacksonnc.com
+ * Description:     Archive pagination.
+ * Agency:          Rawle Murdy Associates
+ * Agency URI:      https://www.rawlemurdy.com
+ * Text Domain:     jctda
+ *
+ * @package         jctda
+ * @since           3.3.0
+ * @link            https://www.discoverjacksonnc.com
+ * @author          Lee Peterson
+ * @date            6/24/18
+ * @file            archive-nav.php
+ */
+defined('ABSPATH') or exit;
+
+if ( ! function_exists( 'jc_archive_nav' ) ) {
+
+	function jc_archive_nav() {
+		// Don't print empty markup if there's only one page.
+		if ( $GLOBALS['wp_query']->max_num_pages < 2 ) {
+			return;
+		}
+	
+		$paged        = get_query_var( 'paged' ) ? intval( get_query_var( 'paged' ) ) : 1;
+		$pagenum_link = html_entity_decode( get_pagenum_link() );
+		$query_args   = array();
+		$url_parts    = explode( '?', $pagenum_link );
+	
+		if ( isset( $url_parts[1] ) ) {
+			wp_parse_str( $url_parts[1], $query_args );
+		}
+	
+		$pagenum_link = remove_query_arg( array_keys( $query_args ), $pagenum_link );
+		$pagenum_link = trailingslashit( $pagenum_link ) . '%_%';
+	
+		$format  = $GLOBALS['wp_rewrite']->using_index_permalinks() && ! strpos( $pagenum_link, 'index.php' ) ? 'index.php/' : '';
+		$format .= $GLOBALS['wp_rewrite']->using_permalinks() ? user_trailingslashit( 'page/%#%', 'paged' ) : '?paged=%#%';
+	
+		// Set up paginated links.
+		$links = paginate_links( array(
+			'base'               => $pagenum_link,
+			'format'             => $format,
+			'total'              => $GLOBALS['wp_query']->max_num_pages,
+			'current'            => $paged,
+			'mid_size'           => 5,
+			'add_args'           => array_map( 'urlencode', $query_args ),
+			'show_all'           => true,
+			'end_size'           => 1,
+			'prev_next'          => false,
+			'prev_text'          => 'Newer Blog Posts <small class="uk-icon-chevron-right"></small>',
+			'next_text'          => '<small class="uk-icon-chevron-left"></small> Older Blog Posts',
+			'type'               => 'array',
+			'add_fragment'       => '',
+			'before_page_number' => '',
+			'after_page_number'  => ''
+		) );
+	
+		if ( $links ) :
+
+			ob_start(); ?>
+
+			<h2 class="uk-visible screen-reader-text">Posts Navigation</h2>
+			<nav class="post-pagination">
+				<hr class="uk-article-divider">
+				
+				<ul class="uk-flex uk-flex-center uk-flex-space-around uk-pagination">
+					<?php foreach ( $links as $link ) : ?>
+					<li class="uk-border uk-text-uppercase sans-bold text-blue"><?= $link ?></li>
+					<?php endforeach ?>
+				</ul>
+			</nav>
+			
+			<?php ob_get_flush();
+
+		endif;
+
+	}
+
+}

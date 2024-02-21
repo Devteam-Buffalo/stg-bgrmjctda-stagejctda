@@ -1,0 +1,240 @@
+.uk-slidenav {
+	display: inline-block;
+	box-sizing: border-box;
+	width: 60px;
+	height: 60px;
+	line-height: 60px;
+	color: var(--opaque);
+	font-size: 40px;
+	text-align: center;
+	background-color: var(--trans);
+	font-family: var(--icon)
+}
+
+.uk-slidenav:focus,
+.uk-slidenav:hover {
+	outline: 0;
+	text-decoration: none;
+	color: var(--white);
+	cursor: pointer
+}
+
+.uk-slidenav:active {
+	color: var(--white)
+}
+
+.uk-slidenav-previous:before {
+	content: "\f104";
+	font-family: var(--icon)
+}
+
+.uk-slidenav-next:before {
+	content: "\f105";
+	font-family: var(--icon)
+}
+
+.uk-slidenav-position {
+	position: relative
+}
+
+.uk-slidenav-position .uk-slidenav {
+	display: block;
+	position: absolute;
+	top: 50%;
+	z-index: 1;
+	margin-top: -30px;
+	opacity: .9;
+	transition: opacity 150ms linear
+}
+
+.uk-slidenav-position:hover .uk-slidenav {
+	opacity: 1
+}
+
+.uk-slidenav-position .uk-slidenav-previous {
+	left: 0;
+	font-family: var(--icon)
+}
+
+.uk-slidenav-position .uk-slidenav-next {
+	right: 0;
+	font-family: var(--icon)
+}
+
+.uk-slidenav-contrast {
+	color: var(--opaque)
+}
+
+.uk-slidenav-contrast:focus,
+.uk-slidenav-contrast:hover {
+	color: var(--opaque)
+}
+
+.uk-slidenav-contrast:active {
+	color: var(--white)
+}
+
+[data-uk-slider] {
+	direction: ltr
+}
+
+html[dir=rtl] .uk-slider>* {
+	direction: rtl
+}
+
+.uk-slider {
+	position: relative;
+	z-index: 0;
+	touch-action: pan-y
+}
+
+.uk-slider:not(.uk-grid) {
+	margin: 0;
+	padding: 0;
+	list-style: none
+}
+
+.uk-slider>* {
+	position: absolute;
+	top: 0;
+	left: 0
+}
+
+.uk-slider-container {
+	overflow: hidden
+}
+
+.uk-slider:not(.uk-drag) {
+	-webkit-transition: -webkit-transform .2s linear;
+	transition: transform .2s linear
+}
+
+.uk-slider.uk-drag {
+	cursor: col-resize;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none
+}
+
+.uk-slider a,
+.uk-slider img {
+	-webkit-user-drag: none;
+	user-drag: none;
+	-webkit-touch-callout: none
+}
+
+.uk-slider img {
+	pointer-events: none
+}
+
+.uk-slider-fullscreen,
+.uk-slider-fullscreen>li {
+	height: 100vh
+}
+
+.uk-slideshow {
+	position: relative;
+	z-index: 0;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	overflow: hidden;
+	touch-action: pan-y
+}
+
+.uk-slideshow>li {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	opacity: 0
+}
+
+.uk-slideshow>.uk-active {
+	z-index: 10;
+	opacity: 1
+}
+
+.uk-slideshow>li>img {
+	visibility: hidden
+}
+
+[data-uk-slideshow-slide] {
+	cursor: pointer
+}
+
+.uk-slideshow-fullscreen,
+.uk-slideshow-fullscreen>li {
+	height: 100vh
+}
+
+.uk-slideshow-fade-in {
+	-webkit-animation: uk-fade .5s linear;
+	animation: uk-fade .5s linear
+}
+
+.uk-slideshow-fade-out {
+	-webkit-animation: uk-fade .5s linear reverse;
+	animation: uk-fade .5s linear reverse
+}
+
+.uk-slideshow-scroll-forward-in {
+	-webkit-animation: uk-slide-right .5s linear;
+	animation: uk-slide-right .5s linear
+}
+
+.uk-slideshow-scroll-forward-out {
+	-webkit-animation: uk-slide-left .5s linear reverse;
+	animation: uk-slide-left .5s linear reverse
+}
+
+.uk-slideshow-scroll-backward-in {
+	-webkit-animation: uk-slide-left .5s linear;
+	animation: uk-slide-left .5s linear
+}
+
+.uk-slideshow-scroll-backward-out {
+	-webkit-animation: uk-slide-right .5s linear reverse;
+	animation: uk-slide-right .5s linear reverse
+}
+
+.uk-slideshow-scale-out {
+	-webkit-animation: uk-fade-scale-15 .5s linear reverse;
+	animation: uk-fade-scale-15 .5s linear reverse
+}
+
+.uk-slideshow-swipe-forward-in {
+	-webkit-animation: uk-slide-left-33 .5s linear;
+	animation: uk-slide-left-33 .5s linear
+}
+
+.uk-slideshow-swipe-forward-out {
+	-webkit-animation: uk-slide-left .5s linear reverse;
+	animation: uk-slide-left .5s linear reverse
+}
+
+.uk-slideshow-swipe-backward-in {
+	-webkit-animation: uk-slide-right-33 .5s linear;
+	animation: uk-slide-right-33 .5s linear
+}
+
+.uk-slideshow-swipe-backward-out {
+	-webkit-animation: uk-slide-right .5s linear reverse;
+	animation: uk-slide-right .5s linear reverse
+}
+
+.uk-slideshow-swipe-backward-in:before,
+.uk-slideshow-swipe-forward-in:before {
+	content: "";
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 1;
+	background: var(--trans);
+	-webkit-animation: uk-fade .5s linear reverse;
+	animation: uk-fade .5s linear reverse
+}

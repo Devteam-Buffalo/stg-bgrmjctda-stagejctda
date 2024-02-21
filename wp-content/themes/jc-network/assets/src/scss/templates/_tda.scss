@@ -1,0 +1,95 @@
+/*
+**  @file    _tda.scss
+**  
+**  @desc    
+**  
+**  @path    /Volumes/☢/Users/devnull/Library/Caches/Coda 2/FA419FF3-6FF1-4307-A908-BB304B24907A
+**  @package 
+**  @author  Lee Peterson
+**  @date    5/29/17
+*/
+
+
+.tda-collections {
+	.tda-collection {
+		margin-top: 2rem;
+		margin-bottom: 2rem;
+		
+		h2 {
+			font-size: 2rem;
+			line-height: 1.1;
+		}
+	}
+	
+	.tda-accordion {
+		margin-bottom: 1rem;
+		
+		
+		.uk-accordion-title {
+			margin: 0;
+			padding: .75rem 1.5rem;
+			border: 1px solid $support-blue;
+			border-radius: 3px;
+			background-color: $support-blue;
+			color: #fff;
+			
+			span { float: right; }
+			
+			.uk-icon-minus { display: none; line-height: 1.35; }
+			.uk-icon-plus { display: inline-block; line-height: 1.4; }
+			
+			&.uk-active {
+				border-radius: 3px 3px 0 0;
+				
+				.uk-icon-minus { display: inline-block; }
+				.uk-icon-plus { display: none; }
+			}
+		}
+		
+		.uk-accordion-content {
+			padding: .75rem;
+			border: 1px solid transparent;
+			
+			&.uk-active {
+				border: 1px solid #ddd;
+				border-top: 0;
+				border-radius: 3px;
+			}
+		}
+
+		.tda-doc {
+			h3 { margin: 0; }
+			
+			a {
+				margin: 0;
+				padding: .75rem;
+				background-color: #fff;
+				color: $primary-grey;
+				-webkit-transition: all 200ms ease-in-out;
+				-moz-transition: all 200ms ease-in-out;
+				-ms-transition: all 200ms ease-in-out;
+				-o-transition: all 200ms ease-in-out;
+				transition: all 200ms ease-in-out;
+				
+				> .item-date {
+					display: inline-block;
+					margin-right: 1rem;
+					width: 4rem;
+					border-right: 1px solid #ccc;
+					font-family: $base-body-font-family;
+					font-size: 1.1rem;
+					font-weight: normal;
+				}
+		
+				> .item-title { color: $base-link-color; }
+				
+				&:hover, &:focus {
+					background-color: #eee;
+					text-decoration: none;
+				}
+				
+				[class*='uk-icon-'] { line-height: 1.25; }
+			}
+		}
+	}
+}

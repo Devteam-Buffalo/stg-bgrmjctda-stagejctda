@@ -1,0 +1,156 @@
+{
+    "key": "group_586d50cedf4d5",
+    "title": "TDA Docs Type, Attachment &amp; Link",
+    "fields": [
+        {
+            "key": "field_59014e7d7ed42",
+            "label": "Type",
+            "name": "jctda_type",
+            "type": "select",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "file": "File Download",
+                "in_link": "Internal Link",
+                "ex_link": "External Link",
+                "s_link": "Link to Self"
+            },
+            "default_value": [
+                "file"
+            ],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        },
+        {
+            "key": "field_586d50eb438a7",
+            "label": "File Download",
+            "name": "jctda_attachment",
+            "type": "file",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_59014e7d7ed42",
+                        "operator": "==",
+                        "value": "file"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "library": "all",
+            "min_size": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_59014d917ed41",
+            "label": "Internal Link",
+            "name": "jctda_in_link",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_59014e7d7ed42",
+                        "operator": "==",
+                        "value": "in_link"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
+        },
+        {
+            "key": "field_591d97deaeef7",
+            "label": "External Link",
+            "name": "jctda_ex_link",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_59014e7d7ed42",
+                        "operator": "==",
+                        "value": "ex_link"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
+        },
+        {
+            "key": "field_591d958491be5",
+            "label": "Link to Self",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_59014e7d7ed42",
+                        "operator": "==",
+                        "value": "s_link"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "This post will link to itself so it opens in its own page.",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "tda_docs"
+            },
+            {
+                "param": "post_taxonomy",
+                "operator": "!=",
+                "value": "jctda_category:board-members"
+            }
+        ]
+    ],
+    "menu_order": "",
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1505195218
+}

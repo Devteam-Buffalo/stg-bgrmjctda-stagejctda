@@ -1,0 +1,35 @@
+button.expand-button {
+	position: relative;
+	padding-left: 0;
+	padding-right: 0;
+	background: 0 0;
+	color: var(--blue)
+}
+
+button.expand-button:after {
+	position: absolute;
+	top: calc(50% - 10px);
+	left: calc(100% + 1px);
+	display: block;
+	width: 20px;
+	height: 20px;
+	font-family: var(--sans-light);
+	font-size: 20px;
+	line-height: 1;
+	color: var(--blue)
+}
+
+button.expand-button:focus,
+button.expand-button:hover {
+	background: 0 0;
+	color: var(--blue);
+	outline: 0
+}
+
+.expanded-content+.expand-button:after {
+	content: "-"
+}
+
+.expanded-content.uk-hidden+.expand-button:after {
+	content: "+"
+}

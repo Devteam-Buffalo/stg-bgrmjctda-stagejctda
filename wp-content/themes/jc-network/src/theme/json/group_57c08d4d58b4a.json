@@ -1,0 +1,277 @@
+{
+    "key": "group_57c08d4d58b4a",
+    "title": "Lodging & Restaurant Manager Contact Information",
+    "fields": [
+        {
+            "key": "field_57c08d4d61183",
+            "label": "Manager First Name",
+            "name": "manager_contact_first_name_text",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "uk-width-medium-1-2 uk-width-1-1",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_57c08d4d6187d",
+            "label": "Manager Last Name",
+            "name": "manager_contact_last_name_text",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "uk-width-medium-1-2 uk-width-1-1",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_57d0478e27603",
+            "label": "Manager Phone",
+            "name": "manager_contact_phone_text",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "uk-width-medium-1-2 uk-width-1-1",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_57d047b927604",
+            "label": "Manager Email Address",
+            "name": "manager_contact_email_address_email",
+            "type": "email",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "uk-width-medium-1-2 uk-width-1-1",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_57c08d4d61ad7",
+            "label": "Manager Address 1",
+            "name": "manager_contact_address_1_text",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "uk-width-medium-1-2 uk-width-1-1",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_57c08d4d61cfc",
+            "label": "Manager Address 2",
+            "name": "manager_contact_address_2_text",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "uk-width-medium-1-2 uk-width-1-1",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_57c08d4d61d9e",
+            "label": "Manager City",
+            "name": "manager_contact_city_text",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "uk-width-medium-1-3 uk-width-1-1",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_57c08d4d61dfd",
+            "label": "Manager State",
+            "name": "manager_contact_state_select",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "uk-width-medium-1-3 uk-width-1-1",
+                "id": ""
+            },
+            "choices": {
+                "al": "Alabama",
+                "ak": "Alaska",
+                "az": "Arizona",
+                "ar": "Arkansas",
+                "ca": "California",
+                "co": "Colorado",
+                "ct": "Connecticut",
+                "de": "Delaware",
+                "dc": "District of Columbia",
+                "fl": "Florida",
+                "ga": "Georgia",
+                "hi": "Hawaii",
+                "id": "Idaho",
+                "il": "Illinois",
+                "in": "Indiana",
+                "ia": "Iowa",
+                "ks": "Kansas",
+                "ky": "Kentucky",
+                "la": "Louisiana",
+                "me": "Maine",
+                "md": "Maryland",
+                "ma": "Massachusetts",
+                "mi": "Michigan",
+                "mn": "Minnesota",
+                "ms": "Mississippi",
+                "mo": "Missouri",
+                "mt": "Montana",
+                "ne": "Nebraska",
+                "nv": "Nevada",
+                "nh": "New Hampshire",
+                "nj": "New Jersey",
+                "nm": "New Mexico",
+                "ny": "New York",
+                "nc": "North Carolina",
+                "nd": "North Dakota",
+                "oh": "Ohio",
+                "ok": "Oklahoma",
+                "or": "Oregon",
+                "pa": "Pennsylvania",
+                "ri": "Rhode Island",
+                "sc": "South Carolina",
+                "sd": "South Dakota",
+                "tn": "Tennessee",
+                "tx": "Texas",
+                "ut": "Utah",
+                "vt": "Vermont",
+                "va": "Virginia",
+                "wa": "Washington",
+                "wv": "West Virginia",
+                "wi": "Wisconsin",
+                "wy": "Wyoming"
+            },
+            "default_value": [
+                "nc"
+            ],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 1,
+            "ajax": 0,
+            "return_format": "label",
+            "placeholder": ""
+        },
+        {
+            "key": "field_57c08d4d61fd7",
+            "label": "Manager Zip Code",
+            "name": "manager_contact_zip_code_text",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "uk-width-medium-1-3 uk-width-1-1",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_57c9c298f9a13",
+            "label": "Manager Newsletter Signup",
+            "name": "manager_newsletter_signup_true_false",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "uk-width-1-1",
+                "id": ""
+            },
+            "message": "Yes, I would like to receive the JCTDA bi-monhtly newsletter.",
+            "default_value": 1,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "food_drink"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "lodgings"
+            }
+        ]
+    ],
+    "menu_order": "",
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1500330902
+}

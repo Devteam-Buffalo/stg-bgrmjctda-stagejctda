@@ -1,0 +1,44 @@
+@charset "UTF-8";
+/*
+**  @file    _site.scss
+**  
+**  @desc    
+**  
+**  @path    /_site.scss
+**  @package jctda
+**  @author  Lee Peterson
+**  @date    11/9/17
+*/
+
+.site {
+	@media all and (max-width: 667px) {
+		position: relative;
+		top: -20px;
+	}
+}
+
+.site-header .header-content {
+	@include xs() { max-height: 80px; }
+	@include s() { max-height: 90px; }
+}
+
+.site-content {
+	@include xs() { margin-top: 80px; }
+	@include l() { margin-top: 45px; }
+}
+
+.site-content {
+	@media all and (min-width: 320px) {
+		margin-top: 60px;
+		margin-bottom: 0px;
+	}
+	@media all and (min-width: $breakpoint-large) {
+		top: -85px;
+		margin-top: 0;
+		margin-bottom: -85px;
+	}
+}
+
+//.uk-slider,
+//.uk-slider figure { height: 255px; min-height: 255px; }
+

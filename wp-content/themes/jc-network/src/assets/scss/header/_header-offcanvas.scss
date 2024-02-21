@@ -1,0 +1,26 @@
+.offcanvas-nav {
+	position: absolute;
+	left: 25px;
+	top: 32px;
+	padding-left: 0;
+
+	@media all and (max-width: $breakpoint-small) { margin-top: -17px; }
+
+	.hamburger {
+		display: block;
+		width: 35px;
+
+		@media all and (max-width: $breakpoint-small) { width: 30px; }
+
+		span {
+			display: block;
+			margin: 6px 0;
+			height: 2px;
+			background-color: #000;
+
+			&:first-of-type { width: 100%; }
+			&:nth-child(2) { width: 85%; }
+			&:last-of-type { width: 70%; }
+		}
+	}
+}

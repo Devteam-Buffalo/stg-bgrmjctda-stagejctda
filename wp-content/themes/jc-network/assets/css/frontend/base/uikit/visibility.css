@@ -1,0 +1,112 @@
+@media (min-width:960px) {
+	.uk-visible-small {
+		display: none !important
+	}
+
+	.uk-visible-medium {
+		display: none !important
+	}
+
+	.uk-hidden-large {
+		display: none !important
+	}
+}
+
+@media (min-width:768px) and (max-width:959px) {
+	.uk-visible-small {
+		display: none !important
+	}
+
+	.uk-visible-large {
+		display: none !important
+	}
+
+	.uk-hidden-medium {
+		display: none !important
+	}
+}
+
+@media (max-width:767px) {
+	.uk-visible-medium {
+		display: none !important
+	}
+
+	.uk-visible-large {
+		display: none !important
+	}
+
+	.uk-hidden-small {
+		display: none !important
+	}
+}
+
+.uk-hidden {
+	display: none !important;
+	visibility: hidden !important
+}
+
+.uk-invisible {
+	visibility: hidden !important
+}
+
+.uk-visible-hover:hover .uk-hidden,
+.uk-visible-hover:hover .uk-invisible {
+	display: block !important;
+	visibility: visible !important
+}
+
+.uk-visible-hover-inline:hover .uk-hidden,
+.uk-visible-hover-inline:hover .uk-invisible {
+	display: inline-block !important;
+	visibility: visible !important
+}
+
+.uk-notouch .uk-hidden-notouch,
+.uk-touch .uk-hidden-touch {
+	display: none !important
+}
+
+.screen-reader-text,
+[name=google_conversion_frame] {
+	position: absolute;
+	top: -9999px;
+	left: -9999px
+}
+
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	border: 0
+}
+
+.sr-only-focusable:active,
+.sr-only-focusable:focus {
+	position: static;
+	width: auto;
+	height: auto;
+	margin: 0;
+	overflow: visible;
+	clip: auto
+}
+
+.uk-nbfc {
+	overflow: hidden
+}
+
+.uk-nbfc-alt {
+	display: table-cell;
+	width: 10000px
+}
+
+.uk-border-circle {
+	border-radius: 50%
+}
+
+.uk-border-rounded {
+	border-radius: 5px
+}

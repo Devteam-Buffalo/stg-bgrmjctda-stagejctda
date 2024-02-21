@@ -1,0 +1,29 @@
+@charset "UTF-8";
+/*
+**  @file    _the-events-calendar.scss
+**  
+**  @desc    
+**  
+**  @path    /_the-events-calendar.scss
+**  @package jctda
+**  @author  Lee Peterson
+**  @date    11/10/17
+*/
+
+#tribe-events-pg-template { margin-top: 5%; }
+
+#tribe-events {
+	.tribe-events-single-event-title {
+		font-size: 52px;
+		line-height: 58px;
+	}
+	.tribe-events-schedule,
+	.tribe-events-schedule h2,
+	.tribe-event-date-start,
+	.tribe-event-date-end {
+		font-size: 1rem;
+		line-height: 1;
+	}
+}
+
+.tribe-events-tooltip { bottom: 100% !important; }

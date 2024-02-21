@@ -1,0 +1,50 @@
+<?php
+/*
+**  @file               .be-sidebar-selector.php
+**  @description        Description.
+**  @package            jctda
+**  @since              2.1.0
+**  @author             lpeterson
+**  @date               4/11/18
+**
+**  be_sidebar_selector_override - Modify the sidebar (slug) used. Default: string if sidebar specified, false if none
+**  be_sidebar_selector_post_types - What post types this can be used on. Default: array( 'page' )
+**  be_sidebar_selector_default_sidebar - The name and id of the default sidebar. Default: array( 'name' => 'Default Sidebar', 'id' => 'default-sidebar' )
+**  be_sidebar_selector_widget_area_args - Customize the $args passed to register_sidebar(). Useful for setting things like before/after widget, before/after title, etc. Example. Default: empty array
+*/
+defined( 'ABSPATH' ) || exit;
+
+if ( class_exists( 'BE_Sidebar_Selector' ) ) {
+	add_filter( 'be_sidebar_selector_post_types', function() {
+		return [
+			'post',
+			'page',
+			'b2b_news',
+			'tda_docs',
+			'press_release',
+			'mentions',
+		];
+	} );
+	add_filter( 'be_sidebar_selector_default_sidebar', function() {
+		return [
+			'name'          => 'Default Sidebar',
+			'id'            => 'jc-sidebar',
+			'class'         => 'jc-widget-area',
+			'description'   => 'The sidebar to be used as a fallback, generic sidebar when needed.',
+			'before_widget' => '<section class="%1$s %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h4 class="uk-h3 widget-title">',
+			'after_title'   => '</h4>'
+		];
+	} );
+	add_filter( 'be_sidebar_selector_widget_area_args', function() {
+		return [
+			'id'            => 'jc-sidebar',
+			'class'         => 'jc-widget-area',
+			'before_widget' => '<section class="%1$s %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h4 class="uk-h3 widget-title">',
+			'after_title'   => '</h4>'
+		];
+	} );
+}

@@ -1,0 +1,145 @@
+.site-footer {
+	background-color: var(--medium-green)
+}
+
+.logo-footer {
+	display: block
+}
+
+@media all and (min-width:320px) {
+	.logo-footer {
+		width: 80px;
+		height: 72px
+	}
+}
+
+@media all and (min-width:480px) {
+	.logo-footer {
+		width: 90px;
+		height: 81px
+	}
+}
+
+@media all and (min-width:768px) {
+	.logo-footer {
+		width: 100px;
+		height: 91px
+	}
+}
+
+@media all and (min-width:960px) {
+	.logo-footer {
+		width: 140px;
+		height: 127px
+	}
+}
+
+#menu-footer-menu-left,
+#menu-footer-menu-right {
+	margin-bottom: 0;
+	padding: 0 2rem
+}
+
+#menu-footer-menu-right {
+	border-left: 1px solid #3e4f50
+}
+
+#menu-footer-menu-left li:not(:last-of-type) {
+	margin-bottom: 1rem
+}
+
+#menu-footer-menu-right li:not(:last-of-type) {
+	margin-bottom: .875rem
+}
+
+#menu-footer-menu-left a,
+#menu-footer-menu-right a {
+	font-family: var(--sans-light);
+	color: var(--white)
+}
+
+#menu-footer-menu-left a {
+	display: block;
+	font-size: 1.35rem
+}
+
+#menu-footer-menu-right a {
+	display: inline-block;
+	font-size: .9rem
+}
+
+@media all and (min-width:768px) {
+	.footer-contacts {
+		background-color: var(--dark-green);
+		padding: 1rem 0
+	}
+}
+
+.footer-menu ul {
+	margin-bottom: 0
+}
+
+.footer-menu li,
+.footer-menu ul {
+	margin-top: 0
+}
+
+.footer-menu li a {
+	font-size: 1.1rem;
+	transition: color .2s linear
+}
+
+.footer-menu li a:hover {
+	color: var(--white)
+}
+
+.footer-menu li:not(:first-of-type) {
+	padding-left: 1rem
+}
+
+.footer-menu a {
+	color: #708c8e
+}
+
+@media all and (max-width:767px) {
+	.footer-menu>ul {
+		-ms-flex-pack: center;
+		-webkit-justify-content: center;
+		justify-content: center
+	}
+
+	.footer-contacts>div,
+	.footer-legal>div {
+		display: block;
+		text-align: center
+	}
+}
+
+.footer-contacts .social-button {
+	background-color: var(--medium-green)
+}
+
+.footer-contacts .social-button:hover {
+	background-color: var(--white);
+	color: var(--dark-green);
+	filter: none
+}
+
+.footer-legal {
+	padding: 1rem 0 3rem
+}
+
+.site-footer .footer-legal a,
+.site-footer .footer-legal span {
+	color: #708c8e;
+	font-size: .9rem
+}
+
+.site-footer .footer-legal .footer-menu {
+	padding-left: 1rem
+}
+
+.get-social {
+	border-bottom: 5px solid var(--orange);
+	background: rgba(0, 110, 117, .15) url(https://storage.googleapis.com/jctda-assets/img/social-grid-background.png) center center no-repeat
+}

@@ -1,0 +1,27 @@
+@charset "UTF-8";
+/*
+**  @file    _carousel.scss
+**  
+**  @desc    
+**  
+**  @path    /_carousel.scss
+**  @package jctda
+**  @author  Lee Peterson
+**  @date    11/11/17
+*/
+
+.carousel {
+	.overlay-jc_lodging_type,
+	.overlay-jc_lodging_amenity,
+	.overlay-jc_camping_amenity,
+	.overlay-jc_lodging_accommodation { background-color: $support-blue; }
+
+	.overlay-jc_food_type,
+	.overlay-jc_food_amenity { background-color: $support-orange; }
+
+	.overlay-gray { background-color: $primary-grey; }
+	.overlay-green { background-color: $primary-green; }
+	.overlay-yellow { background-color: $support-yellow; }
+	.overlay-dark-grey { background-color: $dark-grey; }
+	.overlay-brown { background-color: $support-brown; }
+}

@@ -1,0 +1,56 @@
+<?php
+/**
+ * Project Name:    Discover Jackson NC
+ * Project URI:     https://www.discoverjacksonnc.com
+ * Description:     Filters the permalink for a post of a custom post type. 
+ * Agency:          Rawle Murdy Associates
+ * Agency URI:      https://www.rawlemurdy.com
+ * Text Domain:     jctda
+ *
+ * @package         jctda
+ * @since           3.0.0
+ * @link            https://www.discoverjacksonnc.com
+ * @author          lpeterson
+ * @date            6/6/18
+ * @file            post-type-link.php
+ *
+ * @param string  $post_link The post's permalink. 
+ * @param WP_Post $post      The post in question. 
+ * @param bool    $leavename Whether to keep the post name. 
+ * @param bool    $sample    Is it a sample permalink. 
+ */
+defined('ABSPATH') or exit;
+
+add_filter( 'post_type_link', function( $post_link, $post, $leavename, $sample ) {
+	if ( is_admin() || !isset( $post ) )
+		return $post_link;
+	
+	$media_types = [ 'mentions', 'press_release', 'b2b_news' ];
+	$content_type = get_query_var( 'content_type' );
+
+	if ( isset( $content_type ) && ( 'docs' == $content_type || 'media' == $content_type ) ) {
+		$key = md5( $post_link );
+		$media = wp_cache_get( $key, 'post_links' );
+		
+		if ( false === $media ) {
+			$media = get_attached_media( 'application/pdf', $post );
+			$media = array_values( $media );
+			$attachment = isset( $media[0] ) ? $media[0]->ID : false;
+			$media = wp_get_attachment_url( $attachment );
+			wp_cache_set( $key, $media, 'post_links', MINUTE_IN_SECONDS );
+		}
+
+		switch ( true ) {
+			case isset( $post->link_to_article ):
+				return $post->link_to_article;
+				break;
+			//case ( false === wp_http_validate_url( $media ) ):
+			case ( false !== stripos($media, WP_SITEURL) ):
+			case ( false !== stripos($media, CDN_URL) ):
+				return wp_http_validate_url( str_replace(WP_CONTENT_URL, MEDIA, $media) );
+				break;
+		}
+	}
+
+	return $post_link;
+}, 10, 4 );

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="500px" height="500px" viewBox="0 0 500 500" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.3 (33839) - http://www.bohemiancoding.com/sketch -->
+    <title>Artboard 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard-2">
+            <rect id="Rectangle" fill="#DF7E40" x="0" y="0" width="500" height="500"></rect>
+            <rect id="Rectangle-Copy" fill="#1F61A8" x="0" y="0" width="500" height="500"></rect>
+            <g id="Group-2" transform="translate(63.000000, 54.000000)" stroke="#FFFFFF" stroke-linejoin="round">
+                <path d="M334.23913,383 L40.7608696,383" id="Stroke-1" stroke-width="15" stroke-linecap="round"></path>
+                <polygon id="Stroke-4" stroke-width="15" stroke-linecap="round" points="130.434783 374.708333 244.565217 374.708333 244.565217 211.791667 130.434783 211.791667"></polygon>
+                <polygon id="Stroke-7" stroke-width="15" stroke-linecap="round" points="187.5 130.333333 228.26087 211.791667 146.73913 211.791667"></polygon>
+                <polygon id="Stroke-8" stroke-width="12" points="187.5 0 203.804348 32.5833333 236.413043 32.5833333 210.032609 52.7035417 220.108696 89.6041667 187.5 65.1666667 154.891304 89.6041667 167.836957 52.7035417 138.586957 32.5833333 171.195652 32.5833333"></polygon>
+                <polygon id="Stroke-10" stroke-width="12" points="309.782609 65.1666667 326.086957 97.75 358.695652 97.75 332.315217 117.870208 342.391304 154.770833 309.782609 130.333333 277.173913 154.770833 290.119565 117.870208 260.869565 97.75 293.478261 97.75"></polygon>
+                <polygon id="Stroke-12" stroke-width="12" points="326.086957 195.5 342.391304 228.083333 375 228.083333 348.619565 248.203542 358.695652 285.104167 326.086957 260.666667 293.478261 285.104167 306.423913 248.203542 277.173913 228.083333 309.782609 228.083333"></polygon>
+                <polygon id="Stroke-14" stroke-width="12" points="48.9130435 195.5 65.2173913 228.083333 97.826087 228.083333 71.4456522 248.203542 81.5217391 285.104167 48.9130435 260.666667 16.3043478 285.104167 29.25 248.203542 0 228.083333 32.6086957 228.083333"></polygon>
+                <polygon id="Stroke-16" stroke-width="12" points="65.2173913 65.1666667 81.5217391 97.75 114.130435 97.75 87.75 117.870208 97.826087 154.770833 65.2173913 130.333333 32.6086957 154.770833 45.5543478 117.870208 16.3043478 97.75 48.9130435 97.75"></polygon>
+                <polyline id="Stroke-18" stroke-width="15" stroke-linecap="round" points="163.043478 374.708333 163.043478 325.833333 211.956522 325.833333 211.956522 374.708333"></polyline>
+                <path d="M163,244.375 L163,252.520833" id="Stroke-21" stroke-width="15" stroke-linecap="round"></path>
+                <path d="M211,244.375 L211,252.520833" id="Stroke-22" stroke-width="15" stroke-linecap="round"></path>
+                <path d="M163,285.104167 L163,293.25" id="Stroke-23" stroke-width="15" stroke-linecap="round"></path>
+                <path d="M211,285.104167 L211,293.25" id="Stroke-24" stroke-width="15" stroke-linecap="round"></path>
+            </g>
+        </g>
+    </g>
+</svg>

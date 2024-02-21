@@ -1,0 +1,99 @@
+<?php
+/**
+ * Project Name:    Discover Jackson NC
+ * Project URI:     https://www.discoverjacksonnc.com
+ * Description:     Register post types
+ * Agency:          Rawle Murdy Associates
+ * Agency URI:      https://www.rawlemurdy.com
+ * Text Domain:     jctda
+ *
+ * @package         jctda
+ * @since           20181207
+ * @author          lpeterson
+ */
+
+// namespace Jctda;
+
+class Post_Types {
+	private static $instance;
+
+	public static function getInstance(): Post_Types {
+		if ( null === static::$instance ) {
+			static::$instance = new static();
+		}
+
+		return static::$instance;
+	}
+
+	private function __construct() {
+		add_action( 'init', [ $this, 'setup' ] );
+	}
+
+	public static function setup() {
+		$post_types = [
+			"public" => true,
+			"show_ui" => true,
+			"query_var" => true,
+			"has_archive" => false,
+			"map_meta_cap" => true,
+			"hierarchical" => false,
+			"menu_position" => null,
+			"delete_with_user" => false,
+			"publicly_queryable" => true,
+			"exclude_from_search" => false,
+			"supports" => [ "title", "editor", "excerpt", "page-attributes", "thumbnail", "revisions", "author" ]
+		];
+
+		register_post_type( "outdoor", wp_parse_args( [
+			"label" => "Outdoors",
+			"has_archive" => "outdoors",
+			"hierarchical" => true,
+			"show_in_menu" => "jc-locations-menu",
+			"rewrite" => [ "slug" => "outdoors", "with_front" => true ]
+		], $post_types ) );
+		register_post_type( "attraction", wp_parse_args( [
+			"label" => "Attractions",
+			"has_archive" => "attractions",
+			"hierarchical" => true,
+			"show_in_menu" => "jc-locations-menu",
+			"rewrite" => [ "slug" => "attractions", "with_front" => true ]
+		], $post_types ) );
+		register_post_type( "wedding", wp_parse_args( [
+			"label" => "Weddings",
+			"has_archive" => "your-trip/weddings",
+			"show_in_menu" => "jc-trip-menu",
+			"rewrite" => [ "slug" => "your-trip/weddings", "with_front" => true ]
+		], $post_types ) );
+		register_post_type( "town", wp_parse_args( [
+			"label" => "Towns",
+			"has_archive" => "your-trip/towns",
+			"show_in_menu" => "jc-trip-menu",
+			"rewrite" => [ "slug" => "your-trip/towns", "with_front" => true ]
+		], $post_types ) );
+		register_post_type( "tda_docs", wp_parse_args( [
+			"label" => "TDA Docs",
+			"has_archive" => "tda-docs",
+			"show_in_menu" => "jc-docs-menu",
+			"rewrite" => [ "slug" => "jctda", "with_front" => true ],
+			"taxonomies" => [ "jctda_category" ]
+		], $post_types ) );
+		register_post_type( "mentions", wp_parse_args( [
+			"label" => "Mentions",
+			"has_archive" => "mentions",
+			"show_in_menu" => "jc-media-menu",
+			"rewrite" => [ "slug" => "mentions", "with_front" => true ]
+		], $post_types ) );
+		register_post_type( "press_release", wp_parse_args( [
+			"label" => "Press Releases",
+			"has_archive" => "press-releases",
+			"show_in_menu" => "jc-media-menu",
+			"rewrite" => [ "slug" => "media/press-releases", "with_front" => true ]
+		], $post_types ) );
+		register_post_type( "b2b_news", wp_parse_args( [
+			"label" => "B2B News",
+			"has_archive" => "b2b-news",
+			"show_in_menu" => "jc-media-menu",
+			"rewrite" => [ "slug" => "media/b2b-news", "with_front" => false ]
+		], $post_types ) );
+	}
+}

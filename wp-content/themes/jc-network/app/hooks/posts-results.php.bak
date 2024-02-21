@@ -1,0 +1,54 @@
+<?php
+/**
+ * Project Name:    Discover Jackson NC
+ * Project URI:     https://www.discoverjacksonnc.com
+ * Description:     Filters the raw post results array, prior to status checks
+ * Agency:          Rawle Murdy Associates
+ * Agency URI:      https://www.rawlemurdy.com
+ * Text Domain:     jctda
+ *
+ * @package         jctda
+ * @since           2.3.0
+ * @link            https://www.discoverjacksonnc.com
+ * @author          lpeterson
+ * @date            6/3/18
+ * @file            posts-results.php
+ *
+ * @param array $posts The post results array
+ * @param WP_Query &$this The WP_Query instance (passed by reference)
+ */
+defined('ABSPATH') or exit;
+
+add_filter( 'posts_results', function( array $posts, \WP_Query $query ) {
+	if ( class_exists( 'Pods' ) && !is_admin() ) {
+		foreach ( $posts as $post ) {
+			$key = md5( 'pods_meta_'.$post->ID );
+			$group = 'pods_meta';
+			
+			$metadata = wp_cache_get( $key, $group );
+			
+			if ( false === $metadata ) {
+				$pods = pods( $post->post_type, $post->ID, true );
+				
+				if ( false === $pods ) 
+					continue;
+				
+				$metadata = $pods->export();
+				
+				wp_cache_set( $key, $metadata, $group, MINUTE_IN_SECONDS*15 );
+			}
+	
+			foreach ( $metadata as $k => $v ) {
+				if ( empty($v) )
+					continue;
+	
+				$post->$k = $v;
+			}
+		}
+	}
+	
+	return $posts;
+}, 10, 2 );
+
+
+

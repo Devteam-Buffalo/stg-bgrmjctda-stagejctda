@@ -1,0 +1,28 @@
+<?php
+/**
+ * Project Name:    Discover Jackson NC
+ * Project URI:     https://www.discoverjacksonnc.com
+ * Description:     Filters the list of attachment image attributes
+ * Agency:          Rawle Murdy Associates
+ * Agency URI:      https://www.rawlemurdy.com
+ * Text Domain:     jctda
+ *
+ * @package         jctda
+ * @since           2.8.0
+ * @author          lpeterson
+ *
+ * @param array     $attr       Attributes for the image markup.
+ * @param WP_Post   $attachment Image attachment post.
+ * @param str|arr   $size       Requested size. Image size or array of width and height values
+ *                              (in that order). Default 'thumbnail'.
+ */
+
+add_filter( 'wp_get_attachment_image_attributes', function( $attr, $attachment ) {
+	if ( !is_admin() && '' !== $attr['src'] ) {
+		$attr['data-src'] = $attr['src'];
+		$attr['src'] = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
+		$attr['class'] = $attr['class'] . ' lazyloading';
+	}
+
+	return $attr;
+}, 20, 2 );

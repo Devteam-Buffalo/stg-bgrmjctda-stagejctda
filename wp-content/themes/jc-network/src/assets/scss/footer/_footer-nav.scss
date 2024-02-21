@@ -1,0 +1,41 @@
+.footer-content {
+	padding: 2.5% 0;
+	
+	@media all and (max-width: $breakpoint-small) { padding-bottom: 5%; }
+
+	a {
+		color: #fff;
+		line-height: 1;
+		font-family: "Proxima N W01 Reg";
+
+		&:hover,
+		&:focus { text-decoration: none; }
+	}
+}
+
+.footer-primary-nav {
+	ul {
+		border-right: 1px solid $footer-link-color;
+
+		li {
+			&:not(:last-of-type) { margin-bottom: 1.15rem; }
+
+			a {
+				display: block;
+				font-size: 1.5rem;
+				font-family: "Proxima N W01 Light";
+			}
+		}
+	}
+}
+
+.footer-ancillary-nav {
+	li {
+		&:not(:last-of-type) { margin-bottom: .875rem; }
+
+		a {
+			display: block;
+			font-size: .9rem;
+		}
+	}
+}

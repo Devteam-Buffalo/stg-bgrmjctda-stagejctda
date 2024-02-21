@@ -1,0 +1,27 @@
+.site-header {
+	position: relative;
+	z-index: 5;
+
+	@media all and (max-width: ($breakpoint-large + 1)) {
+		position: fixed;
+		top: 0;
+		width: 100%;
+		z-index: 20;
+	}
+
+	.header-content {
+		position: relative;
+		z-index: 6;
+		background-color: #fff;
+
+		@media all and (min-width: $breakpoint-small) { max-height: 70px; }
+		@media all and (min-width: $breakpoint-medium) { max-height: 80px; }
+		@media all and (min-width: $breakpoint-large) {
+			&,
+			& > div,
+			& > div > div {
+				max-height: 90px;
+			}
+		}
+	}
+}

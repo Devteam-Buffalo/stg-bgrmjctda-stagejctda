@@ -1,0 +1,50 @@
+<?php
+/**
+ * Project Name:    Discover Jackson NC
+ * Project URI:     https://www.discoverjacksonnc.com
+ * Description:     Filters the image HTML markup to send to the editor when inserting an image.
+ * Agency:          Rawle Murdy Associates
+ * Agency URI:      https://www.rawlemurdy.com
+ * Text Domain:     jctda
+ *
+ * @package         jctda
+ * @since           20181211
+ * @author          lpeterson
+ *
+ * @since 2.5.0
+ * @param string       $html    The image HTML markup to send.
+ * @param int          $id      The attachment id.
+ * @param string       $caption The image caption.
+ * @param string       $title   The image title.
+ * @param string       $align   The image alignment.
+ * @param string       $url     The image source URL.
+ * @param string|array $size    Size of image. Image size or array of width and height values
+ *                              (in that order). Default 'medium'.
+ * @param string       $alt     The image alternative, or alt, text.
+ */
+
+add_filter( 'image_send_to_editor', function( $html, $id, $caption, $title, $align, $url, $size, $alt ) {
+	if ( '' !== $html ) {
+		$image_id = wp_get_attachment_image_id( $id );
+		$image_url = wp_get_attachment_image_url( $id, $size, false );
+
+		$html = '<figure id="post-'.$id.'-media-'.$image_id.'" class="align-'.$align.'">'.
+
+			'<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"';
+
+			if ( !empty( $image_url ) )
+				$html .= ' data-src="'.$image_url.'"';
+
+			if ( !empty( $alt ) )
+				$html .= ' alt="'.$alt.'"';
+
+			$html .= '>';
+
+			if ( isset( $caption ) && !empty( $caption ) )
+				$html .= '<figcaption>'.$caption.'</figcaption>';
+
+		$html .= '</figure>';
+	}
+
+	return $html;
+}, 10, 8 );

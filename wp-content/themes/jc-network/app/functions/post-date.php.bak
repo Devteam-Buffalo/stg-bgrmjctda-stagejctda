@@ -1,0 +1,43 @@
+<?php
+/**
+ * Project Name:    Discover Jackson NC
+ * Project URI:     https://www.discoverjacksonnc.com
+ * Description:     Prints HTML with meta information for the current post-date/time
+ * Agency:          Rawle Murdy Associates
+ * Agency URI:      https://www.rawlemurdy.com
+ * Text Domain:     jctda
+ *
+ * @package         jctda
+ * @since           3.3.0
+ * @link            https://www.discoverjacksonnc.com
+ * @author          Lee Peterson
+ * @date            6/24/18
+ * @file            post-date.php
+ */
+defined('ABSPATH') or exit;
+
+if ( ! function_exists( 'jc_post_date' ) ) :
+
+	function jc_post_date() {
+		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
+		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
+			$time_string = '<time class="entry-date updated" datetime="%3$s">%4$s</time>';
+		}
+		$time_string = sprintf( $time_string,
+			esc_attr( get_the_date( DATE_W3C ) ),
+			esc_html( get_the_date() ),
+			esc_attr( get_the_modified_date( DATE_W3C ) ),
+			esc_html( get_the_modified_date() )
+		);
+		
+		ob_start(); ?>
+
+		<div class="uk-flex post-meta post-date">
+			<div><span class="uk-icon-calendar uk-icon-justify"></span></div>
+			<div class="uk-padding-left uk-text-uppercase uk-text-truncate sans-serif">Posted on <?= $time_string ?></div>
+		</div>
+
+		<?php ob_get_flush();
+	}
+
+endif;

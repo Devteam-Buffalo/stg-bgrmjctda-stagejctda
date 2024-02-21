@@ -1,0 +1,70 @@
+{
+    "key": "group_5824ac6ce6d2d",
+    "title": "Outdoors, Attractions, Lodging, Restaurants, Towns & Weddings - GPS+Address",
+    "fields": [
+        {
+            "key": "field_5824acb867e93",
+            "label": "Enter a Full Address",
+            "name": "address_gps",
+            "type": "google_map",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "100",
+                "class": "",
+                "id": ""
+            },
+            "height": 300,
+            "center_lat": "35.3738562",
+            "center_lng": "-83.2280255",
+            "zoom": 14
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "outdoor"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "town"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "attraction"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "food_drink"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "lodgings"
+            }
+        ]
+    ],
+    "menu_order": "",
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1500331287
+}

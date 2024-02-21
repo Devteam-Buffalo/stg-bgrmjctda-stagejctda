@@ -1,0 +1,51 @@
+<?php
+/**
+ * Template Name: Ｘ Visitor Guide
+ *
+ * @link https://codex.wordpress.org/Template_Hierarchy
+ *
+ * @package jc-network
+ */
+wp_enqueue_style( 'gform_chosen' );
+get_header();
+	do_action( 'jc_network_before_full_width_content_area' );
+		while ( have_posts() ) : the_post();
+		?>
+		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+			<div class="entry-content">
+				<h1 class="section-heading text-script large-script uk-text-center"><?php the_field('page_heading'); ?></h1>
+
+				<h2 class="uk-text-uppercase section-subheading uk-text-center"><?php the_field('page_subheading'); ?></h2>
+
+				<p class="intro-paragraph uk-text-center"><?php the_field('page_intro'); ?></p>
+				
+				<?php the_field( 'page_content' ); ?>
+
+				<div style="margin-bottom: 10%;">
+					<div class="uk-grid uk-grid-collapse visitor-guide-form" data-uk-grid-match>
+						<div class="uk-width-large-1-2 uk-hidden-small">
+							<div class="visitor-guide-bg" style="padding: 0 5% 5%; height: 100%; background: url(<?= wp_get_attachment_image_url( 53111, 'full', false ) ?>) center bottom no-repeat;">
+								&nbsp;
+							</div>
+						</div>
+						
+						<div class="uk-width-large-1-2 uk-width-1-1 visitor-guide-form-bg">
+							<div class="uk-width-large-3-4 uk-width-1-1">
+								<?php 
+								echo '<h3>Receive Our Visitor Guide</h3>';
+								echo do_shortcode( '[gravityform id="6" title="false" description="false" ajax="true" tabindex="5"]' );
+								?>
+							</div>
+						</div>
+					</div>
+	
+				</div>
+			</div><!-- .entry-content -->
+		
+			<footer class="screen-reader-text entry-footer">
+			</footer><!-- .entry-footer -->
+		</article><!-- #post-## -->
+		<?php
+		endwhile;
+	do_action( 'jc_network_after_full_width_content_area' );
+get_footer();

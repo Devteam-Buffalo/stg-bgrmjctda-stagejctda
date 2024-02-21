@@ -1,0 +1,33 @@
+<?php
+/**
+ * Project Name:    Discover Jackson NC
+ * Project URI:     https://www.discoverjacksonnc.com
+ * Description:     Filters the size used to display the post thumbnail image in the 'Featured Image' meta box.
+ * Agency:          Rawle Murdy Associates
+ * Agency URI:      https://www.rawlemurdy.com
+ * Text Domain:     jctda
+ *
+ * @package         jctda
+ * @since           20181211
+ * @author          lpeterson
+ *
+ *
+ * Note: When a theme adds 'post-thumbnail' support, a special 'post-thumbnail'
+ * image size is registered, which differs from the 'thumbnail' image size
+ * managed via the Settings > Media screen. See the `$size` parameter description
+ * for more information on default values.
+ *
+ * @param string|array $size         Post thumbnail image size to display in the meta box. Accepts any valid
+ *                                   image size, or an array of width and height values in pixels (in that order).
+ *                                   If the 'post-thumbnail' size is set, default is 'post-thumbnail'. Otherwise,
+ *                                   default is an array with 266 as both the height and width values.
+ * @param int          $thumbnail_id Post thumbnail attachment ID.
+ * @param WP_Post      $post         The post object associated with the thumbnail.
+ */
+
+add_filter( 'admin_post_thumbnail_size', function( $size, $thumbnail_id, $post ) {
+	$size = 'tile_large_size';
+
+	return $size;
+}, 10, 3 );
+

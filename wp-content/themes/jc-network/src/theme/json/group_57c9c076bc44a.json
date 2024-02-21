@@ -1,0 +1,158 @@
+{
+    "key": "group_57c9c076bc44a",
+    "title": "Outdoors, Attractions, Lodging, Restaurants, Towns & Weddings - Photos",
+    "fields": [
+        {
+            "key": "field_57c9c0d5bc2c3",
+            "label": "Featured Photo",
+            "name": "featured_photo_img",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "uk-width-1-1",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "full",
+            "library": "uploadedTo",
+            "min_width": 1000,
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "jpg,jpeg"
+        },
+        {
+            "key": "field_57c9c15abc2c5",
+            "label": "Interior Photos",
+            "name": "interior_photos_gallery",
+            "type": "gallery",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "uk-width-1-1",
+                "id": ""
+            },
+            "library": "uploadedTo",
+            "min": "",
+            "max": "",
+            "min_width": 500,
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "jpg,jpeg",
+            "insert": "append"
+        },
+        {
+            "key": "field_57c9c19bbc2c7",
+            "label": "Scenic Photos",
+            "name": "scenic_photos_gallery",
+            "type": "gallery",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "uk-width-1-1",
+                "id": ""
+            },
+            "library": "uploadedTo",
+            "min": "",
+            "max": "",
+            "min_width": 500,
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "jpg,jpeg",
+            "insert": "append"
+        },
+        {
+            "key": "field_57c9c1bbbc2c9",
+            "label": "Special Feature Photos",
+            "name": "special_feature_photos_gallery",
+            "type": "gallery",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "uk-width-1-1",
+                "id": ""
+            },
+            "library": "uploadedTo",
+            "min": "",
+            "max": "",
+            "min_width": 500,
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "jpg,jpeg",
+            "insert": "append"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "outdoor"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "attraction"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "wedding"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "town"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "food_drink"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "lodgings"
+            }
+        ]
+    ],
+    "menu_order": "",
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1500331354
+}

@@ -1,0 +1,34 @@
+.jc-recent-posts {
+	&.jc-recent-post-list {
+		li {
+			margin-bottom: 2rem;
+		}
+		
+		.entry-meta {
+			i { display: none; }
+			
+			a {
+				display: inline-block;
+				border-bottom: 2px solid $support-orange;
+				font-size: 1.2rem;
+				line-height: 1.4;
+				color: $primary-grey;
+			}
+		}
+		
+		.entry-title {
+			margin: .5rem 0 .25rem;
+			font-family: "roboto_slabregular";
+			font-size: 1.5rem;
+			line-height: 1.2;
+			color: $support-blue;
+		}
+		
+		.read-more {
+			text-transform: uppercase;
+			color: $support-orange;
+		}
+	}
+	
+	a:hover { text-decoration: none; }
+}

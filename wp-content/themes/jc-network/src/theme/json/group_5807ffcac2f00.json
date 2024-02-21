@@ -1,0 +1,53 @@
+{
+    "key": "group_5807ffcac2f00",
+    "title": "Waterfalls & Trails Photo Rating",
+    "fields": [
+        {
+            "key": "field_5807ffd3ee90b",
+            "label": "Photo Rating",
+            "name": "photo_rating",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "min": "",
+            "max": "",
+            "step": "",
+            "placeholder": "i.e. 7",
+            "prepend": "",
+            "append": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "cpt_parent",
+                "operator": "==",
+                "value": "3808"
+            }
+        ],
+        [
+            {
+                "param": "cpt_parent",
+                "operator": "==",
+                "value": "3809"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 0,
+    "description": "",
+    "menu_item_level": "all",
+    "modified": 1499114887
+}

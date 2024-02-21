@@ -1,0 +1,89 @@
+
+body .cky-consent-container {
+	right: 1rem !important;
+	left: 1rem;
+    width: auto !important;
+	bottom: calc(1rem + 40px);
+	border: 1px solid #ddd;
+    border-radius: 0 !important;
+}
+@media (min-width:768px) {
+	body .cky-consent-container {
+		right: auto;
+		max-width: 50%;
+	}
+}
+@media (min-width:1024px) {
+	body .cky-consent-container {
+		max-width: 33%;
+	}
+}
+@media (min-width:1200px) {
+	body .cky-consent-container {
+		max-width: 25%;
+	}
+}
+@media (max-width:767px) {
+	body .cky-consent-container {
+        bottom: calc(1rem + 90px);
+    }
+}
+@media (max-width:440px) {
+	body .cky-custom-brand-logo-wrapper, 
+    body .cky-notice .cky-title, 
+    body .cky-notice-des, 
+    body .cky-notice-btn-wrapper {
+        padding: 0;
+    }
+}
+body .cky-consent-container .cky-notice-btn-wrapper {
+	flex-basis: 100%;
+    margin-top: 3px;
+}
+body .cky-consent-container .cky-btn-accept {
+	box-sizing: border-box;
+	display: block;
+	margin-top: .5rem;
+	padding: .5rem;
+	width: 100%;
+	cursor: pointer;
+	font-size: 12.5px;
+    line-height: 1.4;
+    background-color: #1f61a8 !important;
+}
+body .cky-consent-container .cky-btn-accept:hover {
+    color: #ffffff !important;
+    background-color: #17497e !important;
+    opacity: 1;
+    border-color: #17497e !important;
+}
+body .cky-consent-container .cky-consent-bar {
+	padding: 0.75rem 1rem;
+    font-size: 90%;
+    line-height: 1.4;
+    color: #404040 !important;
+    background-color: #ffffff !important;
+    border-color: #1f61a8 !important;
+    border-style: solid;
+    position: relative;
+    border-width: 1px 0 0;
+    border-radius: 0 !important;
+    box-shadow: 0 -3px 5px 0 rgba(0, 0, 0, 0.1) !important;
+}
+
+body .cky-consent-container .cky-notice .cky-title {
+    margin-bottom: 0.2rem;
+}
+body .cky-consent-container .cky-notice-des,
+body .cky-consent-container .cky-notice-des *  {
+    font-size: 12.5px !important;
+    line-height: 1.4 !important;
+    color: #404040 !important;
+}
+
+body .cky-consent-container .cky-notice-des a {
+    color: #1f61a8 !important;
+}
+body .cky-consent-container .cky-notice-des a:hover {
+    color: #17497e !important;
+}

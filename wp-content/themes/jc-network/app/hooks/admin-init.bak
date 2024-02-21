@@ -1,0 +1,53 @@
+<?php
+/**
+ * Project Name:    Discover Jackson NC
+ * Project URI:     https://www.discoverjacksonnc.com
+ * Description:     Fires as an admin screen or script is being initialized
+ * Agency:          Rawle Murdy Associates
+ * Agency URI:      https://www.rawlemurdy.com
+ * Text Domain:     jctda
+ *
+ * @package         jctda
+ * @since           2.5.0
+ * @author          lpeterson
+ *
+ * Note, this does not just run on user-facing admin screens.
+ * It runs on admin-ajax.php and admin-post.php as well.
+ *
+ * This is roughly analogous to the more general {@see 'init'} hook, which fires earlier.
+ */
+
+add_action( 'admin_init', function () {
+	$base = trailingslashit( get_template_directory() );
+	$cache_hash = md5( trailingslashit( dirname( $base ) ) . basename( $base ) );
+	$custom_templates = [];
+	$search_path = $base . 'resource/view/template/';
+	$custom_path = 'resource/view/template/';
+	$custom_files = scandir( $search_path );
+
+	foreach ( $custom_files as $template ) {
+		$file = $search_path . $template;
+
+		if ( is_file( $file ) ) {
+			if ( ! preg_match('|Template Name:(.*)$|mi', file_get_contents( $file ), $header ) )
+				continue;
+
+			$types = ['page'];
+
+			if ( preg_match('|Template Post Type:(.*)$|mi', file_get_contents( $file ), $type ) )
+				$types = explode( ',', _cleanup_header_comment( $type[1] ) );
+
+			foreach ( $types as $type ) {
+				$type = sanitize_key( $type );
+
+				if ( ! isset( $custom_templates[$type] ) )
+					$custom_templates[$type] = [];
+
+				$custom_templates[$type][$custom_path . $template] = trim( preg_replace( "/\s*(?:\*\/|\?>).*/", "", $header[1] ) );
+			}
+		}
+
+	}
+
+	wp_cache_add( 'post_templates-' . $cache_hash, $custom_templates, 'themes', HOUR_IN_SECONDS );
+}, 1 );

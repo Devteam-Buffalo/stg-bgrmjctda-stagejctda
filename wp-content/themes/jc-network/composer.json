@@ -1,0 +1,41 @@
+{
+	"name": "jctda/theme",
+	"description": "Composer-based WordPress theme by Rawle Murdy Associates.",
+	"homepage": "https://www.discoverjacksonnc.com",
+	"type": "wordpress-theme",
+	"license": "proprietary",
+	"authors" : [{
+		"name": "Rawle Murdy Associates",
+		"role": "Agency",
+		"email": "digital@rawlemurdy.com",
+		"homepage": "https://www.rawlemurdy.com"
+	}],
+	"support" : {
+		"email": "support@rawlemurdy.com",
+		"chat": "https://rawlemurdy.slack.com",
+		"issues": "https://rawlemurdy.mydonedone.com"
+	},
+	"require": {
+		"php": ">=7.2",
+		"johnbillion/extended-template-parts": "@stable",
+		"wp-bootstrap/wp-bootstrap-navwalker": "^4.2",
+		"justintadlock/hybrid-breadcrumbs": "^1.0",
+		"justintadlock/hybrid-carbon": "^1.0"
+	},
+	"require-dev": {
+		"10up/phpcs-composer": "dev-master"
+	},
+	"config": {
+		"vendor-dir": "vendor"
+	},
+	"autoload": {
+		"psr-4": {
+			"Jctda\\": "includes/classes/"
+		}
+	},
+	"scripts": {
+		"post-update-cmd": "wp core is-installed && wp cache flush",
+		"lint": "phpcs .",
+		"lint-fix": "phpcbf ."
+	}
+}

@@ -1,0 +1,25 @@
+<?php
+/**
+ * Project Name:    Discover Jackson NC
+ * Project URI:     https://www.discoverjacksonnc.com
+ * Description:     Remove the Tribe Customier css <script>
+ * Agency:          Rawle Murdy Associates
+ * Agency URI:      https://www.rawlemurdy.com
+ * Text Domain:     jctda
+ *
+ * @package         jctda
+ * @since           3.3.0
+ * @link            https://www.discoverjacksonnc.com
+ * @author          Lee Peterson
+ * @date            7/2/18
+ * @file            wp-footer.php
+ */
+defined('ABSPATH') or exit;
+
+add_action( 'wp_footer', function() {
+	if ( class_exists( 'GFForms' ) ) 
+		gravity_form_enqueue_scripts( 3, true );
+
+	if ( class_exists( 'Tribe__Customizer' ) ) 
+		remove_action( 'wp_print_footer_scripts', [Tribe__Customizer::instance(), 'print_css_template'], 15 );
+});

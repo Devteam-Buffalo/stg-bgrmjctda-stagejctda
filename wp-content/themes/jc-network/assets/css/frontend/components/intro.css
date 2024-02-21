@@ -1,0 +1,46 @@
+.styled-intro .uk-h1 {
+	margin: 2rem 0 0;
+	font: normal normal normal 3rem/1.1 var(--script)
+}
+
+@media all and (min-width:480px) {
+	.styled-intro .uk-h1 {
+		font-size: 3.5rem
+	}
+}
+
+@media all and (min-width:768px) {
+	.styled-intro .uk-h1 {
+		font-size: 4rem
+	}
+}
+
+@media all and (min-width:960px) {
+	.styled-intro .uk-h1 {
+		font-size: 4.5rem
+	}
+}
+
+@media all and (min-width:1220px) {
+	.styled-intro .uk-h1 {
+		font-size: 6rem
+	}
+}
+
+.styled-intro .uk-h4 {
+	margin: 0
+}
+
+.styled-intro p.uk-text-large {
+	margin: 1rem 0 2rem;
+	font: normal normal normal 1.1rem/1.4 var(--sans-regular)
+}
+
+@media all and (max-width:479px) {
+
+	.styled-intro .uk-h1,
+	.styled-intro .uk-h4,
+	.styled-intro p.uk-text-large {
+		text-align: center
+	}
+}

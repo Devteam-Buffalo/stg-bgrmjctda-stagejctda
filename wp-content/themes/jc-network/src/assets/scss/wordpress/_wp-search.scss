@@ -1,0 +1,17 @@
+body .searchwp-live-search-results {
+	z-index: 5 !important;
+}
+
+#searchwp_live_search_results_582520f459c08 {
+	background: none !important;
+	
+	.searchwp-live-search-result {
+		background: #fff;
+		
+		@media all and (min-width: 320px) { max-width: 320px !important; }
+		@media all and (min-width: $breakpoint-small) { margin-left: 25px; margin-right: 25px; max-width: $breakpoint-small; }
+		@media all and (min-width: $breakpoint-medium) { max-width: $breakpoint-medium; }
+		@media all and (min-width: $breakpoint-large) { margin-left: 35px; margin-right: 35px; max-width: $breakpoint-large; }
+		@media all and (min-width: $breakpoint-xlarge) { max-width: $breakpoint-xlarge; }
+	}
+}

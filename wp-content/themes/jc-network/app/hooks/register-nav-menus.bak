@@ -1,0 +1,48 @@
+<?php
+/**
+ * Project Name:    Discover Jackson NC
+ * Project URI:     https://www.discoverjacksonnc.com
+ * Description:     Registers navigation menu locations for a theme.
+ * Agency:          Rawle Murdy Associates
+ * Agency URI:      https://www.rawlemurdy.com
+ * Text Domain:     jctda
+ *
+ * @package         jctda
+ * @since           3.1.0
+ * @link            https://www.discoverjacksonnc.com
+ * @author          lpeterson
+ * @date            6/15/18
+ * @file            register-nav-menus.php
+ *
+ * @global array $_wp_registered_nav_menus
+ *
+ * @param array $locations Associative array of menu location identifiers (like a slug) and descriptive text.
+ */
+defined('ABSPATH') or exit;
+
+add_action( 'after_setup_theme', function() {
+
+	$labels = [
+		'Primary',
+		'Ancillary',
+		'Tertiary',
+		'Outdoors Mega',
+		'Attractions Mega',
+		'Food & Drink Mega',
+		'Lodging Mega',
+		'Your Trip Mega',
+		'Footer Left',
+		'Footer Right',
+		'Footer Contact',
+		'Footer Legal',
+		'Offcanvas Top',
+		'Offcanvas Bottom',
+	];
+	
+	$nav_menus = [];
+	
+	foreach ( $labels as $menu )
+		$nav_menus[sanitize_title_with_dashes( $menu )] = __( $menu );
+	
+	register_nav_menus( $nav_menus );
+});

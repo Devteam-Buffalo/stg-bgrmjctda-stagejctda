@@ -1,0 +1,17 @@
+@charset "UTF-8";
+/*
+**  @file    _fonts.scss
+**  
+**  @desc    
+**  
+**  @path    /_fonts.scss
+**  @package jctda
+**  @author  Lee Peterson
+**  @date    11/10/17
+*/
+
+// Rem output with px fallback
+@mixin font-size($sizeValue: 1) {
+	font-size: ($sizeValue * 16) * 1px;
+	font-size: $sizeValue * 1rem;
+}

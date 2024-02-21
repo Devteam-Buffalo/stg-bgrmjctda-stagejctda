@@ -1,0 +1,37 @@
+<?php
+/**
+ * Project Name:    Discover Jackson NC
+ * Project URI:     https://www.discoverjacksonnc.com
+ * Description:     Filter the theme page templates
+ * Agency:          Rawle Murdy Associates
+ * Agency URI:      https://www.rawlemurdy.com
+ * Text Domain:     jctda
+ *
+ * @package         jctda
+ * @since           20181210
+ * @author          lpeterson
+ *
+ * @param array    $page_templates Page templates.
+ * @param WP_Theme $this           WP_Theme instance.
+ * @param WP_Post  $post           The post being edited, provided for context, or null.
+ * @return array (Maybe) modified page templates array.
+ *
+ * apply_filters( 'theme_page_templates', array $page_templates, WP_Theme $this, WP_Post|null $post );
+ * apply_filters( 'theme_templates', string[] $post_templates, WP_Theme $this, WP_Post|null $post, string $post_type );
+ * apply_filters( "theme_{$post_type}_templates", array $post_templates, WP_Theme $this, WP_Post|null $post, string $post_type );
+ */
+
+add_filter( 'theme_page_templates', function( $page_templates ) {
+	$files = glob( get_parent_theme_file_path('app/views/templates').'/*.php' );
+	$names = [];
+
+	foreach ( $files as $file ) {
+		$info = pathinfo( $file );
+		$title = get_file_data( $file, [ 'Template Name' => 'Template Name' ] );
+		$name = 'app/views/templates/'.$info['basename'];
+		$names[ $name ] = $title['Template Name'].' ('.$info['filename'].')';
+	}
+	$page_templates = array_unique( $names + $page_templates );
+
+	return $page_templates;
+}, 20);

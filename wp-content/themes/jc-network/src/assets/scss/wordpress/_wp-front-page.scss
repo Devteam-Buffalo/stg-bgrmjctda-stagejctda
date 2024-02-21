@@ -1,0 +1,71 @@
+.home-page {
+	.section-heading {
+		background: url('../img/heading-mountain-bg.png') center bottom no-repeat;
+		background-size: 75%;
+		
+		@media all and (min-width: 560px) { background-size: 50%; }
+	}
+
+	.section-subheading { font-family: "Proxima N W01 Reg"; }
+	
+	.hero-container {
+		top: 0;
+		margin-bottom: 0;
+
+		@media all and (min-width: $breakpoint-medium) {
+			top: -60px;
+			margin-bottom: -60px;
+		}
+		@media all and (min-width: $breakpoint-large) {
+			top: -120px;
+			margin-bottom: -120px;
+		}
+	}
+
+	.hero { margin-bottom: 0; }
+}
+
+.home-content {
+	.jc-section-intro {
+		margin: 0 auto;
+		max-width: 1220px;
+		
+		@media (min-width: 320px) {
+			padding-left: 1rem;
+			padding-right: 1rem;
+		}
+		@media (min-width: 768px) {
+			padding-left: 1.3rem;
+			padding-right: 1.3rem;
+		}
+		@media (min-width: 1220px) {
+			padding-left: 1.6rem;
+			padding-right: 1.6rem;
+		}
+	}
+	
+	.jc-events-widget {
+		.jc-events-content {
+			.uk-article-lead {
+				margin: 0;
+			}
+			
+			.uk-article-lead span {
+				display: inline-block;
+				color: #84746c;
+				font-size: 1.15rem;
+				
+				&:not(:first-child) {
+					margin-left: .75em;
+					padding-left: .75em;
+					border-left: 1px solid rgba(0, 0, 0, 0.1);
+				}
+			}
+		}
+		.jc-events-footer {
+			@media (min-width: 1220px) {
+				padding-left: 20%;
+			}
+		}
+	}
+}

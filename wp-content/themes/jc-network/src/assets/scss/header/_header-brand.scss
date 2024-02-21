@@ -1,0 +1,54 @@
+.logo-header-container {
+	position: relative;
+
+	@media all and (min-width: 320px) {
+		width: 80px;
+		height: 60px;
+	}
+	@media all and (min-width: $breakpoint-small) {
+		width: 90px;
+		height: 81px;
+	}
+	@media all and (min-width: $breakpoint-medium) {
+		width: 100px;
+		height: 91px;
+	}
+	@media all and (min-width: $breakpoint-large) {
+		margin-right: 5%;
+		width: 140px;
+		height: 127px;
+	}
+	@media all and (max-width: ($breakpoint-large - 1)) {
+		float: none;
+		margin: 0 auto;
+	}
+
+	.logo-header {
+		position: absolute;
+		display: block;
+		background: transparent url('../img/logo-header-vector.svg') center center no-repeat;
+		background-size: contain;
+
+		@media all and (min-width: 320px) {
+			top: 10px;
+			width: 80px;
+			height: 70px;
+		}
+		@media all and (min-width: $breakpoint-small) {
+			width: 90px;
+			height: 80px;
+		}
+		@media all and (min-width: $breakpoint-medium) {
+			width: 100px;
+			height: 88px;
+		}
+		@media all and (min-width: $breakpoint-large) {
+			top: -15px;
+			width: 140px;
+			height: 124px;
+		}
+		
+		&:hover,
+		&:focus { text-decoration: none; }
+	}
+}

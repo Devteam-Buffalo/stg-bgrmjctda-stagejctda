@@ -1,0 +1,43 @@
+<?php
+/**
+ * Template Name:      Ancillary
+ * Template Post Type: page, outdoor, attraction, town, wedding, jc_trip_idea, jc_visitor_gallery
+ * Project Name:       Discover Jackson NC
+ * Project URI:        https://www.discoverjacksonnc.com
+ * Description:        A page template offering a tall hero image vertically oriented on the left, content on the right.
+ * Agency:             Rawle Murdy Associates
+ * Agency URI:         https://www.rawlemurdy.com
+ * Text Domain:        jctda
+ *
+ * @package            jctda
+ * @since              20181210
+ * @author             lpeterson
+ */
+
+get_header();
+
+if ( have_posts() ) :
+	while ( have_posts() ) :
+		the_post(); ?>
+
+		<article <?php post_class('uk-flex uk-article loop-article jc-ancillary') ?>>
+			<header class="uk-width-1-1 uk-width-large-1-3">
+				<?php the_post_thumbnail( 'hero_medium_size' ) ?>
+			</header>
+
+			<section class="uk-width-1-1 uk-width-large-2-3">
+				<?php jc_page_intro() ?>
+
+				<?php jc_page_content() ?>
+
+				<hr class="uk-article-divider">
+
+				<?php get_template_part( 'resource/view/partial/footer/post', 'footer' ) ?>
+
+				<?php jc_page_edit() ?>
+			</section>
+		</article>
+	<?php endwhile;
+endif;
+
+get_footer();

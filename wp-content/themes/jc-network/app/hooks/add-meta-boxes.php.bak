@@ -1,0 +1,49 @@
+<?php
+/*
+**  @file               metaboxes.php
+**  @description        Remove meta boxes on post edit screens
+**  @package            jctda
+**  @since              2.1.0
+**  @author             lpeterson
+**  @date               5/1/18
+*/
+defined( 'ABSPATH' ) || exit;
+
+/**
+ * Add or remove a meta box on post edit screens since they're either unnecessary or cause poor performance.
+ *
+ * @since 2.1.0
+ *
+ * @access public
+ * @param $id            | string                 | Required | Meta box ID (used in the 'id' attribute for the meta box)
+ * @param $title         | string                 | Required | Title of the meta box
+ * @param $callback      | callable               | Required | Function that fills the box with the desired content
+ *                                                             The function should echo its output.
+ * @param $screen        | string|array|WP_Screen | The screen or screens on which to show the box (such as a post type, 'link', or 'comment'). 
+ *                                                  Accepts a single screen ID, WP_Screen object, or array of screen IDs. 
+ *                                                  Default is the current screen. If you have used add_menu_page() or add_submenu_page() 
+ *                                                  to create a new screen (and hence screen_id), make sure your menu slug conforms to the limits 
+ *                                                  of sanitize_key() otherwise the 'screen' menu may not correctly render on your page
+ * @param $context       | string | Global        | The context within the screen where the boxes should display; 'normal', 'side', and 'advanced'.
+ *                                                  Menus meta boxes (accordion sections) all use the 'side' context. 
+ * @param $priority      | string                 | The priority within the context where the boxes should show; 'high', 'low'
+ * @param $callback_args | array                  | Data that should be set as the $args property of the box array 
+ *                                                  (which is the second parameter passed to your callback)
+ *
+ */
+add_action( 'add_meta_boxes', function() {
+	if ( is_admin() ) {
+		remove_meta_box( 'postcustom', null, 'normal' );
+		remove_meta_box( 'authordiv', null, 'normal' );
+		remove_meta_box( 'trackbacksdiv', null, 'normal' );
+		remove_meta_box( 'commentsdiv', null, 'normal' );
+		remove_meta_box( 'commentstatusdiv', null, 'normal' );
+		remove_meta_box( 'revisionsdiv', null, 'normal' );
+		
+		//remove_meta_box( 'submitdiv', 'custom_post_id', 'side' );
+		
+		//remove_meta_box( 'postexcerpt', 'post', 'normal' );
+		
+		//remove_meta_box( 'sqpt-meta-tags', 'post', 'normal' );
+	}
+} );

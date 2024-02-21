@@ -1,0 +1,38 @@
+.blog-list time {
+	border-bottom: 2px solid var(--orange)
+}
+
+.featured-image {
+	position: relative
+}
+
+.featured-image .post-date {
+	position: absolute;
+	top: 20%;
+	left: 0;
+	display: block;
+	padding: 10px 10px 7px;
+	background-color: #df7e40
+}
+
+.featured-image .post-date a {
+	color: var(--white);
+	font-size: 1.75rem;
+	line-height: 1.4
+}
+
+.entry-header .post-author {
+	display: block;
+	margin: 0 0 2rem;
+	font-size: 1.3rem
+}
+
+.tags-links a {
+	display: inline-block;
+	margin-right: 5px
+}
+
+.single-post .site-main>h2 {
+	margin: 5% 0 10%
+}
+

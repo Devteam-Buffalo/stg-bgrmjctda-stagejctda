@@ -1,0 +1,36 @@
+@charset "UTF-8";
+/*
+**  @file    _media-room.scss
+**  
+**  @desc    
+**  
+**  @path    /_media-room.scss
+**  @package jctda
+**  @author  Lee Peterson
+**  @date    11/10/17
+*/
+
+.media-room-lists {
+	h3 a:hover { text-decoration: none; }
+
+	.uk-list {
+		padding-bottom: 1rem;
+		border-bottom: 1px dotted $light-grey;
+
+		li a {
+			display: block;
+			color: $base-body-color;
+		}
+
+		a small {
+			display: inline-block;
+			padding: 0 5px;
+			background-color: $support-orange;
+
+			em {
+				color: #fff;
+				font-style: normal;
+			}
+		}
+	}
+}

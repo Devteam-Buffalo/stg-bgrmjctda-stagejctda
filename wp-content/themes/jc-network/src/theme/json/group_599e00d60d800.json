@@ -1,0 +1,42 @@
+{
+    "key": "group_599e00d60d800",
+    "title": "Custom Code",
+    "fields": [
+        {
+            "key": "field_599e0135740fa",
+            "label": "Place Custom Code Below",
+            "name": "jc_custom_code",
+            "type": "acf_code_field",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "mode": "htmlmixed",
+            "theme": "monokai"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-templates\/page-template-social-stream.php"
+            }
+        ]
+    ],
+    "menu_order": "",
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1503527273
+}

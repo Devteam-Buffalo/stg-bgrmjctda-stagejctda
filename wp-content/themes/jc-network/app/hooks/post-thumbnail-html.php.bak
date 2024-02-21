@@ -1,0 +1,56 @@
+<?php
+/**
+ * Project Name:    Discover Jackson NC
+ * Project URI:     https://www.discoverjacksonnc.com
+ * Description:     Filters the post thumbnail HTML.
+ * Agency:          Rawle Murdy Associates
+ * Agency URI:      https://www.rawlemurdy.com
+ * Text Domain:     jctda
+ *
+ * @package         jctda
+ * @since           20180930
+ * @author          lpeterson
+ *
+ * @since 2.9.0
+ * @param string       $html              The post thumbnail HTML.
+ * @param int          $post_id           The post ID.
+ * @param string       $post_thumbnail_id The post thumbnail ID.
+ * @param string|array $size              The post thumbnail size. Image size or array of width and height
+ *                                        values (in that order). Default 'post-thumbnail'.
+ * @param string       $attr              Query string of attributes.
+ */
+
+add_filter( 'post_thumbnail_html', function( $html, $post_id, $post_thumbnail_id, $size, $attr ) {
+	if ( !empty( $html ) ) {
+		$data_src = wp_get_attachment_image_url( $post_thumbnail_id, $size, false );
+		$src = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
+		$class = 'lazyload';
+		$alt = get_metadata('post', $post_thumbnail_id, '_wp_attachment_image_alt', true);
+		$caption = wp_get_attachment_caption( $post_thumbnail_id );
+		$copyright = get_metadata('post', $post_thumbnail_id, 'copyright', true);
+
+		$atts = [
+			'src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"',
+			'data-src="'.esc_url($data_src).'"',
+			'data-size="'.esc_attr($size).'"',
+			empty($copyright)?'':'data-copyright="'.esc_attr($copyright).'"',
+			'class="lazyload"',
+			'alt="'.esc_attr(empty($alt)?get_the_title($post_thumbnail_id):$alt).'"',
+			'itemprop="image"',
+		];
+		$html = '<figure class="post-thumbnail">'."\n" .
+			'<img ' . implode( ' ', $atts ) . '>'."\n";
+
+			if ( ( false !== $caption || false !== $copyright ) && ( !empty($caption) || !empty($copyright) ) ) {
+				$html .= '<figcaption class="uk-padding-vertical-small uk-text-center text-sans text-grey">'."\n" .
+					strip_tags( $caption ) .
+					esc_html( $copyright ) .
+				'</figcaption>';
+			}
+
+		$html .= '</figure>'."\n";
+
+	}
+
+	return $html;
+}, 11, 5 );

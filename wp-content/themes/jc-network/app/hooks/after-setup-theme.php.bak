@@ -1,0 +1,69 @@
+<?php
+/**
+ * Project Name:    Discover Jackson NC
+ * Project URI:     https://www.discoverjacksonnc.com
+ * Description:     Register new image sizes
+ * Agency:          Rawle Murdy Associates
+ * Agency URI:      https://www.rawlemurdy.com
+ * Text Domain:     jctda
+ *
+ * @package         jctda
+ * @since           20190107
+ * @author          lpeterson
+ */
+
+add_action( 'after_setup_theme', function() {
+	add_theme_support('soil-clean-up');
+	add_theme_support('soil-disable-asset-versioning');
+	add_theme_support('soil-disable-trackbacks');
+	add_theme_support('title-tag');
+	add_theme_support('post-thumbnails');
+	add_theme_support('post-formats', ['aside', 'chat', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio']);
+	add_theme_support('html5', ['search-form', 'gallery', 'caption']);
+	add_theme_support( 'wpthumb-crop-from-position' );
+	add_theme_support( 'wpthumb-watermarking' );
+
+	add_post_type_support('page', 'excerpt');
+	add_post_type_support('post', 'excerpt');
+
+	register_nav_menus( [
+		'primary'          => 'Primary',
+		'ancillary'        => 'Ancillary',
+		'tertiary'         => 'Tertiary',
+		'outdoors-mega'    => 'Outdoors Mega',
+		'attractions-mega' => 'Attractions Mega',
+		'food-drink-mega'  => 'Food & Drink Mega',
+		'lodging-mega'     => 'Lodging Mega',
+		'your-trip-mega'   => 'Your Trip Mega',
+		'footer-left'      => 'Footer Left',
+		'footer-right'     => 'Footer Right',
+		'footer-contact'   => 'Footer Contact',
+		'footer-legal'     => 'Footer Legal',
+		'offcanvas-top'    => 'Offcanvas Top',
+		'offcanvas-bottom' => 'Offcanvas Bottom',
+	] );
+
+	// Add Tile Size
+	add_image_size( 'tile', 275, 275, true );
+	remove_image_size( 'tile_small_size' );
+	remove_image_size( 'tile_medium_size' );
+	remove_image_size( 'tile_large_size' );
+
+	// Add Card Size
+	add_image_size( 'card', 480, 360, true );
+	remove_image_size( 'card_small_size' );
+	remove_image_size( 'card_medium_size' );
+	remove_image_size( 'card_large_size' );
+
+	// Add Masonry Size
+	add_image_size( 'masonry', 99999, 525, false );
+	remove_image_size( 'masonry_small_size' );
+	remove_image_size( 'masonry_medium_size' );
+	remove_image_size( 'masonry_large_size' );
+
+	// Add Hero Size
+	add_image_size( 'hero', 99999, 725, false );
+	remove_image_size( 'hero_small_size' );
+	remove_image_size( 'hero_medium_size' );
+	remove_image_size( 'hero_large_size' );
+});

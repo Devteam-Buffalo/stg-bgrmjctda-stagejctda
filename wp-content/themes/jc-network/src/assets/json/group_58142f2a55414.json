@@ -1,0 +1,60 @@
+{
+    "key": "group_58142f2a55414",
+    "title": "Outdoors &amp; Attractions Post Template",
+    "fields": [
+        {
+            "key": "field_5814303cb28b4",
+            "label": "Layout Template",
+            "name": "layout_template",
+            "type": "select",
+            "instructions": "<strong>Hero:<\/strong> Large, full-width graphic at the top<br><strong>Ancillary:<\/strong> Title with supporting text at the top<br><strong>Sidebar:<\/strong> Blog-style archive\/single post on left and widgetized sidebar on the right<br><strong>Location:<\/strong> Hero at the top, overlay with intro content + share and small map to the right<br><strong>Map:<\/strong> Multiple locations shown in a map with hero at the top<br><strong>Collection:<\/strong> Masonry grid leading to a Location layout",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "hero": "Hero",
+                "ancillary": "Ancillary",
+                "sidebar": "Sidebar",
+                "location": "Location",
+                "map": "Map",
+                "collection": "Collection"
+            },
+            "default_value": [],
+            "allow_null": 1,
+            "multiple": 0,
+            "ui": 0,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "outdoor"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "attraction"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 0,
+    "description": "",
+    "modified": 1522449894
+}

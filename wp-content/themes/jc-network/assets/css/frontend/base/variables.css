@@ -1,0 +1,90 @@
+:root {
+
+	--green: #006e75;
+	--medium-green: #203233;
+	--dark-green: #162323;
+	--yellow: #d1ae32;
+	--blue: #1f61a8;
+	--dark-blue: #042344;
+	--orange: #df7e40;
+	--red: #b60b17;
+	--brown: #9d7b58;
+	--white: #fff;
+	--black: #0b1212;
+	--dark: #1d2323;
+	--grey: #4f5858;
+	--faint: #f2f2f2;
+	--dark-grey: #666;
+	--medium-grey: #999;
+	--facebook: #3b5998;
+	--twitter: #46c0fb;
+	--instagram: #833ab4;
+	--youtube: #f00;
+	--pinterest: #bd081c;
+	--tripadvisor: #00af87;
+	--google: #4285f4;
+	--tumblr: #35465c;
+	--yelp: #af0606;
+	--airbnb: #fd5c63;
+	--linkedin: #0077b5;
+	--addthis: #ff5c3e;
+	--light-green: #68e76e33;
+	--light-yellow: #c9f90833;
+	--light-blue: #11aee11a;
+	--light-orange: #df7e401a;
+	--light-red: #fb05161a;
+	--light-brown: #93550633;
+	--light-grey: #343f3f1a;
+	--opaque: #fffc;
+	--trans: #0003;
+	--trans-green: #006e7599;
+	--trans-yellow: #d1ae3299;
+	--trans-blue: #1f61a899;
+	--trans-orange: #df7e4099;
+	--trans-red: #b60b1799;
+	--trans-brown: #9d7b5899;
+	--trans-grey: #4f585899;
+	--trans-hover: #0003;
+	--trans-green-hover: #006e75cc;
+	--trans-yellow-hover: #d1ae32cc;
+	--trans-blue-hover: #1f61a8cc;
+	--trans-orange-hover: #df7e40cc;
+	--trans-red-hover: #b60b17cc;
+	--trans-brown-hover: #9d7b58cc;
+	--trans-grey-hover: #4f5858cc;
+	--fonts: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	--jc-font: fontello, FontAwesome, Wingdings;
+	--icon: "FontAwesome";
+	--script: "Freeland", sans-serif;
+	--serif-thin: "roboto_slabthin", sans-serif;
+	--serif-light: "roboto_slablight", sans-serif;
+	--serif-regular: "roboto_slabregular", sans-serif;
+	--serif-bold: "roboto_slabbold", sans-serif;
+	--sans-thin: "Proxima N W01 Thin Reg", sans-serif;
+	--sans-light: "Proxima N W01 Light", sans-serif;
+	--sans-regular: "Proxima N W01 Reg", sans-serif;
+	--sans-bold: "Proxima N W01 Bold", sans-serif;
+	--padding: 1rem;
+	--padding-xsmall: .25rem;
+	--padding-small: .5rem;
+	--padding-medium: 2rem;
+	--padding-large: 3rem;
+	--margin: 1rem;
+	--margin-small: .25rem;
+	--margin-medium: 2rem;
+	--margin-large: 3rem;
+
+	--c-black: #000;
+	--c-white: #fff;
+
+	/* Breakpoints */
+	@custom-media --bp-tiny (min-width: 25em);
+	/* 400px */
+	@custom-media --bp-small (min-width: 40.625em);
+	/* 650px */
+	@custom-media --bp-medium (min-width: 53.125em);
+	/* 850px */
+	@custom-media --bp-large (min-width: 62.5em);
+	/* 1000px */
+
+}

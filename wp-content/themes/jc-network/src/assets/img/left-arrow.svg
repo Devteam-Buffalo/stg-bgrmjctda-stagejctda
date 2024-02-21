@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="31px" height="59px" viewBox="0 0 31 59" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+    <title>LeftArrow</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD-Copy-2" transform="translate(-518.000000, -807.000000)" fill="#221F20">
+            <path d="M518.924476,835.280383 C518.358508,835.862557 518.358508,836.78938 518.924476,837.371554 L546.46197,865.697523 L548.613017,863.606352 L521.075524,835.280383 L521.075524,837.371554 L548.613017,809.045586 L546.46197,806.954414 L518.924476,835.280383 Z" id="LeftArrow"></path>
+        </g>
+    </g>
+</svg>

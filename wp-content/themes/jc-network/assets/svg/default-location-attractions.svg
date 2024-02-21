@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="257px" height="257px" viewBox="0 0 257 257" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41 (35326) - http://www.bohemiancoding.com/sketch -->
+    <title>default-location-attractions</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Default-Location-Icons" transform="translate(0.000000, -306.000000)">
+            <g id="default-location-attractions" transform="translate(0.000000, 306.000000)">
+                <rect id="Rectangle" fill="#D1AE32" x="0.726364851" y="0.635694287" width="256" height="256"></rect>
+                <g id="Attractions-Shapes" transform="translate(62.000000, 63.000000)" stroke="#FFFFFF" stroke-width="7">
+                    <path d="M45.3703704,32.4074074 L45.3703704,136.111111" id="Shape"></path>
+                    <path d="M90.7407407,64.8148148 L90.7407407,0" id="Shape"></path>
+                    <polyline id="Shape" points="84.2592593 108.331481 45.3703704 136.111111 0 103.703704 0 0 45.3703704 32.4074074 90.7407407 0 136.111111 32.4074074 136.111111 64.8148148"></polyline>
+                    <path d="M140,94.6296296 C140,108.947222 114.074074,140 114.074074,140 C114.074074,140 88.1481481,108.947222 88.1481481,94.6296296 C88.1481481,80.312037 99.75,68.7037037 114.074074,68.7037037 C128.391667,68.7037037 140,80.312037 140,94.6296296 Z" id="Shape"></path>
+                    <circle id="Oval" cx="114.074074" cy="94.6296296" r="9.72222222"></circle>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

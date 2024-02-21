@@ -1,0 +1,152 @@
+header[class*=hero]>figure {
+	position: relative;
+	margin-bottom: 0;
+	height: 275px
+}
+
+@media all and (min-width:480px) {
+	header[class*=hero]>figure {
+		height: 320px
+	}
+}
+
+@media all and (min-width:768px) {
+	header[class*=hero]>figure {
+		height: 375px
+	}
+}
+
+@media all and (min-width:960px) {
+	header[class*=hero]>figure {
+		height: 450px;
+		transform: translateY(-6rem)
+	}
+
+	.jc-ancillary header[class*=hero]>figure {
+		height: 100vh;
+		max-height: 100vh
+	}
+
+	.jc-ancillary {
+		padding-left: 0
+	}
+}
+
+@media all and (min-width:1220px) {
+	header[class*=hero]>figure {
+		height: 525px
+	}
+}
+
+header[data-jc-copyright],
+header[data-jc-credit] {
+	position: relative
+}
+
+header[data-jc-copyright]:after {
+	content: attr(data-jc-copyright)
+}
+
+header[data-jc-credit]:after {
+	content: attr(data-jc-credit)
+}
+
+header[data-jc-copyright]:after,
+header[data-jc-credit]:after {
+	position: absolute;
+	bottom: 1rem;
+	right: 1rem;
+	z-index: 2;
+	color: var(--white);
+	font: italic .7rem/1 Arial, sans-serif;
+	text-shadow: 0 2px 5px var(--trans)
+}
+
+header[class*=hero] h1 {
+	font-family: var(--script)
+}
+
+.photo-copyright {
+	opacity: .75;
+	color: var(--white);
+	font: caption;
+	letter-spacing: .05em
+}
+
+.photo-copyright a {
+	color: var(--white)
+}
+
+.thank-you-page .ancillary-hero {
+	background-position: center bottom
+}
+
+@media all and (min-width:960px) {
+	.thank-you-page .ancillary-hero {
+		height: 650px
+	}
+}
+
+.jc-title {
+	flex: 0 0 auto;
+	text-align: center
+}
+
+header.jc-vertical-hero {
+	max-height: 275px;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover
+}
+
+@media all and (max-width:959px) {
+	header.jc-vertical-hero img {
+		display: none
+	}
+}
+
+@media all and (max-width:767px) {
+	header.jc-ancillary section img {
+		display: block;
+		float: none;
+		margin: 2rem 0;
+		padding: 0;
+		width: 100%;
+		max-width: 100%
+	}
+}
+
+@media all and (max-width:479px) {
+	header.jc-ancillary section img {
+		display: block;
+		float: none;
+		margin: 2rem 0;
+		padding: 0;
+		width: 100%;
+		max-width: 100%
+	}
+}
+
+@media all and (min-width:480px) {
+	header.jc-vertical-hero {
+		max-height: 320px
+	}
+}
+
+@media all and (min-width:768px) {
+	header.jc-vertical-hero {
+		max-height: 375px
+	}
+}
+
+@media all and (min-width:960px) {
+	.jc-ancillary {
+		padding-left: 0
+	}
+
+	header.jc-vertical-hero {
+		background-position: right top;
+		max-height: none;
+		height: 100vh
+	}
+}

@@ -1,0 +1,47 @@
+@charset "UTF-8";
+/*
+**  @file    _visitor-guide.scss
+**  
+**  @desc    
+**  
+**  @path    /_visitor-guide.scss
+**  @package jctda
+**  @author  Lee Peterson
+**  @date    11/10/17
+*/
+
+.visitor-guide-form-bg {
+	padding: 5%;
+	height: 100%;
+	background: rgb(204,227,228);
+
+	&.gform_wrapper {
+		margin: 0;
+		
+		.gfield_label { display: none !important; }
+	}
+
+	h3.gform_title {
+		margin: 2rem 0 !important;
+		font-family: "roboto_slabregular" !important;
+		font-size: 2rem !important;
+		color: $primary-grey !important;
+	}
+
+	.uk-form-row { margin: 1rem 0; }
+
+	input[type="tel"],
+	input[type="email"],
+	input[type="text"] {
+		margin: .5rem 0;
+		font-size: 1.6rem !important;
+		color: $support-orange !important;
+		background: transparent !important;
+		border: 0 !important;
+		border-bottom: 1px solid #fff !important;
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+	}
+
+	input[type="submit"] { background: $support-orange; }
+}

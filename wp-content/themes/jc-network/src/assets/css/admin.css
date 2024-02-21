@@ -1,0 +1,12 @@
+.notice,
+.notice-error,
+.notice-warning,
+.notice-success,
+.notice-info,
+.is-dismissible,
+.update-nag {
+	display: none !important;
+}
+
+body.settings_page_cdn_enabler .form-table tr:nth-of-type(6),
+body.settings_page_cdn_enabler .form-table tr:nth-of-type(7) {display: none}

@@ -1,0 +1,12 @@
+.thank-you-page .ancillary-content .button {
+	display: inline-block;
+	margin: 1% 0
+}
+
+.grecaptcha-badge {
+	width: 0 !important;
+	height: 0 !important;
+	visibility: hidden !important;
+	overflow: hidden !important;
+	display: none !important
+}

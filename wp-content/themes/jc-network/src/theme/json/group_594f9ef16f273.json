@@ -1,0 +1,119 @@
+{
+    "key": "group_594f9ef16f273",
+    "title": "Page Template - JC Login",
+    "fields": [
+        {
+            "key": "field_594f9ef17bbd6",
+            "label": "Page Heading",
+            "name": "page_heading_logged_in",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "&lt;h1&gt;",
+            "append": "&lt;\/h1&gt;",
+            "maxlength": 100
+        },
+        {
+            "key": "field_594f9ef17bc80",
+            "label": "Page Subheading",
+            "name": "page_subheading_logged_in",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "&lt;h2&gt;",
+            "append": "&lt;\/h2&gt;",
+            "maxlength": 250
+        },
+        {
+            "key": "field_594f9ef17bd23",
+            "label": "Page Intro",
+            "name": "page_intro_logged_in",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 3,
+            "new_lines": ""
+        },
+        {
+            "key": "field_594f9ef17bdc5",
+            "label": "Page Content",
+            "name": "page_content_logged_in",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 1
+        },
+        {
+            "key": "field_594f9ef17be71",
+            "label": "Page Excerpt",
+            "name": "page_excerpt_logged_in",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 4,
+            "new_lines": "wpautop"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-templates\/page-template-jc-login.php"
+            }
+        ]
+    ],
+    "menu_order": "",
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1500313446
+}

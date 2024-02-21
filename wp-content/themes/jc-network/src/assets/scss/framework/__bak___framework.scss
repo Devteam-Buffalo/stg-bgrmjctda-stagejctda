@@ -1,0 +1,50 @@
+@charset "UTF-8";
+/*
+**  @file    _framework.scss
+**  
+**  @desc    
+**  
+**  @path    /_framework.scss
+**  @package jctda
+**  @author  Lee Peterson
+**  @date    11/10/17
+*/
+$vendor-path:      "../../vendor" !default;
+$component-path:   "#{$vendor-path}/uikit/scss/components" !default;
+
+// Theme Variables
+@import "../global/variables";
+
+// Theme Mixins
+@import "../mixins/index";
+
+// Theme Fonts
+@import "../fonts/fonts";
+
+// Framework Mixins
+@import "#{$vendor-path}/uikit/scss/uikit-mixins";
+
+// Framework Base
+@import "#{$vendor-path}/uikit/scss/uikit";
+
+// Framework JS Component Sass
+@import "#{$component-path}/slidenav";
+@import "#{$component-path}/slider";
+@import "#{$component-path}/slideshow";
+@import "#{$component-path}/accordion";
+@import "#{$component-path}/search";
+@import "#{$component-path}/placeholder";
+@import "#{$component-path}/form-advanced";
+@import "#{$component-path}/form-file";
+@import "#{$component-path}/form-select";
+@import "#{$component-path}/upload";
+@import "#{$component-path}/tooltip";
+
+// Lightbox
+@import "#{$vendor-path}/lightGallery/sass/lightgallery";
+
+// Masonry Grid
+@import "#{$vendor-path}/justifiedGallery/dist/css/masonry";
+
+// Weather Icons
+@import "../weather-icons/weather-icons";

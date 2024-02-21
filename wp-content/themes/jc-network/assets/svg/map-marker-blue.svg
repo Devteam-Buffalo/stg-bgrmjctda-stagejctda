@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="35px" height="32px" viewBox="0 0 35 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41 (35326) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD-Copy-2" transform="translate(-341.000000, -231.000000)">
+            <g id="Group-2" transform="translate(341.000000, 231.000000)">
+                <g id="Blue-Pin-Copy" transform="translate(6.000000, 22.000000)" fill-opacity="0.2" fill="#000000">
+                    <path d="M6.96,9.87692308 C8.06769231,9.87692308 24.4589567,6.26234099 27.2253596,4.1343388 C29.9917624,2.00633662 26.5036198,0.28125 19.434375,0.28125 C12.3651302,0.28125 4.3917624,2.00633662 1.62535956,4.1343388 C-1.14104329,6.26234099 5.85230769,9.87692308 6.96,9.87692308 Z" id="Oval"></path>
+                </g>
+                <g id="Blue-Pin">
+                    <path d="M12.8,31.8769231 C13.9076923,31.8769231 25.6,19.8692448 25.6,12.8 C25.6,5.7307552 19.8692448,0 12.8,0 C5.7307552,0 0,5.7307552 0,12.8 C0,19.8692448 11.6923077,31.8769231 12.8,31.8769231 Z" id="Oval" fill="#1F61A8"></path>
+                    <ellipse id="Oval-2" fill="#FFFFFF" cx="12.8" cy="12.3076923" rx="8.86153846" ry="8.86153846"></ellipse>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

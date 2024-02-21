@@ -1,0 +1,138 @@
+:root {
+	--hero-height: 15rem;
+}
+@media (min-width:360px) {
+	:root {
+
+	}
+}
+@media (min-width:480px) {
+	:root {
+
+	}
+}
+@media (min-width:640px) {
+	:root {
+		--hero-height: 20rem;
+	}
+}
+@media (min-width:768px) {
+	:root {
+		--hero-height: 25rem;
+	}
+}
+@media (min-width:960px) {
+	:root {
+		--hero-height: 30rem;
+	}
+}
+@media (min-width:1400px) {
+	:root {
+		--hero-height: 35rem;
+	}
+}
+main[class^=top],
+main[class^=top] figure.ugc + #map,
+main[class^=top] figure.hero + #map {
+	transform: translateY(-80px)
+}
+main[class^=top] figure.hero + #map {
+	position: relative;
+	z-index: 2
+}
+
+figure.ugc {
+	min-height: calc(var(--hero-height) - 100px)
+}
+figure.hero {
+	height: var(--hero-height)
+}
+figure.hero > img {
+	z-index: 2
+}
+figure.hero > figcaption {
+	z-index: 5
+}
+figure.ugc h1,
+figure.hero h1 {
+	color: var(--white);
+	font: normal 600%/1 var(--script);
+	text-shadow: 0 2px 5px var(--trans)
+}
+
+figure.ugc > div[id^=cr],
+figure.ugc > div[id^=cr] .cr__gallery,
+figure.ugc > div[id^=cr] .cr__grid {
+	width: 100%;
+	height: 100%
+}
+figure.ugc > div[id^=cr] .cr__grid {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: space-between;
+}
+figure.ugc > div[id^=cr] .cr__grid .erd_scroll_detection_container {
+	display: none !important;
+	visibility: hidden !important;
+}
+figure.ugc > div[id^=cr] .cr__asset:not(.isLoaded) {
+	background-color: var(--faint)
+}
+main[class^=top] figure.ugc + #map {
+	position: relative;
+	z-index: 5;
+	transition: transform 300ms ease
+}
+main[class^=top] figure.ugc:hover + #map {
+	transform: translateY(0)
+}
+figure.ugc figcaption {
+	opacity: 1;
+	visibility: visible;
+	z-index: 3;
+	transition: 300ms ease;
+	transition-property: opacity,visibility
+}
+figure.ugc:hover figcaption {
+	opacity: 0;
+	visibility: hidden
+}
+
+@media (min-width:768px) {
+	main[class*=side] article {
+		display: grid;
+		grid-template-columns: 2fr 5fr;
+		grid-template-areas: "header content";
+		grid-gap: 1px
+	}
+
+	main[class*=side] article header {
+		grid-area: header;
+	}
+
+	main[class*=side] article section {
+		grid-area: content;
+	}
+}
+
+.page-intro h2 ~ * {
+	margin-top: 1rem;
+	margin-bottom: 0
+}
+.page-intro p {
+	font-size: 1.125rem
+}
+.page-intro.styled h2 {
+	font: normal 600%/1 var(--script)
+}
+.page-intro.styled h2 + h3 {
+	margin-top: 0;
+	font-size: 150%
+}
+.page-intro.styled h2 + p {
+	margin-top: 0;
+	margin-bottom: 0
+}
+
+
+

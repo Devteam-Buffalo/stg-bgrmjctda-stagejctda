@@ -1,0 +1,44 @@
+<?php
+/*
+**  @file               wp-kses.php
+**  @description        Manage allowed HTML elements and attributes in filtered content.
+**  @package            jctda
+**  @since              3.0.0
+**  @author             lpeterson
+**  @date               5/20/18
+*/
+defined( 'ABSPATH' ) || exit;
+
+add_filter( 'wp_kses_allowed_html', function( $allowedposttags ) {
+	
+	if ( !current_user_can( 'publish_posts' ) )
+		return $allowedposttags;
+	
+	$allowedposttags['iframe'] = [
+		'align' => true,
+		'width' => true,
+		'height' => true,
+		'frameborder' => true,
+		'name' => true,
+		'src' => true,
+		'id' => true,
+		'class' => true,
+		'style' => true,
+		'scrolling' => true,
+		'marginwidth' => true,
+		'marginheight' => true,
+		'gesture' => true,
+		'allow' => true,
+		'allowfullscreen' => true,
+	];
+
+	$allowedposttags['script'] = [
+		'src' => true,
+		'id' => true,
+		'class' => true,
+		'style' => true,
+	];
+	
+	return $allowedposttags;
+	
+} );

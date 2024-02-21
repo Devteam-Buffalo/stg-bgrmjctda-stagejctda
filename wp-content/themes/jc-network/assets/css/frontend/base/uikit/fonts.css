@@ -1,0 +1,89 @@
+@font-face {
+	font-family: "Proxima N W01 Thin Reg";
+	src: local("Proxima Nova Thin"),
+		url("assets/fonts/sans/thin.woff2") format("woff2"),
+		url("assets/fonts/sans/thin.woff") format("woff");
+	font-weight: 400;
+	font-style: normal;
+	font-display: block
+}
+
+@font-face {
+	font-family: "Proxima N W01 Light";
+	src: local("Proxima Nova Light"),
+		url("assets/fonts/sans/light.woff2") format("woff2"),
+		url("assets/fonts/sans/light.woff") format("woff");
+	font-weight: 400;
+	font-style: normal;
+	font-display: block
+}
+
+@font-face {
+	font-family: "Proxima N W01 Reg";
+	src: local("Proxima Nova Regular"),
+		url("assets/fonts/sans/regular.woff2") format("woff2"),
+		url("assets/fonts/sans/regular.woff") format("woff");
+	font-weight: 400;
+	font-style: normal;
+	font-display: block
+}
+
+@font-face {
+	font-family: "Proxima N W01 Bold";
+	src: local("Proxima Nova Bold"),
+		url("assets/fonts/sans/bold.woff2") format("woff2"),
+		url("assets/fonts/sans/bold.woff") format("woff");
+	font-weight: 400;
+	font-style: normal;
+	font-display: block
+}
+
+@font-face {
+	font-family: "roboto_slabthin";
+	src: local("Roboto Slab Thin"),
+		url("assets/fonts/serif/thin.woff2") format("woff2"),
+		url("assets/fonts/serif/thin.woff") format("woff");
+	font-weight: 400;
+	font-style: normal;
+	font-display: block
+}
+
+@font-face {
+	font-family: "roboto_slablight";
+	src: local("Roboto Slab Light"),
+		url("assets/fonts/serif/light.woff2") format("woff2"),
+		url("assets/fonts/serif/light.woff") format("woff");
+	font-weight: 400;
+	font-style: normal;
+	font-display: block
+}
+
+@font-face {
+	font-family: "roboto_slabregular";
+	src: local("Roboto Slab Regular"),
+		url("assets/fonts/serif/regular.woff2") format("woff2"),
+		url("assets/fonts/serif/regular.woff") format("woff");
+	font-weight: 400;
+	font-style: normal;
+	font-display: block
+}
+
+@font-face {
+	font-family: "roboto_slabbold";
+	src: local("Roboto Slab Bold"),
+		url("assets/fonts/serif/bold.woff2") format("woff2"),
+		url("assets/fonts/serif/bold.woff") format("woff");
+	font-weight: 400;
+	font-style: normal;
+	font-display: block
+}
+
+@font-face {
+	font-family: "Freeland";
+	src: local("Freeland"),
+		url("assets/fonts/script/regular.woff2") format("woff2"),
+		url("assets/fonts/script/regular.woff") format("woff");
+	font-weight: 400;
+	font-style: normal;
+	font-display: block
+}

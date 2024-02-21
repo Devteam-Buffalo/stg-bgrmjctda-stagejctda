@@ -1,0 +1,74 @@
+<?php
+/**
+ * Project Name:    Discover Jackson NC
+ * Project URI:     https://www.discoverjacksonnc.com
+ * Description:     Prints HTML with meta information for the categories.
+ * Agency:          Rawle Murdy Associates
+ * Agency URI:      https://www.rawlemurdy.com
+ * Text Domain:     jctda
+ *
+ * @package         jctda
+ * @since           3.3.0
+ * @link            https://www.discoverjacksonnc.com
+ * @author          Lee Peterson
+ * @date            6/24/18
+ * @file            post-categories.php
+ */
+defined('ABSPATH') or exit;
+
+if ( ! function_exists( 'jc_list_categories' ) ) :
+
+	function jc_list_categories() {
+		
+		if ( has_category() ) {
+			$categories_list = get_the_category_list( ', ' );
+
+			ob_start(); ?>
+			<div class="uk-flex post-meta post-categories">
+				<div><span class="uk-icon-folder uk-icon-justify"></span></div>
+				<div class="uk-padding-left uk-text-uppercase uk-text-truncate sans-serif"><?= $categories_list ?></div>
+			</div>
+			<?php ob_get_flush();
+		}
+
+	}
+
+endif;
+
+/*
+* Delete Category Transients
+* Flush post category transients upon editing a category name
+* and saving posts which use categories
+------------------------------------ */
+if ( function_exists('jc_list_categories') ) :
+
+	function jc_cache_categories() {
+		
+		$jc_category_count = get_transient( 'jc_category_count' );
+		
+		if ( false === $jc_category_count ) {
+			$jc_all_categories = get_categories( [
+				'fields'     => 'ids',
+				'hide_empty' => 1,
+				'number'     => 2,
+			] );
+	
+			$jc_category_count = is_countable( $jc_all_categories ) ? count( $jc_all_categories ) : null;
+	
+			set_transient( 'jc_category_count', $jc_category_count );
+		}
+	
+		if ( $jc_category_count < 2 ) 
+			return false;
+		
+		return true;
+	
+	}
+
+	function jc_flush_category_transients() {
+		delete_transient( 'jc_category_count' );
+	}
+	add_action( 'edit_category', 'jc_flush_category_transients' );
+	add_action( 'save_post',	 'jc_flush_category_transients' );
+
+endif;

@@ -1,0 +1,29 @@
+<?php
+/**
+ * Project Name:    Discover Jackson NC
+ * Project URI:     https://www.discoverjacksonnc.com
+ * Description:     Fires in the login page header after scripts are enqueued
+ * Agency:          Rawle Murdy Associates
+ * Agency URI:      https://www.rawlemurdy.com
+ * Text Domain:     jctda
+ *
+ * @package         jctda
+ * @since           20181109
+ * @author          lpeterson
+ */
+
+add_action( 'login_head', function() {
+	$logo = has_custom_logo() ? wp_get_attachment_image_src( get_theme_mod( 'custom_logo' ), 'full' )[0] : CDN_URL.'/assets/img/logo.svg';
+
+	$css = sprintf('<style>'.
+		'.login h1 a {'.
+			'background-image:url(%s);'.
+			'background-size:contain;'.
+			'width:220px;'.
+			'height:140px}'.
+		'</style>',
+		esc_url($logo)
+	);
+
+	echo $css;
+});

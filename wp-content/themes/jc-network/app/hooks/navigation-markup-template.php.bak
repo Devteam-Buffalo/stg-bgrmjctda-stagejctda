@@ -1,0 +1,59 @@
+<?php
+/**
+ * Project Name:    Discover Jackson NC
+ * Project URI:     https://www.discoverjacksonnc.com
+ * Description:     Filters the navigation markup template.
+ * Agency:          Rawle Murdy Associates
+ * Agency URI:      https://www.rawlemurdy.com
+ * Text Domain:     jctda
+ *
+ * @package         jctda
+ * @since           3.3.0
+ * @link            https://www.discoverjacksonnc.com
+ * @author          Lee Peterson
+ * @date            7/1/18
+ * @file            navigation-markup-template.php
+ * 
+ *  Note: The filtered template HTML must contain specifiers for the navigation
+ *  class (%1$s), the screen-reader-text value (%2$s), and placement of the
+ *  navigation links (%3$s):
+ * 
+ *      <nav class="navigation %1$s" role="navigation">
+ *          <h2 class="screen-reader-text">%2$s</h2>
+ *          <div class="nav-links">%3$s</div>
+ *      </nav>
+ * 
+ *  @since 4.4.0
+ * 
+ *  @param string $template The default template.
+ *  @param string $class    The class passed by the calling function.
+ *  @return string Navigation template.
+ *
+ * $template = 
+ *
+ * return sprintf( $template, sanitize_html_class( $class ), esc_html( $screen_reader_text ), $links );
+ * 
+ */
+defined('ABSPATH') or exit;
+
+add_filter( 'navigation_markup_template', function( $template, $class ) {
+	$template = '<h2 class="uk-visible screen-reader-text">%2$s</h2>'.
+	'<nav class="%1$s" role="navigation">'.
+		'<hr class="uk-article-divider">'.
+		'<ul class="uk-flex uk-grid-width-1-1 uk-grid-width-medium-1-2 uk-pagination">'.
+			'<li class="uk-text-left">'.
+				next_post_link( '<div class="uk-text-small uk-text-uppercase"><small class="uk-icon-chevron-left"></small> Prev Blog Post</div><div class="uk-text-small uk-text-uppercase">%3$s</div>', '%title', true ).
+			'</li>'.
+			'<li class="uk-text-right">'.
+				previous_post_link( '<div class="uk-text-small uk-text-uppercase">Next Blog Post <small class="uk-icon-chevron-right"></small></div><div class="uk-text-small uk-text-uppercase">%3$s</div>', '%title', true ).
+			'</li>'.
+		'</ul>'.
+	'</nav>';
+	
+	return sprintf(
+		$template, 
+		sanitize_html_class( 'nav-links' ), 
+		esc_html( 'Post Navigation' ), 
+		$links 
+	);
+}, 10, 2 );

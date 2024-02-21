@@ -1,0 +1,10 @@
+.wpallexport-plugin .columns-to-export-content ol#columns { min-height: 235px; height: 600px; resize: vertical; }
+#titlediv #title { font-size: 1.7em !important; }
+[data-dismissible="disable-ilab-imgix-warning"] { display: none !important; }
+
+#wpcontent ol, #wpbody ol, #wpcontent ul, #wpbody ul, #wpcontent li, #wpbody li, 
+#wpcontent dt, #wpcontent dd, #wpcontent dl, #wpbody dt, #wpbody dd, #wpbody dl,
+#wpcontent p, #wpcontent a, #wpcontent span, #wpbody p, #wpbody a, #wpbody span,
+#wpbody i, #wpbody em, #wpcontent em, #wpcontent i, #wpcontent strong, #wpbody strong,
+#wpbody td, #wpbody th, #wpbody tr, #wpcontent td, #wpcontent th, #wpcontent tr,
+#wpbody button, #wpbody option, #wpbody select, #wpbody input, #wpbody textarea { font-size: inherit !important; }

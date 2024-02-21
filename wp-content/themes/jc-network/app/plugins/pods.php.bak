@@ -1,0 +1,233 @@
+<?php
+/*
+**  @file               pods.php
+**  @description        Description.
+**  @package            jctda
+**  @since              2.1.0
+**  @author             lpeterson
+**  @date               4/13/18
+*/
+defined( 'ABSPATH' ) || exit;
+
+
+add_filter( 'pods_meta_default_box_title', function( $title ) {
+	$title = __( 'Content for this Page', 'pods' );
+	return $title;
+} );
+
+/*
+*
+* Override of loading image
+*
+* https://github.com/pods-framework/pods-ajax-views/blob/master/Pods_AJAX_Views_Frontend.php#L979
+*
+*/
+add_filter( 'pods_ajax_view_loader', function( $output, $view, $data, $expires, $cache_mode ) {
+	$icon = ASSETS . '/img/the-spinner-1.svg';
+	return $icon;
+}, 10, 5 );
+
+
+
+/*
+*
+* pods_form_ui_field_{$type} filters target Pods Form fields by type of field.
+* 
+* Add autocomplete="off" to all text fields to prevent browsers from auto completeing form fields.
+*
+* https://github.com/pods-framework/pods-code-library/blob/549883c5bbab85078c8d15bae71fcac51585e102/example/hooks/filters/pods_form_ui_field_/examples/autocomplete-off.php#L5
+*
+*/
+add_filter( 'pods_form_ui_field_text', function( $output ) {
+	$input = str_replace( '<input', '<input autocomplete="off"', $output );
+	return $input;
+} );
+
+
+
+/**
+* Add my metaboxes for the Books pod
+*
+* $type (string) 
+*   The type of object (post_type, taxonomy, media, user, or comment)
+*
+* $name (string)
+*   The name of the object (pod name, post type, taxonomy name, 
+*   media, user, or comment)
+	$field_types = [
+		'text',
+		'website',
+		// 'link',
+		'phone',
+		'email',
+		'password',
+		'paragraph',
+		'wysiwyg',
+		'code',
+		'datetime',
+		'date',
+		'time',
+		'number',
+		'currency',
+		'file',
+		'avatar',
+		'oembed',
+		'pick',
+		'boolean',
+		'color',
+		'slug',
+	];
+
+	$repeatable_field_types = [
+		'code',
+		'color',
+		'currency',
+		'date',
+		'datetime',
+		'email',
+		'number',
+		'paragraph',
+		'phone',
+		'text',
+		'time',
+		'website',
+		'wysiwyg',
+	];
+
+	$tableless_field_types = [
+		'pick',
+		'file',
+		'avatar',
+		'taxonomy',
+		'comment',
+	];
+	
+	$file_field_types = [
+		'file',
+		'avatar',
+	];
+	
+	$block_field_types = [
+		'heading', 
+		'html',
+	];
+	
+	$text_field_types = [
+		'code', 
+		'paragraph', 
+		'slug', 
+		'password', 
+		'text', 
+		'wysiwyg'
+	];
+	
+	$simple_tableless_objects = [
+		'pick', 
+		'simple_objects',
+	];
+
+	$core_defaults = [
+		'id'          => 0,
+		'label'       => '',
+		'description' => '',
+		'help'        => '',
+		'default'     => null,
+		'attributes'  => [
+			'id' => '',
+			'name' => '',
+			'data-name-clean' => '',
+			'label' => '',
+			'class' => '',
+			'placeholder' => '',
+			'required' => '',
+			'maxlength' => '',
+			'for' => '',
+			'tabindex' => '',
+		],
+		'class'       => '',
+		'grouped'     => 0,
+	];
+
+	$fields_setup = [
+		'id'             => 0,
+		'name'           => '',
+		'label'          => '',
+		'description'    => '',
+		'help'           => '',
+		'default'        => null,
+		'attributes'     => [],
+		'class'          => '',
+		'type'           => 'text',
+		'group'          => 0,
+		'grouped'        => 0,
+		'developer_mode' => false,
+		'dependency'     => false,
+		'depends-on'     => [],
+		'excludes-on'    => [],
+		'options'        => [],
+	];
+
+	$page_heading_center = [
+		//'id'          => 0,
+		'label'       => 'Center page heading',
+		'description' => 'Center page heading text',
+		'help'        => 'Center page heading text',
+		'default'     => null,
+		//'attributes'  => [],
+		'class'       => 'jc-meta-page-heading-center',
+		'grouped'     => 0,
+	];
+	
+	//$fields = array_merge( )
+
+// add_action( 'pods_meta_groups', function( $type, $name ) {
+	$fields = [
+		'center_page_intro' => [
+			'label'   => 'Center Page Intro',
+			'type'    => 'boolean',
+			'attributes'  => [],
+		],
+		'test' => [
+			'name'           => 'Test Name',
+			'label'          => 'Test Label',
+			'description'    => 'Test Description',
+			'help'           => 'Test Help',
+			'default'        => null,
+			'attributes'     => [
+				'label' => 'Test Attributes Label'
+			],
+			'class'          => 'test-class',
+			'type'           => 'html',
+			'group'          => 1,
+			'grouped'        => 1,
+			'developer_mode' => false,
+			'dependency'     => false,
+			'depends-on'     => [],
+			'excludes-on'    => [],
+			'options'        => [
+				'name' => 'Test Options Name',
+				'label' => 'Test Options Label',
+				'help' => 'Test Options Help',
+				'description'    => 'Test Options Description',
+			],
+		],
+		'script_page_heading' => [
+			'label'   => 'Stylize Page Heading Font',
+			'type'    => 'boolean', 
+			//'value'   => 'Stylize Page Heading Font',
+			//'grouped' => 1,
+		],
+	];
+	
+	$type = 'post_type';
+	$name = 'jc_visitor_gallery';
+
+	//pods_group_add( $name, 'Visitor Gallery Page Options', $fields, 'side', 'core', $type );
+	//pods_group_add( $name, 'Visitor Gallery Page Options', $fields, 'side', 'core', $type );
+	
+	// Add a new shared meta group to the Books and Other Books post types
+	//pods_group_add( array( 'books', 'other_books' ), 'Book Information', 'preface,isbn' );
+// }, 10, 2 );
+*/
+
+

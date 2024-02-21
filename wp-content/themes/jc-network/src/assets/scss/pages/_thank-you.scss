@@ -1,0 +1,24 @@
+@charset "UTF-8";
+/*
+**  @file    _thank-you.scss
+**  
+**  @desc    
+**  
+**  @path    /_thank-you.scss
+**  @package jctda
+**  @author  Lee Peterson
+**  @date    11/10/17
+*/
+
+.thank-you-page {
+	.ancillary-content .button {
+		display: inline-block;
+		margin: 1% 0;
+	}
+
+	.ancillary-hero {
+		background-position: center bottom;
+		
+		@media all and (min-width: $breakpoint-large) { height: 650px; }
+	}
+}
