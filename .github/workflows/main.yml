@@ -16,5 +16,8 @@ jobs:
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
       
+      - name: ssh-checking
+        run: ssh bgrmjctda@35.196.247.55 -p 64779 
+
       - name: SFTP Upload
         run: scp -P 64779 -r ./wp-content/themes/*  bgrmjctda@35.196.247.55:/www/bgrmjctda_167/public/wp-content/themes/
