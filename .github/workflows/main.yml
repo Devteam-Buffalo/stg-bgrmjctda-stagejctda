@@ -15,9 +15,12 @@ jobs:
         uses: webfactory/ssh-agent@v0.5.3
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-      
+
       - name: ssh-checking
-        run: ssh -i ${{ secrets.SSH_PRIVATE_KEY }} bgrmjctda@35.196.247.55 -p 64779 
+        run: |
+        echo "$SSH_PRIVATE_KEY" > ssh_key.pem
+        chmod 600 ssh_key.pem
+         ssh -i ssh_key.pem bgrmjctda@35.196.247.55 -p 64779 
 
       - name: SFTP Upload
-        run: scp -P 64779 -r ./wp-content/themes/*  bgrmjctda@35.196.247.55:/www/bgrmjctda_167/public/wp-content/themes/
+        run: scp -i ssh_key.pem -P 64779 -r ./wp-content/themes/*  bgrmjctda@35.196.247.55:/www/bgrmjctda_167/public/wp-content/themes/
