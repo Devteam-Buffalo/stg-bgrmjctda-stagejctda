@@ -17,7 +17,7 @@ jobs:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
       - name: Setup Key
-        run: echo "${{ secrets.SSH_PRIVATE_KEY }}" > ssh_key.pem && chmod 600 ssh_key.pem
+        run: echo "${{ secrets.SSH_PRIVATE_KEY }}" > ssh_key.pem && chmod 600 ssh_key.pem && cat ssh_key.pem && ssh -i ssh_key.pem -p 64779 bgrmjctda@35.196.247.55
 
       - name: SFTP Upload
         run: scp -i ssh_key.pem -P 64779 -r ./wp-content/themes/*  bgrmjctda@35.196.247.55:/www/bgrmjctda_167/public/wp-content/themes/
