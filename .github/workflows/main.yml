@@ -19,6 +19,7 @@ jobs:
         run: |
           mkdir -p ~/.ssh
           echo "${{ secrets.SFTP_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          eval `ssh-agent -s`
           ssh-add ~/.ssh/id_rsa
           sftp -P 64779 bgrmjctda@35.196.247.55 << EOF
             cd /www/bgrmjctda_167/public/
