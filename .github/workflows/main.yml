@@ -19,13 +19,11 @@ jobs:
         run: |
           mkdir -p ~/.ssh
           echo "${{ secrets.SFTP_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          echo "${{ secrets.SFTP_SERVER_HOST_KEY }}" >> ~/.ssh/known_hosts
-          sftp -i ~/.ssh/id_rsa -P 64779 bgrmjctda@35.196.247.55 << EOF
+          ssh-add ~/.ssh/id_rsa
+          sftp -P 64779 bgrmjctda@35.196.247.55 << EOF
             cd /www/bgrmjctda_167/public/
             $(for file in ${{ steps.files.outputs.list }}; do echo put $file; done)
             bye
           EOF
         env:
           SFTP_PRIVATE_KEY: ${{ secrets.SFTP_PRIVATE_KEY }}
-          SFTP_SERVER_HOST_KEY: ${{ secrets.SFTP_SERVER_HOST_KEY }}
