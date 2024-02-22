@@ -22,7 +22,7 @@ jobs:
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan -H 35.196.247.55 >> ~/.ssh/known_hosts
           sftp -i ~/.ssh/id_rsa -p 64779 bgrmjctda@35.196.247.55 << EOF
-            cd /path/to/remote/directory
+            cd /www/bgrmjctda_167/public/
             $(for file in ${{ steps.files.outputs.list }}; do echo put $file; done)
             bye
           EOF
