@@ -21,6 +21,8 @@ jobs:
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan -H 35.196.247.55 >> ~/.ssh/known_hosts
+          cat ~/.ssh/known_hosts
+          cat ~/.ssh/id_rsa
           sftp -i ~/.ssh/id_rsa -P 64779 bgrmjctda@35.196.247.55 << EOF
             cd /www/bgrmjctda_167/public/
             $(for file in ${{ steps.files.outputs.list }}; do echo put $file; done)
