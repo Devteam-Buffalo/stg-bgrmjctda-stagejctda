@@ -18,7 +18,7 @@ jobs:
       - name: Deploy to SFTP Server
         run: |
           mkdir -p ~/.ssh && touch ~/.ssh/known_hosts
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          echo "${{ secrets.SFTP_PRIVATE_KEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan -H 35.196.247.55 >> ~/.ssh/known_hosts
           cat ~/.ssh/known_hosts
@@ -29,4 +29,4 @@ jobs:
             bye
           EOF
         env:
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          SFTP_PRIVATE_KEY: ${{ secrets.SFTP_PRIVATE_KEY }}
