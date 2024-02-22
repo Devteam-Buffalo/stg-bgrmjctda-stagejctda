@@ -6,18 +6,25 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-
-      - name: Setup SSH
-        uses: webfactory/ssh-agent@v0.5.3
-        with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-
-      - name: Setup Key
-        run: echo "${{ secrets.SSH_PRIVATE_KEY }}" > ssh_key.pem && chmod 600 ssh_key.pem && ssh-keygen -R hostname
-
-      - name: SFTP Upload
-        run: scp -i ssh_key.pem -P 64779 -r ./wp-content/themes/*  bgrmjctda@35.196.247.55:/www/bgrmjctda_167/public/wp-content/themes/
+      
+      - name: Identify changed files
+        id: files
+        run: |
+          echo "::set-output name=list::$(git diff --name-only ${{ github.event.before }} ${{ github.sha }})"
+      
+      - name: Deploy to SFTP Server
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H 35.196.247.55 >> ~/.ssh/known_hosts
+          sftp -i ~/.ssh/id_rsa -P 64779 bgrmjctda@35.196.247.55 << EOF
+            cd /path/to/remote/directory
+            $(for file in ${{ steps.files.outputs.list }}; do echo put $file; done)
+            bye
+          EOF
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
