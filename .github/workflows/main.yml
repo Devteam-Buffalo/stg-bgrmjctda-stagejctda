@@ -31,7 +31,7 @@ jobs:
             $(while IFS= read -r file; do
            if [ -f "$file" ]; then # Ensure it's a file, not a directory
                 # Extract directory path from file path and create it on the server
-                echo "-mkdir $(dirname "$file")"
+                echo "mkdir $(dirname "$file")"
                 echo "put $file $(dirname "$file")/"
               fi
             done <<< "${{ env.list }}")
