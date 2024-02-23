@@ -22,10 +22,10 @@ jobs:
           chmod 600 ~/.ssh/id_rsa
           eval `ssh-agent -s`
           ssh-add ~/.ssh/id_rsa
-          sftp -o StrictHostKeyChecking=no -P 64779 bgrmjctda@35.196.247.55 #<< EOF
-            #cd /www/bgrmjctda_167/public/
-            #$(for file in ${{ steps.files.outputs.list }}; do echo put $file; done)
-            #bye
-          #EOF
+          sftp -o StrictHostKeyChecking=no -P 64779 bgrmjctda@35.196.247.55 << EOF
+            cd /www/bgrmjctda_167/public/
+            $(for file in ${{ steps.files.outputs.list }}; do echo put $file; done)
+            bye
+          EOF
         env:
           SFTP_PRIVATE_KEY: ${{ secrets.SFTP_PRIVATE_KEY }}
