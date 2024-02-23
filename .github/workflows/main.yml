@@ -21,6 +21,6 @@ jobs:
 
       - name: Rsync files to SFTP Server
         run: |
-          rsync -avz --delete -e "ssh -p 64779" ./wp-content/themes/jc-network bgrmjctda@35.196.247.55:/www/bgrmjctda_167/public/wp-content/themes/jc-network
+          rsync -avz --delete -e "ssh -o StrictHostKeyChecking=no -p 64779" ./wp-content/themes/jc-network bgrmjctda@35.196.247.55:/www/bgrmjctda_167/public/wp-content/themes/jc-network
         env:
           SFTP_PRIVATE_KEY: ${{ secrets.SFTP_PRIVATE_KEY }}
