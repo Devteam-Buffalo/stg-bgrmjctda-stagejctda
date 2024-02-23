@@ -12,15 +12,35 @@ jobs:
         with:
           fetch-depth: 0
       
-      - name: Setup SSH Keys and known_hosts
+      - name: Identify changed files
+        id: files
+        run: |
+          echo "list<<EOF" >> $GITHUB_ENV
+          git diff --name-only ${{ github.event.before }} ${{ github.sha }} >> $GITHUB_ENV
+          echo "EOF" >> $GITHUB_ENV
+      
+      - name: Deploy to SFTP Server
         run: |
           mkdir -p ~/.ssh
           echo "${{ secrets.SFTP_PRIVATE_KEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -H 35.196.247.55 >> ~/.ssh/known_hosts
-
-      - name: Rsync files to SFTP Server
-        run: |
-          rsync -avz --delete -e "ssh -o StrictHostKeyChecking=no -p 64779" ./ bgrmjctda@35.196.247.55:/www/bgrmjctda_167/public/
+          eval `ssh-agent -s`
+          ssh-add ~/.ssh/id_rsa
+          while IFS= read -r file; do
+          if [ -f "$file" ]; then # Ensure it's a file, not a directory
+              DIR=$(dirname "$file")
+              ssh -o StrictHostKeyChecking=no -p 64779 bgrmjctda@35.196.247.55 "mkdir -p /www/bgrmjctda_167/public/$DIR"
+            fi
+          done <<< "${{ env.list }}"
+          sftp -o StrictHostKeyChecking=no -P 64779 bgrmjctda@35.196.247.55 << EOF
+            cd /www/bgrmjctda_167/public/
+            $(while IFS= read -r file; do
+           if [ -f "$file" ]; then # Ensure it's a file, not a directory
+                # Extract directory path from file path and create it on the server
+                 echo "put $file $DIR/"
+              fi
+            done <<< "${{ env.list }}")
+            bye
+          EOF
         env:
           SFTP_PRIVATE_KEY: ${{ secrets.SFTP_PRIVATE_KEY }}
