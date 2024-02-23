@@ -26,13 +26,18 @@ jobs:
           chmod 600 ~/.ssh/id_rsa
           eval `ssh-agent -s`
           ssh-add ~/.ssh/id_rsa
+          while IFS= read -r file; do
+          if [ -f "$file" ]; then # Ensure it's a file, not a directory
+              DIR=$(dirname "$file")
+              ssh -o StrictHostKeyChecking=no -p 64779 bgrmjctda@35.196.247.55 "mkdir -p /www/bgrmjctda_167/public/$DIR"
+            fi
+          done <<< "${{ env.list }}"
           sftp -o StrictHostKeyChecking=no -P 64779 bgrmjctda@35.196.247.55 << EOF
             cd /www/bgrmjctda_167/public/
             $(while IFS= read -r file; do
            if [ -f "$file" ]; then # Ensure it's a file, not a directory
                 # Extract directory path from file path and create it on the server
-                echo "mkdir -p $(dirname "$file")"
-                echo "put $file $(dirname "$file")/"
+                 echo "put $file $DIR/"
               fi
             done <<< "${{ env.list }}")
             bye
